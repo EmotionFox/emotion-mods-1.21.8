@@ -1,0 +1,5 @@
+{
+  "type": "emomodworld:orchard_biome_modifier",
+  "biomes": "#c:is_overworld",
+  "value": 20
+}
