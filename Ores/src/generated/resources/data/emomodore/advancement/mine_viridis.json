@@ -1,0 +1,33 @@
+{
+  "parent": "emomodore:mine_purpura",
+  "criteria": {
+    "viridis": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodore:viridis_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.emomodore.mine_viridis.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomodore:viridis_crystal"
+    },
+    "title": {
+      "translate": "advancements.emomodore.mine_viridis.title"
+    }
+  },
+  "requirements": [
+    [
+      "viridis"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

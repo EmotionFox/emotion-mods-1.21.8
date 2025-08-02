@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "emomodore:purpura_sword",
+    "minecraft:netherite_ingot",
+    "minecraft:netherite_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_netherite_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "sharpness": 2,
+        "unbreaking": 2
+      }
+    }
+  }
+}

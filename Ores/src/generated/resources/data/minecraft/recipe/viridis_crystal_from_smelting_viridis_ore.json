@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "viridis",
+  "ingredient": "emomodore:viridis_ore",
+  "result": {
+    "count": 1,
+    "id": "emomodore:viridis_crystal"
+  }
+}

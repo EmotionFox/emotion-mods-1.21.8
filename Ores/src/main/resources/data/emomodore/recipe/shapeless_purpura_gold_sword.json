@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "emomodore:purpura_sword",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_gold_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "looting": 1
+      }
+    }
+  }
+}

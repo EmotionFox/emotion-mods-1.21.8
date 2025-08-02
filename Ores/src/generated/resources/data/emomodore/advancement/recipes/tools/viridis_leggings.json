@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "emomodore:viridis_leggings"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_viridis": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodore:viridis_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_viridis"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "emomodore:viridis_leggings"
+    ]
+  }
+}

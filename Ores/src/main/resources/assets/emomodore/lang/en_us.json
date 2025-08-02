@@ -1,0 +1,63 @@
+{
+  "emomodore.configuration.title": "Emotion's Mod Configs",
+  "emomodore.configuration.section.emomodore.common.toml": "Emotion's Mod Configs",
+  "emomodore.configuration.section.emomodore.common.toml.title": "Emotion's Mod Configs",
+  "emomodore.configuration.fadingChanceViridisCrystal": "Viridis Crystal Fading Chance",
+  "emomodore.configuration.fadingChanceNetherLumeOre": "Nether Lume Ore Fading Chance",
+
+  "block.emomodore.fossil_ore": "Fossil Ore",
+  "block.emomodore.fossil_block": "Fossil Block",
+
+  "block.emomodore.purpura_ore": "Purpura Ore",
+  "block.emomodore.deepslate_purpura_ore": "Deepslate Purpura Ore",
+  "block.emomodore.purpura_block": "Purpura Block",
+
+  "block.emomodore.viridis_ore": "Viridis Ore",
+  "block.emomodore.viridis_block": "Viridis Block",
+  "block.emomodore.viridis_crystal": "Viridis Crystal",
+
+  "block.emomodore.nether_lume_ore": "Nether Lume Ore",
+  "block.emomodore.lume_block": "Lume Block",
+
+  "item.emomodore.fossil": "Fossil",
+
+  "item.emomodore.fossil_axe": "Fossil Axe",
+  "item.emomodore.fossil_hoe": "Fossil Hoe",
+  "item.emomodore.fossil_pickaxe": "Fossil Pickaxe",
+  "item.emomodore.fossil_shovel": "Fossil Shovel",
+  "item.emomodore.fossil_sword": "Fossil Sword",
+
+  "item.emomodore.purpura_shard": "Purpura Shard",
+
+  "item.emomodore.purpura_axe": "Purpura Axe",
+  "item.emomodore.purpura_hoe": "Purpura Hoe",
+  "item.emomodore.purpura_pickaxe": "Purpura Pickaxe",
+  "item.emomodore.purpura_shovel": "Purpura Shovel",
+  "item.emomodore.purpura_sword": "Purpura Sword",
+
+  "item.emomodore.purpura_lume_sword": "Lume-Inlaid Purpura Sword",
+
+  "item.emomodore.purpura_netherite_sword": "Netherite-Inlaid Purpura Sword",
+  "item.emomodore.purpura_diamond_sword": "Diamond-Inlaid Purpura Sword",
+  "item.emomodore.purpura_emerald_sword": "Emerald-Inlaid Purpura Sword",
+  "item.emomodore.purpura_gold_sword": "Gold-Inlaid Purpura Sword",
+  "item.emomodore.purpura_iron_sword": "Iron-Inlaid Purpura Sword",
+  "item.emomodore.purpura_copper_sword": "Copper-Inlaid Purpura Sword",
+
+  "item.emomodore.viridis_crystal": "Viridis Crystal",
+
+  "item.emomodore.viridis_helmet": "Viridis Helmet",
+  "item.emomodore.viridis_chestplate": "Viridis Chestplate",
+  "item.emomodore.viridis_leggings": "Viridis Leggings",
+  "item.emomodore.viridis_boots": "Viridis Boots",
+
+  "item.emomodore.lume_stone": "Lume Stone",
+
+  "item.emomodore.phase.tooltip": "Phase",
+
+  "advancements.emomodore.mine_purpura.description": "Gather purpura",
+  "advancements.emomodore.mine_purpura.title": "Purpura?",
+
+  "advancements.emomodore.mine_viridis.description": "Found it",
+  "advancements.emomodore.mine_viridis.title": "Viridis!"
+}

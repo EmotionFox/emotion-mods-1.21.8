@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot",
+    "X": "emomodore:purpura_shard",
+    "Y": "emomodore:lume_stone"
+  },
+  "pattern": [
+    "XY",
+    "XY",
+    "# "
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_lume_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "fire_aspect": 1
+      }
+    }
+  }
+}

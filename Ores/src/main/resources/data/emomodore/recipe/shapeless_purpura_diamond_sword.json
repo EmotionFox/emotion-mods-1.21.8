@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "emomodore:purpura_sword",
+    "minecraft:diamond",
+    "minecraft:diamond"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_diamond_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "sharpness": 1,
+        "unbreaking": 2
+      }
+    }
+  }
+}

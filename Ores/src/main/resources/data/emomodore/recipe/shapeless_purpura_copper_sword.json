@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "emomodore:purpura_sword",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_copper_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "sweeping_edge": 1
+      }
+    }
+  }
+}

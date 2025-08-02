@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "emomodore:purpura_ore",
+    "emomodore:deepslate_purpura_ore",
+    "emomodore:purpura_block",
+    "emomodore:viridis_ore",
+    "emomodore:viridis_crystal",
+    "emomodore:viridis_block",
+    "emomodore:nether_lume_ore",
+    "emomodore:lume_block"
+  ]
+}

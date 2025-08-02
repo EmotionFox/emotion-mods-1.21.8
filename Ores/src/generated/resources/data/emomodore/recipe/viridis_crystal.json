@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "emomodore:viridis_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "emomodore:viridis_crystal"
+  }
+}

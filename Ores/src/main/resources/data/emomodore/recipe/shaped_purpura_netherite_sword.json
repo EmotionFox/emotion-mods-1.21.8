@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot",
+    "X": "emomodore:purpura_shard",
+    "Y": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "XY",
+    "XY",
+    "# "
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_netherite_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "sharpness": 2,
+        "unbreaking": 2
+      }
+    }
+  }
+}

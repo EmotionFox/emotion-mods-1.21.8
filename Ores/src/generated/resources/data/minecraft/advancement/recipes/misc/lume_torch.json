@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lume": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodore:lume_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:lume_torch"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lume"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:lume_torch"
+    ]
+  }
+}

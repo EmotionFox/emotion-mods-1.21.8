@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "phase=0": {
+      "model": "emomodore:block/nether_lume_ore_0"
+    },
+    "phase=1": {
+      "model": "emomodore:block/nether_lume_ore_1"
+    },
+    "phase=2": {
+      "model": "emomodore:block/nether_lume_ore_2"
+    },
+    "phase=3": {
+      "model": "emomodore:block/nether_lume_ore_3"
+    },
+    "phase=4": {
+      "model": "emomodore:block/nether_lume_ore_4"
+    }
+  }
+}

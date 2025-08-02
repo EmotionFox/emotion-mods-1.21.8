@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "lume",
+  "ingredient": "emomodore:nether_lume_ore",
+  "result": {
+    "count": 1,
+    "id": "emomodore:lume_stone"
+  }
+}

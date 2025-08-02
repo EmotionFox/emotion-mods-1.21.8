@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nether_lume_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodore:nether_lume_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:lume_stone_from_blasting_nether_lume_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nether_lume_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:lume_stone_from_blasting_nether_lume_ore"
+    ]
+  }
+}

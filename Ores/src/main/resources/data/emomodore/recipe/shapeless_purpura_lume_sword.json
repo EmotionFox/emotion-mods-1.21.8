@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "emomodore:purpura_sword",
+    "emomodore:lume_stone",
+    "emomodore:lume_stone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_lume_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "fire_aspect": 1
+      }
+    }
+  }
+}

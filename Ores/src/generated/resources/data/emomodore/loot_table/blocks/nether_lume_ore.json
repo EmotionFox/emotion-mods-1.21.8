@@ -1,0 +1,465 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "0"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 0
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 0"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "emomodore:nether_lume_ore"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "1"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 1
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 1"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "emomodore:nether_lume_ore"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "2"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 2
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 2"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "emomodore:nether_lume_ore"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "3"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 3
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 3"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "emomodore:nether_lume_ore"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "4"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 4
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 4"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "emomodore:nether_lume_ore"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:silk_touch",
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "0"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 0
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 0"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "emomodore:lume_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "1"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 1
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 1"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "emomodore:lume_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "2"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 2
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 2"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "emomodore:lume_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "3"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 3
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 3"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "emomodore:lume_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "emomodore:nether_lume_ore",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "phase": "4"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "components": {
+                "emomodore:phase": {
+                  "value": 4
+                }
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "color": "dark_aqua",
+                    "extra": [
+                      ": 4"
+                    ],
+                    "translate": "item.emomodore.phase.tooltip"
+                  }
+                ]
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops",
+              "function": "minecraft:apply_bonus"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "emomodore:lume_stone"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "emomodore:blocks/nether_lume_ore"
+}

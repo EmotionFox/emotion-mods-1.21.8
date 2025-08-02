@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "phase=0": {
+      "model": "emomodore:block/viridis_crystal_0"
+    },
+    "phase=1": {
+      "model": "emomodore:block/viridis_crystal_1"
+    },
+    "phase=2": {
+      "model": "emomodore:block/viridis_crystal_2"
+    },
+    "phase=3": {
+      "model": "emomodore:block/viridis_crystal_3"
+    },
+    "phase=4": {
+      "model": "emomodore:block/viridis_crystal_4"
+    }
+  }
+}

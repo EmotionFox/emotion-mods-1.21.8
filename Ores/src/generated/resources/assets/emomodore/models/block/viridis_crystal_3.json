@@ -1,0 +1,6 @@
+{
+  "parent": "emomodore:block/crystal",
+  "textures": {
+    "crystal": "emomodore:block/viridis_crystal_3"
+  }
+}

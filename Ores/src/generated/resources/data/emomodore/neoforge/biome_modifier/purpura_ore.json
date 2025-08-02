@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_overworld",
+  "features": [
+    "emomodore:purpura_ore_buried",
+    "emomodore:purpura_ore_small",
+    "emomodore:purpura_ore_medium",
+    "emomodore:purpura_ore_large"
+  ],
+  "step": "underground_ores"
+}

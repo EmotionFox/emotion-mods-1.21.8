@@ -1,0 +1,6 @@
+[00:07:36] [main/INFO]: ModLauncher running: args [--mod, emomodore, --all, --output, E:\\Users\\micka_000\\Documents\\.Programmation\\Java\\Minecraft\\Emotion's Mod\\.NeoForge\\Ores\\src\\generated\\resources, --existing, E:\\Users\\micka_000\\Documents\\.Programmation\\Java\\Minecraft\\Emotion's Mod\\.NeoForge\\Ores\\src\\main\\resources, --launchTarget, neoforgedatadev, --assetIndex, asset-index, --assetsDir, C:\\Users\\micka\\.gradle\\caches\\minecraft\\assets, --fml.fmlVersion, 9.0.5, --fml.mcVersion, 1.21.7, --fml.neoForgeVersion, 21.7.8-beta, --fml.neoFormVersion, 20250630.141722]
+[00:07:36] [main/INFO]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.4+7-LTS
+[00:07:36] [main/INFO]: ModLauncher 9.0 starting: java version 21.0.4 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[00:07:36] [main/INFO]: ImmediateWindowProvider not loading because launch target is neoforgedatadev
+[00:07:36] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/micka/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23162!/ Service=ModLauncher Env=UNKNOWN
+[00:07:36] [main/ERROR]: Missing LaunchHandler neoforgedatadev, cannot continue

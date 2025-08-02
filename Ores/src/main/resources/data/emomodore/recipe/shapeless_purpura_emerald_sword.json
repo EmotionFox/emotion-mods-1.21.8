@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "emomodore:purpura_sword",
+    "minecraft:emerald",
+    "minecraft:emerald"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_emerald_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "knockback": 1,
+        "unbreaking": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "emomodore.configuration.title": "Emotion's Mod Configs",
+  "emomodore.configuration.section.emomodore.common.toml": "Emotion's Mod Configs",
+  "emomodore.configuration.section.emomodore.common.toml.title": "Emotion's Mod Configs",
+  "emomodore.configuration.fadingChanceViridisCrystal": "Chande de s'effacer du cristal de viridis",
+  "emomodore.configuration.fadingChanceNetherLumeOre": "Chance de s'effacer du minerai de lume du nether",
+
+  "block.emomodore.fossil_ore": "Minerai de fossile",
+  "block.emomodore.fossil_block": "Bloc de fossile",
+
+  "block.emomodore.purpura_ore": "Minerai de purpura",
+  "block.emomodore.deepslate_purpura_ore": "Minerai de purpura des abîmes",
+  "block.emomodore.purpura_block": "Bloc de purpura",
+
+  "block.emomodore.viridis_ore": "Minerai de viridis",
+  "block.emomodore.viridis_block": "Bloc de viridis",
+  "block.emomodore.viridis_crystal": "Cristal de viridis",
+
+  "block.emomodore.nether_lume_ore": "Minerai de lume du Nether",
+  "block.emomodore.lume_block": "Bloc de lume",
+
+  "item.emomodore.fossil": "Fossile",
+
+  "item.emomodore.fossil_axe": "Hache en fossile",
+  "item.emomodore.fossil_hoe": "Houe en fossile",
+  "item.emomodore.fossil_pickaxe": "Pioche en fossile",
+  "item.emomodore.fossil_shovel": "Pelle en fossile",
+  "item.emomodore.fossil_sword": "Épée en fossile",
+
+  "item.emomodore.purpura_shard": "Éclat de purpura",
+
+  "item.emomodore.purpura_axe": "Hache en purpura",
+  "item.emomodore.purpura_hoe": "Houe en purpura",
+  "item.emomodore.purpura_pickaxe": "Pioche en purpura",
+  "item.emomodore.purpura_shovel": "Pelle en purpura",
+  "item.emomodore.purpura_sword": "Épée en purpura",
+
+  "item.emomodore.purpura_lume_sword": "Épée en purpura incrustée de lume",
+
+  "item.emomodore.purpura_netherite_sword": "Épée en purpura incrustée de netherite",
+  "item.emomodore.purpura_diamond_sword": "Épée en purpura incrustée de diamant",
+  "item.emomodore.purpura_emerald_sword": "Épée en purpura incrustée d'émeraude",
+  "item.emomodore.purpura_gold_sword": "Épée en purpura incrustée d'or",
+  "item.emomodore.purpura_iron_sword": "Épée en purpura incrustée de fer",
+  "item.emomodore.purpura_copper_sword": "Épée en purpura incrustée de cuivre",
+
+  "item.emomodore.viridis_crystal": "Viridis Cristal",
+
+  "item.emomodore.viridis_helmet": "Viridis Helmet",
+  "item.emomodore.viridis_chestplate": "Viridis Chestplate",
+  "item.emomodore.viridis_leggings": "Viridis Leggings",
+  "item.emomodore.viridis_boots": "Viridis Boots",
+
+  "item.emomodore.lume_stone": "Pierre de lume",
+
+  "item.emomodore.phase.tooltip": "Phase",
+
+  "advancements.emomodore.mine_purpura.description": "Récuperer du purpura",
+  "advancements.emomodore.mine_purpura.title": "Purpura ?",
+
+  "advancements.emomodore.mine_viridis.description": "Trouvé",
+  "advancements.emomodore.mine_viridis.title": "Viridis !"
+}

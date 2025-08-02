@@ -1,0 +1,11 @@
+// 1.21.8	2025-08-01T21:18:12.0893062	Loot Tables
+4f3d9c4921c796451c6314fa6262ad28b04e475c data/emomodore/loot_table/blocks/deepslate_purpura_ore.json
+b910729bb1ac8c87ea7664ba35be953b301cc236 data/emomodore/loot_table/blocks/fossil_block.json
+6813b34325c37cc650319e30458ae3b72eb2a5d1 data/emomodore/loot_table/blocks/fossil_ore.json
+3e6cdcb2387274849199c8bfa2635eb290c7db46 data/emomodore/loot_table/blocks/lume_block.json
+9a2311e791402d27d547d7a8319fb0416f4a8779 data/emomodore/loot_table/blocks/nether_lume_ore.json
+35767d58173947f738d74df8708bff913ad8658b data/emomodore/loot_table/blocks/purpura_block.json
+1c34ef32ba8cced67fca96bb3a2b749263164113 data/emomodore/loot_table/blocks/purpura_ore.json
+18f82714c43746a56130df11684cc66cb31a33ea data/emomodore/loot_table/blocks/viridis_block.json
+ab05cfebfa24d957631f9b68b51b0cfcc35b5f35 data/emomodore/loot_table/blocks/viridis_crystal.json
+b33e480b384f5cb3c5548da82688c45127abd482 data/emomodore/loot_table/blocks/viridis_ore.json

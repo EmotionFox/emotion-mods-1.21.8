@@ -1,0 +1,47 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "entries": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_crystal_0"
+        },
+        "threshold": 0.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_crystal_1"
+        },
+        "threshold": 1.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_crystal_2"
+        },
+        "threshold": 2.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_crystal_3"
+        },
+        "threshold": 3.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_crystal_4"
+        },
+        "threshold": 4.0
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "emomodore:block/viridis_crystal"
+    },
+    "property": "emomodore:phase_value"
+  }
+}

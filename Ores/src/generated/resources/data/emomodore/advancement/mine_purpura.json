@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "criteria": {
+    "purpura": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodore:purpura_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.emomodore.mine_purpura.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomodore:purpura_shard"
+    },
+    "title": {
+      "translate": "advancements.emomodore.mine_purpura.title"
+    }
+  },
+  "requirements": [
+    [
+      "purpura"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot",
+    "X": "emomodore:purpura_shard",
+    "Y": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    "XY",
+    "XY",
+    "# "
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_gold_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "looting": 1
+      }
+    }
+  }
+}

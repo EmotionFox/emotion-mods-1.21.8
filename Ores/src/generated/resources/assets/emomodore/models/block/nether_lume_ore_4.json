@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "emomodore:block/nether_lume_ore_4"
+  }
+}

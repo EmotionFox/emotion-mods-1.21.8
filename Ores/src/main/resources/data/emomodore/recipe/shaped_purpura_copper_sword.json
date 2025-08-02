@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot",
+    "X": "emomodore:purpura_shard",
+    "Y": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "XY",
+    "XY",
+    "# "
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodore:purpura_copper_sword",
+    "components": {
+      "minecraft:enchantments": {
+        "sweeping_edge": 1
+      }
+    }
+  }
+}
