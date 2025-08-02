@@ -1,8 +1,8 @@
 
-# 🧊 Emotion's Mod - 1.21.7
+# 🧊 Emotion's Mod - 1.21.8
 
 Bienvenue sur le GitHub **Emotion's Mod**, un mod d’extension vanilla riche, immersif et cohérent, conçu pour sublimer votre expérience Minecraft sans la trahir.  
-Initialement développé intimement en 1.8 avec ma conjointe, le mod revient en **1.21.7** avec une toute nouvelle base, nettoyée et mieux intégrée à la version moderne du jeu.
+Initialement développé intimement en 1.8 avec ma conjointe, le mod revient en **1.21.8** avec une toute nouvelle base, nettoyée et mieux intégrée à la version moderne du jeu.
 
 > 🔧 Actuellement en cours de portage et de reconstruction avec NeoForge.
 
@@ -58,7 +58,7 @@ Voici un aperçu de ce que propose ou proposera le mod :
 
 # ⚙️ Développement
 
-Ce dépôt contient la version en cours de développement pour Minecraft **1.21.7** avec **NeoForge**.  
+Ce dépôt contient la version en cours de développement pour Minecraft **1.21.8** avec **NeoForge**.  
 Le mod est reconstruit proprement, en tenant compte des fonctionnalités désormais natives pour éviter les doublons.
 
 # 📁 Structure
