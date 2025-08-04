@@ -2,20 +2,23 @@ package fr.emotion.emomodworld.init;
 
 import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.blocks.ThornyFlowerBlock;
+import fr.emotion.emomodworld.blocks.properties.EmoBlockSetType;
+import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
@@ -28,6 +31,7 @@ import java.util.function.Function;
 public class EmoBlocks {
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EmoMain.MODID);
 
+    // FLOWER
     public static final DeferredBlock<Block> FLOWER_1 = addBlock("flower_kitty", props -> new FlowerBlock(MobEffects.SATURATION, 0.33f, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "flower_kitty")))));
     public static final DeferredBlock<Block> FLOWER_2 = addBlock("flower_nox", props -> new FlowerBlock(MobEffects.SATURATION, 0.33f, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "flower_nox")))));
     public static final DeferredBlock<Block> FLOWER_3 = addBlock("flower_dely", props -> new FlowerBlock(MobEffects.SATURATION, 0.33f, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "flower_dely")))));
@@ -55,7 +59,48 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> POTTED_FLOWER_6 = addBlock("potted_flower_centus", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_6, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_centus")))));
     public static final DeferredBlock<Block> POTTED_FLOWER_7 = addBlock("potted_flower_tallgrass", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_7, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_tallgrass")))));
     public static final DeferredBlock<Block> POTTED_FLOWER_8 = addBlock("potted_flower_nebula", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_8, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_nebula")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_9 = addBlock("potted_flower_narcota", props -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), FLOWER_9, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_narcota")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_9 = addBlock("potted_flower_narcota", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_9, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_narcota")))));
+
+    // WOOD
+    public static final DeferredBlock<Block> PEAR_PLANKS = addBlock("pear_planks", props -> new Block(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_planks")))));
+
+    public static final DeferredBlock<Block> PEAR_SAPLING = addBlock("pear_sapling", props -> new SaplingBlock(TreeGrower.OAK, props.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_sapling")))));
+
+    public static final DeferredBlock<Block> PEAR_LOG = addBlock("pear_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_log")))));
+
+    public static final DeferredBlock<Block> STRIPPED_PEAR_LOG = addBlock("stripped_pear_log", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "stripped_pear_log")))));
+
+    public static final DeferredBlock<Block> PEAR_WOOD = addBlock("pear_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_wood")))));
+
+    public static final DeferredBlock<Block> STRIPPED_PEAR_WOOD = addBlock("stripped_pear_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "stripped_pear_wood")))));
+
+    public static final DeferredBlock<Block> PEAR_LEAVES = addBlock("pear_leaves", props -> new TintedParticleLeavesBlock(0.01F, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_leaves")))));
+
+    public static final DeferredBlock<Block> PEAR_SIGN = addBlock("pear_sign", props -> new StandingSignBlock(EmoWoodType.PEAR, props.mapColor(PEAR_LOG.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_sign")))), SignItem.class);
+
+    public static final DeferredBlock<Block> PEAR_WALL_SIGN = BLOCKS.registerBlock("pear_wall_sign", props -> new WallSignBlock(EmoWoodType.PEAR, wallVariant(PEAR_SIGN.get(), true).mapColor(PEAR_LOG.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_wall_sign")))));
+
+    public static final DeferredBlock<Block> PEAR_HANGING_SIGN = addBlock("pear_hanging_sign", props -> new CeilingHangingSignBlock(EmoWoodType.PEAR, props.mapColor(PEAR_LOG.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_hanging_sign")))), HangingSignItem.class);
+
+    public static final DeferredBlock<Block> PEAR_WALL_HANGING_SIGN = BLOCKS.registerBlock("pear_wall_hanging_sign", props -> new WallHangingSignBlock(EmoWoodType.PEAR, wallVariant(PEAR_HANGING_SIGN.get(), true).mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_wall_hanging_sign")))));
+
+    public static final DeferredBlock<Block> PEAR_PRESSURE_PLATE = addBlock("pear_pressure_plate", props -> new PressurePlateBlock(EmoBlockSetType.PEAR, props.mapColor(PEAR_PLANKS.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_pressure_plate")))));
+
+    public static final DeferredBlock<Block> PEAR_TRAPDOOR = addBlock("pear_trapdoor", props -> new TrapDoorBlock(EmoBlockSetType.PEAR, props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(3.0F).noOcclusion().isValidSpawn(Blocks::never).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_trapdoor")))));
+
+    public static final DeferredBlock<Block> PEAR_STAIRS = addBlock("pear_stairs", props -> new StairBlock(PEAR_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(PEAR_PLANKS.get()).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_stairs")))));
+
+    public static final DeferredBlock<Block> POTTED_PEAR_SAPLING = addBlock("potted_pear_sapling", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PEAR_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_pear_sapling")))));
+
+    public static final DeferredBlock<Block> PEAR_BUTTON = addBlock("pear_button", props -> new ButtonBlock(EmoBlockSetType.PEAR, 30, props.noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_button")))));
+
+    public static final DeferredBlock<Block> PEAR_SLAB = addBlock("pear_slab", props -> new SlabBlock(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_slab")))));
+
+    public static final DeferredBlock<Block> PEAR_FENCE_GATE = addBlock("pear_fence_gate", props -> new FenceGateBlock(EmoWoodType.PEAR, props.mapColor(PEAR_PLANKS.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_fence_gate")))));
+
+    public static final DeferredBlock<Block> PEAR_FENCE = addBlock("pear_fence", props -> new FenceBlock(props.mapColor(PEAR_PLANKS.get().defaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).ignitedByLava().sound(SoundType.WOOD).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_fence")))));
+
+    public static final DeferredBlock<Block> PEAR_DOOR = addBlock("pear_door", props -> new DoorBlock(EmoBlockSetType.PEAR, props.mapColor(PEAR_PLANKS.get().defaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_door")))), DoubleHighBlockItem.class);
 
     public static void init(IEventBus event) {
         BLOCKS.register(event);
@@ -87,12 +132,44 @@ public class EmoBlocks {
                     .setId(ResourceKey.create(Registries.ITEM, key))
                     .useBlockDescriptionPrefix();
 
+            if (blockItemClass==SignItem.class || blockItemClass==HangingSignItem.class) properties.stacksTo(16);
+
             try {
-                Constructor<I> constructor = blockItemClass.getConstructor(Block.class, Item.Properties.class);
-                return constructor.newInstance(block.get(), properties);
+                if (blockItemClass==SignItem.class || blockItemClass==HangingSignItem.class) {
+                    Constructor<I> constructor = blockItemClass.getConstructor(Block.class, Block.class, Item.Properties.class);
+
+                    Block wallSign;
+
+                    switch (name) {
+                        case "pear_sign":
+                            wallSign = PEAR_WALL_SIGN.get();
+                            break;
+                        case "pear_hanging_sign":
+                            wallSign = PEAR_WALL_HANGING_SIGN.get();
+                            break;
+                        default:
+                            wallSign = PEAR_WALL_SIGN.get();
+                            break;
+                    }
+
+                    return constructor.newInstance(block.get(), wallSign, properties);
+                } else {
+                    Constructor<I> constructor = blockItemClass.getConstructor(Block.class, Item.Properties.class);
+                    return constructor.newInstance(block.get(), properties);
+                }
             } catch (ReflectiveOperationException e) {
                 throw new RuntimeException("Could not instanciate BlockItem class: " + blockItemClass.getName(), e);
             }
         });
+    }
+
+    private static BlockBehaviour.Properties wallVariant(Block baseBlock, boolean overrideDescription) {
+        BlockBehaviour.Properties blockbehaviour$properties = baseBlock.properties();
+        BlockBehaviour.Properties blockbehaviour$properties1 = BlockBehaviour.Properties.of().overrideLootTable(baseBlock.getLootTable());
+        if (overrideDescription) {
+            blockbehaviour$properties1 = blockbehaviour$properties1.overrideDescription(baseBlock.getDescriptionId());
+        }
+
+        return blockbehaviour$properties1;
     }
 }

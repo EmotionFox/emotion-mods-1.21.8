@@ -84,7 +84,7 @@ config="${mod_id}.mixins.json"
     modId="emomodcore"
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="${emomodcore_version_range}"
+    versionRange="${emomod_version_range}"
     ordering="NONE"
     side="BOTH"
 
@@ -92,7 +92,7 @@ config="${mod_id}.mixins.json"
     modId="emomodore"
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="${emomodore_version_range}"
+    versionRange="${emomod_version_range}"
     ordering="NONE"
     side="BOTH"
 
@@ -100,7 +100,7 @@ config="${mod_id}.mixins.json"
     modId="emomodworld"
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="${emomodworld_version_range}"
+    versionRange="${emomod_version_range}"
     ordering="NONE"
     side="BOTH"
 

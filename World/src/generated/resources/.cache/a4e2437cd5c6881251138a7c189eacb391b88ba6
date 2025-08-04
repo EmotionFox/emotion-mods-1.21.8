@@ -1,2 +1,17 @@
-// 1.21.8	2025-07-31T21:08:54.1139551	Tags for minecraft:block mod id emomodworld
-283e66e455264542a9f49b7aedf2c42d4bdf4633 data/minecraft/tags/block/flower_pots.json
+// 1.21.8	2025-08-04T15:29:46.1239742	Tags for minecraft:block mod id emomodworld
+981e7c26b5a4bb380aca689bd9e1abf4f1a691f9 data/c/tags/block/stripped_logs.json
+04058b084161d3b4bad41ed04dfa529470b9492c data/emomodworld/tags/block/pear_logs.json
+33dbeaaf2bfd107fc524143e808bf524f028002a data/minecraft/tags/block/fence_gates.json
+c56489af334e9290bb3453043afc07af439d685d data/minecraft/tags/block/flower_pots.json
+28515721c02ec1571ca6cfc086b6c078adca42bc data/minecraft/tags/block/logs_that_burn.json
+e4aebb4edf71731e6912eaed9e46083217cc46ec data/minecraft/tags/block/overworld_natural_logs.json
+9180eae97e43ca974d166a6809596cc76eb8a96d data/minecraft/tags/block/planks.json
+0bebc0a4ecd1eca162b3a4a1c926f3d985370bfa data/minecraft/tags/block/standing_signs.json
+7d258a89bbec3a64962d7b24b864c379dc80ca58 data/minecraft/tags/block/wall_signs.json
+f8b426cbbc1733bc362a44079bb2009eee6e7347 data/minecraft/tags/block/wooden_buttons.json
+590e6a4adde0f82f353f6660f2a0be5925579257 data/minecraft/tags/block/wooden_doors.json
+21c01ef56441491466f12852fc590c0ee1aaa131 data/minecraft/tags/block/wooden_fences.json
+21d416e73c61bda5534aee3dc4ae58ed014b913d data/minecraft/tags/block/wooden_pressure_plates.json
+e1a3161d4f05c06bfae9a60cea38943d032208ef data/minecraft/tags/block/wooden_slabs.json
+7b058ac2ddd6db2fd0e82184f24d52c27a5475ab data/minecraft/tags/block/wooden_stairs.json
+dbafdd002aed6a46600110d6b8df9be50dc76b05 data/minecraft/tags/block/wooden_trapdoors.json

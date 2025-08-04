@@ -3,9 +3,11 @@ package fr.emotion.emomodworld;
 import com.mojang.logging.LogUtils;
 import fr.emotion.emomodworld.init.EmoBiomeModifier;
 import fr.emotion.emomodworld.init.EmoBlocks;
+import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
 import fr.emotion.emomodworld.world.biome.surface.ModSurfaceRules;
+import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -14,9 +16,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -77,6 +77,7 @@ public class EmoMain {
         EmoBlocks.init(modEventBus);
         EmoBiomeModifier.init(modEventBus);
         ModTerrablender.registerBiomes();
+        EmoEntityType.init(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -148,6 +149,18 @@ public class EmoMain {
                     EmoBlocks.FLOWER_9.getId(),
                     EmoBlocks.POTTED_FLOWER_9
             );
+
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_PEAR_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_PEAR_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_FENCE.get(), 5, 20);
+
+            DispenserBlock.registerBehavior(EmoItems.PEAR_BOAT, new BoatDispenseItemBehavior(EmoEntityType.PEAR_BOAT.get()));
+            DispenserBlock.registerBehavior(EmoItems.PEAR_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.PEAR_CHEST_BOAT.get()));
         });
     }
 

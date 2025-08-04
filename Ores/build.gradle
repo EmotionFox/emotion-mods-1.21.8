@@ -130,7 +130,7 @@ tasks.withType(ProcessResources).configureEach {
             mod_version            : mod_version,
             mod_authors            : mod_authors,
             mod_description        : mod_description,
-            emomodcore_version_range: emomodcore_version_range
+            emomod_version_range   : emomod_version_range
     ]
     inputs.properties replaceProperties
 

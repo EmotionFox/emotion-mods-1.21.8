@@ -8,15 +8,14 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    maven { url = 'https://maven.minecraftforge.net/' }
-    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    // Add here additional repositories if required by some of the dependencies below.
 }
 
 base {
     archivesName = mod_id
 }
 
-// Mojang ships Java 21 to end users in 1.21.8, so mods should target Java 21.
+// Mojang ships Java 21 to end users in 1.21.7, so mods should target Java 21.
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 //minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -65,6 +64,10 @@ runs {
 
         // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
         arguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+    }
+
+    serverData {
+        arguments.addAll '--mod', project.mod_id, '--server', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }
 
@@ -129,9 +132,7 @@ tasks.withType(ProcessResources).configureEach {
             mod_version            : mod_version,
             mod_authors            : mod_authors,
             mod_description        : mod_description,
-            emomodcore_version_range: emomodcore_version_range,
-            emomodore_version_range: emomodcore_version_range,
-            emomodworld_version_range: emomodcore_version_range
+            emomod_version_range   : emomod_version_range
     ]
     inputs.properties replaceProperties
 
