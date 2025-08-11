@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -27,9 +28,9 @@ public class EmoEntityType {
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 
-    public static final DeferredHolder<EntityType<?>, EntityType<Boat>> PEAR_CHEST_BOAT = ENTITY_TYPE.register(
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> PEAR_CHEST_BOAT = ENTITY_TYPE.register(
             "pear_chest_boat",
-            resourceLocation -> EntityType.Builder.of(boatFactory(EmoItems.PEAR_CHEST_BOAT), MobCategory.MISC)
+            resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.PEAR_CHEST_BOAT), MobCategory.MISC)
                     .noLootTable()
                     .sized(1.375F, 0.5625F)
                     .eyeHeight(0.5625F)
@@ -43,5 +44,9 @@ public class EmoEntityType {
 
     private static EntityType.EntityFactory<Boat> boatFactory(Supplier<Item> boatItemGetter) {
         return (p_375558_, p_375559_) -> new Boat(p_375558_, p_375559_, boatItemGetter);
+    }
+
+    private static EntityType.EntityFactory<ChestBoat> chestBoatFactory(Supplier<Item> boatItemGetter) {
+        return (p_375555_, p_375556_) -> new ChestBoat(p_375555_, p_375556_, boatItemGetter);
     }
 }

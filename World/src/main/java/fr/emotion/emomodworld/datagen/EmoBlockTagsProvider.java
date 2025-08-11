@@ -18,17 +18,26 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        this.tag(BlockTags.REPLACEABLE_BY_TREES)
+                .add(
+                        EmoBlocks.DREAM_SHORT_GRASS.get(),
+                        EmoBlocks.DREAM_TALL_GRASS.get()
+                );
+        this.tag(BlockTags.REPLACEABLE_BY_MUSHROOMS)
+                .add(
+                        EmoBlocks.DREAM_SHORT_GRASS.get(),
+                        EmoBlocks.DREAM_TALL_GRASS.get()
+                );
         this.tag(BlockTags.FLOWER_POTS)
                 .add(
-                        EmoBlocks.POTTED_FLOWER_1.get(),
-                        EmoBlocks.POTTED_FLOWER_2.get(),
-                        EmoBlocks.POTTED_FLOWER_3.get(),
-                        EmoBlocks.POTTED_FLOWER_4.get(),
-                        EmoBlocks.POTTED_FLOWER_5.get(),
-                        EmoBlocks.POTTED_FLOWER_6.get(),
-                        EmoBlocks.POTTED_FLOWER_7.get(),
-                        EmoBlocks.POTTED_FLOWER_8.get(),
-                        EmoBlocks.POTTED_FLOWER_9.get(),
+                        EmoBlocks.POTTED_FLOWER_KITTY.get(),
+                        EmoBlocks.POTTED_FLOWER_NOX.get(),
+                        EmoBlocks.POTTED_FLOWER_DELY.get(),
+                        EmoBlocks.POTTED_FLOWER_GNON.get(),
+                        EmoBlocks.POTTED_FLOWER_THORNY.get(),
+                        EmoBlocks.POTTED_FLOWER_CENTUS.get(),
+                        EmoBlocks.POTTED_FLOWER_NEBULA.get(),
+                        EmoBlocks.POTTED_FLOWER_NARCOTA.get(),
                         EmoBlocks.POTTED_PEAR_SAPLING.get()
                 );
         this.tag(BlockTags.PLANKS)

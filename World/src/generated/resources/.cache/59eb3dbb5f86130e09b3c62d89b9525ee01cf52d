@@ -1,4 +1,10 @@
-// 1.21.8	2025-08-04T13:08:42.738511	Loot Tables
+// 1.21.8	2025-08-11T18:33:43.2089694	Loot Tables
+e916e9de7056a8576de92747ecbf2a21210358cc data/emomodworld/loot_table/blocks/bush_blackcurrant.json
+820df166266fedda4bff16f579fc362b4c44a1f5 data/emomodworld/loot_table/blocks/bush_blueberry.json
+c51ab8074acb3eb8080350534619f69464eee8f0 data/emomodworld/loot_table/blocks/bush_dreamcurrant.json
+e025cfa76951fca5d850093cd51a3517d82969ae data/emomodworld/loot_table/blocks/bush_strawberry.json
+9f2e01ccef9ec06c1e6216d14da704e9442e9527 data/emomodworld/loot_table/blocks/bush_sweet.json
+7007d0a9c3cc4f5f7d64e68c870c14409531e5a2 data/emomodworld/loot_table/blocks/dream_tall_grass.json
 cbbdbf26a6b34165d2d9cebb6005c5e9286d7cb3 data/emomodworld/loot_table/blocks/flower_centus.json
 c7eff6ea482b626752be97b0ef9a878f02a165e4 data/emomodworld/loot_table/blocks/flower_dely.json
 9c0501e0f51fa5abc731468e33877fc01f3d2184 data/emomodworld/loot_table/blocks/flower_gnon.json
@@ -6,7 +12,7 @@ e924891c1f62fb9bc0ab06522185dfdfe95b6b98 data/emomodworld/loot_table/blocks/flow
 a602fe25a952f495205088bf858081e5ede916bc data/emomodworld/loot_table/blocks/flower_narcota.json
 fe1689d9181947fc738d5c7debcec911e2641de4 data/emomodworld/loot_table/blocks/flower_nebula.json
 82daf5aa7454cf2dc99887035716f0b0a2682498 data/emomodworld/loot_table/blocks/flower_nox.json
-e914751cf127d2c3e66d33027c8074d08b26130b data/emomodworld/loot_table/blocks/flower_tallgrass.json
+46e800903899d0e59f98ae4a3d3bbb8afba79b5e data/emomodworld/loot_table/blocks/flower_tallgrass.json
 f6778d3c8c00b4169375d76ab1d4d92a035fa05b data/emomodworld/loot_table/blocks/flower_thorny.json
 a1ce76dc7b33d61056df25435a4eb2a5a8cc9be8 data/emomodworld/loot_table/blocks/pear_button.json
 dfc31e4e832e6c869cf974ba552b39b86e1c7e54 data/emomodworld/loot_table/blocks/pear_door.json
@@ -30,7 +36,6 @@ c82cde6b6933afc0ee6d7d4de76ff91db005ed80 data/emomodworld/loot_table/blocks/pott
 8399511e220b25448a7c382e0394eaca425b7470 data/emomodworld/loot_table/blocks/potted_flower_narcota.json
 c9bd5c655b3fd1d2b890bed3923dd7d4a1c13033 data/emomodworld/loot_table/blocks/potted_flower_nebula.json
 9f6e8df1e2e342e02fbf15ddad17473913bd2019 data/emomodworld/loot_table/blocks/potted_flower_nox.json
-585a56e2ab0e4c8424131df616ea0b23e5c53d2f data/emomodworld/loot_table/blocks/potted_flower_tallgrass.json
 9d928f1d102ccddae083b65d07549951308da8b8 data/emomodworld/loot_table/blocks/potted_flower_thorny.json
 13c7923e4cf79fd7558a1d63e733549c189f5e21 data/emomodworld/loot_table/blocks/potted_pear_sapling.json
 f6f653336644bc3fe59da1eb4e967bb3c9a03581 data/emomodworld/loot_table/blocks/stripped_pear_log.json

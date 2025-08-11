@@ -1,11 +1,13 @@
-// 1.21.8	2025-08-04T15:29:46.1239742	Tags for minecraft:block mod id emomodworld
+// 1.21.8	2025-08-11T18:33:43.2109714	Tags for minecraft:block mod id emomodworld
 981e7c26b5a4bb380aca689bd9e1abf4f1a691f9 data/c/tags/block/stripped_logs.json
 04058b084161d3b4bad41ed04dfa529470b9492c data/emomodworld/tags/block/pear_logs.json
 33dbeaaf2bfd107fc524143e808bf524f028002a data/minecraft/tags/block/fence_gates.json
-c56489af334e9290bb3453043afc07af439d685d data/minecraft/tags/block/flower_pots.json
+9f542e8705518b542d96e8ec4f8aeed1218e6d7d data/minecraft/tags/block/flower_pots.json
 28515721c02ec1571ca6cfc086b6c078adca42bc data/minecraft/tags/block/logs_that_burn.json
 e4aebb4edf71731e6912eaed9e46083217cc46ec data/minecraft/tags/block/overworld_natural_logs.json
 9180eae97e43ca974d166a6809596cc76eb8a96d data/minecraft/tags/block/planks.json
+eba801596d7edd27fbe753783e93b8eb1607b714 data/minecraft/tags/block/replaceable_by_mushrooms.json
+eba801596d7edd27fbe753783e93b8eb1607b714 data/minecraft/tags/block/replaceable_by_trees.json
 0bebc0a4ecd1eca162b3a4a1c926f3d985370bfa data/minecraft/tags/block/standing_signs.json
 7d258a89bbec3a64962d7b24b864c379dc80ca58 data/minecraft/tags/block/wall_signs.json
 f8b426cbbc1733bc362a44079bb2009eee6e7347 data/minecraft/tags/block/wooden_buttons.json

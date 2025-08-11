@@ -1,11 +1,21 @@
 package fr.emotion.emomodworld.datagen;
 
+import fr.emotion.emomodworld.blocks.EmoBushBlock;
 import fr.emotion.emomodworld.init.EmoBlocks;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
 
@@ -16,25 +26,26 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(EmoBlocks.FLOWER_1.get());
-        this.dropSelf(EmoBlocks.FLOWER_2.get());
-        this.dropSelf(EmoBlocks.FLOWER_3.get());
-        this.dropSelf(EmoBlocks.FLOWER_4.get());
-        this.dropSelf(EmoBlocks.FLOWER_5.get());
-        this.dropSelf(EmoBlocks.FLOWER_6.get());
-        this.dropSelf(EmoBlocks.FLOWER_7.get());
-        this.dropSelf(EmoBlocks.FLOWER_8.get());
-        this.dropSelf(EmoBlocks.FLOWER_9.get());
+        this.dropSelf(EmoBlocks.FLOWER_KITTY.get());
+        this.dropSelf(EmoBlocks.FLOWER_NOX.get());
+        this.dropSelf(EmoBlocks.FLOWER_DELY.get());
+        this.dropSelf(EmoBlocks.FLOWER_GNON.get());
+        this.dropSelf(EmoBlocks.FLOWER_THORNY.get());
+        this.dropSelf(EmoBlocks.FLOWER_CENTUS.get());
+        this.dropSelf(EmoBlocks.FLOWER_NEBULA.get());
+        this.dropSelf(EmoBlocks.FLOWER_NARCOTA.get());
 
-        this.add(EmoBlocks.POTTED_FLOWER_1.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_1.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_2.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_2.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_3.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_3.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_4.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_4.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_5.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_5.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_6.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_6.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_7.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_7.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_8.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_8.get()));
-        this.add(EmoBlocks.POTTED_FLOWER_9.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_9.get()));
+        this.add(EmoBlocks.DREAM_SHORT_GRASS.get(), this::createGrassDrops);
+        this.add(EmoBlocks.DREAM_TALL_GRASS.get(), block -> this.createDoublePlantWithSeedDrops(block, EmoBlocks.DREAM_SHORT_GRASS.get()));
+
+        this.add(EmoBlocks.POTTED_FLOWER_KITTY.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_KITTY.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_NOX.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_NOX.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_DELY.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_DELY.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_GNON.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_GNON.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_THORNY.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_THORNY.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_CENTUS.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_CENTUS.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_NEBULA.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_NEBULA.get()));
+        this.add(EmoBlocks.POTTED_FLOWER_NARCOTA.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_NARCOTA.get()));
 
         this.dropSelf(EmoBlocks.PEAR_PLANKS.get());
 
@@ -58,6 +69,29 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.PEAR_FENCE_GATE.get());
         this.dropSelf(EmoBlocks.PEAR_FENCE.get());
         this.add(EmoBlocks.PEAR_DOOR.get(), block -> this.createDoorTable(block));
+
+        this.add(EmoBlocks.BUSH_BLACKCURRANT.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
+        this.add(EmoBlocks.BUSH_BLUEBERRY.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
+        this.add(EmoBlocks.BUSH_DREAMCURRANT.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
+        this.add(EmoBlocks.BUSH_STRAWBERRY.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
+        this.add(EmoBlocks.BUSH_SWEET.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
+    }
+
+    protected LootTable.Builder createBushItemTable(Block block, Item item) {
+        return LootTable.lootTable()
+                .withPool(
+                        LootPool.lootPool()
+                                .add(LootItem.lootTableItem(block))
+                )
+                .withPool(
+                        LootPool.lootPool()
+                                .add(LootItem.lootTableItem(item))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                .when(
+                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(EmoBushBlock.AGE, 3))
+                                )
+                );
     }
 
     @Override

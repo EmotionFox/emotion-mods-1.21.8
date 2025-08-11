@@ -6,19 +6,18 @@ import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.models.EmoBoatRenderer;
 import fr.emotion.emomodworld.models.EmoModelLayers;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
-import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.special.HangingSignSpecialRenderer;
 import net.minecraft.client.renderer.special.StandingSignSpecialRenderer;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -32,47 +31,46 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
-// This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = EmoMain.MODID, dist = Dist.CLIENT)
-// You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
 @EventBusSubscriber(modid = EmoMain.MODID, value = Dist.CLIENT)
 public class EmoMainClient {
     public EmoMainClient(ModContainer container) {
-        // Allows NeoForge to create a config screen for this mod's configs.
-        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
-        // Do not forget to add translations for your config options to the en_us.json file.
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        EmoMain.LOGGER.info("HELLO FROM CLIENT SETUP");
-        EmoMain.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_KITTY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_NOX.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_DELY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_GNON.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_THORNY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_CENTUS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_NEBULA.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_NARCOTA.get(), ChunkSectionLayer.CUTOUT);
 
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_1.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_2.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_3.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_4.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_5.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_6.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_7.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_8.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_9.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_SHORT_GRASS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_TALL_GRASS.get(), ChunkSectionLayer.CUTOUT);
 
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_1.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_2.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_3.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_4.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_5.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_6.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_7.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_8.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_9.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_KITTY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_NOX.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_DELY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_GNON.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_THORNY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_CENTUS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_NEBULA.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_NARCOTA.get(), ChunkSectionLayer.CUTOUT);
 
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.PEAR_SAPLING.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_PEAR_SAPLING.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.PEAR_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.PEAR_DOOR.get(), ChunkSectionLayer.CUTOUT);
+
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_BLACKCURRANT.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_BLUEBERRY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_DREAMCURRANT.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_STRAWBERRY.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_SWEET.get(), ChunkSectionLayer.CUTOUT);
 
         event.enqueueWork(() -> {
             Sheets.addWoodType(EmoWoodType.PEAR);
@@ -96,18 +94,24 @@ public class EmoMainClient {
         ResourceKey<CreativeModeTab> key = event.getTabKey();
 
         if (key==CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(EmoBlocks.FLOWER_1);
-            event.accept(EmoBlocks.FLOWER_2);
-            event.accept(EmoBlocks.FLOWER_3);
-            event.accept(EmoBlocks.FLOWER_4);
-            event.accept(EmoBlocks.FLOWER_5);
-            event.accept(EmoBlocks.FLOWER_6);
-            event.accept(EmoBlocks.FLOWER_7);
-            event.accept(EmoBlocks.FLOWER_8);
-            event.accept(EmoBlocks.FLOWER_9);
+            event.accept(EmoBlocks.FLOWER_KITTY);
+            event.accept(EmoBlocks.FLOWER_NOX);
+            event.accept(EmoBlocks.FLOWER_DELY);
+            event.accept(EmoBlocks.FLOWER_GNON);
+            event.accept(EmoBlocks.FLOWER_THORNY);
+            event.accept(EmoBlocks.FLOWER_CENTUS);
+            event.accept(EmoBlocks.FLOWER_NEBULA);
+            event.accept(EmoBlocks.FLOWER_NARCOTA);
+            event.accept(EmoBlocks.DREAM_SHORT_GRASS);
+            event.accept(EmoBlocks.DREAM_TALL_GRASS);
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_LEAVES);
             event.accept(EmoBlocks.PEAR_SAPLING);
+            event.accept(EmoBlocks.BUSH_BLACKCURRANT);
+            event.accept(EmoBlocks.BUSH_BLUEBERRY);
+            event.accept(EmoBlocks.BUSH_DREAMCURRANT);
+            event.accept(EmoBlocks.BUSH_STRAWBERRY);
+            event.accept(EmoBlocks.BUSH_SWEET);
         } else if (key==CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_WOOD);
@@ -158,13 +162,16 @@ public class EmoMainClient {
         BlockColor foliageColor = (state, world, pos, tintIndex) -> {
             if (world!=null && pos!=null) {
                 int biomeColor = BiomeColors.getAverageFoliageColor(world, pos);
-                return blendColors(baseColor, biomeColor, 0.5F);
+                return blendColors(baseColor, biomeColor, 0.75F);
             }
 
             return baseColor;
         };
 
+        BlockColor grassColor = (state, world, pos, tintIndex) -> (world!=null && pos!=null) ? BiomeColors.getAverageGrassColor(world, pos):GrassColor.getDefaultColor();
+
         event.register(foliageColor, EmoBlocks.PEAR_LEAVES.get(), EmoBlocks.PEAR_SAPLING.get());
+        event.register(grassColor, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get());
     }
 
     public static int blendColors(int color1, int color2, float ratio) {

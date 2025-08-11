@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/flower_pot_cross",
+  "parent": "emomodworld:block/flower_pot_low",
   "textures": {
+    "base": "emomodworld:block/flower_narcota_base",
     "plant": "emomodworld:block/flower_narcota"
   }
 }
