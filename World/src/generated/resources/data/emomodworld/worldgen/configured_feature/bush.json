@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:noise_threshold_provider",
+            "default_state": {
+              "Name": "emomodworld:bush_blackcurrant",
+              "Properties": {
+                "age": "0",
+                "moisture": "7"
+              }
+            },
+            "high_chance": 0.33333334,
+            "high_states": [
+              {
+                "Name": "emomodworld:bush_blackcurrant",
+                "Properties": {
+                  "age": "3",
+                  "moisture": "7"
+                }
+              },
+              {
+                "Name": "emomodworld:bush_blueberry",
+                "Properties": {
+                  "age": "3",
+                  "moisture": "7"
+                }
+              },
+              {
+                "Name": "emomodworld:bush_sweet",
+                "Properties": {
+                  "age": "3",
+                  "moisture": "7"
+                }
+              },
+              {
+                "Name": "emomodworld:bush_strawberry",
+                "Properties": {
+                  "age": "3",
+                  "moisture": "7"
+                }
+              }
+            ],
+            "low_states": [
+              {
+                "Name": "emomodworld:bush_blackcurrant",
+                "Properties": {
+                  "age": "0",
+                  "moisture": "7"
+                }
+              },
+              {
+                "Name": "emomodworld:bush_blueberry",
+                "Properties": {
+                  "age": "0",
+                  "moisture": "7"
+                }
+              },
+              {
+                "Name": "emomodworld:bush_sweet",
+                "Properties": {
+                  "age": "0",
+                  "moisture": "7"
+                }
+              },
+              {
+                "Name": "emomodworld:bush_strawberry",
+                "Properties": {
+                  "age": "0",
+                  "moisture": "7"
+                }
+              }
+            ],
+            "noise": {
+              "amplitudes": [
+                1.0
+              ],
+              "firstOctave": 0
+            },
+            "scale": 0.005,
+            "seed": 1995,
+            "threshold": -0.8
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 64,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

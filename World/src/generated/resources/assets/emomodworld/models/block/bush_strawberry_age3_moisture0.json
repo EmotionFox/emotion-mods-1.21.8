@@ -1,0 +1,7 @@
+{
+  "parent": "emomodworld:block/bush",
+  "textures": {
+    "base": "emomodworld:block/base_bush_strawberry",
+    "bush": "emomodworld:block/bush_strawberry_age3_moisture0"
+  }
+}

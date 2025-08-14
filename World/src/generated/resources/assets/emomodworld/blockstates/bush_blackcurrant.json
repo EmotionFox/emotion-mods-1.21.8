@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "age=0,moisture=0": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture0"
+    },
+    "age=0,moisture=1": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture1"
+    },
+    "age=0,moisture=2": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture2"
+    },
+    "age=0,moisture=3": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture3"
+    },
+    "age=0,moisture=4": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture4"
+    },
+    "age=0,moisture=5": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture5"
+    },
+    "age=0,moisture=6": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture6"
+    },
+    "age=0,moisture=7": {
+      "model": "emomodworld:block/bush_blackcurrant_age0_moisture7"
+    },
+    "age=1,moisture=0": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture0"
+    },
+    "age=1,moisture=1": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture1"
+    },
+    "age=1,moisture=2": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture2"
+    },
+    "age=1,moisture=3": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture3"
+    },
+    "age=1,moisture=4": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture4"
+    },
+    "age=1,moisture=5": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture5"
+    },
+    "age=1,moisture=6": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture6"
+    },
+    "age=1,moisture=7": {
+      "model": "emomodworld:block/bush_blackcurrant_age1_moisture7"
+    },
+    "age=2,moisture=0": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture0"
+    },
+    "age=2,moisture=1": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture1"
+    },
+    "age=2,moisture=2": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture2"
+    },
+    "age=2,moisture=3": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture3"
+    },
+    "age=2,moisture=4": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture4"
+    },
+    "age=2,moisture=5": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture5"
+    },
+    "age=2,moisture=6": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture6"
+    },
+    "age=2,moisture=7": {
+      "model": "emomodworld:block/bush_blackcurrant_age2_moisture7"
+    },
+    "age=3,moisture=0": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture0"
+    },
+    "age=3,moisture=1": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture1"
+    },
+    "age=3,moisture=2": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture2"
+    },
+    "age=3,moisture=3": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture3"
+    },
+    "age=3,moisture=4": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture4"
+    },
+    "age=3,moisture=5": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture5"
+    },
+    "age=3,moisture=6": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture6"
+    },
+    "age=3,moisture=7": {
+      "model": "emomodworld:block/bush_blackcurrant_age3_moisture7"
+    }
+  }
+}

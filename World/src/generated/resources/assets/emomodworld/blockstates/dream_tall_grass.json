@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "emomodworld:block/dream_tall_grass_bottom"
+    },
+    "half=upper": {
+      "model": "emomodworld:block/dream_tall_grass_top"
+    }
+  }
+}

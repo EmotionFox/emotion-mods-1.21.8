@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "emomodworld:orchard",
+  "features": "emomodworld:pear",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,18 @@
+// 1.21.8	2025-08-14T22:34:37.9840733	Tags for minecraft:item mod id emomodworld
+1499a62c3438a6987b3ef84593533cc7d0c8abbd data/c/tags/item/foods/berry.json
+04058b084161d3b4bad41ed04dfa529470b9492c data/emomodworld/tags/item/pear_logs.json
+09f57a9cbf4b4bc1d281fef33d1f4ada15eb15de data/minecraft/tags/item/boats.json
+7026fb594bc1db296192d0393788372797de213b data/minecraft/tags/item/chest_boats.json
+33dbeaaf2bfd107fc524143e808bf524f028002a data/minecraft/tags/item/fence_gates.json
+1499a62c3438a6987b3ef84593533cc7d0c8abbd data/minecraft/tags/item/fox_food.json
+d8d8233dfac062802eccf787ed83de928144160e data/minecraft/tags/item/leaves.json
+9180eae97e43ca974d166a6809596cc76eb8a96d data/minecraft/tags/item/planks.json
+8ac416974cca3e30928e75f945497d070c4517a9 data/minecraft/tags/item/saplings.json
+0bebc0a4ecd1eca162b3a4a1c926f3d985370bfa data/minecraft/tags/item/signs.json
+f8b426cbbc1733bc362a44079bb2009eee6e7347 data/minecraft/tags/item/wooden_buttons.json
+590e6a4adde0f82f353f6660f2a0be5925579257 data/minecraft/tags/item/wooden_doors.json
+21c01ef56441491466f12852fc590c0ee1aaa131 data/minecraft/tags/item/wooden_fences.json
+21d416e73c61bda5534aee3dc4ae58ed014b913d data/minecraft/tags/item/wooden_pressure_plates.json
+e1a3161d4f05c06bfae9a60cea38943d032208ef data/minecraft/tags/item/wooden_slabs.json
+7b058ac2ddd6db2fd0e82184f24d52c27a5475ab data/minecraft/tags/item/wooden_stairs.json
+dbafdd002aed6a46600110d6b8df9be50dc76b05 data/minecraft/tags/item/wooden_trapdoors.json

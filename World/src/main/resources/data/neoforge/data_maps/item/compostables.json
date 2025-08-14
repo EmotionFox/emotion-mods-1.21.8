@@ -1,0 +1,22 @@
+{
+	"values": {
+		"emomodworld:dream_short_grass": {
+			"chance": 0.3
+		},
+		"emomodworld:dream_tall_grass": {
+			"chance": 0.5
+		},
+		"emomodworld:blackcurrant": {
+			"chance": 0.3
+		},
+		"emomodworld:blueberry": {
+			"chance": 0.3
+		},
+		"emomodworld:dreamcurrant": {
+			"chance": 0.5
+		},
+		"emomodworld:strawberry": {
+			"chance": 0.3
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "emomodworld:block/bush",
+  "textures": {
+    "base": "emomodworld:block/base_bush_blackcurrant",
+    "bush": "emomodworld:block/bush_blackcurrant_age0_moisture2"
+  }
+}

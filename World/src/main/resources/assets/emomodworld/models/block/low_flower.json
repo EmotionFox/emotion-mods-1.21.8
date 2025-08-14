@@ -1,0 +1,93 @@
+{
+	"format_version": "1.21.8",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#plant"
+	},
+	"elements": [
+		{
+			"name": "base_nwse",
+			"from": [0, 0, 8],
+			"to": [16, 2, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 1, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 14, 16, 16], "texture": "#base"},
+				"south": {"uv": [0, 14, 16, 16], "texture": "#base"}
+			}
+		},
+		{
+			"name": "base_nesw",
+			"from": [0, 0, 8],
+			"to": [16, 2, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 1, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 14, 16, 16], "texture": "#base"},
+				"south": {"uv": [0, 14, 16, 16], "texture": "#base"}
+			}
+		},
+		{
+			"name": "center",
+			"from": [1, 2, 1],
+			"to": [15, 2, 15],
+			"faces": {
+				"up": {"uv": [1, 1, 15, 15], "texture": "#plant"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#plant"}
+			}
+		},
+		{
+			"name": "north",
+			"from": [0, 2, 0],
+			"to": [16, 2, 1],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 2, 1], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 1], "texture": "#plant"},
+				"down": {"uv": [0, 0, 16, 1], "texture": "#plant"}
+			}
+		},
+		{
+			"name": "west",
+			"from": [0, 2, 0],
+			"to": [1, 2, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [1, 2, 8], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 0, 1, 16], "texture": "#plant"},
+				"down": {"uv": [0, 0, 1, 16], "texture": "#plant"}
+			}
+		},
+		{
+			"name": "south",
+			"from": [0, 2, 15],
+			"to": [16, 2, 16],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 2, 15], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 15, 16, 16], "texture": "#plant"},
+				"down": {"uv": [0, 15, 16, 16], "texture": "#plant"}
+			}
+		},
+		{
+			"name": "east",
+			"from": [15, 2, 0],
+			"to": [16, 2, 16],
+			"rotation": {"angle": -45, "axis": "z", "origin": [15, 2, 8], "rescale": true},
+			"faces": {
+				"up": {"uv": [15, 0, 16, 16], "texture": "#plant"},
+				"down": {"uv": [15, 0, 16, 16], "texture": "#plant"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "base",
+			"origin": [8, 1, 8],
+			"color": 0,
+			"children": [0, 1]
+		},
+		{
+			"name": "flower",
+			"origin": [1, 2, 13],
+			"color": 0,
+			"children": [2, 3, 4, 5, 6]
+		}
+	]
+}

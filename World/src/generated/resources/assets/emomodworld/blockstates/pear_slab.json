@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "emomodworld:block/pear_slab"
+    },
+    "type=double": {
+      "model": "emomodworld:block/pear_planks"
+    },
+    "type=top": {
+      "model": "emomodworld:block/pear_slab_top"
+    }
+  }
+}
