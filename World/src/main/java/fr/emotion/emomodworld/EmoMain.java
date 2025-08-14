@@ -31,10 +31,13 @@ public class EmoMain {
 
         EmoItems.init(modEventBus);
         EmoBlocks.init(modEventBus);
-        EmoBiomeModifier.init(modEventBus);
+        EmoMapCodec.init(modEventBus);
         ModTerrablender.registerBiomes();
         EmoEntityType.init(modEventBus);
         EmoBlockType.init(modEventBus);
+        EmoTrunkPlacerType.init(modEventBus);
+        EmoFoliagePlacerType.init(modEventBus);
+        EmoPlacementModifierType.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

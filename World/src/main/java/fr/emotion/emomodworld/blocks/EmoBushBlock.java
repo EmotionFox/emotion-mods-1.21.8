@@ -1,8 +1,9 @@
 package fr.emotion.emomodworld.blocks;
 
 import com.mojang.serialization.MapCodec;
-import fr.emotion.emomodworld.EmoMain;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,6 +15,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -29,21 +31,39 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.CommonHooks;
-import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Supplier;
 
 public class EmoBushBlock extends VegetationBlock implements BonemealableBlock {
-    public static final MapCodec<EmoBushBlock> CODEC = simpleCodec(EmoBushBlock::new);
+    public static final MapCodec<EmoBushBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+            BuiltInRegistries.ITEM.byNameCodec()
+                    .fieldOf("berry")
+                    .forGetter(bush -> bush.berry.get()),
+
+            Properties.CODEC
+                    .fieldOf("properties")
+                    .forGetter(bush -> bush.properties)
+    ).apply(instance, EmoBushBlock::new));
+
     public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+    private final Supplier<Item> berry;
 
     @Override
     protected MapCodec<? extends VegetationBlock> codec() {
         return CODEC;
     }
 
-    public EmoBushBlock(Properties p_401368_) {
-        super(p_401368_);
-        this.registerDefaultState(this.stateDefinition.any().setValue(MOISTURE, 7).setValue(AGE, 0));
+    public EmoBushBlock(Item berry, Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(MOISTURE, 0).setValue(AGE, 0));
+        this.berry = () -> berry;
+    }
+
+    public EmoBushBlock(Supplier<Item> berry, Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(MOISTURE, 0).setValue(AGE, 0));
+        this.berry = berry;
     }
 
     @Override
@@ -112,7 +132,7 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock {
             int amount = 1 + level.random.nextInt(2);
             BlockState newState = state.setValue(AGE, 0);
 
-            popResource(level, pos, new ItemStack(Items.SWEET_BERRIES, amount));
+            popResource(level, pos, new ItemStack(berry.get(), amount));
             level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             level.setBlock(pos, newState, 2);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
@@ -120,17 +140,6 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock {
         } else {
             return super.useWithoutItem(state, level, pos, player, hitResult);
         }
-    }
-
-    @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity entity, ItemStack stack) {
-        if (entity instanceof Player) {
-            BlockState newState = state.setValue(AGE, 0).setValue(MOISTURE, 0);
-            level.setBlock(pos, newState, 2);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, newState));
-        }
-
-        EmoMain.LOGGER.info("BUSH PLACED BY : " + entity.toString());
     }
 
     @Override

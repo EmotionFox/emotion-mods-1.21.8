@@ -1,7 +1,7 @@
 package fr.emotion.emomodworld.biome;
 
 import com.mojang.serialization.MapCodec;
-import fr.emotion.emomodworld.init.EmoBiomeModifier;
+import fr.emotion.emomodworld.init.EmoMapCodec;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.world.level.biome.Biome;
@@ -17,6 +17,6 @@ public record OrchardBiomeModifier(HolderSet<Biome> biomes, int value) implement
 
     @Override
     public MapCodec<? extends BiomeModifier> codec() {
-        return EmoBiomeModifier.ORCHARD_BIOME_MODIFIER.get();
+        return EmoMapCodec.ORCHARD_BIOME_MODIFIER.get();
     }
 }

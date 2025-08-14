@@ -13,7 +13,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-public class EmoBiomeModifier {
+public class EmoMapCodec {
     private static final DeferredRegister<MapCodec<? extends BiomeModifier>> BIOME_MODIFIER = DeferredRegister.create(NeoForgeRegistries.BIOME_MODIFIER_SERIALIZERS, EmoMain.MODID);
 
     public static final Supplier<MapCodec<OrchardBiomeModifier>> ORCHARD_BIOME_MODIFIER = BIOME_MODIFIER.register("orchard_biome_modifier", () -> RecordCodecBuilder.mapCodec(instance ->

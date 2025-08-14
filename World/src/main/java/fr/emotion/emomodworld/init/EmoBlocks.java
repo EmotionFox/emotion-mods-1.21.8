@@ -5,6 +5,7 @@ import fr.emotion.emomodworld.blocks.EmoBushBlock;
 import fr.emotion.emomodworld.blocks.ThornyFlowerBlock;
 import fr.emotion.emomodworld.blocks.properties.EmoBlockSetType;
 import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
+import fr.emotion.emomodworld.world.tree.EmoTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -18,7 +19,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -76,19 +76,19 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> DREAM_TALL_GRASS = addBlock("dream_tall_grass", props -> new DoublePlantBlock(props.mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)), DoubleHighBlockItem.class);
 
     // POTTED FLOWER
-    public static final DeferredBlock<Block> POTTED_FLOWER_KITTY = addBlock("potted_flower_kitty", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_KITTY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_kitty")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_NOX = addBlock("potted_flower_nox", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_NOX, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_nox")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_DELY = addBlock("potted_flower_dely", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_DELY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_dely")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_GNON = addBlock("potted_flower_gnon", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_GNON, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_gnon")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_THORNY = addBlock("potted_flower_thorny", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_THORNY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_thorny")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_CENTUS = addBlock("potted_flower_centus", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_CENTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_centus")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_NEBULA = addBlock("potted_flower_nebula", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_NEBULA, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_nebula")))));
-    public static final DeferredBlock<Block> POTTED_FLOWER_NARCOTA = addBlock("potted_flower_narcota", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_NARCOTA, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_narcota")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_KITTY = BLOCKS.registerBlock("potted_flower_kitty", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_KITTY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_kitty")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_NOX = BLOCKS.registerBlock("potted_flower_nox", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_NOX, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_nox")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_DELY = BLOCKS.registerBlock("potted_flower_dely", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_DELY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_dely")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_GNON = BLOCKS.registerBlock("potted_flower_gnon", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_GNON, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_gnon")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_THORNY = BLOCKS.registerBlock("potted_flower_thorny", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_THORNY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_thorny")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_CENTUS = BLOCKS.registerBlock("potted_flower_centus", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_CENTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_centus")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_NEBULA = BLOCKS.registerBlock("potted_flower_nebula", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_NEBULA, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_nebula")))));
+    public static final DeferredBlock<Block> POTTED_FLOWER_NARCOTA = BLOCKS.registerBlock("potted_flower_narcota", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_NARCOTA, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_narcota")))));
 
     // WOOD
     public static final DeferredBlock<Block> PEAR_PLANKS = addBlock("pear_planks", props -> new Block(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_planks")))));
 
-    public static final DeferredBlock<Block> PEAR_SAPLING = addBlock("pear_sapling", props -> new SaplingBlock(TreeGrower.OAK, props.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_sapling")))));
+    public static final DeferredBlock<Block> PEAR_SAPLING = addBlock("pear_sapling", props -> new SaplingBlock(EmoTreeGrower.PEAR, props.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_sapling")))));
 
     public static final DeferredBlock<Block> PEAR_LOG = addBlock("pear_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_log")))) {
         @Override
@@ -139,11 +139,11 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> PEAR_DOOR = addBlock("pear_door", props -> new DoorBlock(EmoBlockSetType.PEAR, props.mapColor(PEAR_PLANKS.get().defaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_door")))), DoubleHighBlockItem.class);
 
     // BUSH
-    public static final DeferredBlock<Block> BUSH_BLACKCURRANT = addBlock("bush_blackcurrant", props -> new EmoBushBlock(props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<Block> BUSH_BLUEBERRY = addBlock("bush_blueberry", props -> new EmoBushBlock(props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<Block> BUSH_DREAMCURRANT = addBlock("bush_dreamcurrant", props -> new EmoBushBlock(props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<Block> BUSH_STRAWBERRY = addBlock("bush_strawberry", props -> new EmoBushBlock(props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<Block> BUSH_SWEET = addBlock("bush_sweet", props -> new EmoBushBlock(props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> BUSH_BLACKCURRANT = addBlock("bush_blackcurrant", props -> new EmoBushBlock(EmoItems.BLACKCURRANT, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> BUSH_BLUEBERRY = addBlock("bush_blueberry", props -> new EmoBushBlock(EmoItems.BLUEBERRY, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> BUSH_DREAMCURRANT = addBlock("bush_dreamcurrant", props -> new EmoBushBlock(EmoItems.DREAMCURRANT, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> BUSH_STRAWBERRY = addBlock("bush_strawberry", props -> new EmoBushBlock(EmoItems.STRAWBERRY, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> BUSH_SWEET = addBlock("bush_sweet", props -> new EmoBushBlock(Items.SWEET_BERRIES, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
 
     public static void init(IEventBus event) {
         BLOCKS.register(event);

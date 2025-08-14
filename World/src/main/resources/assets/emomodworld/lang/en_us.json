@@ -1,13 +1,48 @@
 {
-  "itemGroup.emomodworld": "Example Mod Tab",
-  "block.emomodworld.example_block": "Example Block",
-  "item.emomodworld.example_item": "Example Item",
-
   "emomodworld.configuration.title": "Emotion's Mod - World Configs",
   "emomodworld.configuration.section.emomodworld.common.toml": "Emotion's Mod - World Configs",
   "emomodworld.configuration.section.emomodworld.common.toml.title": "Emotion's Mod - World Configs",
-  "emomodworld.configuration.items": "Item List",
-  "emomodworld.configuration.logDirtBlock": "Log Dirt Block",
-  "emomodworld.configuration.magicNumberIntroduction": "Magic Number Text",
-  "emomodworld.configuration.magicNumber": "Magic Number"
+
+  "generator.emomodworld.parcel" : "Parcel",
+
+  "block.emomodworld.flower_kitty": "Kitty",
+  "block.emomodworld.flower_nox": "Nox",
+  "block.emomodworld.flower_dely": "Dely",
+  "block.emomodworld.flower_gnon": "Gnon",
+  "block.emomodworld.flower_thorny": "Bush Thorny",
+  "block.emomodworld.flower_centus": "Centus",
+  "block.emomodworld.flower_nebula": "Nebula",
+  "block.emomodworld.flower_narcota": "Narcota",
+
+  "block.emomodworld.dream_short_grass": "Dream Short Grass",
+  "block.emomodworld.dream_tall_grass": "Dream Tall Grass",
+
+  "block.emomodworld.pear_planks": "Pear Planks",
+  "block.emomodworld.pear_sapling": "Pear Sapling",
+  "block.emomodworld.pear_log": "Pear Log",
+  "block.emomodworld.stripped_pear_log": "Stripped Pear Log",
+  "block.emomodworld.pear_wood": "Pear Wood",
+  "block.emomodworld.stripped_pear_wood": "Stripped Pear Wood",
+  "block.emomodworld.pear_leaves": "Pear Leaves",
+  "block.emomodworld.pear_sign": "Pear Sign",
+  "block.emomodworld.pear_hanging_sign": "Pear Hanging Sign",
+  "block.emomodworld.pear_pressure_plate": "Pear Pressure Plate",
+  "block.emomodworld.pear_trapdoor": "Pear Trapdoor",
+  "block.emomodworld.pear_stairs": "Pear Stairs",
+  "block.emomodworld.pear_button": "Pear Button",
+  "block.emomodworld.pear_slab": "Pear Slab",
+  "block.emomodworld.pear_fence_gate": "Pear Fence Gate",
+  "block.emomodworld.pear_fence": "Pear Fence",
+  "block.emomodworld.pear_door": "Pear Door",
+
+  "block.emomodworld.bush_blackcurrant": "Blackcurrant Bush",
+  "block.emomodworld.bush_blueberry": "Blueberry Bush",
+  "block.emomodworld.bush_dreamcurrant": "Dreamcurrant Bush",
+  "block.emomodworld.bush_strawberry": "Strawberry Bush",
+  "block.emomodworld.bush_sweet": "Sweetberry Bush",
+
+  "item.emomodworld.pear_boat": "Pear Boat",
+  "item.emomodworld.pear_chest_boat": "Pear Boat with Chest",
+
+  "entity.emomodworld.pear_chest_boat": "Pear Boat with Chest"
 }

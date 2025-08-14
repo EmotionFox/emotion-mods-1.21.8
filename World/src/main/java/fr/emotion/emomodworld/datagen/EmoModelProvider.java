@@ -65,6 +65,10 @@ public class EmoModelProvider extends ModelProvider {
 
         itemModels.generateFlatItem(EmoItems.PEAR_BOAT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.PEAR_CHEST_BOAT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BLACKCURRANT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BLUEBERRY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.DREAMCURRANT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.STRAWBERRY.get(), ModelTemplates.FLAT_ITEM);
     }
 
     public static void createBush(Block block, BlockModelGenerators blockModels) {

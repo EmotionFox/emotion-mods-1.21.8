@@ -44,6 +44,10 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                 .add(
                         EmoBlocks.PEAR_PLANKS.get()
                 );
+        this.tag(BlockTags.SAPLINGS)
+                .add(
+                        EmoBlocks.PEAR_SAPLING.get()
+                );
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(
                         EmoBlocks.PEAR_LOG.get()
@@ -61,6 +65,10 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                 );
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .addTag(EmoBlockTags.PEAR_LOGS);
+        this.tag(BlockTags.LEAVES)
+                .add(
+                        EmoBlocks.PEAR_LEAVES.get()
+                );
         this.tag(BlockTags.STANDING_SIGNS)
                 .add(
                         EmoBlocks.PEAR_SIGN.get()

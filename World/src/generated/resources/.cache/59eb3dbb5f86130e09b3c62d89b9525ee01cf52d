@@ -1,8 +1,8 @@
-// 1.21.8	2025-08-11T18:33:43.2089694	Loot Tables
-e916e9de7056a8576de92747ecbf2a21210358cc data/emomodworld/loot_table/blocks/bush_blackcurrant.json
-820df166266fedda4bff16f579fc362b4c44a1f5 data/emomodworld/loot_table/blocks/bush_blueberry.json
-c51ab8074acb3eb8080350534619f69464eee8f0 data/emomodworld/loot_table/blocks/bush_dreamcurrant.json
-e025cfa76951fca5d850093cd51a3517d82969ae data/emomodworld/loot_table/blocks/bush_strawberry.json
+// 1.21.8	2025-08-14T22:34:37.985073	Loot Tables
+a5a1f06866aff53d506a5abf3b391fa56ac78541 data/emomodworld/loot_table/blocks/bush_blackcurrant.json
+d01dadb1869fcfe38efbf093b4756bb117089e5f data/emomodworld/loot_table/blocks/bush_blueberry.json
+5cd704e74c212ee8d69040be4e86b5878ce6d0a6 data/emomodworld/loot_table/blocks/bush_dreamcurrant.json
+b3aee383798e4cf4a9aa0184bd1b9b6a0d36f0ac data/emomodworld/loot_table/blocks/bush_strawberry.json
 9f2e01ccef9ec06c1e6216d14da704e9442e9527 data/emomodworld/loot_table/blocks/bush_sweet.json
 7007d0a9c3cc4f5f7d64e68c870c14409531e5a2 data/emomodworld/loot_table/blocks/dream_tall_grass.json
 cbbdbf26a6b34165d2d9cebb6005c5e9286d7cb3 data/emomodworld/loot_table/blocks/flower_centus.json

@@ -1,0 +1,48 @@
+{
+  "emomodworld.configuration.title": "Emotion's Mod - World Configs",
+  "emomodworld.configuration.section.emomodworld.common.toml": "Emotion's Mod - World Configs",
+  "emomodworld.configuration.section.emomodworld.common.toml.title": "Emotion's Mod - World Configs",
+
+  "generator.emomodworld.parcel" : "Parcelle",
+
+  "block.emomodworld.flower_kitty": "Kitty",
+  "block.emomodworld.flower_nox": "Nox",
+  "block.emomodworld.flower_dely": "Dely",
+  "block.emomodworld.flower_gnon": "Gnon",
+  "block.emomodworld.flower_thorny": "Buisson épineux",
+  "block.emomodworld.flower_centus": "Centus",
+  "block.emomodworld.flower_nebula": "Nebula",
+  "block.emomodworld.flower_narcota": "Narcota",
+
+  "block.emomodworld.dream_short_grass": "Herbes courtes des rêves",
+  "block.emomodworld.dream_tall_grass": "Hautes herbres des rêves",
+
+  "block.emomodworld.pear_planks": "Planches de poirier",
+  "block.emomodworld.pear_sapling": "Pousse de poirier",
+  "block.emomodworld.pear_log": "Bûche de poirier",
+  "block.emomodworld.stripped_pear_log": "Bûche de poirier écorcée",
+  "block.emomodworld.pear_wood": "Bois de poirier",
+  "block.emomodworld.stripped_pear_wood": "Bois de poirier écorcée",
+  "block.emomodworld.pear_leaves": "Feuilles de poirier",
+  "block.emomodworld.pear_sign": "Pancarte en poirier",
+  "block.emomodworld.pear_hanging_sign": "Pancarte suspendue en poirier",
+  "block.emomodworld.pear_pressure_plate": "Plaque de pression en poirier",
+  "block.emomodworld.pear_trapdoor": "Trappe en poirier",
+  "block.emomodworld.pear_stairs": "Escalier en poirier",
+  "block.emomodworld.pear_button": "Bouton en poirier",
+  "block.emomodworld.pear_slab": "Dalle en poirier",
+  "block.emomodworld.pear_fence_gate": "Portillon en poirier",
+  "block.emomodworld.pear_fence": "Barrière en poirier",
+  "block.emomodworld.pear_door": "Porte en poirier",
+
+  "block.emomodworld.bush_blackcurrant": "Buisson de cassis",
+  "block.emomodworld.bush_blueberry": "Buisson de myrtilles",
+  "block.emomodworld.bush_dreamcurrant": "Buisson de baies des rêves",
+  "block.emomodworld.bush_strawberry": "Buisson de fraises",
+  "block.emomodworld.bush_sweet": "Buisson de baies sucrées",
+
+  "item.emomodworld.pear_boat": "Bateau en poirier",
+  "item.emomodworld.pear_chest_boat": "Bateau de stockage en poirier",
+
+  "entity.emomodworld.pear_chest_boat": "Bateau de stockage en poirier"
+}

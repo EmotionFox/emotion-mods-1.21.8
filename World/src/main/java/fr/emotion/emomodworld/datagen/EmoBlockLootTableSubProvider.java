@@ -2,6 +2,7 @@ package fr.emotion.emomodworld.datagen;
 
 import fr.emotion.emomodworld.blocks.EmoBushBlock;
 import fr.emotion.emomodworld.init.EmoBlocks;
+import fr.emotion.emomodworld.init.EmoItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -70,10 +71,10 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.PEAR_FENCE.get());
         this.add(EmoBlocks.PEAR_DOOR.get(), block -> this.createDoorTable(block));
 
-        this.add(EmoBlocks.BUSH_BLACKCURRANT.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
-        this.add(EmoBlocks.BUSH_BLUEBERRY.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
-        this.add(EmoBlocks.BUSH_DREAMCURRANT.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
-        this.add(EmoBlocks.BUSH_STRAWBERRY.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
+        this.add(EmoBlocks.BUSH_BLACKCURRANT.get(), block -> this.createBushItemTable(block, EmoItems.BLACKCURRANT.get()));
+        this.add(EmoBlocks.BUSH_BLUEBERRY.get(), block -> this.createBushItemTable(block, EmoItems.BLUEBERRY.get()));
+        this.add(EmoBlocks.BUSH_DREAMCURRANT.get(), block -> this.createBushItemTable(block, EmoItems.DREAMCURRANT.get()));
+        this.add(EmoBlocks.BUSH_STRAWBERRY.get(), block -> this.createBushItemTable(block, EmoItems.STRAWBERRY.get()));
         this.add(EmoBlocks.BUSH_SWEET.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
     }
 

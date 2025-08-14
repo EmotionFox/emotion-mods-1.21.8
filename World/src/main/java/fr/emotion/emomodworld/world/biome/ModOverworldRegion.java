@@ -1,7 +1,6 @@
 package fr.emotion.emomodworld.world.biome;
 
 import com.mojang.datafixers.util.Pair;
-import fr.emotion.emomodworld.tags.EmoBiomeKeys;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

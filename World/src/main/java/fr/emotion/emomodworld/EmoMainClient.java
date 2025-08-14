@@ -112,6 +112,10 @@ public class EmoMainClient {
             event.accept(EmoBlocks.BUSH_DREAMCURRANT);
             event.accept(EmoBlocks.BUSH_STRAWBERRY);
             event.accept(EmoBlocks.BUSH_SWEET);
+            event.accept(EmoItems.BLACKCURRANT);
+            event.accept(EmoItems.BLUEBERRY);
+            event.accept(EmoItems.DREAMCURRANT);
+            event.accept(EmoItems.STRAWBERRY);
         } else if (key==CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_WOOD);

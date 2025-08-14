@@ -7,7 +7,7 @@ import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -23,12 +23,20 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                 .add(
                         EmoBlocks.PEAR_PLANKS.asItem()
                 );
+        this.tag(ItemTags.SAPLINGS)
+                .add(
+                        EmoBlocks.PEAR_SAPLING.asItem()
+                );
         this.tag(EmoItemTags.PEAR_LOGS)
                 .add(
                         EmoBlocks.PEAR_LOG.asItem(),
                         EmoBlocks.PEAR_WOOD.asItem(),
                         EmoBlocks.STRIPPED_PEAR_LOG.asItem(),
                         EmoBlocks.STRIPPED_PEAR_WOOD.asItem()
+                );
+        this.tag(ItemTags.LEAVES)
+                .add(
+                        EmoBlocks.PEAR_LEAVES.asItem()
                 );
         this.tag(ItemTags.SIGNS)
                 .add(
@@ -73,6 +81,20 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.CHEST_BOATS)
                 .add(
                         EmoItems.PEAR_CHEST_BOAT.get()
+                );
+        this.tag(ItemTags.FOX_FOOD)
+                .add(
+                        EmoItems.BLACKCURRANT.get(),
+                        EmoItems.BLUEBERRY.get(),
+                        EmoItems.DREAMCURRANT.get(),
+                        EmoItems.STRAWBERRY.get()
+                );
+        this.tag(Tags.Items.FOODS_BERRY)
+                .add(
+                        EmoItems.BLACKCURRANT.get(),
+                        EmoItems.BLUEBERRY.get(),
+                        EmoItems.DREAMCURRANT.get(),
+                        EmoItems.STRAWBERRY.get()
                 );
     }
 }

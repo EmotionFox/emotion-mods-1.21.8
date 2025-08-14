@@ -1,4 +1,4 @@
-package fr.emotion.emomodworld.tags;
+package fr.emotion.emomodworld.world.biome;
 
 import fr.emotion.emomodworld.EmoMain;
 import net.minecraft.core.registries.Registries;

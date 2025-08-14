@@ -1,7 +1,7 @@
 package fr.emotion.emomodworld.datagen;
 
 import fr.emotion.emomodworld.EmoMain;
-import fr.emotion.emomodworld.tags.EmoBiomeKeys;
+import fr.emotion.emomodworld.world.biome.EmoBiomeKeys;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;

@@ -1,4 +1,10 @@
-// 1.21.8	2025-07-31T19:56:17.1575616	Registries
+// 1.21.8	2025-08-14T21:36:34.508343	Registries
+4980ba7f0d22c466fef4fcfa4f2908dbb60c953d data/emomodworld/neoforge/biome_modifier/bush.json
 cf2b94116367a91d7e68ef15979b9c4fcb32dedf data/emomodworld/neoforge/biome_modifier/orchard_modifier.json
+f587ba672362c64a85f0d4262437180c09113da5 data/emomodworld/neoforge/biome_modifier/pear.json
 12d186481f309675054d092bfbc5083124dabbd7 data/emomodworld/worldgen/biome/orchard.json
+2cde679653bef31d5a9368aa581e8c4d38b33dbf data/emomodworld/worldgen/configured_feature/bush.json
+da5a8fbf95eee824ae584e000f86d24ffdbc7ba9 data/emomodworld/worldgen/configured_feature/pear.json
+223f35a63b5a63442d1c709dbaa2869bbb46162c data/emomodworld/worldgen/placed_feature/bush.json
+e9564aa1af035573056cbef9ef33aeed9d75c8bc data/emomodworld/worldgen/placed_feature/pear.json
 bb7b445ced8118145b5c709bc30d4e8fb97968d1 data/emomodworld/worldgen/world_preset/parcel.json

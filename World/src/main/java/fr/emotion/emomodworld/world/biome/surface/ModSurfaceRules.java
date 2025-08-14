@@ -1,6 +1,6 @@
 package fr.emotion.emomodworld.world.biome.surface;
 
-import fr.emotion.emomodworld.tags.EmoBiomeKeys;
+import fr.emotion.emomodworld.world.biome.EmoBiomeKeys;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
