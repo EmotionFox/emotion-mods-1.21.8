@@ -21,15 +21,61 @@ public class EmoRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        // PEAR
         this.planksFromLogs(EmoBlocks.PEAR_PLANKS, EmoItemTags.PEAR_LOGS, 4);
         this.woodFromLogs(EmoBlocks.PEAR_WOOD, EmoBlocks.PEAR_LOG);
         this.woodFromLogs(EmoBlocks.STRIPPED_PEAR_WOOD, EmoBlocks.STRIPPED_PEAR_LOG);
         this.hangingSign(EmoBlocks.PEAR_HANGING_SIGN, EmoBlocks.STRIPPED_PEAR_LOG);
 
-        EmoBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach(blockFamily -> this.generateRecipes(blockFamily, FeatureFlagSet.of(FeatureFlags.VANILLA)));
-
         this.woodenBoat(EmoItems.PEAR_BOAT, EmoBlocks.PEAR_PLANKS);
         this.chestBoat(EmoItems.PEAR_CHEST_BOAT, EmoItems.PEAR_BOAT);
+
+        // ORANGE
+        this.planksFromLogs(EmoBlocks.ORANGE_PLANKS, EmoItemTags.ORANGE_LOGS, 4);
+        this.woodFromLogs(EmoBlocks.ORANGE_WOOD, EmoBlocks.ORANGE_LOG);
+        this.woodFromLogs(EmoBlocks.STRIPPED_ORANGE_WOOD, EmoBlocks.STRIPPED_ORANGE_LOG);
+        this.hangingSign(EmoBlocks.ORANGE_HANGING_SIGN, EmoBlocks.STRIPPED_ORANGE_LOG);
+
+        this.woodenBoat(EmoItems.ORANGE_BOAT, EmoBlocks.ORANGE_PLANKS);
+        this.chestBoat(EmoItems.ORANGE_CHEST_BOAT, EmoItems.ORANGE_BOAT);
+
+        // ATLAS
+        this.planksFromLogs(EmoBlocks.ATLAS_PLANKS, EmoItemTags.ATLAS_LOGS, 4);
+        this.woodFromLogs(EmoBlocks.ATLAS_WOOD, EmoBlocks.ATLAS_LOG);
+        this.woodFromLogs(EmoBlocks.STRIPPED_ATLAS_WOOD, EmoBlocks.STRIPPED_ATLAS_LOG);
+        this.hangingSign(EmoBlocks.ATLAS_HANGING_SIGN, EmoBlocks.STRIPPED_ATLAS_LOG);
+
+        this.woodenBoat(EmoItems.ATLAS_BOAT, EmoBlocks.ATLAS_PLANKS);
+        this.chestBoat(EmoItems.ATLAS_CHEST_BOAT, EmoItems.ATLAS_BOAT);
+
+        // PINE
+        this.planksFromLogs(EmoBlocks.PINE_PLANKS, EmoItemTags.PINE_LOGS, 4);
+        this.woodFromLogs(EmoBlocks.PINE_WOOD, EmoBlocks.PINE_LOG);
+        this.woodFromLogs(EmoBlocks.STRIPPED_PINE_WOOD, EmoBlocks.STRIPPED_PINE_LOG);
+        this.hangingSign(EmoBlocks.PINE_HANGING_SIGN, EmoBlocks.STRIPPED_PINE_LOG);
+
+        this.woodenBoat(EmoItems.PINE_BOAT, EmoBlocks.PINE_PLANKS);
+        this.chestBoat(EmoItems.PINE_CHEST_BOAT, EmoItems.PINE_BOAT);
+
+        // COCO
+        this.planksFromLogs(EmoBlocks.COCO_PLANKS, EmoItemTags.COCO_LOGS, 4);
+        this.woodFromLogs(EmoBlocks.COCO_WOOD, EmoBlocks.COCO_LOG);
+        this.woodFromLogs(EmoBlocks.STRIPPED_COCO_WOOD, EmoBlocks.STRIPPED_COCO_LOG);
+        this.hangingSign(EmoBlocks.COCO_HANGING_SIGN, EmoBlocks.STRIPPED_COCO_LOG);
+
+        this.woodenBoat(EmoItems.COCO_BOAT, EmoBlocks.COCO_PLANKS);
+        this.chestBoat(EmoItems.COCO_CHEST_BOAT, EmoItems.COCO_BOAT);
+
+        // DREAM
+        this.planksFromLogs(EmoBlocks.DREAM_PLANKS, EmoItemTags.DREAM_LOGS, 4);
+        this.woodFromLogs(EmoBlocks.DREAM_WOOD, EmoBlocks.DREAM_LOG);
+        this.woodFromLogs(EmoBlocks.STRIPPED_DREAM_WOOD, EmoBlocks.STRIPPED_DREAM_LOG);
+        this.hangingSign(EmoBlocks.DREAM_HANGING_SIGN, EmoBlocks.STRIPPED_DREAM_LOG);
+
+        this.woodenBoat(EmoItems.DREAM_BOAT, EmoBlocks.DREAM_PLANKS);
+        this.chestBoat(EmoItems.DREAM_CHEST_BOAT, EmoItems.DREAM_BOAT);
+
+        EmoBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach(blockFamily -> this.generateRecipes(blockFamily, FeatureFlagSet.of(FeatureFlags.VANILLA)));
     }
 
     public static class Runner extends RecipeProvider.Runner {

@@ -1,5 +1,10 @@
 {
   "values": [
-    "emomodworld:pear_button"
+    "emomodworld:pear_button",
+    "emomodworld:orange_button",
+    "emomodworld:atlas_button",
+    "emomodworld:pine_button",
+    "emomodworld:coco_button",
+    "emomodworld:dream_button"
   ]
 }

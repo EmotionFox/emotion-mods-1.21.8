@@ -11,9 +11,43 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class EmoItems {
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(EmoMain.MODID);
 
-    public static final DeferredItem<Item> PEAR_BOAT = ITEMS.registerItem("pear_boat", props -> new BoatItem(EmoEntityType.PEAR_BOAT.get(), props.stacksTo(1)));
+    public static final DeferredItem<Item> PEAR_BOAT = ITEMS.registerItem(
+            "pear_boat", props -> new BoatItem(EmoEntityType.PEAR_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> ORANGE_BOAT = ITEMS.registerItem(
+            "orange_boat", props -> new BoatItem(EmoEntityType.ORANGE_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> ATLAS_BOAT = ITEMS.registerItem(
+            "atlas_boat", props -> new BoatItem(EmoEntityType.ATLAS_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> PINE_BOAT = ITEMS.registerItem(
+            "pine_boat", props -> new BoatItem(EmoEntityType.PINE_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> COCO_BOAT = ITEMS.registerItem(
+            "coco_boat", props -> new BoatItem(EmoEntityType.COCO_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> DREAM_BOAT = ITEMS.registerItem(
+            "dream_boat", props -> new BoatItem(EmoEntityType.DREAM_BOAT.get(), props.stacksTo(1))
+    );
 
-    public static final DeferredItem<Item> PEAR_CHEST_BOAT = ITEMS.registerItem("pear_chest_boat", props -> new BoatItem(EmoEntityType.PEAR_CHEST_BOAT.get(), props.stacksTo(1)));
+    public static final DeferredItem<Item> PEAR_CHEST_BOAT = ITEMS.registerItem(
+            "pear_chest_boat", props -> new BoatItem(EmoEntityType.PEAR_CHEST_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> ORANGE_CHEST_BOAT = ITEMS.registerItem(
+            "orange_chest_boat", props -> new BoatItem(EmoEntityType.ORANGE_CHEST_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> ATLAS_CHEST_BOAT = ITEMS.registerItem(
+            "atlas_chest_boat", props -> new BoatItem(EmoEntityType.ATLAS_CHEST_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> PINE_CHEST_BOAT = ITEMS.registerItem(
+            "pine_chest_boat", props -> new BoatItem(EmoEntityType.PINE_CHEST_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> COCO_CHEST_BOAT = ITEMS.registerItem(
+            "coco_chest_boat", props -> new BoatItem(EmoEntityType.COCO_CHEST_BOAT.get(), props.stacksTo(1))
+    );
+    public static final DeferredItem<Item> DREAM_CHEST_BOAT = ITEMS.registerItem(
+            "dream_chest_boat", props -> new BoatItem(EmoEntityType.DREAM_CHEST_BOAT.get(), props.stacksTo(1))
+    );
 
     public static final DeferredItem<Item> BLACKCURRANT = ITEMS.registerSimpleItem("blackcurrant", new Item.Properties().food(EmoFoods.BLACKCURRANT));
     public static final DeferredItem<Item> BLUEBERRY = ITEMS.registerSimpleItem("blueberry", new Item.Properties().food(EmoFoods.BLUEBERRY));

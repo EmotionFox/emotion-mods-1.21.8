@@ -1,9 +1,12 @@
 package fr.emotion.emomodworld.biome;
 
+import fr.emotion.emomodworld.datagen.setBuilder.EmoPlacedFeature;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
@@ -24,18 +27,19 @@ public class EmoBiomes {
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
 
-        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
+        BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(generation);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(generation);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(generation);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(generation);
-        BiomeDefaultFeatures.addDefaultSprings(generation);
-        BiomeDefaultFeatures.addSurfaceFreezing(generation);
-        BiomeDefaultFeatures.addDefaultOres(generation);
-        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
-        BiomeDefaultFeatures.addDefaultMushrooms(generation);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(generation, true);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addPlainGrass(builder);
+        addOrchardVegetation(builder);
+        BiomeDefaultFeatures.addDefaultOres(builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(builder, true);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -43,7 +47,13 @@ public class EmoBiomes {
                 .downfall(0.7f)
                 .specialEffects(effects)
                 .mobSpawnSettings(spawn.build())
-                .generationSettings(generation.build())
+                .generationSettings(builder.build())
                 .build();
+    }
+
+    public static void addOrchardVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_JUNGLE);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.BUSH);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.TREES_ORCHARD);
     }
 }

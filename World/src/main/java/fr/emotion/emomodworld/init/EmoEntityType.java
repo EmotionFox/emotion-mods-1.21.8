@@ -28,9 +28,109 @@ public class EmoEntityType {
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 
+    public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ORANGE_BOAT = ENTITY_TYPE.register(
+            "orange_boat",
+            resourceLocation -> EntityType.Builder.of(boatFactory(EmoItems.ORANGE_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ATLAS_BOAT = ENTITY_TYPE.register(
+            "atlas_boat",
+            resourceLocation -> EntityType.Builder.of(boatFactory(EmoItems.ATLAS_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Boat>> PINE_BOAT = ENTITY_TYPE.register(
+            "pine_boat",
+            resourceLocation -> EntityType.Builder.of(boatFactory(EmoItems.PINE_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Boat>> COCO_BOAT = ENTITY_TYPE.register(
+            "coco_boat",
+            resourceLocation -> EntityType.Builder.of(boatFactory(EmoItems.COCO_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Boat>> DREAM_BOAT = ENTITY_TYPE.register(
+            "dream_boat",
+            resourceLocation -> EntityType.Builder.of(boatFactory(EmoItems.DREAM_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
     public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> PEAR_CHEST_BOAT = ENTITY_TYPE.register(
             "pear_chest_boat",
             resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.PEAR_CHEST_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> ORANGE_CHEST_BOAT = ENTITY_TYPE.register(
+            "orange_chest_boat",
+            resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.ORANGE_CHEST_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> ATLAS_CHEST_BOAT = ENTITY_TYPE.register(
+            "atlas_chest_boat",
+            resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.ATLAS_CHEST_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> PINE_CHEST_BOAT = ENTITY_TYPE.register(
+            "pine_chest_boat",
+            resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.PINE_CHEST_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> COCO_CHEST_BOAT = ENTITY_TYPE.register(
+            "coco_chest_boat",
+            resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.COCO_CHEST_BOAT), MobCategory.MISC)
+                    .noLootTable()
+                    .sized(1.375F, 0.5625F)
+                    .eyeHeight(0.5625F)
+                    .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> DREAM_CHEST_BOAT = ENTITY_TYPE.register(
+            "dream_chest_boat",
+            resourceLocation -> EntityType.Builder.of(chestBoatFactory(EmoItems.DREAM_CHEST_BOAT), MobCategory.MISC)
                     .noLootTable()
                     .sized(1.375F, 0.5625F)
                     .eyeHeight(0.5625F)

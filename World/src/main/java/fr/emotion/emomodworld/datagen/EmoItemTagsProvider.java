@@ -21,11 +21,21 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(ItemTags.PLANKS)
                 .add(
-                        EmoBlocks.PEAR_PLANKS.asItem()
+                        EmoBlocks.PEAR_PLANKS.asItem(),
+                        EmoBlocks.ORANGE_PLANKS.asItem(),
+                        EmoBlocks.ATLAS_PLANKS.asItem(),
+                        EmoBlocks.PINE_PLANKS.asItem(),
+                        EmoBlocks.COCO_PLANKS.asItem(),
+                        EmoBlocks.DREAM_PLANKS.asItem()
                 );
         this.tag(ItemTags.SAPLINGS)
                 .add(
-                        EmoBlocks.PEAR_SAPLING.asItem()
+                        EmoBlocks.PEAR_SAPLING.asItem(),
+                        EmoBlocks.ORANGE_SAPLING.asItem(),
+                        EmoBlocks.ATLAS_SAPLING.asItem(),
+                        EmoBlocks.PINE_SAPLING.asItem(),
+                        EmoBlocks.COCO_SAPLING.asItem(),
+                        EmoBlocks.DREAM_SAPLING.asItem()
                 );
         this.tag(EmoItemTags.PEAR_LOGS)
                 .add(
@@ -34,53 +44,148 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                         EmoBlocks.STRIPPED_PEAR_LOG.asItem(),
                         EmoBlocks.STRIPPED_PEAR_WOOD.asItem()
                 );
+        this.tag(EmoItemTags.ORANGE_LOGS)
+                .add(
+                        EmoBlocks.ORANGE_LOG.asItem(),
+                        EmoBlocks.ORANGE_WOOD.asItem(),
+                        EmoBlocks.STRIPPED_ORANGE_LOG.asItem(),
+                        EmoBlocks.STRIPPED_ORANGE_WOOD.asItem()
+                );
+        this.tag(EmoItemTags.ATLAS_LOGS)
+                .add(
+                        EmoBlocks.ATLAS_LOG.asItem(),
+                        EmoBlocks.ATLAS_WOOD.asItem(),
+                        EmoBlocks.STRIPPED_ATLAS_LOG.asItem(),
+                        EmoBlocks.STRIPPED_ATLAS_WOOD.asItem()
+                );
+        this.tag(EmoItemTags.PINE_LOGS)
+                .add(
+                        EmoBlocks.PINE_LOG.asItem(),
+                        EmoBlocks.PINE_WOOD.asItem(),
+                        EmoBlocks.STRIPPED_PINE_LOG.asItem(),
+                        EmoBlocks.STRIPPED_PINE_WOOD.asItem()
+                );
+        this.tag(EmoItemTags.COCO_LOGS)
+                .add(
+                        EmoBlocks.COCO_LOG.asItem(),
+                        EmoBlocks.COCO_WOOD.asItem(),
+                        EmoBlocks.STRIPPED_COCO_LOG.asItem(),
+                        EmoBlocks.STRIPPED_COCO_WOOD.asItem()
+                );
+        this.tag(EmoItemTags.DREAM_LOGS)
+                .add(
+                        EmoBlocks.DREAM_LOG.asItem(),
+                        EmoBlocks.DREAM_WOOD.asItem(),
+                        EmoBlocks.STRIPPED_DREAM_LOG.asItem(),
+                        EmoBlocks.STRIPPED_DREAM_WOOD.asItem()
+                );
         this.tag(ItemTags.LEAVES)
                 .add(
-                        EmoBlocks.PEAR_LEAVES.asItem()
+                        EmoBlocks.PEAR_LEAVES.asItem(),
+                        EmoBlocks.ORANGE_LEAVES.asItem(),
+                        EmoBlocks.ATLAS_LEAVES.asItem(),
+                        EmoBlocks.PINE_LEAVES.asItem(),
+                        EmoBlocks.COCO_LEAVES.asItem(),
+                        EmoBlocks.DREAM_LEAVES.asItem()
                 );
         this.tag(ItemTags.SIGNS)
                 .add(
-                        EmoBlocks.PEAR_SIGN.asItem()
+                        EmoBlocks.PEAR_SIGN.asItem(),
+                        EmoBlocks.ORANGE_SIGN.asItem(),
+                        EmoBlocks.ATLAS_SIGN.asItem(),
+                        EmoBlocks.PINE_SIGN.asItem(),
+                        EmoBlocks.COCO_SIGN.asItem(),
+                        EmoBlocks.DREAM_SIGN.asItem()
                 );
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
                 .add(
-                        EmoBlocks.PEAR_PRESSURE_PLATE.asItem()
+                        EmoBlocks.PEAR_PRESSURE_PLATE.asItem(),
+                        EmoBlocks.ORANGE_PRESSURE_PLATE.asItem(),
+                        EmoBlocks.ATLAS_PRESSURE_PLATE.asItem(),
+                        EmoBlocks.PINE_PRESSURE_PLATE.asItem(),
+                        EmoBlocks.COCO_PRESSURE_PLATE.asItem(),
+                        EmoBlocks.DREAM_PRESSURE_PLATE.asItem()
                 );
         this.tag(ItemTags.WOODEN_TRAPDOORS)
                 .add(
-                        EmoBlocks.PEAR_TRAPDOOR.asItem()
+                        EmoBlocks.PEAR_TRAPDOOR.asItem(),
+                        EmoBlocks.ORANGE_TRAPDOOR.asItem(),
+                        EmoBlocks.ATLAS_TRAPDOOR.asItem(),
+                        EmoBlocks.PINE_TRAPDOOR.asItem(),
+                        EmoBlocks.COCO_TRAPDOOR.asItem(),
+                        EmoBlocks.DREAM_TRAPDOOR.asItem()
                 );
         this.tag(ItemTags.WOODEN_STAIRS)
                 .add(
-                        EmoBlocks.PEAR_STAIRS.asItem()
+                        EmoBlocks.PEAR_STAIRS.asItem(),
+                        EmoBlocks.ORANGE_STAIRS.asItem(),
+                        EmoBlocks.ATLAS_STAIRS.asItem(),
+                        EmoBlocks.PINE_STAIRS.asItem(),
+                        EmoBlocks.COCO_STAIRS.asItem(),
+                        EmoBlocks.DREAM_STAIRS.asItem()
                 );
         this.tag(ItemTags.WOODEN_BUTTONS)
                 .add(
-                        EmoBlocks.PEAR_BUTTON.asItem()
+                        EmoBlocks.PEAR_BUTTON.asItem(),
+                        EmoBlocks.ORANGE_BUTTON.asItem(),
+                        EmoBlocks.ATLAS_BUTTON.asItem(),
+                        EmoBlocks.PINE_BUTTON.asItem(),
+                        EmoBlocks.COCO_BUTTON.asItem(),
+                        EmoBlocks.DREAM_BUTTON.asItem()
                 );
         this.tag(ItemTags.WOODEN_SLABS)
                 .add(
-                        EmoBlocks.PEAR_SLAB.asItem()
+                        EmoBlocks.PEAR_SLAB.asItem(),
+                        EmoBlocks.ORANGE_SLAB.asItem(),
+                        EmoBlocks.ATLAS_SLAB.asItem(),
+                        EmoBlocks.PINE_SLAB.asItem(),
+                        EmoBlocks.COCO_SLAB.asItem(),
+                        EmoBlocks.DREAM_SLAB.asItem()
                 );
         this.tag(ItemTags.FENCE_GATES)
                 .add(
-                        EmoBlocks.PEAR_FENCE_GATE.asItem()
+                        EmoBlocks.PEAR_FENCE_GATE.asItem(),
+                        EmoBlocks.ORANGE_FENCE_GATE.asItem(),
+                        EmoBlocks.ATLAS_FENCE_GATE.asItem(),
+                        EmoBlocks.PINE_FENCE_GATE.asItem(),
+                        EmoBlocks.COCO_FENCE_GATE.asItem(),
+                        EmoBlocks.DREAM_FENCE_GATE.asItem()
                 );
         this.tag(ItemTags.WOODEN_FENCES)
                 .add(
-                        EmoBlocks.PEAR_FENCE.asItem()
+                        EmoBlocks.PEAR_FENCE.asItem(),
+                        EmoBlocks.ORANGE_FENCE.asItem(),
+                        EmoBlocks.ATLAS_FENCE.asItem(),
+                        EmoBlocks.PINE_FENCE.asItem(),
+                        EmoBlocks.COCO_FENCE.asItem(),
+                        EmoBlocks.DREAM_FENCE.asItem()
                 );
         this.tag(ItemTags.WOODEN_DOORS)
                 .add(
-                        EmoBlocks.PEAR_DOOR.asItem()
+                        EmoBlocks.PEAR_DOOR.asItem(),
+                        EmoBlocks.ORANGE_DOOR.asItem(),
+                        EmoBlocks.ATLAS_DOOR.asItem(),
+                        EmoBlocks.PINE_DOOR.asItem(),
+                        EmoBlocks.COCO_DOOR.asItem(),
+                        EmoBlocks.DREAM_DOOR.asItem()
                 );
         this.tag(ItemTags.BOATS)
                 .add(
-                        EmoItems.PEAR_BOAT.get()
+                        EmoItems.PEAR_BOAT.get(),
+                        EmoItems.ORANGE_BOAT.get(),
+                        EmoItems.ATLAS_BOAT.get(),
+                        EmoItems.PINE_BOAT.get(),
+                        EmoItems.COCO_BOAT.get(),
+                        EmoItems.DREAM_BOAT.get()
                 );
         this.tag(ItemTags.CHEST_BOATS)
                 .add(
-                        EmoItems.PEAR_CHEST_BOAT.get()
+                        EmoItems.PEAR_CHEST_BOAT.get(),
+                        EmoItems.ORANGE_CHEST_BOAT.get(),
+                        EmoItems.ATLAS_CHEST_BOAT.get(),
+                        EmoItems.PINE_CHEST_BOAT.get(),
+                        EmoItems.COCO_CHEST_BOAT.get(),
+                        EmoItems.DREAM_CHEST_BOAT.get()
                 );
         this.tag(ItemTags.FOX_FOOD)
                 .add(

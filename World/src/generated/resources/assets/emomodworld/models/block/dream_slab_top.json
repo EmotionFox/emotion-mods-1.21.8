@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "emomodworld:block/dream_planks",
+    "side": "emomodworld:block/dream_planks",
+    "top": "emomodworld:block/dream_planks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "emomodworld:block/dream_slab"
+    },
+    "type=double": {
+      "model": "emomodworld:block/dream_planks"
+    },
+    "type=top": {
+      "model": "emomodworld:block/dream_slab_top"
+    }
+  }
+}

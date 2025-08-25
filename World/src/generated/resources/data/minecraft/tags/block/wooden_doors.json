@@ -1,5 +1,10 @@
 {
   "values": [
-    "emomodworld:pear_door"
+    "emomodworld:pear_door",
+    "emomodworld:orange_door",
+    "emomodworld:atlas_door",
+    "emomodworld:pine_door",
+    "emomodworld:coco_door",
+    "emomodworld:dream_door"
   ]
 }

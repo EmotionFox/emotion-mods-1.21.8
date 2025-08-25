@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "emomodworld:coco_boat"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodworld:coco_chest_boat"
+  }
+}

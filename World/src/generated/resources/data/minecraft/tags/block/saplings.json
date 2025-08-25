@@ -1,5 +1,10 @@
 {
   "values": [
-    "emomodworld:pear_sapling"
+    "emomodworld:pear_sapling",
+    "emomodworld:orange_sapling",
+    "emomodworld:atlas_sapling",
+    "emomodworld:pine_sapling",
+    "emomodworld:coco_sapling",
+    "emomodworld:dream_sapling"
   ]
 }

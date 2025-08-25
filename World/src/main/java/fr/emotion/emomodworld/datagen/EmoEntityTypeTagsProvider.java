@@ -18,7 +18,12 @@ public class EmoEntityTypeTagsProvider extends EntityTypeTagsProvider {
     protected void addTags(HolderLookup.Provider p_255894_) {
         this.tag(EntityTypeTags.BOAT)
                 .add(
-                        EmoEntityType.PEAR_BOAT.get()
+                        EmoEntityType.PEAR_BOAT.get(),
+                        EmoEntityType.ORANGE_BOAT.get(),
+                        EmoEntityType.ATLAS_BOAT.get(),
+                        EmoEntityType.PINE_BOAT.get(),
+                        EmoEntityType.COCO_BOAT.get(),
+                        EmoEntityType.DREAM_BOAT.get()
                 );
     }
 }

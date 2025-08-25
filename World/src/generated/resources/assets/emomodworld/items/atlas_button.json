@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "emomodworld:block/atlas_button_inventory"
+  }
+}

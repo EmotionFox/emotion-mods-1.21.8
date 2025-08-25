@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "emomodworld:block/atlas_pressure_plate"
+    },
+    "powered=true": {
+      "model": "emomodworld:block/atlas_pressure_plate_down"
+    }
+  }
+}

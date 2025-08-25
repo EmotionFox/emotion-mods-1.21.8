@@ -1,5 +1,10 @@
 {
   "values": [
-    "emomodworld:pear_fence_gate"
+    "emomodworld:pear_fence_gate",
+    "emomodworld:orange_fence_gate",
+    "emomodworld:atlas_fence_gate",
+    "emomodworld:pine_fence_gate",
+    "emomodworld:coco_fence_gate",
+    "emomodworld:dream_fence_gate"
   ]
 }

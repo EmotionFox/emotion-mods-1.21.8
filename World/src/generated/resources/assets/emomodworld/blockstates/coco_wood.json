@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "emomodworld:block/coco_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "emomodworld:block/coco_wood"
+    },
+    "axis=z": {
+      "model": "emomodworld:block/coco_wood",
+      "x": 90
+    }
+  }
+}

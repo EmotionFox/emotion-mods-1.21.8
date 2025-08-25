@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "emomodworld:block/coco_leaves"
+  }
+}

@@ -83,5 +83,15 @@ public class EmoDataGenerators {
     public static void onAddBlocksToBlockEntityType(BlockEntityTypeAddBlocksEvent event) {
         event.modify(BlockEntityType.SIGN, EmoBlocks.PEAR_SIGN.get(), EmoBlocks.PEAR_WALL_SIGN.get());
         event.modify(BlockEntityType.HANGING_SIGN, EmoBlocks.PEAR_HANGING_SIGN.get(), EmoBlocks.PEAR_WALL_HANGING_SIGN.get());
+        event.modify(BlockEntityType.SIGN, EmoBlocks.ORANGE_SIGN.get(), EmoBlocks.ORANGE_WALL_SIGN.get());
+        event.modify(BlockEntityType.HANGING_SIGN, EmoBlocks.ORANGE_HANGING_SIGN.get(), EmoBlocks.ORANGE_WALL_HANGING_SIGN.get());
+        event.modify(BlockEntityType.SIGN, EmoBlocks.ATLAS_SIGN.get(), EmoBlocks.ATLAS_WALL_SIGN.get());
+        event.modify(BlockEntityType.HANGING_SIGN, EmoBlocks.ATLAS_HANGING_SIGN.get(), EmoBlocks.ATLAS_WALL_HANGING_SIGN.get());
+        event.modify(BlockEntityType.SIGN, EmoBlocks.PINE_SIGN.get(), EmoBlocks.PINE_WALL_SIGN.get());
+        event.modify(BlockEntityType.HANGING_SIGN, EmoBlocks.PINE_HANGING_SIGN.get(), EmoBlocks.PINE_WALL_HANGING_SIGN.get());
+        event.modify(BlockEntityType.SIGN, EmoBlocks.COCO_SIGN.get(), EmoBlocks.COCO_WALL_SIGN.get());
+        event.modify(BlockEntityType.HANGING_SIGN, EmoBlocks.COCO_HANGING_SIGN.get(), EmoBlocks.COCO_WALL_HANGING_SIGN.get());
+        event.modify(BlockEntityType.SIGN, EmoBlocks.DREAM_SIGN.get(), EmoBlocks.DREAM_WALL_SIGN.get());
+        event.modify(BlockEntityType.HANGING_SIGN, EmoBlocks.DREAM_HANGING_SIGN.get(), EmoBlocks.DREAM_WALL_HANGING_SIGN.get());
     }
 }

@@ -22,7 +22,7 @@ public class InGridPlacement extends PlacementModifier {
     public Stream<BlockPos> getPositions(PlacementContext context, RandomSource random, BlockPos pos) {
         int chunkX = (pos.getX() >> 4) << 4;
         int chunkZ = (pos.getZ() >> 4) << 4;
-        return random.nextInt(5)==0 ? Stream.empty():Stream.of(new BlockPos(chunkX, pos.getY(), chunkZ));
+        return random.nextInt(1)==0 ? Stream.of(new BlockPos(chunkX, pos.getY(), chunkZ)):Stream.empty();
     }
 
     @Override

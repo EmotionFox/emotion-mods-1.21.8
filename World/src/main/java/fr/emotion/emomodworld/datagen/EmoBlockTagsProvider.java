@@ -42,19 +42,39 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                 );
         this.tag(BlockTags.PLANKS)
                 .add(
-                        EmoBlocks.PEAR_PLANKS.get()
+                        EmoBlocks.PEAR_PLANKS.get(),
+                        EmoBlocks.ORANGE_PLANKS.get(),
+                        EmoBlocks.ATLAS_PLANKS.get(),
+                        EmoBlocks.PINE_PLANKS.get(),
+                        EmoBlocks.COCO_PLANKS.get(),
+                        EmoBlocks.DREAM_PLANKS.get()
                 );
         this.tag(BlockTags.SAPLINGS)
                 .add(
-                        EmoBlocks.PEAR_SAPLING.get()
+                        EmoBlocks.PEAR_SAPLING.get(),
+                        EmoBlocks.ORANGE_SAPLING.get(),
+                        EmoBlocks.ATLAS_SAPLING.get(),
+                        EmoBlocks.PINE_SAPLING.get(),
+                        EmoBlocks.COCO_SAPLING.get(),
+                        EmoBlocks.DREAM_SAPLING.get()
                 );
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(
-                        EmoBlocks.PEAR_LOG.get()
+                        EmoBlocks.PEAR_LOG.get(),
+                        EmoBlocks.ORANGE_LOG.get(),
+                        EmoBlocks.ATLAS_LOG.get(),
+                        EmoBlocks.PINE_LOG.get(),
+                        EmoBlocks.COCO_LOG.get(),
+                        EmoBlocks.DREAM_LOG.get()
                 );
         this.tag(Tags.Blocks.STRIPPED_LOGS)
                 .add(
-                        EmoBlocks.STRIPPED_PEAR_LOG.get()
+                        EmoBlocks.STRIPPED_PEAR_LOG.get(),
+                        EmoBlocks.STRIPPED_ORANGE_LOG.get(),
+                        EmoBlocks.STRIPPED_ATLAS_LOG.get(),
+                        EmoBlocks.STRIPPED_PINE_LOG.get(),
+                        EmoBlocks.STRIPPED_COCO_LOG.get(),
+                        EmoBlocks.STRIPPED_DREAM_LOG.get()
                 );
         this.tag(EmoBlockTags.PEAR_LOGS)
                 .add(
@@ -63,51 +83,146 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                         EmoBlocks.STRIPPED_PEAR_LOG.get(),
                         EmoBlocks.STRIPPED_PEAR_WOOD.get()
                 );
+        this.tag(EmoBlockTags.ORANGE_LOGS)
+                .add(
+                        EmoBlocks.ORANGE_LOG.get(),
+                        EmoBlocks.ORANGE_WOOD.get(),
+                        EmoBlocks.STRIPPED_ORANGE_LOG.get(),
+                        EmoBlocks.STRIPPED_ORANGE_WOOD.get()
+                );
+        this.tag(EmoBlockTags.ATLAS_LOGS)
+                .add(
+                        EmoBlocks.ATLAS_LOG.get(),
+                        EmoBlocks.ATLAS_WOOD.get(),
+                        EmoBlocks.STRIPPED_ATLAS_LOG.get(),
+                        EmoBlocks.STRIPPED_ATLAS_WOOD.get()
+                );
+        this.tag(EmoBlockTags.PINE_LOGS)
+                .add(
+                        EmoBlocks.PINE_LOG.get(),
+                        EmoBlocks.PINE_WOOD.get(),
+                        EmoBlocks.STRIPPED_PINE_LOG.get(),
+                        EmoBlocks.STRIPPED_PINE_WOOD.get()
+                );
+        this.tag(EmoBlockTags.COCO_LOGS)
+                .add(
+                        EmoBlocks.COCO_LOG.get(),
+                        EmoBlocks.COCO_WOOD.get(),
+                        EmoBlocks.STRIPPED_COCO_LOG.get(),
+                        EmoBlocks.STRIPPED_COCO_WOOD.get()
+                );
+        this.tag(EmoBlockTags.DREAM_LOGS)
+                .add(
+                        EmoBlocks.DREAM_LOG.get(),
+                        EmoBlocks.DREAM_WOOD.get(),
+                        EmoBlocks.STRIPPED_DREAM_LOG.get(),
+                        EmoBlocks.STRIPPED_DREAM_WOOD.get()
+                );
         this.tag(BlockTags.LOGS_THAT_BURN)
-                .addTag(EmoBlockTags.PEAR_LOGS);
+                .addTag(EmoBlockTags.PEAR_LOGS)
+                .addTag(EmoBlockTags.ORANGE_LOGS)
+                .addTag(EmoBlockTags.ATLAS_LOGS)
+                .addTag(EmoBlockTags.PINE_LOGS)
+                .addTag(EmoBlockTags.COCO_LOGS)
+                .addTag(EmoBlockTags.DREAM_LOGS);
         this.tag(BlockTags.LEAVES)
                 .add(
-                        EmoBlocks.PEAR_LEAVES.get()
+                        EmoBlocks.PEAR_LEAVES.get(),
+                        EmoBlocks.ORANGE_LEAVES.get(),
+                        EmoBlocks.ATLAS_LEAVES.get(),
+                        EmoBlocks.PINE_LEAVES.get(),
+                        EmoBlocks.COCO_LEAVES.get(),
+                        EmoBlocks.DREAM_LEAVES.get()
                 );
         this.tag(BlockTags.STANDING_SIGNS)
                 .add(
-                        EmoBlocks.PEAR_SIGN.get()
+                        EmoBlocks.PEAR_SIGN.get(),
+                        EmoBlocks.ORANGE_SIGN.get(),
+                        EmoBlocks.ATLAS_SIGN.get(),
+                        EmoBlocks.PINE_SIGN.get(),
+                        EmoBlocks.COCO_SIGN.get(),
+                        EmoBlocks.DREAM_SIGN.get()
                 );
         this.tag(BlockTags.WALL_SIGNS)
                 .add(
-                        EmoBlocks.PEAR_WALL_SIGN.get()
+                        EmoBlocks.PEAR_WALL_SIGN.get(),
+                        EmoBlocks.ORANGE_WALL_SIGN.get(),
+                        EmoBlocks.ATLAS_WALL_SIGN.get(),
+                        EmoBlocks.PINE_WALL_SIGN.get(),
+                        EmoBlocks.COCO_WALL_SIGN.get(),
+                        EmoBlocks.DREAM_WALL_SIGN.get()
                 );
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(
-                        EmoBlocks.PEAR_PRESSURE_PLATE.get()
+                        EmoBlocks.PEAR_PRESSURE_PLATE.get(),
+                        EmoBlocks.ORANGE_PRESSURE_PLATE.get(),
+                        EmoBlocks.ATLAS_PRESSURE_PLATE.get(),
+                        EmoBlocks.PINE_PRESSURE_PLATE.get(),
+                        EmoBlocks.COCO_PRESSURE_PLATE.get(),
+                        EmoBlocks.DREAM_PRESSURE_PLATE.get()
                 );
         this.tag(BlockTags.WOODEN_TRAPDOORS)
                 .add(
-                        EmoBlocks.PEAR_TRAPDOOR.get()
+                        EmoBlocks.PEAR_TRAPDOOR.get(),
+                        EmoBlocks.ORANGE_TRAPDOOR.get(),
+                        EmoBlocks.ATLAS_TRAPDOOR.get(),
+                        EmoBlocks.PINE_TRAPDOOR.get(),
+                        EmoBlocks.COCO_TRAPDOOR.get(),
+                        EmoBlocks.DREAM_TRAPDOOR.get()
                 );
         this.tag(BlockTags.WOODEN_STAIRS)
                 .add(
-                        EmoBlocks.PEAR_STAIRS.get()
+                        EmoBlocks.PEAR_STAIRS.get(),
+                        EmoBlocks.ORANGE_STAIRS.get(),
+                        EmoBlocks.ATLAS_STAIRS.get(),
+                        EmoBlocks.PINE_STAIRS.get(),
+                        EmoBlocks.COCO_STAIRS.get(),
+                        EmoBlocks.DREAM_STAIRS.get()
                 );
         this.tag(BlockTags.WOODEN_BUTTONS)
                 .add(
-                        EmoBlocks.PEAR_BUTTON.get()
+                        EmoBlocks.PEAR_BUTTON.get(),
+                        EmoBlocks.ORANGE_BUTTON.get(),
+                        EmoBlocks.ATLAS_BUTTON.get(),
+                        EmoBlocks.PINE_BUTTON.get(),
+                        EmoBlocks.COCO_BUTTON.get(),
+                        EmoBlocks.DREAM_BUTTON.get()
                 );
         this.tag(BlockTags.WOODEN_SLABS)
                 .add(
-                        EmoBlocks.PEAR_SLAB.get()
+                        EmoBlocks.PEAR_SLAB.get(),
+                        EmoBlocks.ORANGE_SLAB.get(),
+                        EmoBlocks.ATLAS_SLAB.get(),
+                        EmoBlocks.PINE_SLAB.get(),
+                        EmoBlocks.COCO_SLAB.get(),
+                        EmoBlocks.DREAM_SLAB.get()
                 );
         this.tag(BlockTags.FENCE_GATES)
                 .add(
-                        EmoBlocks.PEAR_FENCE_GATE.get()
+                        EmoBlocks.PEAR_FENCE_GATE.get(),
+                        EmoBlocks.ORANGE_FENCE_GATE.get(),
+                        EmoBlocks.ATLAS_FENCE_GATE.get(),
+                        EmoBlocks.PINE_FENCE_GATE.get(),
+                        EmoBlocks.COCO_FENCE_GATE.get(),
+                        EmoBlocks.DREAM_FENCE_GATE.get()
                 );
         this.tag(BlockTags.WOODEN_FENCES)
                 .add(
-                        EmoBlocks.PEAR_FENCE.get()
+                        EmoBlocks.PEAR_FENCE.get(),
+                        EmoBlocks.ORANGE_FENCE.get(),
+                        EmoBlocks.ATLAS_FENCE.get(),
+                        EmoBlocks.PINE_FENCE.get(),
+                        EmoBlocks.COCO_FENCE.get(),
+                        EmoBlocks.DREAM_FENCE.get()
                 );
         this.tag(BlockTags.WOODEN_DOORS)
                 .add(
-                        EmoBlocks.PEAR_DOOR.get()
+                        EmoBlocks.PEAR_DOOR.get(),
+                        EmoBlocks.ORANGE_DOOR.get(),
+                        EmoBlocks.ATLAS_DOOR.get(),
+                        EmoBlocks.PINE_DOOR.get(),
+                        EmoBlocks.COCO_DOOR.get(),
+                        EmoBlocks.DREAM_DOOR.get()
                 );
     }
 }

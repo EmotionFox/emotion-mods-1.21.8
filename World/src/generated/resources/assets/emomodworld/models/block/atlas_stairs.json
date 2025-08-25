@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "emomodworld:block/atlas_planks",
+    "side": "emomodworld:block/atlas_planks",
+    "top": "emomodworld:block/atlas_planks"
+  }
+}

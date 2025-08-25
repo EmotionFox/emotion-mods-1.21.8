@@ -1,5 +1,10 @@
 {
   "values": [
-    "emomodworld:pear_slab"
+    "emomodworld:pear_slab",
+    "emomodworld:orange_slab",
+    "emomodworld:atlas_slab",
+    "emomodworld:pine_slab",
+    "emomodworld:coco_slab",
+    "emomodworld:dream_slab"
   ]
 }

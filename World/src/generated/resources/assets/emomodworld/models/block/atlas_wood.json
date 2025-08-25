@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "emomodworld:block/atlas_log",
+    "side": "emomodworld:block/atlas_log"
+  }
+}

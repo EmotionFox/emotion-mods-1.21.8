@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "emomodworld:block/orange_door_bottom",
+    "top": "emomodworld:block/orange_door_top"
+  }
+}

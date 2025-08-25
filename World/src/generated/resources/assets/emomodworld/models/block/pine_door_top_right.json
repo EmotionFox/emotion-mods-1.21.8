@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "emomodworld:block/pine_door_bottom",
+    "top": "emomodworld:block/pine_door_top"
+  }
+}

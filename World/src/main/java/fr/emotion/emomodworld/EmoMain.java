@@ -86,6 +86,7 @@ public class EmoMain {
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_SHORT_GRASS.get(), 60, 100);
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_TALL_GRASS.get(), 60, 100);
 
+            // PEAR
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_PLANKS.get(), 5, 20);
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_LOG.get(), 5, 5);
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_PEAR_LOG.get(), 5, 5);
@@ -97,11 +98,97 @@ public class EmoMain {
 
             DispenserBlock.registerBehavior(EmoItems.PEAR_BOAT, new BoatDispenseItemBehavior(EmoEntityType.PEAR_BOAT.get()));
             DispenserBlock.registerBehavior(EmoItems.PEAR_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.PEAR_CHEST_BOAT.get()));
+
+            // ORANGE
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ORANGE_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ORANGE_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_ORANGE_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ORANGE_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_ORANGE_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ORANGE_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ORANGE_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ORANGE_FENCE.get(), 5, 20);
+
+            DispenserBlock.registerBehavior(EmoItems.ORANGE_BOAT, new BoatDispenseItemBehavior(EmoEntityType.ORANGE_BOAT.get()));
+            DispenserBlock.registerBehavior(EmoItems.ORANGE_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.ORANGE_CHEST_BOAT.get()));
+
+            // ATLAS
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ATLAS_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ATLAS_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_ATLAS_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ATLAS_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_ATLAS_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ATLAS_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ATLAS_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.ATLAS_FENCE.get(), 5, 20);
+
+            DispenserBlock.registerBehavior(EmoItems.ATLAS_BOAT, new BoatDispenseItemBehavior(EmoEntityType.ATLAS_BOAT.get()));
+            DispenserBlock.registerBehavior(EmoItems.ATLAS_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.ATLAS_CHEST_BOAT.get()));
+
+            // PINE
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PINE_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PINE_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_PINE_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PINE_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_PINE_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PINE_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PINE_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PINE_FENCE.get(), 5, 20);
+
+            DispenserBlock.registerBehavior(EmoItems.PINE_BOAT, new BoatDispenseItemBehavior(EmoEntityType.PINE_BOAT.get()));
+            DispenserBlock.registerBehavior(EmoItems.PINE_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.PINE_CHEST_BOAT.get()));
+
+            // COCO
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.COCO_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.COCO_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_COCO_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.COCO_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_COCO_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.COCO_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.COCO_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.COCO_FENCE.get(), 5, 20);
+
+            DispenserBlock.registerBehavior(EmoItems.COCO_BOAT, new BoatDispenseItemBehavior(EmoEntityType.COCO_BOAT.get()));
+            DispenserBlock.registerBehavior(EmoItems.COCO_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.COCO_CHEST_BOAT.get()));
+
+            // DREAM
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_DREAM_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.STRIPPED_DREAM_WOOD.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_FENCE.get(), 5, 20);
+
+            DispenserBlock.registerBehavior(EmoItems.DREAM_BOAT, new BoatDispenseItemBehavior(EmoEntityType.DREAM_BOAT.get()));
+            DispenserBlock.registerBehavior(EmoItems.DREAM_CHEST_BOAT, new BoatDispenseItemBehavior(EmoEntityType.DREAM_CHEST_BOAT.get()));
         });
     }
 
     private void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
+        // PEAR
         event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.PEAR_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
         event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.PEAR_CHEST_BOAT.get(), ((entity, ctx) -> new InvWrapper(entity)));
+
+        // ORANGE
+        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.ORANGE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.ORANGE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+
+        // ATLAS
+        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.ATLAS_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.ATLAS_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+
+        // PINE
+        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.PINE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.PINE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+
+        // COCO
+        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.COCO_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.COCO_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+
+        // DREAM
+        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
     }
 }

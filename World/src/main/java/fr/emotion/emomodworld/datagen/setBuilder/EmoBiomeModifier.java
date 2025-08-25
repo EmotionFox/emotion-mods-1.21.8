@@ -23,16 +23,6 @@ public class EmoBiomeModifier {
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "orchard_modifier")
     );
 
-    public static final ResourceKey<BiomeModifier> PEAR = ResourceKey.create(
-            NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear")
-    );
-
-    public static final ResourceKey<BiomeModifier> BUSH = ResourceKey.create(
-            NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "bush")
-    );
-
     public static void init(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -41,20 +31,6 @@ public class EmoBiomeModifier {
                 new OrchardBiomeModifier(
                         biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
                         20
-                )
-        );
-        context.register(PEAR,
-                new BiomeModifiers.AddFeaturesBiomeModifier(
-                        HolderSet.direct(biomes.getOrThrow(EmoBiomeKeys.ORCHARD)),
-                        HolderSet.direct(placedFeatures.getOrThrow(EmoPlacedFeature.PEAR)),
-                        GenerationStep.Decoration.VEGETAL_DECORATION
-                )
-        );
-        context.register(BUSH,
-                new BiomeModifiers.AddFeaturesBiomeModifier(
-                        HolderSet.direct(biomes.getOrThrow(EmoBiomeKeys.ORCHARD)),
-                        HolderSet.direct(placedFeatures.getOrThrow(EmoPlacedFeature.BUSH)),
-                        GenerationStep.Decoration.VEGETAL_DECORATION
                 )
         );
     }

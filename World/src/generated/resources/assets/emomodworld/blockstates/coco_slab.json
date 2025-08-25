@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "emomodworld:block/coco_slab"
+    },
+    "type=double": {
+      "model": "emomodworld:block/coco_planks"
+    },
+    "type=top": {
+      "model": "emomodworld:block/coco_slab_top"
+    }
+  }
+}

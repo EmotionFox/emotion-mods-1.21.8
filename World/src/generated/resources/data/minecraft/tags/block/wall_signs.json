@@ -1,5 +1,10 @@
 {
   "values": [
-    "emomodworld:pear_wall_sign"
+    "emomodworld:pear_wall_sign",
+    "emomodworld:orange_wall_sign",
+    "emomodworld:atlas_wall_sign",
+    "emomodworld:pine_wall_sign",
+    "emomodworld:coco_wall_sign",
+    "emomodworld:dream_wall_sign"
   ]
 }
