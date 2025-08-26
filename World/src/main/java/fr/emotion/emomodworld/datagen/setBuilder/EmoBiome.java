@@ -11,9 +11,11 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class EmoBiome {
     public static void init(BootstrapContext<Biome> context) {
-        HolderGetter<PlacedFeature> holdergetter = context.lookup(Registries.PLACED_FEATURE);
-        HolderGetter<ConfiguredWorldCarver<?>> holdergetter1 = context.lookup(Registries.CONFIGURED_CARVER);
+        HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+        HolderGetter<ConfiguredWorldCarver<?>> configuredCarvers = context.lookup(Registries.CONFIGURED_CARVER);
 
-        context.register(EmoBiomeKeys.ORCHARD, EmoBiomes.createOrchard(holdergetter, holdergetter1));
+        context.register(EmoBiomeKeys.ORCHARD, EmoBiomes.createOrchard(placedFeatures, configuredCarvers));
+        context.register(EmoBiomeKeys.ANCIENT_FOREST, EmoBiomes.createAncientForest(placedFeatures, configuredCarvers));
+        context.register(EmoBiomeKeys.VERDANT_SLOPES, EmoBiomes.createVerdantSlopes(placedFeatures, configuredCarvers));
     }
 }

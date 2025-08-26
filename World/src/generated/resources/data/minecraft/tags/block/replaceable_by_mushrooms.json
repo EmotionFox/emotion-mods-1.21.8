@@ -1,6 +1,10 @@
 {
   "values": [
     "emomodworld:dream_short_grass",
-    "emomodworld:dream_tall_grass"
+    "emomodworld:dream_tall_grass",
+    "emomodworld:blue_mushroom",
+    "emomodworld:green_mushroom",
+    "emomodworld:blue_mushroom_block",
+    "emomodworld:green_mushroom_block"
   ]
 }

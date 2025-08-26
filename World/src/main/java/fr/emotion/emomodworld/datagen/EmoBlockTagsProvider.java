@@ -6,6 +6,7 @@ import fr.emotion.emomodworld.tags.EmoBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 
@@ -223,6 +224,23 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                         EmoBlocks.PINE_DOOR.get(),
                         EmoBlocks.COCO_DOOR.get(),
                         EmoBlocks.DREAM_DOOR.get()
+                );
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(
+                        EmoBlocks.BLUE_MUSHROOM_BLOCK.get(),
+                        EmoBlocks.GREEN_MUSHROOM_BLOCK.get()
+                );
+        this.tag(BlockTags.ENDERMAN_HOLDABLE)
+                .add(
+                        EmoBlocks.BLUE_MUSHROOM.get(),
+                        EmoBlocks.GREEN_MUSHROOM.get()
+                );
+        this.tag(BlockTags.REPLACEABLE_BY_MUSHROOMS)
+                .add(
+                        EmoBlocks.BLUE_MUSHROOM.get(),
+                        EmoBlocks.GREEN_MUSHROOM.get(),
+                        EmoBlocks.BLUE_MUSHROOM_BLOCK.get(),
+                        EmoBlocks.GREEN_MUSHROOM_BLOCK.get()
                 );
     }
 }

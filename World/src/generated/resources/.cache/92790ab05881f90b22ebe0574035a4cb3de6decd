@@ -1,5 +1,5 @@
-// 1.21.8	2025-07-28T16:59:20.8052724	Tags for minecraft:worldgen/biome mod id emomodworld
-9833cdb73a07cdc7294ef94625a1b20a651c71f5 data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
-9833cdb73a07cdc7294ef94625a1b20a651c71f5 data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_standard.json
-9833cdb73a07cdc7294ef94625a1b20a651c71f5 data/minecraft/tags/worldgen/biome/is_overworld.json
-9833cdb73a07cdc7294ef94625a1b20a651c71f5 data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
+// 1.21.8	2025-08-25T12:03:39.1021311	Tags for minecraft:worldgen/biome mod id emomodworld
+166bd973c9560e7ab7b8c084df4327d188f6e0fb data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
+166bd973c9560e7ab7b8c084df4327d188f6e0fb data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_standard.json
+166bd973c9560e7ab7b8c084df4327d188f6e0fb data/minecraft/tags/worldgen/biome/is_overworld.json
+166bd973c9560e7ab7b8c084df4327d188f6e0fb data/minecraft/tags/worldgen/biome/stronghold_biased_to.json

@@ -56,10 +56,20 @@ public class EmoModelProvider extends ModelProvider {
         createBush(EmoBlocks.BUSH_STRAWBERRY.get(), blockModels);
         createBush(EmoBlocks.BUSH_SWEET.get(), blockModels);
 
+        blockModels.createCrossBlock(EmoBlocks.BLUE_MUSHROOM.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModels.createCrossBlock(EmoBlocks.GREEN_MUSHROOM.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
+        blockModels.createMushroomBlock(EmoBlocks.BLUE_MUSHROOM_BLOCK.get());
+        blockModels.createMushroomBlock(EmoBlocks.GREEN_MUSHROOM_BLOCK.get());
+
         itemModels.generateFlatItem(EmoItems.BLACKCURRANT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.BLUEBERRY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.DREAMCURRANT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.STRAWBERRY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(EmoItems.PEAR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.CHERRY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.ORANGE.get(), ModelTemplates.FLAT_ITEM);
 
         woodModel(blockModels, itemModels);
     }

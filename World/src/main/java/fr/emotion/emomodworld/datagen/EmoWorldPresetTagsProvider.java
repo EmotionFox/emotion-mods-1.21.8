@@ -16,7 +16,7 @@ public class EmoWorldPresetTagsProvider extends WorldPresetTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider lookupProvider) {
-        this.tag(WorldPresetTags.NORMAL)
+        this.tag(WorldPresetTags.EXTENDED)
                 .add(EmoWorldPresetKeys.PARCEL);
     }
 }

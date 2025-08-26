@@ -31,6 +31,9 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
+import static fr.emotion.emomodworld.utils.EmoColor.blendColors;
+import static fr.emotion.emomodworld.utils.EmoColor.blendColorsByHeight;
+
 @Mod(value = EmoMain.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = EmoMain.MODID, value = Dist.CLIENT)
 public class EmoMainClient {
@@ -102,6 +105,9 @@ public class EmoMainClient {
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_DREAMCURRANT.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_STRAWBERRY.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BUSH_SWEET.get(), ChunkSectionLayer.CUTOUT);
+
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BLUE_MUSHROOM.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.GREEN_MUSHROOM.get(), ChunkSectionLayer.CUTOUT);
 
         event.enqueueWork(() -> {
             Sheets.addWoodType(EmoWoodType.PEAR);
@@ -212,10 +218,6 @@ public class EmoMainClient {
             event.accept(EmoBlocks.BUSH_DREAMCURRANT);
             event.accept(EmoBlocks.BUSH_STRAWBERRY);
             event.accept(EmoBlocks.BUSH_SWEET);
-            event.accept(EmoItems.BLACKCURRANT);
-            event.accept(EmoItems.BLUEBERRY);
-            event.accept(EmoItems.DREAMCURRANT);
-            event.accept(EmoItems.STRAWBERRY);
         } else if (key==CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_WOOD);
@@ -336,6 +338,14 @@ public class EmoMainClient {
 
             event.accept(EmoItems.DREAM_BOAT);
             event.accept(EmoItems.DREAM_CHEST_BOAT);
+        } else if (key==CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(EmoItems.BLACKCURRANT);
+            event.accept(EmoItems.BLUEBERRY);
+            event.accept(EmoItems.DREAMCURRANT);
+            event.accept(EmoItems.STRAWBERRY);
+            event.accept(EmoItems.PEAR);
+            event.accept(EmoItems.CHERRY);
+            event.accept(EmoItems.ORANGE);
         }
     }
 
@@ -464,6 +474,26 @@ public class EmoMainClient {
         }), EmoBlocks.DREAM_LEAVES.get(), EmoBlocks.DREAM_SAPLING.get());
 
         event.register(grassColor, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get());
+
+        BlockColor verdantSlopes = ((state, world, pos, tintIndex) -> {
+            if (world!=null && pos!=null) {
+                int baseColor = BiomeColors.getAverageGrassColor(world, pos);
+                int brownColor = 0x6e6048;
+                float max = 110;
+                float min = 70;
+
+                if (pos.getY() > max)
+                    return brownColor;
+                else if (pos.getY() < min)
+                    return baseColor;
+                else
+                    return blendColorsByHeight(baseColor, brownColor, (float) (pos.getY()), max - min, min);
+            }
+
+            return GrassColor.getDefaultColor();
+        });
+
+        //event.register(verdantSlopes, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS);
     }
 
     protected static BlockColor getColor(int base, float ratio) {
@@ -475,14 +505,5 @@ public class EmoMainClient {
 
             return base;
         };
-    }
-
-    public static int blendColors(int color1, int color2, float ratio) {
-        float inverseRatio = 1.0F - ratio;
-        int r = (int) (((color1 >> 16 & 0xFF) * ratio) + ((color2 >> 16 & 0xFF) * inverseRatio));
-        int g = (int) (((color1 >> 8 & 0xFF) * ratio) + ((color2 >> 8 & 0xFF) * inverseRatio));
-        int b = (int) (((color1 & 0xFF) * ratio) + ((color2 & 0xFF) * inverseRatio));
-
-        return (r << 16) | (g << 8) | b;
     }
 }

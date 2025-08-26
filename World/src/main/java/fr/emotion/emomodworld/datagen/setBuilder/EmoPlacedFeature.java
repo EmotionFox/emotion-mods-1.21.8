@@ -25,6 +25,11 @@ public class EmoPlacedFeature {
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_stony")
     );
 
+    public static final ResourceKey<PlacedFeature> ANCIENT_FOREST_VEGETATION = ResourceKey.create(
+            Registries.PLACED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "ancient_forest_vegetation")
+    );
+
     public static final ResourceKey<PlacedFeature> PEAR = ResourceKey.create(
             Registries.PLACED_FEATURE,
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear")
@@ -65,6 +70,16 @@ public class EmoPlacedFeature {
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "bush")
     );
 
+    public static final ResourceKey<PlacedFeature> BLUE_MUSHROOM_NORMAL = ResourceKey.create(
+            Registries.PLACED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "blue_mushroom_normal")
+    );
+
+    public static final ResourceKey<PlacedFeature> GREEN_MUSHROOM_NORMAL = ResourceKey.create(
+            Registries.PLACED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "green_mushroom_normal")
+    );
+
     public static void init(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -80,6 +95,16 @@ public class EmoPlacedFeature {
         context.register(
                 TREES_STONY,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.TREES_STONY), List.of(
+                        InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                        BiomeFilter.biome()
+                ))
+        );
+        context.register(
+                ANCIENT_FOREST_VEGETATION,
+                new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.ANCIENT_FOREST_VEGETATION), List.of(
+                        CountPlacement.of(8),
                         InSquarePlacement.spread(),
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
@@ -152,6 +177,24 @@ public class EmoPlacedFeature {
                         RarityFilter.onAverageOnceEvery(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ))
+        );
+        context.register(
+                BLUE_MUSHROOM_NORMAL,
+                new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_BLUE_MUSHROOM), List.of(
+                        RarityFilter.onAverageOnceEvery(128),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ))
+        );
+        context.register(
+                GREEN_MUSHROOM_NORMAL,
+                new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_GREEN_MUSHROOM), List.of(
+                        RarityFilter.onAverageOnceEvery(64),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
                 ))
         );

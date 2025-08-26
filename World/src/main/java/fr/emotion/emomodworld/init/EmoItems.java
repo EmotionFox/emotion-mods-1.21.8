@@ -54,6 +54,10 @@ public class EmoItems {
     public static final DeferredItem<Item> DREAMCURRANT = ITEMS.registerSimpleItem("dreamcurrant", new Item.Properties().food(EmoFoods.DREAMCURRANT));
     public static final DeferredItem<Item> STRAWBERRY = ITEMS.registerSimpleItem("strawberry", new Item.Properties().food(EmoFoods.STRAWBERRY));
 
+    public static final DeferredItem<Item> PEAR = ITEMS.registerSimpleItem("pear", new Item.Properties().food(EmoFoods.PEAR));
+    public static final DeferredItem<Item> CHERRY = ITEMS.registerSimpleItem("cherry", new Item.Properties().food(EmoFoods.CHERRY));
+    public static final DeferredItem<Item> ORANGE = ITEMS.registerSimpleItem("orange", new Item.Properties().food(EmoFoods.ORANGE));
+
     public static void init(IEventBus event) {
         ITEMS.register(event);
     }

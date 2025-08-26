@@ -201,5 +201,11 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                         EmoItems.DREAMCURRANT.get(),
                         EmoItems.STRAWBERRY.get()
                 );
+        this.tag(Tags.Items.FOODS_FRUIT)
+                .add(
+                        EmoItems.PEAR.get(),
+                        EmoItems.CHERRY.get(),
+                        EmoItems.ORANGE.get()
+                );
     }
 }

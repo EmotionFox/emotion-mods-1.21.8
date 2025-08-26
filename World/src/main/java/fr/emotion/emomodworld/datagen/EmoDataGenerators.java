@@ -28,6 +28,7 @@ public class EmoDataGenerators {
                 Set.of(EmoMain.MODID)
         );
 
+
         event.getGenerator().addProvider(true, biomeProvider);
         event.getGenerator().addProvider(true, new EmoWorldPresetTagsProvider(output, biomeProvider.getRegistryProvider()));
         event.getGenerator().addProvider(true, new EmoBiomeTagsProvider(output, biomeProvider.getRegistryProvider()));

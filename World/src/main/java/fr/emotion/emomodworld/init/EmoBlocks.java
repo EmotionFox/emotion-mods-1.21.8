@@ -5,6 +5,7 @@ import fr.emotion.emomodworld.blocks.EmoBushBlock;
 import fr.emotion.emomodworld.blocks.ThornyFlowerBlock;
 import fr.emotion.emomodworld.blocks.properties.EmoBlockSetType;
 import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
+import fr.emotion.emomodworld.datagen.setBuilder.EmoConfiguredFeature;
 import fr.emotion.emomodworld.world.tree.EmoTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -304,6 +305,13 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> BUSH_DREAMCURRANT = addBlock("bush_dreamcurrant", props -> new EmoBushBlock(EmoItems.DREAMCURRANT, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BUSH_STRAWBERRY = addBlock("bush_strawberry", props -> new EmoBushBlock(EmoItems.STRAWBERRY, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BUSH_SWEET = addBlock("bush_sweet", props -> new EmoBushBlock(Items.SWEET_BERRIES, props.mapColor(MapColor.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+
+    //MUSHROOM
+    public static final DeferredBlock<Block> BLUE_MUSHROOM = addBlock("blue_mushroom", props -> new MushroomBlock(EmoConfiguredFeature.HUGE_BLUE_MUSHROOM, props.mapColor(MapColor.COLOR_LIGHT_BLUE).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).lightLevel(state -> 1).hasPostProcess((state, blockGetter, pos) -> true).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> GREEN_MUSHROOM = addBlock("green_mushroom", props -> new MushroomBlock(EmoConfiguredFeature.HUGE_GREEN_MUSHROOM, props.mapColor(MapColor.COLOR_LIGHT_GREEN).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).lightLevel(state -> 1).hasPostProcess((state, blockGetter, pos) -> true).pushReaction(PushReaction.DESTROY)));
+
+    public static final DeferredBlock<Block> BLUE_MUSHROOM_BLOCK = addBlock("blue_mushroom_block", props -> new HugeMushroomBlock(props.mapColor(MapColor.COLOR_LIGHT_BLUE).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> GREEN_MUSHROOM_BLOCK = addBlock("green_mushroom_block", props -> new HugeMushroomBlock(props.mapColor(MapColor.COLOR_LIGHT_GREEN).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()));
 
     public static void init(IEventBus event) {
         BLOCKS.register(event);

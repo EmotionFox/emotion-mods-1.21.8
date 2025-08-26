@@ -6,16 +6,22 @@ import fr.emotion.emomodworld.init.EmoItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
@@ -54,6 +60,12 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.add(EmoBlocks.BUSH_STRAWBERRY.get(), block -> this.createBushItemTable(block, EmoItems.STRAWBERRY.get()));
         this.add(EmoBlocks.BUSH_SWEET.get(), block -> this.createBushItemTable(block, Items.SWEET_BERRIES));
 
+        this.dropSelf(EmoBlocks.BLUE_MUSHROOM.get());
+        this.dropSelf(EmoBlocks.GREEN_MUSHROOM.get());
+
+        this.add(EmoBlocks.BLUE_MUSHROOM_BLOCK.get(), block -> this.createMushroomBlockDrop(block, EmoBlocks.BLUE_MUSHROOM.get()));
+        this.add(EmoBlocks.GREEN_MUSHROOM_BLOCK.get(), block -> this.createMushroomBlockDrop(block, EmoBlocks.GREEN_MUSHROOM.get()));
+
         woodLootTable();
     }
 
@@ -85,7 +97,7 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.STRIPPED_PEAR_LOG.get());
         this.dropSelf(EmoBlocks.PEAR_WOOD.get());
         this.dropSelf(EmoBlocks.STRIPPED_PEAR_WOOD.get());
-        this.add(EmoBlocks.PEAR_LEAVES.get(), block -> this.createLeavesDrops(block, EmoBlocks.PEAR_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(EmoBlocks.PEAR_LEAVES.get(), block -> this.createFruitLeavesDrops(block, EmoBlocks.PEAR_SAPLING.get(), EmoItems.PEAR.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropSelf(EmoBlocks.PEAR_SIGN.get());
         this.dropOther(EmoBlocks.PEAR_WALL_SIGN.get(), EmoBlocks.PEAR_SIGN.get());
         this.dropSelf(EmoBlocks.PEAR_HANGING_SIGN.get());
@@ -109,7 +121,7 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.STRIPPED_ORANGE_LOG.get());
         this.dropSelf(EmoBlocks.ORANGE_WOOD.get());
         this.dropSelf(EmoBlocks.STRIPPED_ORANGE_WOOD.get());
-        this.add(EmoBlocks.ORANGE_LEAVES.get(), block -> this.createLeavesDrops(block, EmoBlocks.ORANGE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(EmoBlocks.ORANGE_LEAVES.get(), block -> this.createFruitLeavesDrops(block, EmoBlocks.ORANGE_SAPLING.get(), EmoItems.ORANGE.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropSelf(EmoBlocks.ORANGE_SIGN.get());
         this.dropOther(EmoBlocks.ORANGE_WALL_SIGN.get(), EmoBlocks.ORANGE_SIGN.get());
         this.dropSelf(EmoBlocks.ORANGE_HANGING_SIGN.get());
@@ -218,6 +230,24 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.DREAM_FENCE_GATE.get());
         this.dropSelf(EmoBlocks.DREAM_FENCE.get());
         this.add(EmoBlocks.DREAM_DOOR.get(), this::createDoorTable);
+    }
+
+    protected LootTable.Builder createFruitLeavesDrops(Block leavesBlock, Block saplingBlock, Item fruit, float... chances) {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return this.createLeavesDrops(leavesBlock, saplingBlock, chances)
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .when(this.hasShears().or(this.hasSilkTouch()).invert())
+                                .add(
+                                        ((LootPoolSingletonContainer.Builder<?>) this.applyExplosionCondition(leavesBlock, LootItem.lootTableItem(fruit)))
+                                                .when(
+                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                registrylookup.getOrThrow(Enchantments.FORTUNE), 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F
+                                                        )
+                                                )
+                                )
+                );
     }
 
     @Override

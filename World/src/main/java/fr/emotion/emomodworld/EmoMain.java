@@ -3,7 +3,6 @@ package fr.emotion.emomodworld;
 import com.mojang.logging.LogUtils;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
-import fr.emotion.emomodworld.world.biome.surface.ModSurfaceRules;
 import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
@@ -18,7 +17,6 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import org.slf4j.Logger;
-import terrablender.api.SurfaceRuleManager;
 
 @Mod(EmoMain.MODID)
 public class EmoMain {
@@ -38,12 +36,13 @@ public class EmoMain {
         EmoTrunkPlacerType.init(modEventBus);
         EmoFoliagePlacerType.init(modEventBus);
         EmoPlacementModifierType.init(modEventBus);
+        EmoFeature.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
+        //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
 
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(

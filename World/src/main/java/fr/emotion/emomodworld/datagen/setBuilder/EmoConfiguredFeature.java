@@ -4,12 +4,15 @@ import com.google.common.collect.ImmutableList;
 import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.blocks.EmoBushBlock;
 import fr.emotion.emomodworld.init.EmoBlocks;
+import fr.emotion.emomodworld.init.EmoFeature;
 import fr.emotion.emomodworld.world.tree.*;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.WeightedList;
@@ -17,6 +20,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -41,6 +45,11 @@ public class EmoConfiguredFeature {
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_STONY = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_stony")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_FOREST_VEGETATION = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "ancient_forest_vegetation")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PEAR = ResourceKey.create(
@@ -81,6 +90,26 @@ public class EmoConfiguredFeature {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUSH = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "bush")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BLUE_MUSHROOM = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_blue_mushroom")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GREEN_MUSHROOM = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_green_mushroom")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_BLUE_MUSHROOM = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "huge_blue_mushroom")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_GREEN_MUSHROOM = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "huge_green_mushroom")
     );
 
     private static TreeConfiguration.TreeConfigurationBuilder createFruitTree(Block logBlock, Block leavesBlock) {
@@ -145,6 +174,7 @@ public class EmoConfiguredFeature {
     }
 
     public static void init(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
         context.register(
@@ -174,6 +204,18 @@ public class EmoConfiguredFeature {
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoPlacedFeature.PINE), 0.75F)
                                 ),
                                 placedFeatures.getOrThrow(EmoPlacedFeature.PINE)
+                        )
+                )
+        );
+        context.register(
+                ANCIENT_FOREST_VEGETATION,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_SELECTOR,
+                        new RandomFeatureConfiguration(
+                                List.of(
+                                        new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(EmoConfiguredFeature.HUGE_BLUE_MUSHROOM)), 0.025F)
+                                ),
+                                placedFeatures.getOrThrow(TreePlacements.OAK_LEAF_LITTER)
                         )
                 )
         );
@@ -259,6 +301,50 @@ public class EmoConfiguredFeature {
                                                 )
                                         )
                                 )
+                        )
+                )
+        );
+        context.register(
+                EmoConfiguredFeature.PATCH_BLUE_MUSHROOM,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BLUE_MUSHROOM.get())))
+                )
+        );
+        context.register(
+                EmoConfiguredFeature.PATCH_GREEN_MUSHROOM,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.GREEN_MUSHROOM.get())))
+                )
+        );
+        context.register(
+                EmoConfiguredFeature.HUGE_BLUE_MUSHROOM,
+                new ConfiguredFeature<>(
+                        EmoFeature.HUGE_BLUE_MUSHROOM.get(),
+                        new HugeMushroomFeatureConfiguration(
+                                BlockStateProvider.simple(
+                                        EmoBlocks.BLUE_MUSHROOM_BLOCK.get().defaultBlockState().setValue(HugeMushroomBlock.UP, true).setValue(HugeMushroomBlock.DOWN, false)
+                                ),
+                                BlockStateProvider.simple(
+                                        Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false).setValue(HugeMushroomBlock.DOWN, false)
+                                ),
+                                3
+                        )
+                )
+        );
+        context.register(
+                EmoConfiguredFeature.HUGE_GREEN_MUSHROOM,
+                new ConfiguredFeature<>(
+                        EmoFeature.HUGE_GREEN_MUSHROOM.get(),
+                        new HugeMushroomFeatureConfiguration(
+                                BlockStateProvider.simple(
+                                        EmoBlocks.GREEN_MUSHROOM_BLOCK.get().defaultBlockState().setValue(HugeMushroomBlock.UP, true).setValue(HugeMushroomBlock.DOWN, false)
+                                ),
+                                BlockStateProvider.simple(
+                                        Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false).setValue(HugeMushroomBlock.DOWN, false)
+                                ),
+                                3
                         )
                 )
         );

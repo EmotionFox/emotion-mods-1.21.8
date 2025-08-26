@@ -17,12 +17,20 @@ public class EmoBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider lookupProvider) {
         this.tag(BiomeTags.HAS_MINESHAFT)
-                .add(EmoBiomeKeys.ORCHARD);
+                .add(EmoBiomeKeys.ORCHARD)
+                .add(EmoBiomeKeys.ANCIENT_FOREST)
+                .add(EmoBiomeKeys.VERDANT_SLOPES);
         this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD)
-                .add(EmoBiomeKeys.ORCHARD);
+                .add(EmoBiomeKeys.ORCHARD)
+                .add(EmoBiomeKeys.ANCIENT_FOREST)
+                .add(EmoBiomeKeys.VERDANT_SLOPES);
         this.tag(BiomeTags.STRONGHOLD_BIASED_TO)
-                .add(EmoBiomeKeys.ORCHARD);
+                .add(EmoBiomeKeys.ORCHARD)
+                .add(EmoBiomeKeys.ANCIENT_FOREST)
+                .add(EmoBiomeKeys.VERDANT_SLOPES);
         this.tag(BiomeTags.IS_OVERWORLD)
-                .add(EmoBiomeKeys.ORCHARD);
+                .add(EmoBiomeKeys.ORCHARD)
+                .add(EmoBiomeKeys.ANCIENT_FOREST)
+                .add(EmoBiomeKeys.VERDANT_SLOPES);
     }
 }

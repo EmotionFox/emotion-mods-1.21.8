@@ -2,6 +2,7 @@ package fr.emotion.emomodworld.biome;
 
 import com.mojang.serialization.MapCodec;
 import fr.emotion.emomodworld.init.EmoMapCodec;
+import fr.emotion.emomodworld.world.biome.EmoBiomeKeys;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.world.level.biome.Biome;

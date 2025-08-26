@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/level/biome/BiomeSpecialEffects$GrassColorModifier",
+      "name": "EMOMODWORLD_VERDANT_SLOPES",
+      "constructor": "(Ljava/lang/String;Lnet/minecraft/world/level/biome/BiomeSpecialEffects$GrassColorModifier$ColorModifier;)V",
+      "parameters": {
+        "class": "fr/emotion/emomodworld/biome/EmoGrassColorModifier",
+        "field": "VERDANT_SLOPES"
+      }
+    }
+  ]
+}
