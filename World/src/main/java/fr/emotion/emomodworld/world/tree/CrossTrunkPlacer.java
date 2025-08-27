@@ -3,7 +3,6 @@ package fr.emotion.emomodworld.world.tree;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.init.EmoTrunkPlacerType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -58,7 +57,6 @@ public class CrossTrunkPlacer extends TrunkPlacer {
             if (level instanceof WorldGenLevel worldGenLevel) {
                 heightPercentage = (float) ((pos.getY() - 65) * 100) / (worldGenLevel.getHeight() - 65);
                 smallChancePourcentage = 25.0F + ((float) random.nextInt(25));
-                EmoMain.LOGGER.info("Height Percentage: " + heightPercentage);
 
                 if (heightPercentage <= 10.0F) {
                     newHeight += random.nextInt(3);

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:pine_checked",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "emomodworld:pine"
+      },
+      {
+        "chance": 0.25,
+        "feature": "emomodworld:fallen_pine_tree"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:mega_pine_checked"
+      },
+      {
+        "chance": 0.25,
+        "feature": "minecraft:fallen_spruce_tree"
+      }
+    ]
+  }
+}

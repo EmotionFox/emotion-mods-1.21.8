@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "emomodworld:pear",
+    "default": "minecraft:oak_leaf_litter",
     "features": [
       {
         "chance": 0.5,
@@ -10,26 +10,6 @@
       {
         "chance": 0.5,
         "feature": "emomodworld:orange"
-      },
-      {
-        "chance": 0.5,
-        "feature": "emomodworld:atlas"
-      },
-      {
-        "chance": 0.5,
-        "feature": "emomodworld:pine"
-      },
-      {
-        "chance": 0.5,
-        "feature": "emomodworld:coco"
-      },
-      {
-        "chance": 0.5,
-        "feature": "emomodworld:dream"
-      },
-      {
-        "chance": 1.0,
-        "feature": "emomodworld:fallen_pine_tree"
       }
     ]
   }

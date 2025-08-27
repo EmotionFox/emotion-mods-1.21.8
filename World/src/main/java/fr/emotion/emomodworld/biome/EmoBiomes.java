@@ -1,6 +1,8 @@
 package fr.emotion.emomodworld.biome;
 
 import fr.emotion.emomodworld.datagen.setBuilder.EmoPlacedFeature;
+import fr.emotion.emomodworld.datagen.setBuilder.tree.EmoTreePlacedFeature;
+import fr.emotion.emomodworld.datagen.setBuilder.vegetation.EmoVegetationPlacedFeature;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
@@ -77,8 +79,8 @@ public class EmoBiomes {
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
-        BiomeDefaultFeatures.addPlainGrass(builder);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.ANCIENT_FOREST_VEGETATION);
+        BiomeDefaultFeatures.addForestGrass(builder);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.ANCIENT_FOREST_VEGETATION);
         BiomeDefaultFeatures.addDefaultOres(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
         addAncientForestMushroom(builder);
@@ -119,7 +121,8 @@ public class EmoBiomes {
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
-        BiomeDefaultFeatures.addPlainGrass(builder);
+        BiomeDefaultFeatures.addTaigaGrass(builder);
+        addVerdantSlopesVegetation(builder);
         BiomeDefaultFeatures.addDefaultOres(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
         BiomeDefaultFeatures.addDefaultMushrooms(builder);
@@ -138,7 +141,11 @@ public class EmoBiomes {
     public static void addOrchardVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_MEADOW);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.BUSH);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.TREES_ORCHARD);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.TREES_ORCHARD);
+    }
+
+    public static void addVerdantSlopesVegetation(BiomeGenerationSettings.Builder builder){
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.TREES_VERDANT_SLOPES);
     }
 
     public static void addAncientForestMushroom(BiomeGenerationSettings.Builder builder) {
