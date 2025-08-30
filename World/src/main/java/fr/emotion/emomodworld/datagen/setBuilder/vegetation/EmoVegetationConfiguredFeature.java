@@ -3,30 +3,46 @@ package fr.emotion.emomodworld.datagen.setBuilder.vegetation;
 import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.datagen.setBuilder.EmoConfiguredFeature;
 import fr.emotion.emomodworld.datagen.setBuilder.tree.EmoTreePlacedFeature;
+import fr.emotion.emomodworld.init.EmoBlocks;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.InclusiveRange;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.DualNoiseProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
 import java.util.List;
 
 public class EmoVegetationConfiguredFeature {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWER_ORCHARD = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "flower_orchard")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWER_ANCIENT_FOREST = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "flower_ancient_forest")
+    );
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_ORCHARD = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_orchard")
-    );
-
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_VERDANT_SLOPES = ResourceKey.create(
-            Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_verdant_slopes")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_FOREST_VEGETATION = ResourceKey.create(
@@ -34,10 +50,77 @@ public class EmoVegetationConfiguredFeature {
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "ancient_forest_vegetation")
     );
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_VERDANT_SLOPES = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_verdant_slopes")
+    );
+
     public static void init(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
+        context.register(
+                FLOWER_ORCHARD,
+                new ConfiguredFeature<>(
+                        Feature.FLOWER,
+                        new RandomPatchConfiguration(
+                                96,
+                                6,
+                                2,
+                                PlacementUtils.onlyWhenEmpty(
+                                        Feature.SIMPLE_BLOCK,
+                                        new SimpleBlockConfiguration(
+                                                new DualNoiseProvider(
+                                                        new InclusiveRange<>(1, 3),
+                                                        new NormalNoise.NoiseParameters(-10, 1.0),
+                                                        1.0F,
+                                                        2345L,
+                                                        new NormalNoise.NoiseParameters(-3, 1.0),
+                                                        1.0F,
+                                                        List.of(
+                                                                EmoBlocks.FLOWER_KITTY.get().defaultBlockState(),
+                                                                EmoBlocks.FLOWER_DELY.get().defaultBlockState(),
+                                                                EmoBlocks.FLOWER_GNON.get().defaultBlockState(),
+                                                                EmoBlocks.FLOWER_NEBULA.get().defaultBlockState(),
+                                                                Blocks.DANDELION.defaultBlockState(),
+                                                                Blocks.POPPY.defaultBlockState()
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+        context.register(
+                FLOWER_ANCIENT_FOREST,
+                new ConfiguredFeature<>(
+                        Feature.SIMPLE_RANDOM_SELECTOR,
+                        new SimpleRandomFeatureConfiguration(
+                                HolderSet.direct(
+                                        PlacementUtils.inlinePlaced(
+                                                Feature.RANDOM_PATCH,
+                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.FLOWER_NOX.get())))
+                                        ),
+                                        PlacementUtils.inlinePlaced(
+                                                Feature.RANDOM_PATCH,
+                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.FLOWER_THORNY.get())))
+                                        ),
+                                        PlacementUtils.inlinePlaced(
+                                                Feature.RANDOM_PATCH,
+                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.FLOWER_CENTUS.get())))
+                                        ),
+                                        PlacementUtils.inlinePlaced(
+                                                Feature.RANDOM_PATCH,
+                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.CORNFLOWER)))
+                                        ),
+                                        PlacementUtils.inlinePlaced(
+                                                Feature.RANDOM_PATCH,
+                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.BLUE_ORCHID)))
+                                        )
+                                )
+                        )
+                )
+        );
         context.register(
                 TREES_ORCHARD,
                 new ConfiguredFeature<>(
@@ -48,21 +131,6 @@ public class EmoVegetationConfiguredFeature {
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ORANGE), 0.5F)
                                 ),
                                 placedFeatures.getOrThrow(TreePlacements.OAK_LEAF_LITTER)
-                        )
-                )
-        );
-        context.register(
-                TREES_VERDANT_SLOPES,
-                new ConfiguredFeature<>(
-                        Feature.RANDOM_SELECTOR,
-                        new RandomFeatureConfiguration(
-                                List.of(
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.PINE), 0.5F),
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_PINE_TREE), 0.25F),
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.MEGA_PINE_CHECKED), 0.1F),
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 0.25F)
-                                ),
-                                placedFeatures.getOrThrow(TreePlacements.PINE_CHECKED)
                         )
                 )
         );
@@ -80,6 +148,21 @@ public class EmoVegetationConfiguredFeature {
                                         new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(EmoConfiguredFeature.HUGE_GREEN_MUSHROOM)), 0.01F)
                                 ),
                                 placedFeatures.getOrThrow(TreePlacements.OAK_CHECKED)
+                        )
+                )
+        );
+        context.register(
+                TREES_VERDANT_SLOPES,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_SELECTOR,
+                        new RandomFeatureConfiguration(
+                                List.of(
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.PINE), 0.5F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_PINE_TREE), 0.25F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.MEGA_PINE_CHECKED), 0.1F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 0.25F)
+                                ),
+                                placedFeatures.getOrThrow(TreePlacements.PINE_CHECKED)
                         )
                 )
         );

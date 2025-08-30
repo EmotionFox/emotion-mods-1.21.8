@@ -1,10 +1,67 @@
 {
 	"values": {
+		"emomodworld:flower_kitty": {
+			"chance": 0.65
+		},
+		"emomodworld:flower_nox": {
+			"chance": 0.65
+		},
+		"emomodworld:flower_dely": {
+			"chance": 0.65
+		},
+		"emomodworld:flower_gnon": {
+			"chance": 0.65
+		},
+		"emomodworld:flower_thorny": {
+			"chance": 0.65
+		},
+		"emomodworld:flower_centus": {
+			"chance": 0.65
+		},
+		"emomodworld:flower_nebula": {
+			"chance": 0.65
+		},
 		"emomodworld:dream_short_grass": {
 			"chance": 0.3
 		},
 		"emomodworld:dream_tall_grass": {
 			"chance": 0.5
+		},
+		"emomodworld:pear_leaves": {
+			"chance": 0.3
+		},
+		"emomodworld:orange_leaves": {
+			"chance": 0.3
+		},
+		"emomodworld:atlas_leaves": {
+			"chance": 0.3
+		},
+		"emomodworld:pine_leaves": {
+			"chance": 0.3
+		},
+		"emomodworld:coco_leaves": {
+			"chance": 0.3
+		},
+		"emomodworld:dream_leaves": {
+			"chance": 0.3
+		},
+		"emomodworld:pear_sapling": {
+			"chance": 0.3
+		},
+		"emomodworld:orange_sapling": {
+			"chance": 0.3
+		},
+		"emomodworld:atlas_sapling": {
+			"chance": 0.3
+		},
+		"emomodworld:pine_sapling": {
+			"chance": 0.3
+		},
+		"emomodworld:coco_sapling": {
+			"chance": 0.3
+		},
+		"emomodworld:dream_sapling": {
+			"chance": 0.3
 		},
 		"emomodworld:blackcurrant": {
 			"chance": 0.3
@@ -17,6 +74,21 @@
 		},
 		"emomodworld:strawberry": {
 			"chance": 0.3
+		},
+		"emomodworld:blue_mushroom": {
+			"chance": 0.65
+		},
+		"emomodworld:green_mushroom": {
+			"chance": 0.65
+		},
+		"emomodworld:pear": {
+			"chance": 0.65
+		},
+		"emomodworld:cherry": {
+			"chance": 0.65
+		},
+		"emomodworld:orange": {
+			"chance": 0.65
 		}
 	}
 }

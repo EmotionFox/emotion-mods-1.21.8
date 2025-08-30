@@ -1,7 +1,6 @@
 package fr.emotion.emomodworld.biome;
 
 import fr.emotion.emomodworld.datagen.setBuilder.EmoPlacedFeature;
-import fr.emotion.emomodworld.datagen.setBuilder.tree.EmoTreePlacedFeature;
 import fr.emotion.emomodworld.datagen.setBuilder.vegetation.EmoVegetationPlacedFeature;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -42,7 +41,6 @@ public class EmoBiomes {
         BiomeDefaultFeatures.addDefaultOres(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
         BiomeDefaultFeatures.addDefaultMushrooms(builder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(builder, true);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -83,7 +81,7 @@ public class EmoBiomes {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.ANCIENT_FOREST_VEGETATION);
         BiomeDefaultFeatures.addDefaultOres(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
-        addAncientForestMushroom(builder);
+        addAncientForestVegetation(builder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(builder, true);
 
         return new Biome.BiomeBuilder()
@@ -102,7 +100,7 @@ public class EmoBiomes {
                 .waterColor(0x48696e)
                 .waterFogColor(0x48696e)
                 .skyColor(0x7244c4)
-                .grassColorModifier(EmoGrassColorModifier.VERDANT_SLOPES.getValue())
+                .grassColorOverride(0x376f4a)
                 .foliageColorOverride(0x6e6048)
                 .dryFoliageColorOverride(0x6e6048)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
@@ -125,8 +123,6 @@ public class EmoBiomes {
         addVerdantSlopesVegetation(builder);
         BiomeDefaultFeatures.addDefaultOres(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
-        BiomeDefaultFeatures.addDefaultMushrooms(builder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(builder, true);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -138,22 +134,64 @@ public class EmoBiomes {
                 .build();
     }
 
-    public static void addOrchardVegetation(BiomeGenerationSettings.Builder builder) {
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_MEADOW);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.BUSH);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.TREES_ORCHARD);
+    public static Biome createDreamPlains(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
+                .fogColor(0x7244c4)
+                .waterColor(0x48696e)
+                .waterFogColor(0x48696e)
+                .skyColor(0x7244c4)
+                .grassColorOverride(0x06833D)
+                .foliageColorOverride(0x06833D)
+                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                .backgroundMusic(Musics.GAME)
+                .build();
+
+        MobSpawnSettings.Builder spawn = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.commonSpawns(spawn);
+
+        BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
+
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addPlainGrass(builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(builder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false)
+                .temperature(1.0f)
+                .downfall(0.0f)
+                .specialEffects(effects)
+                .mobSpawnSettings(spawn.build())
+                .generationSettings(builder.build())
+                .build();
     }
 
-    public static void addVerdantSlopesVegetation(BiomeGenerationSettings.Builder builder){
+    public static void addOrchardVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_MEADOW);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.PATCH_BUSH_STRAWBERRY);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.TREES_ORCHARD);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.FLOWER_ORCHARD);
+    }
+
+    public static void addAncientForestVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.PATCH_BUSH_BLUEBERRY);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NORMAL);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.BLUE_MUSHROOM_NORMAL);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.FLOWER_ANCIENT_FOREST);
+    }
+
+    public static void addVerdantSlopesVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.PATCH_BUSH_BLACKCURRANT);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NORMAL);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.TREES_VERDANT_SLOPES);
     }
 
-    public static void addAncientForestMushroom(BiomeGenerationSettings.Builder builder) {
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NORMAL);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.BLUE_MUSHROOM_NORMAL);
-    }
-
-    public static void addDreamMushroom(BiomeGenerationSettings.Builder builder) {
+    public static void addDreamVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.PATCH_BUSH_DREAMCURRANT);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.GREEN_MUSHROOM_NORMAL);
     }
 }

@@ -66,6 +66,11 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.add(EmoBlocks.BLUE_MUSHROOM_BLOCK.get(), block -> this.createMushroomBlockDrop(block, EmoBlocks.BLUE_MUSHROOM.get()));
         this.add(EmoBlocks.GREEN_MUSHROOM_BLOCK.get(), block -> this.createMushroomBlockDrop(block, EmoBlocks.GREEN_MUSHROOM.get()));
 
+        this.add(EmoBlocks.POTTED_BLUE_MUSHROOM.get(), this.createPotFlowerItemTable(EmoBlocks.BLUE_MUSHROOM.get()));
+        this.add(EmoBlocks.POTTED_GREEN_MUSHROOM.get(), this.createPotFlowerItemTable(EmoBlocks.GREEN_MUSHROOM.get()));
+
+        this.add(EmoBlocks.DREAM_PORTAL.get(), noDrop());
+
         woodLootTable();
     }
 

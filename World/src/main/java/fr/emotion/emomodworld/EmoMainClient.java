@@ -1,11 +1,14 @@
 package fr.emotion.emomodworld;
 
 import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
+import fr.emotion.emomodworld.datagen.setBuilder.dimension.EmoDimensionType;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.models.EmoBoatRenderer;
 import fr.emotion.emomodworld.models.EmoModelLayers;
+import fr.emotion.emomodworld.utils.EmoColor;
+import fr.emotion.emomodworld.world.dimension.DreamEffects;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.renderer.BiomeColors;
@@ -18,6 +21,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -26,13 +30,13 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterDimensionSpecialEffectsEvent;
 import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 import static fr.emotion.emomodworld.utils.EmoColor.blendColors;
-import static fr.emotion.emomodworld.utils.EmoColor.blendColorsByHeight;
 
 @Mod(value = EmoMain.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = EmoMain.MODID, value = Dist.CLIENT)
@@ -108,6 +112,9 @@ public class EmoMainClient {
 
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.BLUE_MUSHROOM.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.GREEN_MUSHROOM.get(), ChunkSectionLayer.CUTOUT);
+
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_BLUE_MUSHROOM.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_GREEN_MUSHROOM.get(), ChunkSectionLayer.CUTOUT);
 
         event.enqueueWork(() -> {
             Sheets.addWoodType(EmoWoodType.PEAR);
@@ -218,6 +225,9 @@ public class EmoMainClient {
             event.accept(EmoBlocks.BUSH_DREAMCURRANT);
             event.accept(EmoBlocks.BUSH_STRAWBERRY);
             event.accept(EmoBlocks.BUSH_SWEET);
+
+            event.accept(EmoBlocks.BLUE_MUSHROOM);
+            event.accept(EmoBlocks.GREEN_MUSHROOM);
         } else if (key==CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_WOOD);
@@ -461,6 +471,11 @@ public class EmoMainClient {
     }
 
     @SubscribeEvent
+    public static void onRegisterColorResolver(RegisterColorHandlersEvent.ColorResolvers event){
+        event.register(EmoColor.EMO_GRASS_COLOR_RESOLVER);
+    }
+
+    @SubscribeEvent
     public static void onRegisterColorHandlersEvent(RegisterColorHandlersEvent.Block event) {
         BlockColor grassColor = (state, world, pos, tintIndex) -> (world!=null && pos!=null) ? BiomeColors.getAverageGrassColor(world, pos):GrassColor.getDefaultColor();
 
@@ -475,25 +490,15 @@ public class EmoMainClient {
 
         event.register(grassColor, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get());
 
-        BlockColor verdantSlopes = ((state, world, pos, tintIndex) -> {
+        BlockColor emoGrass = ((state, world, pos, tintIndex) -> {
             if (world!=null && pos!=null) {
-                int baseColor = BiomeColors.getAverageGrassColor(world, pos);
-                int brownColor = 0x6e6048;
-                float max = 110;
-                float min = 70;
-
-                if (pos.getY() > max)
-                    return brownColor;
-                else if (pos.getY() < min)
-                    return baseColor;
-                else
-                    return blendColorsByHeight(baseColor, brownColor, (float) (pos.getY()), max - min, min);
+                return EmoColor.getHeightGrassColor(world, pos);
             }
 
             return GrassColor.getDefaultColor();
         });
 
-        //event.register(verdantSlopes, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS);
+        event.register(emoGrass, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS);
     }
 
     protected static BlockColor getColor(int base, float ratio) {
@@ -505,5 +510,13 @@ public class EmoMainClient {
 
             return base;
         };
+    }
+
+    @SubscribeEvent
+    public static void onRegisterDimensionEffects(RegisterDimensionSpecialEffectsEvent event) {
+        event.register(
+                EmoDimensionType.DREAM_EFFECTS,
+                new DreamEffects()
+        );
     }
 }

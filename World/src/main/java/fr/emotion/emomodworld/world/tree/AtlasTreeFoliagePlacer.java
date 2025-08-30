@@ -2,7 +2,6 @@ package fr.emotion.emomodworld.world.tree;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.init.EmoFoliagePlacerType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;

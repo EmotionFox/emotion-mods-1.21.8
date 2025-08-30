@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "emomodworld:block/blue_mushroom"
+    "model": "emomodworld:item/blue_mushroom"
   }
 }

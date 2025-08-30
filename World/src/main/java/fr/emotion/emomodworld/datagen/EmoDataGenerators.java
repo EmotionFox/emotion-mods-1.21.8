@@ -36,7 +36,6 @@ public class EmoDataGenerators {
         event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoItemTagsProvider::new);
         event.createProvider(EmoEntityTypeTagsProvider::new);
-
         event.createProvider(EmoModelProvider::new);
 
         event.createProvider(((output1, lookupProvider) -> new LootTableProvider(
@@ -47,6 +46,7 @@ public class EmoDataGenerators {
         )));
 
         event.createProvider(EmoRecipeProvider.Runner::new);
+        event.createProvider(EmoGlobalLootModifierProvider::new);
     }
 
     @SubscribeEvent
@@ -78,6 +78,7 @@ public class EmoDataGenerators {
         )));
 
         event.createProvider(EmoRecipeProvider.Runner::new);
+        event.createProvider(EmoGlobalLootModifierProvider::new);
     }
 
     @SubscribeEvent

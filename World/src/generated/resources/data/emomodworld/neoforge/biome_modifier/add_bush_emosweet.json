@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:forest",
+  "features": "emomodworld:patch_bush_emosweet",
+  "step": "vegetal_decoration"
+}

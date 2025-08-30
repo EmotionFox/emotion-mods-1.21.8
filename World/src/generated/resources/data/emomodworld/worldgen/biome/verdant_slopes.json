@@ -9,7 +9,7 @@
     "dry_foliage_color": 7233608,
     "fog_color": 7488708,
     "foliage_color": 7233608,
-    "grass_color_modifier": "emomodworld:verdant_slopes",
+    "grass_color": 3632970,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -88,12 +88,9 @@
       "minecraft:patch_grass_taiga_2",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
-      "emomodworld:trees_verdant_slopes",
+      "emomodworld:patch_bush_blackcurrant",
       "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "emomodworld:trees_verdant_slopes"
     ]
   ],
   "has_precipitation": true,

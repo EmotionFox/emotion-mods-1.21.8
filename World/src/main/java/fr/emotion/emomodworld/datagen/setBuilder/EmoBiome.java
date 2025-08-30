@@ -17,5 +17,6 @@ public class EmoBiome {
         context.register(EmoBiomeKeys.ORCHARD, EmoBiomes.createOrchard(placedFeatures, configuredCarvers));
         context.register(EmoBiomeKeys.ANCIENT_FOREST, EmoBiomes.createAncientForest(placedFeatures, configuredCarvers));
         context.register(EmoBiomeKeys.VERDANT_SLOPES, EmoBiomes.createVerdantSlopes(placedFeatures, configuredCarvers));
+        context.register(EmoBiomeKeys.DREAM_PLAINS, EmoBiomes.createDreamPlains(placedFeatures, configuredCarvers));
     }
 }

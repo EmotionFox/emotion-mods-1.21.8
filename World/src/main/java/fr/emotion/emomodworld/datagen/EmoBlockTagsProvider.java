@@ -6,7 +6,6 @@ import fr.emotion.emomodworld.tags.EmoBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 
@@ -39,7 +38,9 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                         EmoBlocks.POTTED_FLOWER_CENTUS.get(),
                         EmoBlocks.POTTED_FLOWER_NEBULA.get(),
                         EmoBlocks.POTTED_FLOWER_NARCOTA.get(),
-                        EmoBlocks.POTTED_PEAR_SAPLING.get()
+                        EmoBlocks.POTTED_PEAR_SAPLING.get(),
+                        EmoBlocks.POTTED_BLUE_MUSHROOM.get(),
+                        EmoBlocks.POTTED_GREEN_MUSHROOM.get()
                 );
         this.tag(BlockTags.PLANKS)
                 .add(
@@ -241,6 +242,10 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                         EmoBlocks.GREEN_MUSHROOM.get(),
                         EmoBlocks.BLUE_MUSHROOM_BLOCK.get(),
                         EmoBlocks.GREEN_MUSHROOM_BLOCK.get()
+                );
+        this.tag(BlockTags.PORTALS)
+                .add(
+                        EmoBlocks.DREAM_PORTAL.get()
                 );
     }
 }

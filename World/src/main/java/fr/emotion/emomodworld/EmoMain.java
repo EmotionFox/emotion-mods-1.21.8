@@ -81,6 +81,14 @@ public class EmoMain {
                     EmoBlocks.PEAR_SAPLING.getId(),
                     EmoBlocks.POTTED_PEAR_SAPLING
             );
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                    EmoBlocks.BLUE_MUSHROOM.getId(),
+                    EmoBlocks.POTTED_BLUE_MUSHROOM
+            );
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                    EmoBlocks.GREEN_MUSHROOM.getId(),
+                    EmoBlocks.POTTED_GREEN_MUSHROOM
+            );
 
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_SHORT_GRASS.get(), 60, 100);
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_TALL_GRASS.get(), 60, 100);

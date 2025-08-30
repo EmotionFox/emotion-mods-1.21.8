@@ -9,7 +9,6 @@ import fr.emotion.emomodworld.init.EmoFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -17,18 +16,33 @@ import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
-
-import java.util.List;
 
 public class EmoConfiguredFeature {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BUSH = ResourceKey.create(
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BUSH_BLACKCURRANT = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "bush")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_bush_blackcurrant")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BUSH_BLUEBERRY = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_bush_blueberry")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BUSH_DREAMCURRANT = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_bush_dreamcurrant")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BUSH_STRAWBERRY = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_bush_strawberry")
+    );
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BUSH_EMOSWEET = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "patch_bush_emosweet")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BLUE_MUSHROOM = ResourceKey.create(
@@ -56,38 +70,52 @@ public class EmoConfiguredFeature {
         EmoVegetationConfiguredFeature.init(context);
 
         context.register(
-                BUSH,
+                PATCH_BUSH_BLACKCURRANT,
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-                        new RandomPatchConfiguration(
-                                64,
-                                6,
-                                2,
-                                PlacementUtils.onlyWhenEmpty(
-                                        Feature.SIMPLE_BLOCK,
-                                        new SimpleBlockConfiguration(
-                                                new NoiseThresholdProvider(
-                                                        1995L,
-                                                        new NormalNoise.NoiseParameters(0, 1.0),
-                                                        0.005F,
-                                                        -0.8F,
-                                                        0.33333334F,
-                                                        EmoBlocks.BUSH_BLACKCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 0).setValue(EmoBushBlock.MOISTURE, 7),
-                                                        List.of(
-                                                                EmoBlocks.BUSH_BLACKCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 0).setValue(EmoBushBlock.MOISTURE, 7),
-                                                                EmoBlocks.BUSH_BLUEBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 0).setValue(EmoBushBlock.MOISTURE, 7),
-                                                                EmoBlocks.BUSH_SWEET.get().defaultBlockState().setValue(EmoBushBlock.AGE, 0).setValue(EmoBushBlock.MOISTURE, 7),
-                                                                EmoBlocks.BUSH_STRAWBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 0).setValue(EmoBushBlock.MOISTURE, 7)
-                                                        ),
-                                                        List.of(
-                                                                EmoBlocks.BUSH_BLACKCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7),
-                                                                EmoBlocks.BUSH_BLUEBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7),
-                                                                EmoBlocks.BUSH_SWEET.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7),
-                                                                EmoBlocks.BUSH_STRAWBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)
-                                                        )
-                                                )
-                                        )
-                                )
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_BLACKCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
+                        )
+                )
+        );
+        context.register(
+                PATCH_BUSH_BLUEBERRY,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_BLUEBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
+                        )
+                )
+        );
+        context.register(
+                PATCH_BUSH_DREAMCURRANT,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_DREAMCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
+                        )
+                )
+        );
+        context.register(
+                PATCH_BUSH_STRAWBERRY,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_STRAWBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
+                        )
+                )
+        );
+        context.register(
+                PATCH_BUSH_EMOSWEET,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_SWEET.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
                         )
                 )
         );

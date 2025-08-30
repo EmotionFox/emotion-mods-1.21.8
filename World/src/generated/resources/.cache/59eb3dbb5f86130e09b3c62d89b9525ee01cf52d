@@ -1,4 +1,4 @@
-// 1.21.8	2025-08-26T10:12:42.0011148	Loot Tables
+// 1.21.8	2025-08-28T13:09:45.1892716	Loot Tables
 0d556318d1671287aa87763f467ac5098783e258 data/emomodworld/loot_table/blocks/atlas_button.json
 ac65a30ca53604d7f7c640cb16b599130cc5f162 data/emomodworld/loot_table/blocks/atlas_door.json
 084eb39ed14f780f72ce4bad6603cc116a384c87 data/emomodworld/loot_table/blocks/atlas_fence.json
@@ -44,6 +44,7 @@ d0c2c02dc6a7ba8c04e73c56b7986108de9de606 data/emomodworld/loot_table/blocks/drea
 291391f29568b23781a77b9b84a8d5fe8f1067a3 data/emomodworld/loot_table/blocks/dream_leaves.json
 faa3449c0b02a5f01eb2df393e5e9e6bc347be23 data/emomodworld/loot_table/blocks/dream_log.json
 330113d3bd1c515ad4e9b041c6464c2e4cd11290 data/emomodworld/loot_table/blocks/dream_planks.json
+91e1b100bc5b83c00f90d4704318849add8e6c06 data/emomodworld/loot_table/blocks/dream_portal.json
 d57cc76ff9fe3a05d9fd9d63c51a7156fd66b877 data/emomodworld/loot_table/blocks/dream_pressure_plate.json
 c968558b0dfba3eb6b75e4920bc993c709a59466 data/emomodworld/loot_table/blocks/dream_sapling.json
 dc6c7494faba8950a13b41d1456d21d02acef580 data/emomodworld/loot_table/blocks/dream_sign.json
@@ -109,6 +110,7 @@ c3dfffa173e50fea9fc082fcf476804d950a5978 data/emomodworld/loot_table/blocks/pine
 105ab097a2a512e4107103de9d0ce1d3e40fbc92 data/emomodworld/loot_table/blocks/pine_trapdoor.json
 21dd13031f1d6931922c4517ebfb5e0ae768845e data/emomodworld/loot_table/blocks/pine_wood.json
 1f1f605017c2b8870565d49463d25feea1aec783 data/emomodworld/loot_table/blocks/potted_atlas_sapling.json
+97042f34423f623eef406aaca301cbda41db74fb data/emomodworld/loot_table/blocks/potted_blue_mushroom.json
 5bde44b1d85de8728394fae3a530a6cc8f881b04 data/emomodworld/loot_table/blocks/potted_coco_sapling.json
 e7d1437c1877684208c422292440a7df877af7d2 data/emomodworld/loot_table/blocks/potted_dream_sapling.json
 bd9e34c2a90118e510d09fb35b67e1cf48681b2a data/emomodworld/loot_table/blocks/potted_flower_centus.json
@@ -119,6 +121,7 @@ c82cde6b6933afc0ee6d7d4de76ff91db005ed80 data/emomodworld/loot_table/blocks/pott
 c9bd5c655b3fd1d2b890bed3923dd7d4a1c13033 data/emomodworld/loot_table/blocks/potted_flower_nebula.json
 9f6e8df1e2e342e02fbf15ddad17473913bd2019 data/emomodworld/loot_table/blocks/potted_flower_nox.json
 9d928f1d102ccddae083b65d07549951308da8b8 data/emomodworld/loot_table/blocks/potted_flower_thorny.json
+ad14b15c0c5444546195ba587d802f306c6a3d90 data/emomodworld/loot_table/blocks/potted_green_mushroom.json
 989bdb7a929cc214dc517da2dcb7fd5f1f9495e1 data/emomodworld/loot_table/blocks/potted_orange_sapling.json
 13c7923e4cf79fd7558a1d63e733549c189f5e21 data/emomodworld/loot_table/blocks/potted_pear_sapling.json
 ea3b959fadd67ae1b75d87abd44de785151ccbf7 data/emomodworld/loot_table/blocks/potted_pine_sapling.json

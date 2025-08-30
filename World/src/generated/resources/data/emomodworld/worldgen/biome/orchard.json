@@ -86,13 +86,11 @@
       "minecraft:glow_lichen",
       "minecraft:patch_tall_grass_2",
       "minecraft:patch_grass_meadow",
-      "emomodworld:bush",
+      "emomodworld:patch_bush_strawberry",
       "emomodworld:trees_orchard",
+      "emomodworld:flower_orchard",
       "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:red_mushroom_normal"
     ]
   ],
   "has_precipitation": true,

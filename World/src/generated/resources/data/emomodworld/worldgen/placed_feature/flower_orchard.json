@@ -1,16 +1,16 @@
 {
-  "feature": "emomodworld:bush",
+  "feature": "emomodworld:flower_orchard",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 32
+      "chance": 16
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:biome"
