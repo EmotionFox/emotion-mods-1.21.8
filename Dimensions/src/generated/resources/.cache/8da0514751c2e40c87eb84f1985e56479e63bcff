@@ -1,0 +1,12 @@
+// 1.21.8	2025-09-01T12:42:44.4715303	Tags for minecraft:block mod id emomoddimension
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/animals_spawnable_on.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/foxes_spawnable_on.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/frogs_spawnable_on.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/mineable/pickaxe.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/parrots_spawnable_on.json
+3725dd01b7c2d2b02198e5057876c28186cbb5cd data/minecraft/tags/block/portals.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/rabbits_spawnable_on.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/small_dripleaf_placeable.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/sniffer_diggable_block.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/valid_spawn.json
+94dd3fc004ff6daa440c8854768e9c52c6247c3b data/minecraft/tags/block/wolves_spawnable_on.json

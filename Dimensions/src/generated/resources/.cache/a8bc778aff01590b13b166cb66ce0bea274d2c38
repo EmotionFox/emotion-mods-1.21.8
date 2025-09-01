@@ -1,0 +1,9 @@
+// 1.21.8	2025-09-01T12:42:44.4735361	Model Definitions - emomoddimension
+07b6a9e40829361ad1537623607ce2e374f3b546 assets/emomoddimension/blockstates/dream_grass_block.json
+5955cbb4057f528d3822aee07a9d9cb1f3ccb85e assets/emomoddimension/blockstates/dream_portal.json
+01f87ef585b870e8efdcca3ef282ec2e1379a926 assets/emomoddimension/blockstates/dream_stone.json
+719b88d31f59cd7aa86e7f36d2b405b15dc23e55 assets/emomoddimension/items/dream_grass_block.json
+b748a9488b6d00f6856edc612e55a66bc9a7284c assets/emomoddimension/items/dream_stone.json
+fe9d075fd6ae9a1bcdb47881ff75603a89d52a2f assets/emomoddimension/models/block/dream_grass_block_snow.json
+edff4b027219bce80bf5419d5dc61f312dc7efc6 assets/emomoddimension/models/block/dream_portal.json
+76287d27265fc90212780c0cbe70b1f628747d79 assets/emomoddimension/models/block/dream_stone.json

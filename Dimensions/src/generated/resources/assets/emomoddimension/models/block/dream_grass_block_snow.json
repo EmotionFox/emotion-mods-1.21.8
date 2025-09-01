@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "emomoddimension:block/dream_stone",
+    "particle": "emomoddimension:block/dream_stone",
+    "side": "emomoddimension:block/dream_grass_block_snow",
+    "top": "emomoddimension:block/dream_grass_block_top"
+  }
+}

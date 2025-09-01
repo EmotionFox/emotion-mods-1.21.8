@@ -1,0 +1,11 @@
+{
+  "type": "emomoddimension:dream",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "emomoddimension:dream_plains"
+    },
+    "settings": "emomoddimension:dream_floating_islands"
+  }
+}
