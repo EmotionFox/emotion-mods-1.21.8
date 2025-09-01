@@ -1,7 +1,6 @@
 package fr.emotion.emomodworld.init;
 
 import fr.emotion.emomodworld.EmoMain;
-import fr.emotion.emomodworld.blocks.DreamPortalBlock;
 import fr.emotion.emomodworld.blocks.EmoBushBlock;
 import fr.emotion.emomodworld.blocks.ThornyFlowerBlock;
 import fr.emotion.emomodworld.blocks.properties.EmoBlockSetType;
@@ -316,8 +315,6 @@ public class EmoBlocks {
 
     public static final DeferredBlock<Block> BLUE_MUSHROOM_BLOCK = addBlock("blue_mushroom_block", props -> new HugeMushroomBlock(props.mapColor(MapColor.COLOR_LIGHT_BLUE).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> GREEN_MUSHROOM_BLOCK = addBlock("green_mushroom_block", props -> new HugeMushroomBlock(props.mapColor(MapColor.COLOR_LIGHT_GREEN).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()));
-
-    public static final DeferredBlock<Block> DREAM_PORTAL = BLOCKS.registerBlock("dream_portal", props -> new DreamPortalBlock(props.noCollission().strength(-1.0F).sound(SoundType.GLASS).lightLevel(state -> 11).pushReaction(PushReaction.DESTROY)));
 
     public static void init(IEventBus event) {
         BLOCKS.register(event);

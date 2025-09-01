@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Core" />
+            <option value="$PROJECT_DIR$/Dimensions" />
             <option value="$PROJECT_DIR$/Launcher" />
             <option value="$PROJECT_DIR$/Ores" />
             <option value="$PROJECT_DIR$/World" />

@@ -1,9 +1,6 @@
-// 1.21.8	2025-08-30T15:26:55.5780243	Registries
-8cf4729fe8f7d76ac3dd258d4694c0ccc6e3d8da data/emomodworld/dimension/dream.json
-69cf69c29c1872ccf904ffd4dc54d6e1e65c1c04 data/emomodworld/dimension_type/dream.json
+// 1.21.8	2025-09-01T12:19:13.9179807	Registries
 bbcac7c2153b9876a9743f379d209998f10ff215 data/emomodworld/neoforge/biome_modifier/add_bush_emosweet.json
 84ea06f1772d5cf2f22c1360147d25cf4e4cc069 data/emomodworld/worldgen/biome/ancient_forest.json
-6a83bb5ad61e0d5bc60b67d7a3ddd6467568abe8 data/emomodworld/worldgen/biome/dream_plains.json
 b580561bafe3d5810ccd172f9cd7a5de7e941148 data/emomodworld/worldgen/biome/orchard.json
 993b84a6babefdbc6bb184965542b950bcdcb21e data/emomodworld/worldgen/biome/verdant_slopes.json
 2c4af86171616eae8088e3c0d18c2acfef154185 data/emomodworld/worldgen/configured_feature/ancient_forest_vegetation.json
@@ -27,7 +24,6 @@ de42ac08f43b5a41b98c665e219dcf2a0e041d4f data/emomodworld/worldgen/configured_fe
 a708cd0ceeadac03a2e7d1ee189a3ddba340a98c data/emomodworld/worldgen/configured_feature/pine.json
 377b3137e3fed7544e40ab9f14a0fc668027304f data/emomodworld/worldgen/configured_feature/trees_orchard.json
 402398e137ce3d5cb178c949a9940c79f3239942 data/emomodworld/worldgen/configured_feature/trees_verdant_slopes.json
-f549e69e18603f84d4861d8a07be31e3764e19b2 data/emomodworld/worldgen/noise_settings/dream_floating_islands.json
 5f18f627bfc973cb82bf81b538a96ce07c58b47c data/emomodworld/worldgen/placed_feature/ancient_forest_vegetation.json
 f1a9706011b10ad3c18a648126af2311ba9a8f42 data/emomodworld/worldgen/placed_feature/atlas.json
 d2c273bee9aa3721e0e653c08b2da3d60e564aed data/emomodworld/worldgen/placed_feature/blue_mushroom_normal.json

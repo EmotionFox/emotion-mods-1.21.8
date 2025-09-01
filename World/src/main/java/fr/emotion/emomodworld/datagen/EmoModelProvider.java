@@ -62,8 +62,6 @@ public class EmoModelProvider extends ModelProvider {
         blockModels.createPlantWithDefaultItem(EmoBlocks.BLUE_MUSHROOM.get(), EmoBlocks.POTTED_BLUE_MUSHROOM.get(), BlockModelGenerators.PlantType.NOT_TINTED);
         blockModels.createPlantWithDefaultItem(EmoBlocks.GREEN_MUSHROOM.get(), EmoBlocks.POTTED_GREEN_MUSHROOM.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
-        blockModels.createTrivialCube(EmoBlocks.DREAM_PORTAL.get());
-
         itemModels.generateFlatItem(EmoItems.BLACKCURRANT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.BLUEBERRY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.DREAMCURRANT.get(), ModelTemplates.FLAT_ITEM);

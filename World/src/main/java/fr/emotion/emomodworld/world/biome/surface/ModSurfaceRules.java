@@ -16,7 +16,7 @@ public class ModSurfaceRules {
         return SurfaceRules.sequence(
                 SurfaceRules.sequence(
                         SurfaceRules.ifTrue(
-                                SurfaceRules.isBiome(EmoBiomeKeys.DREAM_PLAINS),
+                                SurfaceRules.isBiome(EmoBiomeKeys.ORCHARD),
                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK)
                         ), SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, DIRT)),
 

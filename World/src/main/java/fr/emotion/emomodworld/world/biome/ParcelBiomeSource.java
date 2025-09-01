@@ -6,6 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeSource;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 
 import java.util.stream.Stream;
@@ -18,7 +19,7 @@ public class ParcelBiomeSource extends BiomeSource {
 
     public static ParcelBiomeSource create(HolderGetter<Biome> biomeGetter) {
         return new ParcelBiomeSource(
-                biomeGetter.getOrThrow(EmoBiomeKeys.DREAM_PLAINS),
+                biomeGetter.getOrThrow(Biomes.DESERT),
                 biomeGetter.getOrThrow(EmoBiomeKeys.ORCHARD),
                 biomeGetter.getOrThrow(EmoBiomeKeys.ANCIENT_FOREST),
                 biomeGetter.getOrThrow(EmoBiomeKeys.VERDANT_SLOPES)

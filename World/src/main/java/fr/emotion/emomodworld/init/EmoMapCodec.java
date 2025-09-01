@@ -8,6 +8,7 @@ import fr.emotion.emomodworld.world.biome.ParcelBiomeSource;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.world.level.biome.BiomeSource;
+import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -18,7 +19,7 @@ public class EmoMapCodec {
 
     public static final Supplier<MapCodec<ParcelBiomeSource>> PARCEL_BIOME_SOURCE = BIOME_SOURCE.register("parcel_biome_source", () -> RecordCodecBuilder.mapCodec(instance ->
             instance.group(
-                    RegistryOps.retrieveElement(EmoBiomeKeys.DREAM_PLAINS),
+                    RegistryOps.retrieveElement(Biomes.DESERT),
                     RegistryOps.retrieveElement(EmoBiomeKeys.ORCHARD),
                     RegistryOps.retrieveElement(EmoBiomeKeys.ANCIENT_FOREST),
                     RegistryOps.retrieveElement(EmoBiomeKeys.VERDANT_SLOPES)

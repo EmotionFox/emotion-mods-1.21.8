@@ -1,4 +1,4 @@
-// 1.21.8	2025-08-28T13:09:45.1957829	Tags for minecraft:block mod id emomodworld
+// 1.21.8	2025-09-01T12:19:13.91898	Tags for minecraft:block mod id emomodworld
 d3d58f2b4eb06a9f53d73324647903d5133a26ef data/c/tags/block/stripped_logs.json
 3a3989c1d472e314aceb027fc3922bfdf3586665 data/emomodworld/tags/block/atlas_logs.json
 b313d3df05b36f4c1b9233c3e0a046e15f811d98 data/emomodworld/tags/block/coco_logs.json
@@ -14,7 +14,6 @@ bdadfd28a685aa101c06e0bbf63174e82c7db6e9 data/minecraft/tags/block/leaves.json
 ee053d4e380646fc4dd26ec933114eb361d559ef data/minecraft/tags/block/mineable/axe.json
 2b0dcff23e5db70d6bab24d1a7599ae11daaa336 data/minecraft/tags/block/overworld_natural_logs.json
 85f9f3ba121d4e6bba6d369e27ad4c4a1f1075b7 data/minecraft/tags/block/planks.json
-5f5259d71ad3772d3b02ca4d915602b5e6248266 data/minecraft/tags/block/portals.json
 0db5635d011ede29546e26dd15cc0f20a3752759 data/minecraft/tags/block/replaceable_by_mushrooms.json
 eba801596d7edd27fbe753783e93b8eb1607b714 data/minecraft/tags/block/replaceable_by_trees.json
 23d49d4f900240fa97a877dcb96fecadb4555d0e data/minecraft/tags/block/saplings.json

@@ -243,9 +243,5 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                         EmoBlocks.BLUE_MUSHROOM_BLOCK.get(),
                         EmoBlocks.GREEN_MUSHROOM_BLOCK.get()
                 );
-        this.tag(BlockTags.PORTALS)
-                .add(
-                        EmoBlocks.DREAM_PORTAL.get()
-                );
     }
 }

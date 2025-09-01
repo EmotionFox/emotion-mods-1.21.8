@@ -1,4 +1,4 @@
-// 1.21.8	2025-08-28T13:09:45.1892716	Loot Tables
+// 1.21.8	2025-09-01T12:19:13.9149682	Loot Tables
 0d556318d1671287aa87763f467ac5098783e258 data/emomodworld/loot_table/blocks/atlas_button.json
 ac65a30ca53604d7f7c640cb16b599130cc5f162 data/emomodworld/loot_table/blocks/atlas_door.json
 084eb39ed14f780f72ce4bad6603cc116a384c87 data/emomodworld/loot_table/blocks/atlas_fence.json
@@ -44,7 +44,6 @@ d0c2c02dc6a7ba8c04e73c56b7986108de9de606 data/emomodworld/loot_table/blocks/drea
 291391f29568b23781a77b9b84a8d5fe8f1067a3 data/emomodworld/loot_table/blocks/dream_leaves.json
 faa3449c0b02a5f01eb2df393e5e9e6bc347be23 data/emomodworld/loot_table/blocks/dream_log.json
 330113d3bd1c515ad4e9b041c6464c2e4cd11290 data/emomodworld/loot_table/blocks/dream_planks.json
-91e1b100bc5b83c00f90d4704318849add8e6c06 data/emomodworld/loot_table/blocks/dream_portal.json
 d57cc76ff9fe3a05d9fd9d63c51a7156fd66b877 data/emomodworld/loot_table/blocks/dream_pressure_plate.json
 c968558b0dfba3eb6b75e4920bc993c709a59466 data/emomodworld/loot_table/blocks/dream_sapling.json
 dc6c7494faba8950a13b41d1456d21d02acef580 data/emomodworld/loot_table/blocks/dream_sign.json

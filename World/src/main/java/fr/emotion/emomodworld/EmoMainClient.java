@@ -1,14 +1,12 @@
 package fr.emotion.emomodworld;
 
 import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
-import fr.emotion.emomodworld.datagen.setBuilder.dimension.EmoDimensionType;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.models.EmoBoatRenderer;
 import fr.emotion.emomodworld.models.EmoModelLayers;
 import fr.emotion.emomodworld.utils.EmoColor;
-import fr.emotion.emomodworld.world.dimension.DreamEffects;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.renderer.BiomeColors;
@@ -30,7 +28,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.neoforged.neoforge.client.event.RegisterDimensionSpecialEffectsEvent;
 import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -471,7 +468,7 @@ public class EmoMainClient {
     }
 
     @SubscribeEvent
-    public static void onRegisterColorResolver(RegisterColorHandlersEvent.ColorResolvers event){
+    public static void onRegisterColorResolver(RegisterColorHandlersEvent.ColorResolvers event) {
         event.register(EmoColor.EMO_GRASS_COLOR_RESOLVER);
     }
 
@@ -498,7 +495,7 @@ public class EmoMainClient {
             return GrassColor.getDefaultColor();
         });
 
-        event.register(emoGrass, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS);
+        event.register(emoGrass, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get());
     }
 
     protected static BlockColor getColor(int base, float ratio) {
@@ -510,13 +507,5 @@ public class EmoMainClient {
 
             return base;
         };
-    }
-
-    @SubscribeEvent
-    public static void onRegisterDimensionEffects(RegisterDimensionSpecialEffectsEvent event) {
-        event.register(
-                EmoDimensionType.DREAM_EFFECTS,
-                new DreamEffects()
-        );
     }
 }
