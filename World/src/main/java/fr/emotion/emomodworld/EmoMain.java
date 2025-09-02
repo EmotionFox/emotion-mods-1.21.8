@@ -1,6 +1,7 @@
 package fr.emotion.emomodworld;
 
 import com.mojang.logging.LogUtils;
+import fr.emotion.emomodcore.core.PlaceBlockBehavior;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
 import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
@@ -44,6 +45,22 @@ public class EmoMain {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
+
+        DispenserBlock.registerBehavior(EmoBlocks.PEAR_SAPLING.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.ORANGE_SAPLING.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.ATLAS_SAPLING.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.PINE_SAPLING.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.COCO_SAPLING.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.DREAM_SAPLING.get().asItem(), new PlaceBlockBehavior());
+
+        DispenserBlock.registerBehavior(EmoBlocks.BUSH_BLACKCURRANT.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.BUSH_BLUEBERRY.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.BUSH_DREAMCURRANT.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.BUSH_STRAWBERRY.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.BUSH_SWEET.get().asItem(), new PlaceBlockBehavior());
+
+        DispenserBlock.registerBehavior(EmoBlocks.BLUE_MUSHROOM.get().asItem(), new PlaceBlockBehavior());
+        DispenserBlock.registerBehavior(EmoBlocks.GREEN_MUSHROOM.get().asItem(), new PlaceBlockBehavior());
 
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
