@@ -1,14 +1,13 @@
 package fr.emotion.emomodworld;
 
 import com.mojang.logging.LogUtils;
+import fr.emotion.emomodcore.core.InteractBehavior;
 import fr.emotion.emomodcore.core.PlaceBlockBehavior;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
 import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.FireBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -61,6 +60,8 @@ public class EmoMain {
 
         DispenserBlock.registerBehavior(EmoBlocks.BLUE_MUSHROOM.get().asItem(), new PlaceBlockBehavior());
         DispenserBlock.registerBehavior(EmoBlocks.GREEN_MUSHROOM.get().asItem(), new PlaceBlockBehavior());
+
+        DispenserBlock.registerBehavior(Items.WATER_BUCKET, new InteractBehavior());
 
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(

@@ -2,7 +2,9 @@ package fr.emotion.emomodworld.blocks;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import fr.emotion.emomodcore.core.DispenserReactive;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -34,7 +37,7 @@ import net.neoforged.neoforge.common.CommonHooks;
 
 import java.util.function.Supplier;
 
-public class EmoBushBlock extends VegetationBlock implements BonemealableBlock {
+public class EmoBushBlock extends VegetationBlock implements BonemealableBlock, DispenserReactive {
     public static final MapCodec<EmoBushBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             BuiltInRegistries.ITEM.byNameCodec()
                     .fieldOf("berry")
@@ -160,5 +163,21 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock {
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         popResource(level, pos, new ItemStack(this.asItem()));
+    }
+
+    @Override
+    public InteractionResult react(ServerLevel level, BlockState blockState, BlockPos blockPos, ItemStack stack) {
+        int moisture = blockState.getValue(MOISTURE);
+        boolean flag = moisture==7;
+
+        if (stack.is(Items.WATER_BUCKET) && !flag) {
+            BlockState newState = blockState.setValue(MOISTURE, 7);
+            level.setBlockAndUpdate(blockPos, newState);
+            level.gameEvent(null, GameEvent.BLOCK_CHANGE, blockPos);
+
+            return InteractionResult.SUCCESS;
+        }
+
+        return InteractionResult.PASS;
     }
 }
