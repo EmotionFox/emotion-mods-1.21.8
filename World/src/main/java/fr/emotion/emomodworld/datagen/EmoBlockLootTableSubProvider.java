@@ -42,9 +42,6 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.FLOWER_NEBULA.get());
         this.dropSelf(EmoBlocks.FLOWER_NARCOTA.get());
 
-        this.add(EmoBlocks.DREAM_SHORT_GRASS.get(), this::createGrassDrops);
-        this.add(EmoBlocks.DREAM_TALL_GRASS.get(), block -> this.createDoublePlantWithSeedDrops(block, EmoBlocks.DREAM_SHORT_GRASS.get()));
-
         this.add(EmoBlocks.POTTED_FLOWER_KITTY.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_KITTY.get()));
         this.add(EmoBlocks.POTTED_FLOWER_NOX.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_NOX.get()));
         this.add(EmoBlocks.POTTED_FLOWER_DELY.get(), this.createPotFlowerItemTable(EmoBlocks.FLOWER_DELY.get()));

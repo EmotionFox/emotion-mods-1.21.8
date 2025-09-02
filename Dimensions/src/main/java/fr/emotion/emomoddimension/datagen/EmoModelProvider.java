@@ -21,8 +21,14 @@ public class EmoModelProvider extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        blockModels.createCrossBlock(EmoBlocks.DREAM_SHORT_GRASS.get(), BlockModelGenerators.PlantType.TINTED);
+        blockModels.createItemWithGrassTint(EmoBlocks.DREAM_SHORT_GRASS.get());
+
+        blockModels.createTintedDoublePlant(EmoBlocks.DREAM_TALL_GRASS.get());
+
         blockModels.createTrivialCube(EmoBlocks.DREAM_PORTAL.get());
         blockModels.createTrivialCube(EmoBlocks.DREAM_STONE.get());
+        blockModels.createTrivialCube(EmoBlocks.DREAM_COBBLESTONE.get());
         createDreamGrassBlocks(blockModels);
     }
 

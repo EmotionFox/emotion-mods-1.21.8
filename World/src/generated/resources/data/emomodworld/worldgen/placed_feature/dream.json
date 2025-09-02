@@ -2,7 +2,7 @@
   "feature": "emomodworld:dream",
   "placement": [
     {
-      "type": "emomodworld:in_grid"
+      "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:surface_water_depth_filter",

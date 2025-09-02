@@ -12,13 +12,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -57,24 +54,6 @@ public class EmoBlocks {
             return shape;
         }
     });
-
-    public static final DeferredBlock<Block> DREAM_SHORT_GRASS = addBlock("dream_short_grass", props -> new TallGrassBlock(props.mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "flower_tallgrass")))) {
-        @Override
-        public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state) {
-            return getEmoGrownBlock(state).defaultBlockState().canSurvive(levelReader, pos) && levelReader.isEmptyBlock(pos.above());
-        }
-
-        @Override
-        public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-            DoublePlantBlock.placeAt(level, getEmoGrownBlock(state).defaultBlockState(), pos, 2);
-        }
-
-        private static DoublePlantBlock getEmoGrownBlock(BlockState state) {
-            return (DoublePlantBlock) DREAM_TALL_GRASS.get();
-        }
-    });
-
-    public static final DeferredBlock<Block> DREAM_TALL_GRASS = addBlock("dream_tall_grass", props -> new DoublePlantBlock(props.mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)), DoubleHighBlockItem.class);
 
     // POTTED FLOWER
     public static final DeferredBlock<Block> POTTED_FLOWER_KITTY = BLOCKS.registerBlock("potted_flower_kitty", props -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWER_KITTY, BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "potted_flower_kitty")))));

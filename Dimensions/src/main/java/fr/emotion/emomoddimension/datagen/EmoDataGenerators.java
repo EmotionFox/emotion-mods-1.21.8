@@ -28,6 +28,7 @@ public class EmoDataGenerators {
         event.getGenerator().addProvider(true, setBuilder);
 
         event.createProvider(EmoBlockTagsProvider::new);
+        event.createProvider(EmoItemTagsProvider::new);
 
         event.createProvider(EmoModelProvider::new);
 
@@ -53,6 +54,7 @@ public class EmoDataGenerators {
         event.getGenerator().addProvider(true, setBuilder);
 
         event.createProvider(EmoBlockTagsProvider::new);
+        event.createProvider(EmoItemTagsProvider::new);
 
         event.createProvider(((output1, lookupProvider) -> new LootTableProvider(
                 output,

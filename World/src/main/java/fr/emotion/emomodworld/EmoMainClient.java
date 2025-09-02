@@ -53,9 +53,6 @@ public class EmoMainClient {
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_NEBULA.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.FLOWER_NARCOTA.get(), ChunkSectionLayer.CUTOUT);
 
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_SHORT_GRASS.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_TALL_GRASS.get(), ChunkSectionLayer.CUTOUT);
-
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_KITTY.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_NOX.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.POTTED_FLOWER_DELY.get(), ChunkSectionLayer.CUTOUT);
@@ -190,8 +187,6 @@ public class EmoMainClient {
             event.accept(EmoBlocks.FLOWER_CENTUS);
             event.accept(EmoBlocks.FLOWER_NEBULA);
             event.accept(EmoBlocks.FLOWER_NARCOTA);
-            event.accept(EmoBlocks.DREAM_SHORT_GRASS);
-            event.accept(EmoBlocks.DREAM_TALL_GRASS);
 
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_LEAVES);
@@ -474,8 +469,6 @@ public class EmoMainClient {
 
     @SubscribeEvent
     public static void onRegisterColorHandlersEvent(RegisterColorHandlersEvent.Block event) {
-        BlockColor grassColor = (state, world, pos, tintIndex) -> (world!=null && pos!=null) ? BiomeColors.getAverageGrassColor(world, pos):GrassColor.getDefaultColor();
-
         event.register(getColor(0x6A9E3F, 0.75F), EmoBlocks.PEAR_LEAVES.get(), EmoBlocks.PEAR_SAPLING.get());
         event.register(getColor(0x45a14a, 0.75F), EmoBlocks.ORANGE_LEAVES.get(), EmoBlocks.ORANGE_SAPLING.get());
         event.register(getColor(0x4496c4, 0.75F), EmoBlocks.ATLAS_LEAVES.get(), EmoBlocks.ATLAS_SAPLING.get());
@@ -485,8 +478,6 @@ public class EmoMainClient {
             return 0x42ab71;
         }), EmoBlocks.DREAM_LEAVES.get(), EmoBlocks.DREAM_SAPLING.get());
 
-        event.register(grassColor, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get());
-
         BlockColor emoGrass = ((state, world, pos, tintIndex) -> {
             if (world!=null && pos!=null) {
                 return EmoColor.getHeightGrassColor(world, pos);
@@ -495,7 +486,7 @@ public class EmoMainClient {
             return GrassColor.getDefaultColor();
         });
 
-        event.register(emoGrass, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get());
+        event.register(emoGrass, Blocks.GRASS_BLOCK, Blocks.TALL_GRASS, Blocks.SHORT_GRASS);
     }
 
     protected static BlockColor getColor(int base, float ratio) {

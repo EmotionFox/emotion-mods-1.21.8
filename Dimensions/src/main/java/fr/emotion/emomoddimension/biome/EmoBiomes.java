@@ -1,5 +1,6 @@
 package fr.emotion.emomoddimension.biome;
 
+import fr.emotion.emomoddimension.datagen.setBuilder.vegetation.EmoVegetationPlacedFeature;
 import fr.emotion.emomodworld.datagen.setBuilder.EmoPlacedFeature;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -12,12 +13,13 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class EmoBiomes {
     public static Biome createDreamPlains(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
-                .fogColor(0x7244c4)
-                .waterColor(0x48696e)
-                .waterFogColor(0x48696e)
-                .skyColor(0x7244c4)
-                .grassColorOverride(0x06833D)
-                .foliageColorOverride(0x06833D)
+                .fogColor(0xFFFFFF)
+                .waterColor(0x38ccc4)
+                .waterFogColor(0x38ccc4)
+                .skyColor(0xFFFFFF)
+                .grassColorOverride(0x38cc7a)
+                .foliageColorOverride(0x38cc7a)
+                .dryFoliageColorOverride(0xE1E1E1)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.GAME)
                 .build();
@@ -33,7 +35,7 @@ public class EmoBiomes {
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
-        BiomeDefaultFeatures.addPlainGrass(builder);
+        addDreamVegetation(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
 
         return new Biome.BiomeBuilder()
@@ -49,5 +51,8 @@ public class EmoBiomes {
     public static void addDreamVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.PATCH_BUSH_DREAMCURRANT);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoPlacedFeature.GREEN_MUSHROOM_NORMAL);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.PATCH_DREAM_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EmoVegetationPlacedFeature.PATCH_TALL_DREAM_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, fr.emotion.emomodworld.datagen.setBuilder.vegetation.EmoVegetationPlacedFeature.TREES_DREAM_PLAINS);
     }
 }

@@ -1,15 +1,39 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "minecraft:oak_leaf_litter",
+    "default": "emomodworld:pear",
     "features": [
       {
-        "chance": 0.5,
-        "feature": "emomodworld:pear"
+        "chance": 0.01,
+        "feature": "emomodworld:fallen_pear_tree"
+      },
+      {
+        "chance": 0.025,
+        "feature": "emomodworld:pear_beehive_002"
+      },
+      {
+        "chance": 0.05,
+        "feature": "emomodworld:pear_spider_nest_005"
       },
       {
         "chance": 0.5,
         "feature": "emomodworld:orange"
+      },
+      {
+        "chance": 0.01,
+        "feature": "emomodworld:fallen_orange_tree"
+      },
+      {
+        "chance": 0.025,
+        "feature": "emomodworld:orange_beehive_002"
+      },
+      {
+        "chance": 0.05,
+        "feature": "emomodworld:orange_spider_nest_005"
+      },
+      {
+        "chance": 0.3,
+        "feature": "emomodworld:cherry"
       }
     ]
   }

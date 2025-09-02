@@ -1,7 +1,7 @@
 package fr.emotion.emomodore.advancements;
 
-import fr.emotion.emomodore.MainRegistry;
-import fr.emotion.emomodore.init.ItemRegistry;
+import fr.emotion.emomodore.EmoMain;
+import fr.emotion.emomodore.init.EmoItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -22,7 +22,7 @@ public class MinePurpura {
         builder.parent(AdvancementSubProvider.createPlaceholder("minecraft:story/mine_diamond"));
 
         builder.display(
-                new ItemStack(ItemRegistry.PURPURA_SHARD.get()),
+                new ItemStack(EmoItems.PURPURA_SHARD.get()),
                 Component.translatable("advancements.emomodore.mine_purpura.title"),
                 Component.translatable("advancements.emomodore.mine_purpura.description"),
                 null,
@@ -32,8 +32,8 @@ public class MinePurpura {
                 false
         );
 
-        builder.addCriterion("purpura", InventoryChangeTrigger.TriggerInstance.hasItems(ItemRegistry.PURPURA_SHARD.get()));
+        builder.addCriterion("purpura", InventoryChangeTrigger.TriggerInstance.hasItems(EmoItems.PURPURA_SHARD.get()));
         builder.requirements(AdvancementRequirements.allOf(List.of("purpura")));
-        builder.save(saver, ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "mine_purpura"));
+        builder.save(saver, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "mine_purpura"));
     }
 }

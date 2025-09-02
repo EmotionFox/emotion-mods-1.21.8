@@ -1,6 +1,6 @@
 package fr.emotion.emomodore.datagen;
 
-import fr.emotion.emomodore.MainRegistry;
+import fr.emotion.emomodore.EmoMain;
 import fr.emotion.emomodore.advancements.MinePurpura;
 import fr.emotion.emomodore.advancements.MineViridis;
 import net.minecraft.data.advancements.AdvancementProvider;
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.List;
 import java.util.Set;
 
-@EventBusSubscriber(modid = MainRegistry.MODID)
+@EventBusSubscriber(modid = EmoMain.MODID)
 public class EmoDataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent.Client event) {
@@ -40,7 +40,7 @@ public class EmoDataGenerators {
                         output,
                         lookupProvider,
                         EmoSetBuilder.createBuilder(),
-                        Set.of(MainRegistry.MODID))
+                        Set.of(EmoMain.MODID))
         );
     }
 
@@ -66,7 +66,7 @@ public class EmoDataGenerators {
                         output,
                         lookupProvider,
                         EmoSetBuilder.createBuilder(),
-                        Set.of(MainRegistry.MODID))
+                        Set.of(EmoMain.MODID))
         );
     }
 }

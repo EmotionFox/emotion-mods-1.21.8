@@ -1,10 +1,10 @@
 package fr.emotion.emomodore.recipes;
 
 import fr.emotion.emomodore.components.PhaseRecord;
-import fr.emotion.emomodore.init.BlockRegistry;
-import fr.emotion.emomodore.init.ComponentRegistry;
-import fr.emotion.emomodore.init.ItemRegistry;
-import fr.emotion.emomodore.init.RecipeSerializerRegistry;
+import fr.emotion.emomodore.init.EmoBlocks;
+import fr.emotion.emomodore.init.EmoComponents;
+import fr.emotion.emomodore.init.EmoItems;
+import fr.emotion.emomodore.init.EmoRecipeSerializer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -29,10 +29,10 @@ public class LumeBlockRecipe extends CustomRecipe {
         if (input.ingredientCount()!=9) {
             return false;
         } else {
-            int phase = input.getItem(0).get(ComponentRegistry.PHASE).value();
+            int phase = input.getItem(0).get(EmoComponents.PHASE).value();
 
             for (int i = 1; i < input.size(); i++) {
-                if ((input.getItem(i).getItem()!=ItemRegistry.LUME_STONE.get()) || (input.getItem(i).get(ComponentRegistry.PHASE).value()!=phase))
+                if ((input.getItem(i).getItem()!=EmoItems.LUME_STONE.get()) || (input.getItem(i).get(EmoComponents.PHASE).value()!=phase))
                     return false;
             }
 
@@ -42,15 +42,15 @@ public class LumeBlockRecipe extends CustomRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
-        PhaseRecord phase = input.getItem(0).get(ComponentRegistry.PHASE);
-        ItemStack stack = new ItemStack(BlockRegistry.LUME_BLOCK.get().asItem());
-        stack.set(ComponentRegistry.PHASE, phase);
+        PhaseRecord phase = input.getItem(0).get(EmoComponents.PHASE);
+        ItemStack stack = new ItemStack(EmoBlocks.LUME_BLOCK.get().asItem());
+        stack.set(EmoComponents.PHASE, phase);
         stack.set(DataComponents.LORE, new ItemLore(List.of(Component.translatable("item.emomodore.phase.tooltip").append(": " + phase.value()).withStyle(ChatFormatting.DARK_AQUA))));
         return stack;
     }
 
     @Override
     public RecipeSerializer<? extends CustomRecipe> getSerializer() {
-        return RecipeSerializerRegistry.LUME_STONE.get();
+        return EmoRecipeSerializer.LUME_STONE.get();
     }
 }

@@ -6,9 +6,10 @@
   ],
   "downfall": 0.0,
   "effects": {
-    "fog_color": 7488708,
-    "foliage_color": 426813,
-    "grass_color": 426813,
+    "dry_foliage_color": 14803425,
+    "fog_color": 16777215,
+    "foliage_color": 3722362,
+    "grass_color": 3722362,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -27,9 +28,9 @@
       }
     ],
     "music_volume": 1.0,
-    "sky_color": 7488708,
-    "water_color": 4745582,
-    "water_fog_color": 4745582
+    "sky_color": 16777215,
+    "water_color": 3722436,
+    "water_fog_color": 3722436
   },
   "features": [
     [],
@@ -67,7 +68,11 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2"
+      "emomodworld:patch_bush_dreamcurrant",
+      "emomodworld:green_mushroom_normal",
+      "emomoddimension:patch_dream_grass",
+      "emomoddimension:patch_tall_dream_grass",
+      "emomodworld:trees_dream_plains"
     ]
   ],
   "has_precipitation": false,

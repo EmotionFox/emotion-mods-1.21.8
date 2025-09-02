@@ -41,11 +41,6 @@ public class EmoModelProvider extends ModelProvider {
         blockModels.createPlantWithDefaultItem(EmoBlocks.FLOWER_NEBULA.get(), EmoBlocks.POTTED_FLOWER_NEBULA.get(), BlockModelGenerators.PlantType.NOT_TINTED);
         this.createLowPlantWithDefaultItem(blockModels, EmoBlocks.FLOWER_NARCOTA.get(), EmoBlocks.POTTED_FLOWER_NARCOTA.get());
 
-        blockModels.createCrossBlock(EmoBlocks.DREAM_SHORT_GRASS.get(), BlockModelGenerators.PlantType.TINTED);
-        blockModels.createItemWithGrassTint(EmoBlocks.DREAM_SHORT_GRASS.get());
-
-        blockModels.createTintedDoublePlant(EmoBlocks.DREAM_TALL_GRASS.get());
-
         EmoBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(blockFamily -> blockModels.family(blockFamily.getBaseBlock()).generateFor(blockFamily));

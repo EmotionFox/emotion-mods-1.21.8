@@ -1,7 +1,7 @@
 package fr.emotion.emomodore.advancements;
 
-import fr.emotion.emomodore.MainRegistry;
-import fr.emotion.emomodore.init.BlockRegistry;
+import fr.emotion.emomodore.EmoMain;
+import fr.emotion.emomodore.init.EmoBlocks;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -22,7 +22,7 @@ public class MineViridis {
         builder.parent(AdvancementSubProvider.createPlaceholder("emomodore:mine_purpura"));
 
         builder.display(
-                new ItemStack(BlockRegistry.VIRIDIS_CRYSTAL.get()),
+                new ItemStack(EmoBlocks.VIRIDIS_CRYSTAL.get()),
                 Component.translatable("advancements.emomodore.mine_viridis.title"),
                 Component.translatable("advancements.emomodore.mine_viridis.description"),
                 null,
@@ -32,8 +32,8 @@ public class MineViridis {
                 false
         );
 
-        builder.addCriterion("viridis", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.VIRIDIS_CRYSTAL.get()));
+        builder.addCriterion("viridis", InventoryChangeTrigger.TriggerInstance.hasItems(EmoBlocks.VIRIDIS_CRYSTAL.get()));
         builder.requirements(AdvancementRequirements.allOf(List.of("viridis")));
-        builder.save(saver, ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "mine_viridis"));
+        builder.save(saver, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "mine_viridis"));
     }
 }

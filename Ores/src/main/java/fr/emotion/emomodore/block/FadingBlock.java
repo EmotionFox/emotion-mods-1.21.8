@@ -2,7 +2,7 @@ package fr.emotion.emomodore.block;
 
 import fr.emotion.emomodore.block.state.EmoBlockStateProperties;
 import fr.emotion.emomodore.components.PhaseRecord;
-import fr.emotion.emomodore.init.ComponentRegistry;
+import fr.emotion.emomodore.init.EmoComponents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -55,7 +55,7 @@ public class FadingBlock extends Block {
         int phase = state.getValue(EmoBlockStateProperties.PHASE);
         ItemStack stack = new ItemStack(this.asItem());
 
-        stack.set(ComponentRegistry.PHASE, new PhaseRecord(phase));
+        stack.set(EmoComponents.PHASE, new PhaseRecord(phase));
         stack.set(DataComponents.LORE, new ItemLore(List.of(
                 Component.translatable("item.emomodore.phase.tooltip").append(": " + phase).withStyle(ChatFormatting.DARK_AQUA)
         )));

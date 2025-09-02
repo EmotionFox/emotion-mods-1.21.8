@@ -16,8 +16,12 @@
         "feature": "minecraft:oak_leaf_litter"
       },
       {
-        "chance": 0.1,
+        "chance": 0.15,
         "feature": "emomodworld:atlas"
+      },
+      {
+        "chance": 0.015,
+        "feature": "emomodworld:fallen_atlas_tree"
       },
       {
         "chance": 0.025,
@@ -27,7 +31,7 @@
         }
       },
       {
-        "chance": 0.01,
+        "chance": 0.015,
         "feature": {
           "feature": "emomodworld:huge_green_mushroom",
           "placement": []

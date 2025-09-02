@@ -1,9 +1,9 @@
 package fr.emotion.emomodore.datagen;
 
-import fr.emotion.emomodore.MainRegistry;
+import fr.emotion.emomodore.EmoMain;
 import fr.emotion.emomodore.block.state.EmoBlockStateProperties;
-import fr.emotion.emomodore.init.BlockRegistry;
-import fr.emotion.emomodore.init.ItemRegistry;
+import fr.emotion.emomodore.init.EmoBlocks;
+import fr.emotion.emomodore.init.EmoItems;
 import fr.emotion.emomodore.item.PhaseValue;
 import fr.emotion.emomodore.tags.CustomModelTemplate;
 import fr.emotion.emomodore.tags.CustomTextureSlot;
@@ -31,62 +31,62 @@ import java.util.stream.Stream;
 
 public class EmoModelProvider extends ModelProvider {
     public EmoModelProvider(PackOutput output) {
-        super(output, MainRegistry.MODID);
+        super(output, EmoMain.MODID);
     }
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         // Items
-        itemModels.generateFlatItem(ItemRegistry.FOSSIL.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.FOSSIL_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.FOSSIL_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.FOSSIL_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.FOSSIL_AXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.FOSSIL_HOE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_AXE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_HOE.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_SHARD.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_AXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_HOE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_AXE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_HOE.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_LUME_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_LUME_SWORD.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_NETHERITE_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_DIAMOND_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_EMERALD_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_GOLD_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_IRON_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.PURPURA_COPPER_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_NETHERITE_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_DIAMOND_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_EMERALD_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_GOLD_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_IRON_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_COPPER_SWORD.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.VIRIDIS_HELMET.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.VIRIDIS_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.VIRIDIS_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ItemRegistry.VIRIDIS_BOOTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.VIRIDIS_HELMET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.VIRIDIS_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.VIRIDIS_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.VIRIDIS_BOOTS.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ItemRegistry.VIRIDIS_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.VIRIDIS_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
 
-        createFlatFadingItem(itemModels, ItemRegistry.LUME_STONE.get());
+        createFlatFadingItem(itemModels, EmoItems.LUME_STONE.get());
 
         // Blocks
-        blockModels.createTrivialCube(BlockRegistry.FOSSIL_ORE.get());
-        blockModels.createTrivialCube(BlockRegistry.FOSSIL_BLOCK.get());
+        blockModels.createTrivialCube(EmoBlocks.FOSSIL_ORE.get());
+        blockModels.createTrivialCube(EmoBlocks.FOSSIL_BLOCK.get());
 
-        blockModels.createTrivialCube(BlockRegistry.PURPURA_ORE.get());
-        blockModels.createTrivialCube(BlockRegistry.DEEPSLATE_PURPURA_ORE.get());
-        blockModels.createTrivialCube(BlockRegistry.PURPURA_BLOCK.get());
+        blockModels.createTrivialCube(EmoBlocks.PURPURA_ORE.get());
+        blockModels.createTrivialCube(EmoBlocks.DEEPSLATE_PURPURA_ORE.get());
+        blockModels.createTrivialCube(EmoBlocks.PURPURA_BLOCK.get());
 
-        blockModels.createTrivialCube(BlockRegistry.VIRIDIS_ORE.get());
+        blockModels.createTrivialCube(EmoBlocks.VIRIDIS_ORE.get());
 
-        createCrystalFadingBlock(blockModels, itemModels, BlockRegistry.VIRIDIS_CRYSTAL.get());
+        createCrystalFadingBlock(blockModels, itemModels, EmoBlocks.VIRIDIS_CRYSTAL.get());
 
-        blockModels.createTrivialCube(BlockRegistry.VIRIDIS_BLOCK.get());
+        blockModels.createTrivialCube(EmoBlocks.VIRIDIS_BLOCK.get());
 
-        createFadingBlock(blockModels, itemModels, BlockRegistry.NETHER_LUME_ORE.get());
-        createFadingBlock(blockModels, itemModels, BlockRegistry.LUME_BLOCK.get());
+        createFadingBlock(blockModels, itemModels, EmoBlocks.NETHER_LUME_ORE.get());
+        createFadingBlock(blockModels, itemModels, EmoBlocks.LUME_BLOCK.get());
     }
 
     private static void createCrystalFadingBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block) {
@@ -212,11 +212,11 @@ public class EmoModelProvider extends ModelProvider {
 
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
-        return BlockRegistry.BLOCKS.getEntries().stream();
+        return EmoBlocks.BLOCKS.getEntries().stream();
     }
 
     @Override
     protected Stream<? extends Holder<Item>> getKnownItems() {
-        return ItemRegistry.ITEMS.getEntries().stream();
+        return EmoItems.ITEMS.getEntries().stream();
     }
 }

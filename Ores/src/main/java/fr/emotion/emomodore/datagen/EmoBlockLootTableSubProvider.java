@@ -2,9 +2,9 @@ package fr.emotion.emomodore.datagen;
 
 import fr.emotion.emomodore.block.state.EmoBlockStateProperties;
 import fr.emotion.emomodore.components.PhaseRecord;
-import fr.emotion.emomodore.init.BlockRegistry;
-import fr.emotion.emomodore.init.ComponentRegistry;
-import fr.emotion.emomodore.init.ItemRegistry;
+import fr.emotion.emomodore.init.EmoBlocks;
+import fr.emotion.emomodore.init.EmoComponents;
+import fr.emotion.emomodore.init.EmoItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.Holder;
@@ -42,19 +42,19 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        add(BlockRegistry.FOSSIL_ORE.get(), block -> createOreDrop(BlockRegistry.FOSSIL_ORE.get(), ItemRegistry.FOSSIL.get()));
-        dropSelf(BlockRegistry.FOSSIL_BLOCK.get());
+        add(EmoBlocks.FOSSIL_ORE.get(), block -> createOreDrop(EmoBlocks.FOSSIL_ORE.get(), EmoItems.FOSSIL.get()));
+        dropSelf(EmoBlocks.FOSSIL_BLOCK.get());
 
-        add(BlockRegistry.PURPURA_ORE.get(), block -> createOreDrop(BlockRegistry.PURPURA_ORE.get(), ItemRegistry.PURPURA_SHARD.get()));
-        add(BlockRegistry.DEEPSLATE_PURPURA_ORE.get(), block -> createOreDrop(BlockRegistry.DEEPSLATE_PURPURA_ORE.get(), ItemRegistry.PURPURA_SHARD.get()));
-        dropSelf(BlockRegistry.PURPURA_BLOCK.get());
+        add(EmoBlocks.PURPURA_ORE.get(), block -> createOreDrop(EmoBlocks.PURPURA_ORE.get(), EmoItems.PURPURA_SHARD.get()));
+        add(EmoBlocks.DEEPSLATE_PURPURA_ORE.get(), block -> createOreDrop(EmoBlocks.DEEPSLATE_PURPURA_ORE.get(), EmoItems.PURPURA_SHARD.get()));
+        dropSelf(EmoBlocks.PURPURA_BLOCK.get());
 
-        dropWhenSilkTouch(BlockRegistry.VIRIDIS_ORE.get());
-        add(BlockRegistry.VIRIDIS_CRYSTAL.get(), block -> createPhaseDrop(BlockRegistry.VIRIDIS_CRYSTAL.get(), BlockRegistry.VIRIDIS_CRYSTAL.get().asItem()));
-        dropSelf(BlockRegistry.VIRIDIS_BLOCK.get());
+        dropWhenSilkTouch(EmoBlocks.VIRIDIS_ORE.get());
+        add(EmoBlocks.VIRIDIS_CRYSTAL.get(), block -> createPhaseDrop(EmoBlocks.VIRIDIS_CRYSTAL.get(), EmoBlocks.VIRIDIS_CRYSTAL.get().asItem()));
+        dropSelf(EmoBlocks.VIRIDIS_BLOCK.get());
 
-        add(BlockRegistry.NETHER_LUME_ORE.get(), block -> createPhaseOreDrop(BlockRegistry.NETHER_LUME_ORE.get(), ItemRegistry.LUME_STONE.get()));
-        dropSelf(BlockRegistry.LUME_BLOCK.get());
+        add(EmoBlocks.NETHER_LUME_ORE.get(), block -> createPhaseOreDrop(EmoBlocks.NETHER_LUME_ORE.get(), EmoItems.LUME_STONE.get()));
+        dropSelf(EmoBlocks.LUME_BLOCK.get());
     }
 
     protected LootTable.Builder createPhaseDrop(Block block, Item item) {
@@ -69,7 +69,7 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
                             block,
                             LootItem.lootTableItem(item)
                                     .apply(SetComponentsFunction.setComponent(
-                                            ComponentRegistry.PHASE.get(), new PhaseRecord(phase)
+                                            EmoComponents.PHASE.get(), new PhaseRecord(phase)
                                     ))
                                     .apply(SetComponentsFunction.setComponent(
                                             DataComponents.LORE, new ItemLore(List.of(Component.translatable("item.emomodore.phase.tooltip").append(": " + phase).withStyle(ChatFormatting.DARK_AQUA)))
@@ -113,7 +113,7 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
             silkTouchPool.add(
                     LootItem.lootTableItem(block)
                             .apply(SetComponentsFunction.setComponent(
-                                    ComponentRegistry.PHASE.get(), new PhaseRecord(phase)
+                                    EmoComponents.PHASE.get(), new PhaseRecord(phase)
                             ))
                             .apply(SetComponentsFunction.setComponent(
                                     DataComponents.LORE, new ItemLore(List.of(Component.translatable("item.emomodore.phase.tooltip").append(": " + phase).withStyle(ChatFormatting.DARK_AQUA)))
@@ -136,7 +136,7 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
                             block,
                             LootItem.lootTableItem(item)
                                     .apply(SetComponentsFunction.setComponent(
-                                            ComponentRegistry.PHASE.get(), new PhaseRecord(phase)
+                                            EmoComponents.PHASE.get(), new PhaseRecord(phase)
                                     ))
                                     .apply(SetComponentsFunction.setComponent(
                                             DataComponents.LORE, new ItemLore(List.of(Component.translatable("item.emomodore.phase.tooltip").append(": " + phase).withStyle(ChatFormatting.DARK_AQUA)))
@@ -158,6 +158,6 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return BlockRegistry.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return EmoBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 }

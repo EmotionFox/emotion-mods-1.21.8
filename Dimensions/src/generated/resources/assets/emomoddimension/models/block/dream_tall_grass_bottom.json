@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "emomoddimension:block/dream_tall_grass_bottom"
+  }
+}

@@ -1,10 +1,10 @@
 package fr.emotion.emomodore.recipes;
 
 import fr.emotion.emomodore.components.PhaseRecord;
-import fr.emotion.emomodore.init.BlockRegistry;
-import fr.emotion.emomodore.init.ComponentRegistry;
-import fr.emotion.emomodore.init.ItemRegistry;
-import fr.emotion.emomodore.init.RecipeSerializerRegistry;
+import fr.emotion.emomodore.init.EmoBlocks;
+import fr.emotion.emomodore.init.EmoComponents;
+import fr.emotion.emomodore.init.EmoItems;
+import fr.emotion.emomodore.init.EmoRecipeSerializer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -28,7 +28,7 @@ public class LumeRecipe extends CustomRecipe {
     public boolean matches(CraftingInput input, Level level) {
         if (input.ingredientCount()!=1) {
             return false;
-        } else if (input.getItem(0).getItem()==BlockRegistry.LUME_BLOCK.get().asItem()) {
+        } else if (input.getItem(0).getItem()==EmoBlocks.LUME_BLOCK.get().asItem()) {
             return true;
         } else {
             return false;
@@ -37,15 +37,15 @@ public class LumeRecipe extends CustomRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
-        PhaseRecord phase = input.getItem(0).get(ComponentRegistry.PHASE);
-        ItemStack stack = new ItemStack(ItemRegistry.LUME_STONE.get(), 9);
-        stack.set(ComponentRegistry.PHASE, phase);
+        PhaseRecord phase = input.getItem(0).get(EmoComponents.PHASE);
+        ItemStack stack = new ItemStack(EmoItems.LUME_STONE.get(), 9);
+        stack.set(EmoComponents.PHASE, phase);
         stack.set(DataComponents.LORE, new ItemLore(List.of(Component.translatable("item.emomodore.phase.tooltip").append(": " + phase.value()).withStyle(ChatFormatting.DARK_AQUA))));
         return stack;
     }
 
     @Override
     public RecipeSerializer<? extends CustomRecipe> getSerializer() {
-        return RecipeSerializerRegistry.LUME_BLOCK.get();
+        return EmoRecipeSerializer.LUME_BLOCK.get();
     }
 }

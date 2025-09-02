@@ -7,6 +7,8 @@ import net.minecraft.core.registries.Registries;
 public class EmoSetBuilder {
     public static RegistrySetBuilder createBuilder() {
         return new RegistrySetBuilder()
+                .add(Registries.CONFIGURED_FEATURE, EmoConfiguredFeature::init)
+                .add(Registries.PLACED_FEATURE, EmoPlacedFeature::init)
                 .add(Registries.BIOME, EmoBiome::init)
                 .add(Registries.DIMENSION_TYPE, EmoDimensionType::init)
                 .add(Registries.LEVEL_STEM, EmoLevelStem::init)

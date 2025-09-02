@@ -19,7 +19,7 @@ public class EmoBiomes {
                 .waterFogColor(0x2f59d3)
                 .skyColor(0xFFbcf2ff)
                 .grassColorOverride(0x9dcc42)
-                .dryFoliageColorOverride(0x9dcc42)
+                .dryFoliageColorOverride(0x9DA542)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.GAME)
                 .build();
@@ -60,7 +60,7 @@ public class EmoBiomes {
                 .skyColor(0x7244c4)
                 .grassColorOverride(0x4496c4)
                 .foliageColorOverride(0x4496c4)
-                .dryFoliageColorOverride(0x4496c4)
+                .dryFoliageColorOverride(0x637C9D)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.GAME)
                 .build();

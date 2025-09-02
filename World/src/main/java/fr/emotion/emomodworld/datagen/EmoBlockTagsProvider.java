@@ -18,16 +18,6 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(BlockTags.REPLACEABLE_BY_TREES)
-                .add(
-                        EmoBlocks.DREAM_SHORT_GRASS.get(),
-                        EmoBlocks.DREAM_TALL_GRASS.get()
-                );
-        this.tag(BlockTags.REPLACEABLE_BY_MUSHROOMS)
-                .add(
-                        EmoBlocks.DREAM_SHORT_GRASS.get(),
-                        EmoBlocks.DREAM_TALL_GRASS.get()
-                );
         this.tag(BlockTags.FLOWER_POTS)
                 .add(
                         EmoBlocks.POTTED_FLOWER_KITTY.get(),

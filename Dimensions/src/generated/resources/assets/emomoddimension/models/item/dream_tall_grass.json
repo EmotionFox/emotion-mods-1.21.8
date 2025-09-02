@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "emomoddimension:block/dream_tall_grass_top"
+  }
+}

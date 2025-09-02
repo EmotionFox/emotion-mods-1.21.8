@@ -39,6 +39,11 @@ public class EmoVegetationPlacedFeature {
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_verdant_slopes")
     );
 
+    public static final ResourceKey<PlacedFeature> TREES_DREAM_PLAINS = ResourceKey.create(
+            Registries.PLACED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_dream_plains")
+    );
+
     public static void init(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -79,6 +84,12 @@ public class EmoVegetationPlacedFeature {
         context.register(
                 TREES_VERDANT_SLOPES,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoVegetationConfiguredFeature.TREES_VERDANT_SLOPES),
+                        VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.5F, 2)
+                        ))
+        );
+        context.register(
+                TREES_DREAM_PLAINS,
+                new PlacedFeature(configuredFeatures.getOrThrow(EmoVegetationConfiguredFeature.TREES_DREAM_PLAINS),
                         VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.5F, 2)
                         ))
         );

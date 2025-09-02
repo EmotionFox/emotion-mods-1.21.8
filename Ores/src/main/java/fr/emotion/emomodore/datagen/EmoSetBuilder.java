@@ -1,8 +1,8 @@
 package fr.emotion.emomodore.datagen;
 
 import com.google.common.collect.ImmutableList;
-import fr.emotion.emomodore.MainRegistry;
-import fr.emotion.emomodore.init.BlockRegistry;
+import fr.emotion.emomodore.EmoMain;
+import fr.emotion.emomodore.init.EmoBlocks;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistrySetBuilder;
@@ -30,92 +30,92 @@ import java.util.List;
 public class EmoSetBuilder {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FOSSIL_ORE_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "fossil_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "fossil_ore")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PURPURA_ORE_BURIED_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_buried")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_buried")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PURPURA_ORE_SMALL_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_small")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_small")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PURPURA_ORE_MEDIUM_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_medium")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_medium")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PURPURA_ORE_LARGE_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_large")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_large")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> VIRIDIS_ORE_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "viridis_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "viridis_ore")
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUME_NETHER_ORE_CONFIGURED_FEATURE = ResourceKey.create(
             Registries.CONFIGURED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "lume_nether_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "lume_nether_ore")
     );
 
     public static final ResourceKey<PlacedFeature> FOSSIL_ORE_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "fossil_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "fossil_ore")
     );
 
     public static final ResourceKey<PlacedFeature> PURPURA_ORE_BURIED_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_buried")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_buried")
     );
 
     public static final ResourceKey<PlacedFeature> PURPURA_ORE_SMALL_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_small")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_small")
     );
 
     public static final ResourceKey<PlacedFeature> PURPURA_ORE_MEDIUM_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_medium")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_medium")
     );
 
     public static final ResourceKey<PlacedFeature> PURPURA_ORE_LARGE_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore_large")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore_large")
     );
 
     public static final ResourceKey<PlacedFeature> VIRIDIS_ORE_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "viridis_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "viridis_ore")
     );
 
     public static final ResourceKey<PlacedFeature> LUME_NETHER_ORE_PLACED_FEATURE = ResourceKey.create(
             Registries.PLACED_FEATURE,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "lume_nether_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "lume_nether_ore")
     );
 
     public static final ResourceKey<BiomeModifier> FOSSIL_ORE_BIOME_MODIFIER = ResourceKey.create(
             NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "fossil_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "fossil_ore")
     );
 
     public static final ResourceKey<BiomeModifier> PURPURA_ORE_BIOME_MODIFIER = ResourceKey.create(
             NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "purpura_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "purpura_ore")
     );
 
     public static final ResourceKey<BiomeModifier> VIRIDIS_ORE_BIOME_MODIFIER = ResourceKey.create(
             NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "viridis_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "viridis_ore")
     );
 
     public static final ResourceKey<BiomeModifier> LUME_NETHER_ORE_BIOME_MODIFIER = ResourceKey.create(
             NeoForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(MainRegistry.MODID, "lume_nether_ore")
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "lume_nether_ore")
     );
 
     protected static RegistrySetBuilder createBuilder() {
@@ -125,38 +125,38 @@ public class EmoSetBuilder {
                             FOSSIL_ORE_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(
                                     new BlockMatchTest(Blocks.DIRT),
-                                    BlockRegistry.FOSSIL_ORE.get().defaultBlockState(),
+                                    EmoBlocks.FOSSIL_ORE.get().defaultBlockState(),
                                     4))
                     );
                     bootstrap.register(
                             PURPURA_ORE_BURIED_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ImmutableList.of(OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), BlockRegistry.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockRegistry.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
+                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EmoBlocks.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
+                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EmoBlocks.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
                                     8,
                                     1.0F))
                     );
                     bootstrap.register(
                             PURPURA_ORE_SMALL_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ImmutableList.of(OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), BlockRegistry.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockRegistry.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
+                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EmoBlocks.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
+                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EmoBlocks.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
                                     4,
                                     0.5F))
                     );
                     bootstrap.register(
                             PURPURA_ORE_MEDIUM_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ImmutableList.of(OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), BlockRegistry.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockRegistry.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
+                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EmoBlocks.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
+                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EmoBlocks.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
                                     8,
                                     0.5F))
                     );
                     bootstrap.register(
                             PURPURA_ORE_LARGE_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ImmutableList.of(OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), BlockRegistry.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
-                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockRegistry.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
+                                    new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EmoBlocks.PURPURA_ORE.get().defaultBlockState()), OreConfiguration.target(
+                                    new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EmoBlocks.DEEPSLATE_PURPURA_ORE.get().defaultBlockState())),
                                     12,
                                     0.7F))
                     );
@@ -164,14 +164,14 @@ public class EmoSetBuilder {
                             VIRIDIS_ORE_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(
                                     new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES),
-                                    BlockRegistry.VIRIDIS_ORE.get().defaultBlockState(),
+                                    EmoBlocks.VIRIDIS_ORE.get().defaultBlockState(),
                                     4))
                     );
                     bootstrap.register(
                             LUME_NETHER_ORE_CONFIGURED_FEATURE,
                             new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(
                                     new BlockMatchTest(Blocks.NETHERRACK),
-                                    BlockRegistry.NETHER_LUME_ORE.get().defaultBlockState(),
+                                    EmoBlocks.NETHER_LUME_ORE.get().defaultBlockState(),
                                     8))
                     );
                 })

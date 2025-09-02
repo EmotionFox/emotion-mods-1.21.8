@@ -32,6 +32,8 @@ public class EmoMainClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_SHORT_GRASS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_TALL_GRASS.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(EmoBlocks.DREAM_GRASS_BLOCK.get(), ChunkSectionLayer.CUTOUT_MIPPED);
     }
 
@@ -40,6 +42,9 @@ public class EmoMainClient {
         ResourceKey<CreativeModeTab> key = event.getTabKey();
 
         if (key==CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(EmoBlocks.DREAM_SHORT_GRASS);
+            event.accept(EmoBlocks.DREAM_TALL_GRASS);
+
             event.accept(EmoBlocks.DREAM_STONE);
             event.accept(EmoBlocks.DREAM_GRASS_BLOCK);
         }
@@ -49,7 +54,7 @@ public class EmoMainClient {
     public static void onRegisterColorHandlersEvent(RegisterColorHandlersEvent.Block event) {
         BlockColor grassColor = ((state, world, pos, tintIndex) -> (world!=null && pos!=null) ? BiomeColors.getAverageGrassColor(world, pos):GrassColor.getDefaultColor());
 
-        event.register(grassColor, EmoBlocks.DREAM_GRASS_BLOCK.get());
+        event.register(grassColor, EmoBlocks.DREAM_SHORT_GRASS.get(), EmoBlocks.DREAM_TALL_GRASS.get(), EmoBlocks.DREAM_GRASS_BLOCK.get());
     }
 
     @SubscribeEvent

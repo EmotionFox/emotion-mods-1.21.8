@@ -37,6 +37,7 @@ public class EmoMain {
         EmoFoliagePlacerType.init(modEventBus);
         EmoPlacementModifierType.init(modEventBus);
         EmoFeature.init(modEventBus);
+        EmoTreeDecoratorType.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -89,9 +90,6 @@ public class EmoMain {
                     EmoBlocks.GREEN_MUSHROOM.getId(),
                     EmoBlocks.POTTED_GREEN_MUSHROOM
             );
-
-            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_SHORT_GRASS.get(), 60, 100);
-            ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.DREAM_TALL_GRASS.get(), 60, 100);
 
             // PEAR
             ((FireBlock) Blocks.FIRE).setFlammable(EmoBlocks.PEAR_PLANKS.get(), 5, 20);

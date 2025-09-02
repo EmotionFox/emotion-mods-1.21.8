@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-01T12:19:13.9149682	Loot Tables
+// 1.21.8	2025-09-01T13:33:59.0172893	Loot Tables
 0d556318d1671287aa87763f467ac5098783e258 data/emomodworld/loot_table/blocks/atlas_button.json
 ac65a30ca53604d7f7c640cb16b599130cc5f162 data/emomodworld/loot_table/blocks/atlas_door.json
 084eb39ed14f780f72ce4bad6603cc116a384c87 data/emomodworld/loot_table/blocks/atlas_fence.json
@@ -49,7 +49,6 @@ c968558b0dfba3eb6b75e4920bc993c709a59466 data/emomodworld/loot_table/blocks/drea
 dc6c7494faba8950a13b41d1456d21d02acef580 data/emomodworld/loot_table/blocks/dream_sign.json
 954b27ca57e5e5b232eb96c6df19117145bb604f data/emomodworld/loot_table/blocks/dream_slab.json
 2559e01cc0c98b77f0560bbb9c75771589bedce5 data/emomodworld/loot_table/blocks/dream_stairs.json
-7007d0a9c3cc4f5f7d64e68c870c14409531e5a2 data/emomodworld/loot_table/blocks/dream_tall_grass.json
 b959a7eedf00071813dcd23a0b19e90d35befad5 data/emomodworld/loot_table/blocks/dream_trapdoor.json
 9da739a44aac330c8ed8e3ae3856c92003d5c70c data/emomodworld/loot_table/blocks/dream_wood.json
 cbbdbf26a6b34165d2d9cebb6005c5e9286d7cb3 data/emomodworld/loot_table/blocks/flower_centus.json
@@ -59,7 +58,6 @@ e924891c1f62fb9bc0ab06522185dfdfe95b6b98 data/emomodworld/loot_table/blocks/flow
 a602fe25a952f495205088bf858081e5ede916bc data/emomodworld/loot_table/blocks/flower_narcota.json
 fe1689d9181947fc738d5c7debcec911e2641de4 data/emomodworld/loot_table/blocks/flower_nebula.json
 82daf5aa7454cf2dc99887035716f0b0a2682498 data/emomodworld/loot_table/blocks/flower_nox.json
-46e800903899d0e59f98ae4a3d3bbb8afba79b5e data/emomodworld/loot_table/blocks/flower_tallgrass.json
 f6778d3c8c00b4169375d76ab1d4d92a035fa05b data/emomodworld/loot_table/blocks/flower_thorny.json
 8046fe76dfc8511178446b1e941b72803b8b0f88 data/emomodworld/loot_table/blocks/green_mushroom.json
 e048b5d3bb023b369b2d11ddd14b89c036becb34 data/emomodworld/loot_table/blocks/green_mushroom_block.json

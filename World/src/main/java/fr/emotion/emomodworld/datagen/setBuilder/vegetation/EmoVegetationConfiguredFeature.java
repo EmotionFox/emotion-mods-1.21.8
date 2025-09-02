@@ -55,6 +55,11 @@ public class EmoVegetationConfiguredFeature {
             ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_verdant_slopes")
     );
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_DREAM_PLAINS = ResourceKey.create(
+            Registries.CONFIGURED_FEATURE,
+            ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "trees_dream_plains")
+    );
+
     public static void init(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -127,10 +132,16 @@ public class EmoVegetationConfiguredFeature {
                         Feature.RANDOM_SELECTOR,
                         new RandomFeatureConfiguration(
                                 List.of(
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.PEAR), 0.5F),
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ORANGE), 0.5F)
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_PEAR_TREE), 0.01F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.PEAR_BEEHIVE_002), 0.025F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.PEAR_SPIDER_NEST_005), 0.05F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ORANGE), 0.5F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_ORANGE_TREE), 0.01F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ORANGE_BEEHIVE_002), 0.025F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ORANGE_SPIDER_NEST_005), 0.05F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.CHERRY), 0.3F)
                                 ),
-                                placedFeatures.getOrThrow(TreePlacements.OAK_LEAF_LITTER)
+                                placedFeatures.getOrThrow(EmoTreePlacedFeature.PEAR)
                         )
                 )
         );
@@ -143,9 +154,10 @@ public class EmoVegetationConfiguredFeature {
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.OAK_BEES_002), 0.05F),
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.OAK_BEES_0002_LEAF_LITTER), 0.05F),
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.OAK_LEAF_LITTER), 0.25F),
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ATLAS), 0.1F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.ATLAS), 0.15F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_ATLAS_TREE), 0.015F),
                                         new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(EmoConfiguredFeature.HUGE_BLUE_MUSHROOM)), 0.025F),
-                                        new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(EmoConfiguredFeature.HUGE_GREEN_MUSHROOM)), 0.01F)
+                                        new WeightedPlacedFeature(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(EmoConfiguredFeature.HUGE_GREEN_MUSHROOM)), 0.015F)
                                 ),
                                 placedFeatures.getOrThrow(TreePlacements.OAK_CHECKED)
                         )
@@ -160,9 +172,25 @@ public class EmoVegetationConfiguredFeature {
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.PINE), 0.5F),
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_PINE_TREE), 0.25F),
                                         new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.MEGA_PINE_CHECKED), 0.1F),
-                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 0.25F)
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 0.05F)
                                 ),
                                 placedFeatures.getOrThrow(TreePlacements.PINE_CHECKED)
+                        )
+                )
+        );
+        context.register(
+                TREES_DREAM_PLAINS,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_SELECTOR,
+                        new RandomFeatureConfiguration(
+                                List.of(
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.FALLEN_DREAM_TREE), 0.05F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(EmoTreePlacedFeature.DREAM_LEAF_LITTER), 0.25F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.OAK_CHECKED), 0.1F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.OAK_LEAF_LITTER), 0.5F),
+                                        new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_OAK_TREE), 0.025F)
+                                ),
+                                placedFeatures.getOrThrow(EmoTreePlacedFeature.DREAM)
                         )
                 )
         );
