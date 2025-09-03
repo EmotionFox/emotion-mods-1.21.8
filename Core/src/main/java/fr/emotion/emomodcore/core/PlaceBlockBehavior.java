@@ -3,6 +3,7 @@ package fr.emotion.emomodcore.core;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -11,6 +12,16 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 public class PlaceBlockBehavior extends DefaultDispenseItemBehavior {
+    protected final DispenseItemBehavior vanillaBehavior;
+
+    public PlaceBlockBehavior() {
+        this.vanillaBehavior = null;
+    }
+
+    public PlaceBlockBehavior(DispenseItemBehavior itemBehavior) {
+        this.vanillaBehavior = itemBehavior;
+    }
+
     @Override
     protected ItemStack execute(BlockSource blockSource, ItemStack stack) {
         BlockPos blockPos = blockSource.pos().relative(blockSource.state().getValue(DispenserBlock.FACING));
@@ -28,6 +39,6 @@ public class PlaceBlockBehavior extends DefaultDispenseItemBehavior {
             }
         }
 
-        return super.execute(blockSource, stack);
+        return vanillaBehavior!=null ? vanillaBehavior.dispense(blockSource, stack):super.execute(blockSource, stack);
     }
 }

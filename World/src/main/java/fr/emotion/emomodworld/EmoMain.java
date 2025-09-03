@@ -6,8 +6,12 @@ import fr.emotion.emomodcore.core.PlaceBlockBehavior;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
 import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -61,7 +65,21 @@ public class EmoMain {
         DispenserBlock.registerBehavior(EmoBlocks.BLUE_MUSHROOM.get().asItem(), new PlaceBlockBehavior());
         DispenserBlock.registerBehavior(EmoBlocks.GREEN_MUSHROOM.get().asItem(), new PlaceBlockBehavior());
 
-        DispenserBlock.registerBehavior(Items.WATER_BUCKET, new InteractBehavior());
+        DispenserBlock.registerBehavior(EmoItems.PEAR_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.PEAR_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.ORANGE_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.ORANGE_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.ATLAS_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.ATLAS_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.PINE_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.PINE_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.COCO_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.COCO_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.DREAM_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.DREAM_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.PEAR_CHEST_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.PEAR_CHEST_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.ORANGE_CHEST_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.ORANGE_CHEST_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.ATLAS_CHEST_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.ATLAS_CHEST_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.PINE_CHEST_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.PINE_CHEST_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.COCO_CHEST_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.COCO_CHEST_BOAT.get()));
+        DispenserBlock.registerBehavior(EmoItems.DREAM_CHEST_BOAT.get(), new BoatDispenseItemBehavior(EmoEntityType.DREAM_CHEST_BOAT.get()));
+
+        DispenseItemBehavior waterBucketBehavior = DispenserBlock.DISPENSER_REGISTRY.get(Items.WATER_BUCKET);
+        DispenserBlock.registerBehavior(Items.WATER_BUCKET, new InteractBehavior(waterBucketBehavior));
 
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
