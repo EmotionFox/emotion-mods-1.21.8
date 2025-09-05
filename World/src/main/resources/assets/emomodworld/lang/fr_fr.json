@@ -131,6 +131,12 @@
   "block.emomodworld.bush_strawberry": "Buisson de fraises",
   "block.emomodworld.bush_sweet": "Buisson de baies sucrées",
 
+  "block.emomodworld.blue_mushroom": "Champignon bleu",
+  "block.emomodworld.green_mushroom": "Champignon vert",
+
+  "block.emomodworld.blue_mushroom_block": "Bloc de champignon bleu",
+  "block.emomodworld.green_mushroom_block": "Bloc de champignon vert",
+
   "item.emomodworld.pear_boat": "Bateau en poirier",
   "item.emomodworld.pear_chest_boat": "Bateau de stockage en poirier",
 
@@ -148,6 +154,15 @@
 
   "item.emomodworld.dream_boat": "Bateau des rêves",
   "item.emomodworld.dream_chest_boat": "Bateau de stockage des rêves",
+
+  "item.emomodworld.blackcurrant": "Cassis",
+  "item.emomodworld.blueberry": "Myrtille",
+  "item.emomodworld.dreamcurrant": "Baie des rêves",
+  "item.emomodworld.strawberry": "Fraise",
+
+  "item.emomodworld.pear": "Poire",
+  "item.emomodworld.cherry": "Cerise",
+  "item.emomodworld.orange": "Orange",
 
   "entity.emomodworld.pear_boat": "Bateau en poirier",
   "entity.emomodworld.orange_boat": "Bateau en oranger",

@@ -220,6 +220,9 @@ public class EmoMainClient {
 
             event.accept(EmoBlocks.BLUE_MUSHROOM);
             event.accept(EmoBlocks.GREEN_MUSHROOM);
+
+            event.accept(EmoBlocks.BLUE_MUSHROOM_BLOCK);
+            event.accept(EmoBlocks.GREEN_MUSHROOM_BLOCK);
         } else if (key==CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EmoBlocks.PEAR_LOG);
             event.accept(EmoBlocks.PEAR_WOOD);

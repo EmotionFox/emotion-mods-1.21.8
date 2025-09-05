@@ -24,6 +24,7 @@ public class HugeGreenMushroomFeature extends AbstractHugeMushroomFeature {
         return i;
     }
 
+    //What a clean function look like
     @Override
     protected void makeCap(LevelAccessor level, RandomSource random, BlockPos pos, int treeHeight, BlockPos.MutableBlockPos mutablePos, HugeMushroomFeatureConfiguration config) {
         BlockState blockState = config.capProvider.getState(random, pos);

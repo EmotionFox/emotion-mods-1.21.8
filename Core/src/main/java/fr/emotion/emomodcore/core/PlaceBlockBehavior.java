@@ -30,7 +30,7 @@ public class PlaceBlockBehavior extends DefaultDispenseItemBehavior {
         if (stack.getItem() instanceof BlockItem item) {
             Block block = item.getBlock();
 
-            if (block.defaultBlockState().canSurvive(level, blockPos.above())) {
+            if (level.getBlockState(blockPos.above()).canBeReplaced() && block.defaultBlockState().canSurvive(level, blockPos.above())) {
                 level.setBlockAndUpdate(blockPos.above(), block.defaultBlockState());
                 level.gameEvent(null, GameEvent.BLOCK_PLACE, blockPos.above());
                 stack.shrink(1);

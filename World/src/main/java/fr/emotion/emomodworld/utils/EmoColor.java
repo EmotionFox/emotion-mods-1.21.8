@@ -10,7 +10,7 @@ import java.util.Optional;
 public class EmoColor {
     static BlockPos pos;
 
-    public static final ColorResolver EMO_GRASS_COLOR_RESOLVER = ((biome, x, z) -> {
+    public static ColorResolver EMO_GRASS_COLOR_RESOLVER = ((biome, x, z) -> {
         if (biome.getSpecialEffects().getGrassColorOverride().equals(Optional.of(0x376f4a))) {
             float y = (float) pos.getY();
             float max = 150;

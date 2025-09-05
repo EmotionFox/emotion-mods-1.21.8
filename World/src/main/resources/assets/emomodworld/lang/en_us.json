@@ -131,6 +131,12 @@
   "block.emomodworld.bush_strawberry": "Strawberry Bush",
   "block.emomodworld.bush_sweet": "Sweetberry Bush",
 
+  "block.emomodworld.blue_mushroom": "Blue Mushroom",
+  "block.emomodworld.green_mushroom": "Green Mushroom",
+
+  "block.emomodworld.blue_mushroom_block": "Blue Mushroom Block",
+  "block.emomodworld.green_mushroom_block": "Green Mushroom Block",
+
   "item.emomodworld.pear_boat": "Pear Boat",
   "item.emomodworld.pear_chest_boat": "Pear Boat with Chest",
 
@@ -148,6 +154,15 @@
 
   "item.emomodworld.dream_boat": "Dream Boat",
   "item.emomodworld.dream_chest_boat": "Dream Boat with Chest",
+
+  "item.emomodworld.blackcurrant": "Blackcurrant",
+  "item.emomodworld.blueberry": "Blueberry",
+  "item.emomodworld.dreamcurrant": "Dreamcurrant",
+  "item.emomodworld.strawberry": "Strawberry",
+
+  "item.emomodworld.pear": "Pear",
+  "item.emomodworld.cherry": "Cherry",
+  "item.emomodworld.orange": "Orange",
 
   "entity.emomodworld.pear_boat": "Pear Boat",
   "entity.emomodworld.orange_boat": "Orange Boat",
