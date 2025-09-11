@@ -1,0 +1,10 @@
+{
+  "emomodcore.configuration.title": "Emotion's Mod - Core | Configs",
+  "emomodcore.configuration.section.emomodcore.server.toml": "Emotion's Mod - Core | Server Configs",
+  "emomodcore.configuration.section.emomodcore.server.toml.title": "Emotion's Mod - Core | Server Configs",
+  "emomodcore.configuration.section.emomodcore.client.toml": "Emotion's Mod - Core | Client Configs",
+  "emomodcore.configuration.section.emomodcore.client.toml.title": "Emotion's Mod - Core | Client Configs",
+  "emomodcore.configuration.section.emomodcore.common.toml": "Emotion's Mod - Core | Configs",
+  "emomodcore.configuration.section.emomodcore.common.toml.title": "Emotion's Mod - Core | Configs",
+  "emomodcore.configuration.guiHealth": "Show Aimed Entity Health"
+}

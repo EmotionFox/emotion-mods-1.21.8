@@ -1,6 +1,7 @@
 package fr.emotion.emomodworld.init;
 
 import fr.emotion.emomodworld.EmoMain;
+import fr.emotion.emomodworld.entities.beetle.Beetle;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -135,6 +136,14 @@ public class EmoEntityType {
                     .sized(1.375F, 0.5625F)
                     .eyeHeight(0.5625F)
                     .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Beetle>> BEETLE = ENTITY_TYPE.register(
+            "beetle",
+            resourceLocation -> EntityType.Builder.of(Beetle::new, MobCategory.CREATURE)
+                    .noLootTable()
+                    .sized(0.2F, 0.1F)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 

@@ -4,7 +4,7 @@
     "decorators": [
       {
         "type": "emomodworld:spider_nest",
-        "probability": 1.0
+        "probability": 0.05
       }
     ],
     "dirt_provider": {

@@ -1,2 +1,17 @@
 {
+  "emomoddimension.configuration.title": "Emotion's Mod - Dimension | Configs",
+  "emomoddimension.configuration.section.emomoddimension.server.toml": "Emotion's Mod - Dimension | Server Configs",
+  "emomoddimension.configuration.section.emomoddimension.server.toml.title": "Emotion's Mod - Dimension | Server Configs",
+  "emomoddimension.configuration.section.emomoddimension.client.toml": "Emotion's Mod - Dimension | Client Configs",
+  "emomoddimension.configuration.section.emomoddimension.client.toml.title": "Emotion's Mod - Dimension | Client Configs",
+  "emomoddimension.configuration.section.emomoddimension.common.toml": "Emotion's Mod - Dimension | Configs",
+  "emomoddimension.configuration.section.emomoddimension.common.toml.title": "Emotion's Mod - Dimension | Configs",
+  
+  "block.emomoddimension.dream_short_grass": "Dream Short Grass",
+  "block.emomoddimension.dream_tall_grass": "Dream Tall Grass",
+
+  "block.emomoddimension.dream_portal": "Dream Portal",
+  "block.emomoddimension.dream_stone": "Dream Stone",
+  "block.emomoddimension.dream_cobblestone": "Dream Cobblestone",
+  "block.emomoddimension.dream_grass_block": "Dream Grass Block"
 }

@@ -7,7 +7,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
 public class EmoBiomeTags {
-    public static final TagKey<Biome> IS_ORCHARD = create("is_orchard");
+    public static final TagKey<Biome> IS_ANCIENT_FOREST = create("is_ancient_forest");
 
     private static TagKey<Biome> create(String name) {
         return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, name));

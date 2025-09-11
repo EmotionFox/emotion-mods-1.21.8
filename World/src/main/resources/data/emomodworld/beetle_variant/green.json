@@ -1,0 +1,9 @@
+{
+  "asset_id": "emomodworld:entity/beetle/beetle_green",
+  "model": "green",
+  "spawn_conditions": [
+    {
+      "priority": 0
+    }
+  ]
+}

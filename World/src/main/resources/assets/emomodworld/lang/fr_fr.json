@@ -1,7 +1,11 @@
 {
-  "emomodworld.configuration.title": "Emotion's Mod - World Configs",
-  "emomodworld.configuration.section.emomodworld.common.toml": "Emotion's Mod - World Configs",
-  "emomodworld.configuration.section.emomodworld.common.toml.title": "Emotion's Mod - World Configs",
+  "emomodworld.configuration.title": "Emotion's Mod - World | Configurations",
+  "emomodworld.configuration.section.emomodworld.server.toml": "Emotion's Mod - World | Configurations Serveur",
+  "emomodworld.configuration.section.emomodworld.server.toml.title": "Emotion's Mod - World | Configurations Serveur",
+  "emomodworld.configuration.section.emomodworld.client.toml": "Emotion's Mod - World | Configurations Client",
+  "emomodworld.configuration.section.emomodworld.client.toml.title": "Emotion's Mod - World | Configurations Client",
+  "emomodworld.configuration.section.emomodworld.common.toml": "Emotion's Mod - World | Configurations",
+  "emomodworld.configuration.section.emomodworld.common.toml.title": "Emotion's Mod - World | Configurations",
 
   "generator.emomodworld.parcel" : "Parcelle",
 
@@ -13,9 +17,6 @@
   "block.emomodworld.flower_centus": "Centus",
   "block.emomodworld.flower_nebula": "Nebula",
   "block.emomodworld.flower_narcota": "Narcota",
-
-  "block.emomodworld.dream_short_grass": "Herbes courtes des rêves",
-  "block.emomodworld.dream_tall_grass": "Hautes herbres des rêves",
 
   "block.emomodworld.pear_planks": "Planches de poirier",
   "block.emomodworld.pear_sapling": "Pousse de poirier",

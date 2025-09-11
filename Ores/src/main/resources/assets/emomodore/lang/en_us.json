@@ -1,7 +1,11 @@
 {
-  "emomodore.configuration.title": "Emotion's Mod Configs",
-  "emomodore.configuration.section.emomodore.common.toml": "Emotion's Mod Configs",
-  "emomodore.configuration.section.emomodore.common.toml.title": "Emotion's Mod Configs",
+  "emomodore.configuration.title": "Emotion's Mod - Ore | Configs",
+  "emomodore.configuration.section.emomodore.server.toml": "Emotion's Mod - Ore | Server Configs",
+  "emomodore.configuration.section.emomodore.server.toml.title": "Emotion's Mod - Ore | Server Configs",
+  "emomodore.configuration.section.emomodore.client.toml": "Emotion's Mod - Ore | Client Configs",
+  "emomodore.configuration.section.emomodore.client.toml.title": "Emotion's Mod - Ore | Client Configs",
+  "emomodore.configuration.section.emomodore.common.toml": "Emotion's Mod - Ore | Configs",
+  "emomodore.configuration.section.emomodore.common.toml.title": "Emotion's Mod - Ore | Configs",
   "emomodore.configuration.fadingChanceViridisCrystal": "Viridis Crystal Fading Chance",
   "emomodore.configuration.fadingChanceNetherLumeOre": "Nether Lume Ore Fading Chance",
 

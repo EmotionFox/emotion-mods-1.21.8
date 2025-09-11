@@ -1,0 +1,13 @@
+{
+  "asset_id": "emomodworld:entity/beetle/beetle_blue",
+  "model": "blue",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:biome",
+        "biomes": "emomodworld:ancient_forest"
+      },
+      "priority": 1
+    }
+  ]
+}

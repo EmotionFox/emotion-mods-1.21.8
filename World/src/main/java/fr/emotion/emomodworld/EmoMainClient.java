@@ -1,6 +1,9 @@
 package fr.emotion.emomodworld;
 
 import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
+import fr.emotion.emomodworld.entities.beetle.Beetle;
+import fr.emotion.emomodworld.entities.beetle.BeetleModel;
+import fr.emotion.emomodworld.entities.beetle.BeetleRenderer;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
@@ -32,6 +35,7 @@ import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEven
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
 import static fr.emotion.emomodworld.utils.EmoColor.blendColors;
 
@@ -145,6 +149,8 @@ public class EmoMainClient {
         // DREAM
         event.registerEntityRenderer(EmoEntityType.DREAM_BOAT.get(), context -> new EmoBoatRenderer(context, EmoModelLayers.DREAM_BOAT));
         event.registerEntityRenderer(EmoEntityType.DREAM_CHEST_BOAT.get(), context -> new EmoBoatRenderer(context, EmoModelLayers.DREAM_CHEST_BOAT));
+
+        event.registerEntityRenderer(EmoEntityType.BEETLE.get(), BeetleRenderer::new);
     }
 
     @SubscribeEvent
@@ -172,6 +178,14 @@ public class EmoMainClient {
         // DREAM
         event.registerLayerDefinition(EmoModelLayers.DREAM_BOAT, BoatModel::createBoatModel);
         event.registerLayerDefinition(EmoModelLayers.DREAM_CHEST_BOAT, BoatModel::createChestBoatModel);
+
+        // BEETLE
+        event.registerLayerDefinition(EmoModelLayers.BEETLE, BeetleModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterAttributes(EntityAttributeCreationEvent event) {
+        event.put(EmoEntityType.BEETLE.get(), Beetle.createAttributes().build());
     }
 
     @SubscribeEvent

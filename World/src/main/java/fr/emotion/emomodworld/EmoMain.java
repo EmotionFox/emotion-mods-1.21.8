@@ -42,6 +42,7 @@ public class EmoMain {
         EmoPlacementModifierType.init(modEventBus);
         EmoFeature.init(modEventBus);
         EmoTreeDecoratorType.init(modEventBus);
+        EmoDataComponentType.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

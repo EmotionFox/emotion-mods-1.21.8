@@ -1,7 +1,11 @@
 {
-  "emomodworld.configuration.title": "Emotion's Mod - World Configs",
-  "emomodworld.configuration.section.emomodworld.common.toml": "Emotion's Mod - World Configs",
-  "emomodworld.configuration.section.emomodworld.common.toml.title": "Emotion's Mod - World Configs",
+  "emomodworld.configuration.title": "Emotion's Mod - World | Configs",
+  "emomodworld.configuration.section.emomodworld.server.toml": "Emotion's Mod - World | Server Configs",
+  "emomodworld.configuration.section.emomodworld.server.toml.title": "Emotion's Mod - World | Server Configs",
+  "emomodworld.configuration.section.emomodworld.client.toml": "Emotion's Mod - World | Client Configs",
+  "emomodworld.configuration.section.emomodworld.client.toml.title": "Emotion's Mod - World | Client Configs",
+  "emomodworld.configuration.section.emomodworld.common.toml": "Emotion's Mod - World | Configs",
+  "emomodworld.configuration.section.emomodworld.common.toml.title": "Emotion's Mod - World | Configs",
 
   "generator.emomodworld.parcel" : "Parcel",
 
@@ -13,9 +17,6 @@
   "block.emomodworld.flower_centus": "Centus",
   "block.emomodworld.flower_nebula": "Nebula",
   "block.emomodworld.flower_narcota": "Narcota",
-
-  "block.emomodworld.dream_short_grass": "Dream Short Grass",
-  "block.emomodworld.dream_tall_grass": "Dream Tall Grass",
 
   "block.emomodworld.pear_planks": "Pear Planks",
   "block.emomodworld.pear_sapling": "Pear Sapling",

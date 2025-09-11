@@ -1,0 +1,17 @@
+{
+  "emomoddimension.configuration.title": "Emotion's Mod - Dimension | Configurations",
+  "emomoddimension.configuration.section.emomoddimension.server.toml": "Emotion's Mod - Dimension | Configurations Serveur",
+  "emomoddimension.configuration.section.emomoddimension.server.toml.title": "Emotion's Mod - Dimension | Configurations Serveur",
+  "emomoddimension.configuration.section.emomoddimension.client.toml": "Emotion's Mod - Dimension | Configurations Client",
+  "emomoddimension.configuration.section.emomoddimension.client.toml.title": "Emotion's Mod - Dimension | Configurations Client",
+  "emomoddimension.configuration.section.emomoddimension.common.toml": "Emotion's Mod - Dimension | Configurations",
+  "emomoddimension.configuration.section.emomoddimension.common.toml.title": "Emotion's Mod - Dimension | Configurations",
+  
+  "block.emomoddimension.dream_short_grass": "Herbes courtes des rêves",
+  "block.emomoddimension.dream_tall_grass": "Hautes herbres des rêves",
+
+  "block.emomoddimension.dream_portal": "Portail des rêves",
+  "block.emomoddimension.dream_stone": "Roche des rêves",
+  "block.emomoddimension.dream_cobblestone": "Pierres des rêves",
+  "block.emomoddimension.dream_grass_block": "Bloc d'herbre des rêves"
+}

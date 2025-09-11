@@ -22,6 +22,6 @@ public class EmoMain {
         EmoComponents.init(modEventBus);
         EmoRecipeSerializer.init(modEventBus);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
     }
 }
