@@ -4,6 +4,9 @@ import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.beetle.BeetleModel;
 import fr.emotion.emomodworld.entities.beetle.BeetleRenderer;
+import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.entities.butterfly.ButterflyModel;
+import fr.emotion.emomodworld.entities.butterfly.ButterflyRenderer;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
@@ -151,6 +154,7 @@ public class EmoMainClient {
         event.registerEntityRenderer(EmoEntityType.DREAM_CHEST_BOAT.get(), context -> new EmoBoatRenderer(context, EmoModelLayers.DREAM_CHEST_BOAT));
 
         event.registerEntityRenderer(EmoEntityType.BEETLE.get(), BeetleRenderer::new);
+        event.registerEntityRenderer(EmoEntityType.BUTTERFLY.get(), ButterflyRenderer::new);
     }
 
     @SubscribeEvent
@@ -179,13 +183,14 @@ public class EmoMainClient {
         event.registerLayerDefinition(EmoModelLayers.DREAM_BOAT, BoatModel::createBoatModel);
         event.registerLayerDefinition(EmoModelLayers.DREAM_CHEST_BOAT, BoatModel::createChestBoatModel);
 
-        // BEETLE
         event.registerLayerDefinition(EmoModelLayers.BEETLE, BeetleModel::createBodyLayer);
+        event.registerLayerDefinition(EmoModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void onRegisterAttributes(EntityAttributeCreationEvent event) {
         event.put(EmoEntityType.BEETLE.get(), Beetle.createAttributes().build());
+        event.put(EmoEntityType.BUTTERFLY.get(), Butterfly.createAttributes().build());
     }
 
     @SubscribeEvent

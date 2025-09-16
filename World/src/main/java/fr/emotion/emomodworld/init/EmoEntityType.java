@@ -2,6 +2,7 @@ package fr.emotion.emomodworld.init;
 
 import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
+import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -143,7 +144,17 @@ public class EmoEntityType {
             "beetle",
             resourceLocation -> EntityType.Builder.of(Beetle::new, MobCategory.CREATURE)
                     .noLootTable()
-                    .sized(0.2F, 0.1F)
+                    .sized(0.15F, 0.1F)
+                    .eyeHeight(0.01F)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Butterfly>> BUTTERFLY = ENTITY_TYPE.register(
+            "butterfly",
+            resourceLocation -> EntityType.Builder.of(Butterfly::new, MobCategory.AMBIENT)
+                    .noLootTable()
+                    .sized(0.3F, 0.1F)
+                    .eyeHeight(0.025F)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 

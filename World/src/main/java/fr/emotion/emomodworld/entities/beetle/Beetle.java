@@ -13,6 +13,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
@@ -31,6 +32,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.function.IntFunction;
@@ -80,23 +82,23 @@ public class Beetle extends PathfinderMob {
 
     @Nullable
     @Override
-    public <T> T get(DataComponentType<? extends T> p_397746_) {
-        return p_397746_==EmoDataComponentType.BEETLE_VARIANT ? castComponentValue((DataComponentType<T>) p_397746_, this.getVariant()):super.get(p_397746_);
+    public <T> T get(@NotNull DataComponentType<? extends T> dataComponentType) {
+        return dataComponentType==EmoDataComponentType.BEETLE_VARIANT ? castComponentValue((DataComponentType<? extends T>) dataComponentType, this.getVariant()):super.get(dataComponentType);
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentGetter p_397832_) {
-        this.applyImplicitComponentIfPresent(p_397832_, EmoDataComponentType.BEETLE_VARIANT.get());
-        super.applyImplicitComponents(p_397832_);
+    protected void applyImplicitComponents(@NotNull DataComponentGetter componentGetter) {
+        this.applyImplicitComponentIfPresent(componentGetter, EmoDataComponentType.BEETLE_VARIANT.get());
+        super.applyImplicitComponents(componentGetter);
     }
 
     @Override
-    protected <T> boolean applyImplicitComponent(DataComponentType<T> p_397458_, T p_397829_) {
-        if (p_397458_==EmoDataComponentType.BEETLE_VARIANT) {
-            this.setVariant(castComponentValue(EmoDataComponentType.BEETLE_VARIANT.get(), p_397829_));
+    protected <T> boolean applyImplicitComponent(@NotNull DataComponentType<T> component, @NotNull T value) {
+        if (component==EmoDataComponentType.BEETLE_VARIANT) {
+            this.setVariant(castComponentValue(EmoDataComponentType.BEETLE_VARIANT.get(), value));
             return true;
         } else {
-            return super.applyImplicitComponent(p_397458_, p_397829_);
+            return super.applyImplicitComponent(component, value);
         }
     }
 
@@ -105,7 +107,7 @@ public class Beetle extends PathfinderMob {
         RandomSource randomSource = level.getRandom();
         BeetleVariant variant;
 
-        if (level.getBiome(this.blockPosition())==EmoBiomeKeys.ANCIENT_FOREST) {
+        if (level.getBiome(this.blockPosition()).is(EmoBiomeKeys.ANCIENT_FOREST)) {
             variant = BeetleVariant.BLUE;
         } else {
             variant = Util.getRandom(BeetleVariant.values(), randomSource);
@@ -155,14 +157,16 @@ public class Beetle extends PathfinderMob {
         }
     }
 
-    //@Override
-    //protected void doPush(Entity entity) {
-    //    if (entity.getDimensions(Pose.STANDING).height() > this.getDimensions(Pose.STANDING).height()) {
-    //        this.hurt(this.damageSources().inWall(), 2.5F);
-    //    } else {
-    //        doPush(entity);
-    //    }
-    //}
+    @Override
+    protected void doPush(Entity entity) {
+        if ((entity.getDimensions(Pose.STANDING).height() > this.getDimensions(Pose.STANDING).height()) && (entity.getDimensions(Pose.STANDING).width() > this.getDimensions(Pose.STANDING).width())) {
+            if (this.level() instanceof ServerLevel serverlevel) {
+                this.hurtServer(serverlevel, this.damageSources().inWall(), 2.5F);
+            }
+        } else {
+            super.doPush(entity);
+        }
+    }
 
     static class BeetleGoToDirtGoal extends MoveToBlockGoal {
 
@@ -180,7 +184,8 @@ public class Beetle extends PathfinderMob {
     public enum BeetleVariant implements StringRepresentable {
         BLUE(0, "blue"),
         BROWN(1, "brown"),
-        GREEN(2, "green");
+        GREEN(2, "green"),
+        BLACK(3, "black");
 
         public static final Codec<BeetleVariant> CODEC = StringRepresentable.fromEnum(BeetleVariant::values);
         private static final IntFunction<BeetleVariant> BY_ID = ByIdMap.continuous(BeetleVariant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);
