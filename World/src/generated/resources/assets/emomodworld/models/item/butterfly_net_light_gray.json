@@ -1,0 +1,6 @@
+{
+  "parent": "emomodworld:item/net",
+  "textures": {
+    "wool": "emomodworld:item/light_gray_wool_net"
+  }
+}

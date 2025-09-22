@@ -101,7 +101,7 @@ public class Butterfly extends AmbientCreature {
         return ButterflyVariant.byId(this.getTypeVariant());
     }
 
-    private void setVariant(ButterflyVariant variant) {
+    public void setVariant(ButterflyVariant variant) {
         this.setTypeVariant(variant.getId());
     }
 
@@ -195,7 +195,7 @@ public class Butterfly extends AmbientCreature {
                 }
 
                 TargetingConditions restingTargeting = badWeather
-                        ? BUTTERFLY_RESTING_TARGETING.range(2.0)
+                        ? BUTTERFLY_RESTING_TARGETING.range(4.0)
                         :BUTTERFLY_RESTING_TARGETING.range(6.0);
 
                 if (serverLevel.getNearestPlayer(restingTargeting, this)!=null) {

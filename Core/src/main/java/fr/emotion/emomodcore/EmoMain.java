@@ -3,6 +3,7 @@ package fr.emotion.emomodcore;
 
 import com.mojang.logging.LogUtils;
 import fr.emotion.emomodcore.core.PlaceBlockBehavior;
+import fr.emotion.emomodcore.init.EmoBlocksAndItems;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.bus.api.IEventBus;
@@ -20,6 +21,8 @@ public class EmoMain {
     public EmoMain(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
+
+        EmoBlocksAndItems.init(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

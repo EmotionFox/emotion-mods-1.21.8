@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "net",
+  "key": {
+    "#": "minecraft:light_blue_wool",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "#",
+    "X",
+    "X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodworld:butterfly_net_light_blue"
+  }
+}

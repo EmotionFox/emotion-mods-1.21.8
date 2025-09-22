@@ -1,5 +1,6 @@
 package fr.emotion.emomodworld.models;
 
+import fr.emotion.emomodworld.EmoMain;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -25,8 +26,19 @@ public class EmoTextureMapping {
                 .put(EmoTextureSlot.BASE, TextureMapping.getBlockTexture(block, "_base"));
     }
 
+    public static TextureMapping net(Block block) {
+        return new TextureMapping()
+                .put(TextureSlot.WOOL, getNetTexture(block));
+    }
+
     public static ResourceLocation getBlockTexture(Block block, String prefix) {
         ResourceLocation resourcelocation = BuiltInRegistries.BLOCK.getKey(block);
         return resourcelocation.withPrefix("block/" + prefix);
+    }
+
+    public static ResourceLocation getNetTexture(Block block) {
+        String wool = BuiltInRegistries.BLOCK.getKey(block).getPath();
+        ResourceLocation resourceLocation = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, wool);
+        return resourceLocation.withPrefix("item/").withSuffix("_net");
     }
 }

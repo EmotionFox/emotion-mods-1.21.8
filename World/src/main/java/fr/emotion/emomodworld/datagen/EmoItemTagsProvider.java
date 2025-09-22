@@ -5,14 +5,20 @@ import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
 
 public class EmoItemTagsProvider extends ItemTagsProvider {
+    public static final TagKey<Item> BUTTERFLY_NET = bind("butterfly_net");
+
     public EmoItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, EmoMain.MODID);
     }
@@ -207,5 +213,30 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                         EmoItems.CHERRY.get(),
                         EmoItems.ORANGE.get()
                 );
+
+        // Custom
+        this.tag(BUTTERFLY_NET)
+                .add(
+                        EmoItems.BUTTERFLY_NET_WHITE.get(),
+                        EmoItems.BUTTERFLY_NET_ORANGE.get(),
+                        EmoItems.BUTTERFLY_NET_MAGENTA.get(),
+                        EmoItems.BUTTERFLY_NET_LIGHT_BLUE.get(),
+                        EmoItems.BUTTERFLY_NET_YELLOW.get(),
+                        EmoItems.BUTTERFLY_NET_LIME.get(),
+                        EmoItems.BUTTERFLY_NET_PINK.get(),
+                        EmoItems.BUTTERFLY_NET_GRAY.get(),
+                        EmoItems.BUTTERFLY_NET_LIGHT_GRAY.get(),
+                        EmoItems.BUTTERFLY_NET_CYAN.get(),
+                        EmoItems.BUTTERFLY_NET_PURPLE.get(),
+                        EmoItems.BUTTERFLY_NET_BLUE.get(),
+                        EmoItems.BUTTERFLY_NET_BROWN.get(),
+                        EmoItems.BUTTERFLY_NET_GREEN.get(),
+                        EmoItems.BUTTERFLY_NET_RED.get(),
+                        EmoItems.BUTTERFLY_NET_BLACK.get()
+                );
+    }
+
+    private static TagKey<Item> bind(String name) {
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, name));
     }
 }

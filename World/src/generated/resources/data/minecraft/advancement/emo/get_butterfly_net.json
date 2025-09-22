@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:emo/root",
+  "criteria": {
+    "get_butterfly_net": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#emomodworld:butterfly_net"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.emo.get_butterfly_net.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomodworld:butterfly_net_white"
+    },
+    "title": {
+      "translate": "advancements.emo.get_butterfly_net.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_butterfly_net"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

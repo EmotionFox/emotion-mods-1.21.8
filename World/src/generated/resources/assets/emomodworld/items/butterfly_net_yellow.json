@@ -1,0 +1,23 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodworld:item/butterfly_net_yellow_flat"
+        },
+        "when": [
+          "gui",
+          "ground",
+          "fixed"
+        ]
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "emomodworld:item/butterfly_net_yellow"
+    },
+    "property": "minecraft:display_context"
+  }
+}

@@ -1,6 +1,9 @@
 package fr.emotion.emomodworld.init;
 
 import fr.emotion.emomodworld.EmoMain;
+import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.items.ButterflyItem;
+import fr.emotion.emomodworld.items.ButterflyNetItem;
 import fr.emotion.emomodworld.items.EmoFoods;
 import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
@@ -57,6 +60,30 @@ public class EmoItems {
     public static final DeferredItem<Item> PEAR = ITEMS.registerSimpleItem("pear", new Item.Properties().food(EmoFoods.PEAR));
     public static final DeferredItem<Item> CHERRY = ITEMS.registerSimpleItem("cherry", new Item.Properties().food(EmoFoods.CHERRY));
     public static final DeferredItem<Item> ORANGE = ITEMS.registerSimpleItem("orange", new Item.Properties().food(EmoFoods.ORANGE));
+
+    public static final DeferredItem<Item> BUTTERFLY_NET_WHITE = ITEMS.registerItem("butterfly_net_white", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_ORANGE = ITEMS.registerItem("butterfly_net_orange", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_MAGENTA = ITEMS.registerItem("butterfly_net_magenta", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_LIGHT_BLUE = ITEMS.registerItem("butterfly_net_light_blue", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_YELLOW = ITEMS.registerItem("butterfly_net_yellow", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_LIME = ITEMS.registerItem("butterfly_net_lime", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_PINK = ITEMS.registerItem("butterfly_net_pink", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_GRAY = ITEMS.registerItem("butterfly_net_gray", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_LIGHT_GRAY = ITEMS.registerItem("butterfly_net_light_gray", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_CYAN = ITEMS.registerItem("butterfly_net_cyan", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_PURPLE = ITEMS.registerItem("butterfly_net_purple", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_BLUE = ITEMS.registerItem("butterfly_net_blue", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_BROWN = ITEMS.registerItem("butterfly_net_brown", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_GREEN = ITEMS.registerItem("butterfly_net_green", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_RED = ITEMS.registerItem("butterfly_net_red", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+    public static final DeferredItem<Item> BUTTERFLY_NET_BLACK = ITEMS.registerItem("butterfly_net_black", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
+
+    public static final DeferredItem<Item> BUTTERFLY_BLUE = ITEMS.registerItem("butterfly_blue", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.BLUE));
+    public static final DeferredItem<Item> BUTTERFLY_BROWN = ITEMS.registerItem("butterfly_brown", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.BROWN));
+    public static final DeferredItem<Item> BUTTERFLY_GREEN = ITEMS.registerItem("butterfly_green", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.GREEN));
+    public static final DeferredItem<Item> BUTTERFLY_PINK = ITEMS.registerItem("butterfly_pink", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.PINK));
+    public static final DeferredItem<Item> BUTTERFLY_RED = ITEMS.registerItem("butterfly_red", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.RED));
+    public static final DeferredItem<Item> BUTTERFLY_YELLOW = ITEMS.registerItem("butterfly_yellow", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.YELLOW));
 
     public static void init(IEventBus event) {
         ITEMS.register(event);

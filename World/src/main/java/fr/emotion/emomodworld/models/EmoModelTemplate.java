@@ -34,4 +34,12 @@ public class EmoModelTemplate {
             TextureSlot.PLANT,
             EmoTextureSlot.BASE
     );
+
+    public static final ModelTemplate BUTTERFLY_NET = new ModelTemplate(
+            Optional.of(
+                    ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "item/net")
+            ),
+            Optional.empty(),
+            TextureSlot.WOOL
+    );
 }

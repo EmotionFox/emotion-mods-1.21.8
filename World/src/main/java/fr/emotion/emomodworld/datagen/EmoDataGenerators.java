@@ -1,8 +1,10 @@
 package fr.emotion.emomodworld.datagen;
 
 import fr.emotion.emomodworld.EmoMain;
+import fr.emotion.emomodworld.advancements.EmoAdvancements;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -38,12 +40,20 @@ public class EmoDataGenerators {
         event.createProvider(EmoEntityTypeTagsProvider::new);
         event.createProvider(EmoModelProvider::new);
 
-        event.createProvider(((output1, lookupProvider) -> new LootTableProvider(
-                output,
+        event.createProvider(((packOutput, lookupProvider) -> new LootTableProvider(
+                packOutput,
                 Set.of(),
                 List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootTableSubProvider::new, LootContextParamSets.BLOCK)),
                 lookupProvider
         )));
+
+        event.createProvider((packOutput, lookupProvider) -> new AdvancementProvider(
+                packOutput,
+                lookupProvider,
+                List.of(
+                        new EmoAdvancements()
+                )
+        ));
 
         event.createProvider(EmoRecipeProvider.Runner::new);
         event.createProvider(EmoGlobalLootModifierProvider::new);
@@ -76,6 +86,14 @@ public class EmoDataGenerators {
                 List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootTableSubProvider::new, LootContextParamSets.BLOCK)),
                 lookupProvider
         )));
+
+        event.createProvider((packOutput, lookupProvider) -> new AdvancementProvider(
+                packOutput,
+                lookupProvider,
+                List.of(
+                        new EmoAdvancements()
+                )
+        ));
 
         event.createProvider(EmoRecipeProvider.Runner::new);
         event.createProvider(EmoGlobalLootModifierProvider::new);

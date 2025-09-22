@@ -7,10 +7,14 @@ import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -76,6 +80,35 @@ public class EmoRecipeProvider extends RecipeProvider {
         this.chestBoat(EmoItems.DREAM_CHEST_BOAT, EmoItems.DREAM_BOAT);
 
         EmoBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach(blockFamily -> this.generateRecipes(blockFamily, FeatureFlagSet.of(FeatureFlags.VANILLA)));
+
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_WHITE, Blocks.WHITE_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_ORANGE, Blocks.ORANGE_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_MAGENTA, Blocks.MAGENTA_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_LIGHT_BLUE, Blocks.LIGHT_BLUE_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_YELLOW, Blocks.YELLOW_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_LIME, Blocks.LIME_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_PINK, Blocks.PINK_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_GRAY, Blocks.GRAY_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_LIGHT_GRAY, Blocks.LIGHT_GRAY_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_CYAN, Blocks.CYAN_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_PURPLE, Blocks.PURPLE_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_BLUE, Blocks.BLUE_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_BROWN, Blocks.BROWN_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_GREEN, Blocks.GREEN_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_RED, Blocks.RED_WOOL);
+        this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_BLACK, Blocks.BLACK_WOOL);
+    }
+
+    protected void netFromSticksAndWool(ItemLike net, ItemLike wool) {
+        this.shaped(RecipeCategory.TOOLS, net)
+                .define('#', wool)
+                .define('X', Items.STICK)
+                .pattern("#")
+                .pattern("X")
+                .pattern("X")
+                .group("net")
+                .unlockedBy(getHasName(wool), this.has(wool))
+                .save(this.output);
     }
 
     public static class Runner extends RecipeProvider.Runner {

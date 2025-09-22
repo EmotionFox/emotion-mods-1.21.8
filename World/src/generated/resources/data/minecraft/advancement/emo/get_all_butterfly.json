@@ -1,0 +1,102 @@
+{
+  "parent": "minecraft:emo/get_butterfly_net",
+  "criteria": {
+    "emomodworld:butterfly_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:butterfly_blue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "emomodworld:butterfly_brown": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:butterfly_brown"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "emomodworld:butterfly_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:butterfly_green"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "emomodworld:butterfly_pink": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:butterfly_pink"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "emomodworld:butterfly_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:butterfly_red"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "emomodworld:butterfly_yellow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:butterfly_yellow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.emo.get_all_butterfly.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "emomodworld:butterfly_blue"
+    },
+    "title": {
+      "translate": "advancements.emo.get_all_butterfly.title"
+    }
+  },
+  "requirements": [
+    [
+      "emomodworld:butterfly_blue"
+    ],
+    [
+      "emomodworld:butterfly_brown"
+    ],
+    [
+      "emomodworld:butterfly_green"
+    ],
+    [
+      "emomodworld:butterfly_pink"
+    ],
+    [
+      "emomodworld:butterfly_red"
+    ],
+    [
+      "emomodworld:butterfly_yellow"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

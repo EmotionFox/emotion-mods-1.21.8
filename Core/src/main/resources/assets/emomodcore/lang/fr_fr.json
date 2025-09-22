@@ -6,5 +6,8 @@
   "emomodcore.configuration.section.emomodcore.client.toml.title": "Emotion's Mod - Core | Configurations Client",
   "emomodcore.configuration.section.emomodcore.common.toml": "Emotion's Mod - Core | Configurations",
   "emomodcore.configuration.section.emomodcore.common.toml.title": "Emotion's Mod - Core | Configurations",
-  "emomodcore.configuration.guiHealth": "Afficher la santé de l'entité ciblée"
+  "emomodcore.configuration.guiHealth": "Afficher la santé de l'entité ciblée",
+
+  "advancements.emo.root.description": "le mod d'extension vanilla",
+  "advancements.emo.root.title": "Emotion's Mod"
 }

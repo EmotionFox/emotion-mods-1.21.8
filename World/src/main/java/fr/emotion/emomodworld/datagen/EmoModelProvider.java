@@ -12,17 +12,21 @@ import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.item.SelectItemModel;
+import net.minecraft.client.renderer.item.properties.select.DisplayContext;
 import net.minecraft.core.Holder;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class EmoModelProvider extends ModelProvider {
@@ -65,6 +69,30 @@ public class EmoModelProvider extends ModelProvider {
         itemModels.generateFlatItem(EmoItems.PEAR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.CHERRY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.ORANGE.get(), ModelTemplates.FLAT_ITEM);
+
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_WHITE.get(), Blocks.WHITE_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_ORANGE.get(), Blocks.ORANGE_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_MAGENTA.get(), Blocks.MAGENTA_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_LIGHT_BLUE.get(), Blocks.LIGHT_BLUE_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_YELLOW.get(), Blocks.YELLOW_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_LIME.get(), Blocks.LIME_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_PINK.get(), Blocks.PINK_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_GRAY.get(), Blocks.GRAY_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_LIGHT_GRAY.get(), Blocks.LIGHT_GRAY_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_CYAN.get(), Blocks.CYAN_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_PURPLE.get(), Blocks.PURPLE_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_BLUE.get(), Blocks.BLUE_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_BROWN.get(), Blocks.BROWN_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_GREEN.get(), Blocks.GREEN_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_RED.get(), Blocks.RED_WOOL);
+        createNet(itemModels, EmoItems.BUTTERFLY_NET_BLACK.get(), Blocks.BLACK_WOOL);
+
+        itemModels.generateFlatItem(EmoItems.BUTTERFLY_BLUE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BUTTERFLY_BROWN.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BUTTERFLY_GREEN.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BUTTERFLY_PINK.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BUTTERFLY_RED.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BUTTERFLY_YELLOW.get(), ModelTemplates.FLAT_ITEM);
 
         woodModel(blockModels, itemModels);
     }
@@ -187,6 +215,27 @@ public class EmoModelProvider extends ModelProvider {
     private void createFlowerPotLow(BlockModelGenerators blockModels, Block block, Block pottedBlock) {
         MultiVariant multiVariant = BlockModelGenerators.plainVariant(EmoModelTemplate.FLOWER_POT_LOW.create(pottedBlock, EmoTextureMapping.pottedLowFlower(block), blockModels.modelOutput));
         blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(pottedBlock, multiVariant));
+    }
+
+    // Wonderful
+    private void createNet(ItemModelGenerators itemModels, Item item, Block wool) {
+        itemModels.itemModelOutput.accept(
+                item,
+                new SelectItemModel.Unbaked(
+                        new SelectItemModel.UnbakedSwitch<>(
+                                new DisplayContext(),
+                                List.of(
+                                        new SelectItemModel.SwitchCase<>(
+                                                List.of(ItemDisplayContext.GUI, ItemDisplayContext.GROUND, ItemDisplayContext.FIXED),
+                                                ItemModelUtils.plainModel(ModelTemplates.FLAT_ITEM.create(ModelLocationUtils.getModelLocation(item).withSuffix("_flat"), TextureMapping.layer0(item), itemModels.modelOutput))
+                                        )
+                                )
+                        ),
+                        Optional.of(
+                                ItemModelUtils.plainModel(EmoModelTemplate.BUTTERFLY_NET.create(item, EmoTextureMapping.net(wool), itemModels.modelOutput))
+                        )
+                )
+        );
     }
 
     @Override
