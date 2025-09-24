@@ -2,10 +2,12 @@ package fr.emotion.emomodworld.biome;
 
 import fr.emotion.emomodworld.datagen.setBuilder.EmoPlacedFeature;
 import fr.emotion.emomodworld.datagen.setBuilder.vegetation.EmoVegetationPlacedFeature;
+import fr.emotion.emomodworld.init.EmoEntityType;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
@@ -28,6 +30,7 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
+        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 
@@ -69,6 +72,8 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
+        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 
@@ -111,6 +116,8 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
+        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 

@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-22T09:41:14.3658005	Model Definitions - emomodworld
+// 1.21.8	2025-09-24T15:17:34.6786548	Model Definitions - emomodworld
 2bade7855e6eef5c673a0d3b81fe02a1cbac74bb assets/emomodworld/blockstates/atlas_button.json
 fcfe8440703675330b351db4e5974cbd3dbd2909 assets/emomodworld/blockstates/atlas_door.json
 18fe75a0b4e87cca5b1c765f62e653d6811769d6 assets/emomodworld/blockstates/atlas_fence.json
@@ -212,6 +212,7 @@ a5356ba76581eb2357358a2273cfaf139e2d4bec assets/emomodworld/items/coco_pressure_
 63c7138d98eef6683461f063fc5a7ce77f2ea80c assets/emomodworld/items/coco_stairs.json
 e59392cd6e1ac19ff2e618a57cd53b13b13f4f33 assets/emomodworld/items/coco_trapdoor.json
 6b843637295af4d0b63fa5a36420d8aa0e8c7c5a assets/emomodworld/items/coco_wood.json
+371467645cae8ac142accb27585e65a15e4dce35 assets/emomodworld/items/cooked_ham.json
 61fe986f14de57a0b4798b3d83554c7c00a79203 assets/emomodworld/items/dreamcurrant.json
 19df5874fa0e47fa65871aaa4b6a0c89dcf2d173 assets/emomodworld/items/dream_boat.json
 17e5dd84356973a565930a0c9b54b25783060353 assets/emomodworld/items/dream_button.json
@@ -240,6 +241,9 @@ e9524e68c938a0b41c476e9f8cc39ae56e7dfbac assets/emomodworld/items/flower_nebula.
 6b6ef9f3418a8d71d12a6fbcfd7e97aa309b3ba8 assets/emomodworld/items/flower_thorny.json
 e034d90b20b08cdb7a62c0ef9b91e7018f16e2e0 assets/emomodworld/items/green_mushroom.json
 f3cb357e1dec598a82fe639474066a41151ed52e assets/emomodworld/items/green_mushroom_block.json
+090200b019cdade6567064fcd474fa09b5c0f3b3 assets/emomodworld/items/half_cooked_ham.json
+cabd089060c6bcf89c9c0419325b0979c3dd7a9a assets/emomodworld/items/half_ham.json
+4f8fbe9be0ba01d40a019656f00999f782e1131e assets/emomodworld/items/ham.json
 7de8a8391452b8a3527f2049ed766c75aa6cfd71 assets/emomodworld/items/orange.json
 c853ad64f59767234fabf4abb4209f4f67839999 assets/emomodworld/items/orange_boat.json
 4e86c87645f2e82971ee5a5b3f2d122e8d296f89 assets/emomodworld/items/orange_button.json
@@ -784,6 +788,7 @@ aef08e56691e7ef884c2870e352f4a6981158dd1 assets/emomodworld/models/item/coco_che
 426c9594cb85afbe05c83b858afc346b6367090d assets/emomodworld/models/item/coco_hanging_sign.json
 bdb8071030771c696b164e74c57cab280cbe5b6f assets/emomodworld/models/item/coco_sapling.json
 1c7c6053f4067d8cd366ee2909c467517c9be032 assets/emomodworld/models/item/coco_sign.json
+10ed12c80e2e0c7eee8cf0e62590e479876165a4 assets/emomodworld/models/item/cooked_ham.json
 6c1f577367a7ff656ac97da1f043e3684a3753fb assets/emomodworld/models/item/dreamcurrant.json
 a24543200ee28d42566d10dd5dd7a6825f423ad6 assets/emomodworld/models/item/dream_boat.json
 928d7875c9268b198371913812d82736e60fa51a assets/emomodworld/models/item/dream_chest_boat.json
@@ -800,6 +805,9 @@ f28e5a05c4c32228f775353e8b86c637ac17b082 assets/emomodworld/models/item/dream_si
 92bf40f77fffdfe5fe10719fadfe185a0f1d3991 assets/emomodworld/models/item/flower_nox.json
 1721919114d07ca0c87caa9050359f1d97948549 assets/emomodworld/models/item/flower_thorny.json
 b0d25f1e9092ef012d52c12fd30497b42395fd29 assets/emomodworld/models/item/green_mushroom.json
+e5fcddf4e72646511e5e2ef4000b8e14c0e20ab4 assets/emomodworld/models/item/half_cooked_ham.json
+e6778b73234b98c8361767ca43c91bd423bea4ae assets/emomodworld/models/item/half_ham.json
+aad7f89680e5a6950c2097508c8b4c900b4b957d assets/emomodworld/models/item/ham.json
 401babeaea297027a9c9b547e921bced69805c96 assets/emomodworld/models/item/orange.json
 94a033bca3aa56d806032b0ee1ba980fc4219dfe assets/emomodworld/models/item/orange_boat.json
 4ef9b2f93a2af95ce42d180fda6dc83fdc3bfca9 assets/emomodworld/models/item/orange_chest_boat.json

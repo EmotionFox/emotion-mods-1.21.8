@@ -43,7 +43,7 @@ public class EmoModelProvider extends ModelProvider {
         blockModels.createPlantWithDefaultItem(EmoBlocks.FLOWER_THORNY.get(), EmoBlocks.POTTED_FLOWER_THORNY.get(), BlockModelGenerators.PlantType.NOT_TINTED);
         blockModels.createPlantWithDefaultItem(EmoBlocks.FLOWER_CENTUS.get(), EmoBlocks.POTTED_FLOWER_CENTUS.get(), BlockModelGenerators.PlantType.NOT_TINTED);
         blockModels.createPlantWithDefaultItem(EmoBlocks.FLOWER_NEBULA.get(), EmoBlocks.POTTED_FLOWER_NEBULA.get(), BlockModelGenerators.PlantType.NOT_TINTED);
-        this.createLowPlantWithDefaultItem(blockModels, EmoBlocks.FLOWER_NARCOTA.get(), EmoBlocks.POTTED_FLOWER_NARCOTA.get());
+        createLowPlantWithDefaultItem(blockModels, EmoBlocks.FLOWER_NARCOTA.get(), EmoBlocks.POTTED_FLOWER_NARCOTA.get());
 
         EmoBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
@@ -93,6 +93,11 @@ public class EmoModelProvider extends ModelProvider {
         itemModels.generateFlatItem(EmoItems.BUTTERFLY_PINK.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.BUTTERFLY_RED.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.BUTTERFLY_YELLOW.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(EmoItems.HALF_HAM.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.HAM.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.COOKED_HALF_HAM.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.COOKED_HAM.get(), ModelTemplates.FLAT_ITEM);
 
         woodModel(blockModels, itemModels);
     }

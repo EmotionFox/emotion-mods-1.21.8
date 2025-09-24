@@ -2,6 +2,7 @@ package fr.emotion.emomodworld.advancements;
 
 import fr.emotion.emomodworld.datagen.EmoItemTagsProvider;
 import fr.emotion.emomodworld.init.EmoItems;
+import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRewards;
@@ -49,7 +50,7 @@ public class EmoAdvancements implements AdvancementSubProvider {
                         false
                 )
                 .addCriterion(
-                        "get_butterfly_net", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoItemTagsProvider.BUTTERFLY_NET))
+                        "get_butterfly_net", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoItemTags.BUTTERFLY_NET))
                 )
                 .save(writer, "emo/get_butterfly_net");
         AdvancementHolder advancementHolder2 = addButterfliesToGet(Advancement.Builder.advancement(), itemRegistry, BUTTERFLIES_TO_GET)

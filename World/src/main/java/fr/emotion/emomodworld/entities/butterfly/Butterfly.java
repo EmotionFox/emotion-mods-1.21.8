@@ -2,9 +2,11 @@ package fr.emotion.emomodworld.entities.butterfly;
 
 import com.mojang.serialization.Codec;
 import fr.emotion.emomodworld.init.EmoDataComponentType;
+import fr.emotion.emomodworld.world.biome.EmoBiomeKeys;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -29,7 +31,10 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.storage.ValueInput;
@@ -129,8 +134,36 @@ public class Butterfly extends AmbientCreature {
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnReason, @Nullable SpawnGroupData spawnGroupData) {
         RandomSource randomSource = level.getRandom();
-        this.setVariant(Util.getRandom(ButterflyVariant.values(), randomSource));
+        ButterflyVariant variant;
+        Holder<Biome> biome = level.getBiome(this.blockPosition());
+
+        if (biome.is(EmoBiomeKeys.ANCIENT_FOREST)) {
+            variant = ButterflyVariant.BLUE;
+        } else if (biome.is(EmoBiomeKeys.VERDANT_SLOPES)) {
+            variant = ButterflyVariant.BROWN;
+        } else if (biome.is(Biomes.TAIGA)) {
+            variant = ButterflyVariant.GREEN;
+        } else if (biome.is(Biomes.CHERRY_GROVE)) {
+            variant = ButterflyVariant.PINK;
+        } else if (biome.is(Biomes.FLOWER_FOREST)) {
+            variant = ButterflyVariant.RED;
+        } else if (biome.is(Biomes.SUNFLOWER_PLAINS)) {
+            variant = ButterflyVariant.YELLOW;
+        } else {
+            // Should be random in the dream dimension only
+            variant = Util.getRandom(ButterflyVariant.values(), randomSource);
+        }
+
+        this.setVariant(variant);
         return super.finalizeSpawn(level, difficulty, spawnReason, spawnGroupData);
+    }
+
+    public static boolean checkButterflySpawnRules(EntityType<Butterfly> entityType, LevelAccessor level, EntitySpawnReason spawnReason, BlockPos pos, RandomSource randomSource) {
+        if (pos.getY() >= level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, pos).getY()) {
+            return false;
+        } else {
+            return level.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && level.getRawBrightness(pos, 0) > 8;
+        }
     }
 
     public static AttributeSupplier.Builder createAttributes() {

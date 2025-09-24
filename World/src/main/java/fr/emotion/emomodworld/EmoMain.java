@@ -1,23 +1,22 @@
 package fr.emotion.emomodworld;
 
-import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.logging.LogUtils;
 import fr.emotion.emomodcore.core.InteractBehavior;
 import fr.emotion.emomodcore.core.PlaceBlockBehavior;
+import fr.emotion.emomodworld.entities.beetle.Beetle;
+import fr.emotion.emomodworld.entities.boar.Boar;
+import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -25,12 +24,9 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import org.slf4j.Logger;
-
-import java.io.IOException;
-import java.nio.file.Path;
 
 @Mod(EmoMain.MODID)
 public class EmoMain {
@@ -40,6 +36,7 @@ public class EmoMain {
     public EmoMain(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onRegisterCapabilities);
+        modEventBus.addListener(this::onRegisterSpawnPlacements);
 
         EmoItems.init(modEventBus);
         EmoBlocks.init(modEventBus);
@@ -242,5 +239,11 @@ public class EmoMain {
         // DREAM
         event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
         event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+    }
+
+    private void onRegisterSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(EmoEntityType.BUTTERFLY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Butterfly::checkButterflySpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EmoEntityType.BEETLE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Beetle::checkBeetleSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EmoEntityType.BOAR.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Boar::checkBoarSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }
