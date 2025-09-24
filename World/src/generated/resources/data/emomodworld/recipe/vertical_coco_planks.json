@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "vertical_planks",
+  "key": {
+    "#": "emomodworld:coco_planks"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 9,
+    "id": "emomodworld:vertical_coco_planks"
+  }
+}

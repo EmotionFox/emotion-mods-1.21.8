@@ -230,6 +230,27 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.dropSelf(EmoBlocks.DREAM_FENCE_GATE.get());
         this.dropSelf(EmoBlocks.DREAM_FENCE.get());
         this.add(EmoBlocks.DREAM_DOOR.get(), this::createDoorTable);
+
+        // VERTICAL
+        this.dropSelf(EmoBlocks.VERTICAL_PEAR_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_ORANGE_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_ATLAS_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_PINE_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_COCO_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_DREAM_PLANKS.get());
+
+        this.dropSelf(EmoBlocks.VERTICAL_OAK_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_SPRUCE_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_BIRCH_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_JUNGLE_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_ACACIA_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_CHERRY_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_DARK_OAK_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_PALE_OAK_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_MANGROVE_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_BAMBOO_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_CRIMSON_PLANKS.get());
+        this.dropSelf(EmoBlocks.VERTICAL_WARPED_PLANKS.get());
     }
 
     protected LootTable.Builder createFruitLeavesDrops(Block leavesBlock, Block saplingBlock, Item fruit, float... chances) {

@@ -1,11 +1,11 @@
 {
-  "parent": "emomodore:mine_purpura",
+  "parent": "minecraft:emo/root",
   "criteria": {
-    "viridis": {
+    "purpura": {
       "conditions": {
         "items": [
           {
-            "items": "emomodore:viridis_crystal"
+            "items": "emomodore:purpura_shard"
           }
         ]
       },
@@ -14,19 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.emomodore.mine_viridis.description"
+      "translate": "advancements.emo.mine_purpura.description"
     },
     "icon": {
       "count": 1,
-      "id": "emomodore:viridis_crystal"
+      "id": "emomodore:purpura_shard"
     },
     "title": {
-      "translate": "advancements.emomodore.mine_viridis.title"
+      "translate": "advancements.emo.mine_purpura.title"
     }
   },
   "requirements": [
     [
-      "viridis"
+      "purpura"
     ]
   ],
   "sends_telemetry_event": true

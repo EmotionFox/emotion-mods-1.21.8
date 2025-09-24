@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:emo/root",
+  "criteria": {
+    "entered_dream": {
+      "conditions": {
+        "to": "emomoddimension:dream"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.emo.enter_the_dream.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomoddimension:dream_grass_block"
+    },
+    "title": {
+      "translate": "advancements.emo.enter_the_dream.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_dream"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

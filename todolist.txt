@@ -3,10 +3,9 @@
 - Nightmare dimension (optional~ (but very relevant))
 - More feature for the dreams
 - More feature
-- My planks pattern for all and my planks vanilla pattern (how to switch it?)
-- Entities (mouse / mush (mushroom biped) and boar fixing)
+- Entities (mouse / mush (mushroom biped))
 - Bosses (optional)
-- More biome feature (need bush fixing and watering fine-tuning)
+- More biome feature (bush need watering fine-tuning)
 - Dream's dungeons (optional)
 - Make boar rideable (slighlty faster than donkey) so you can charge on it (optional but sooo cool)
 - Dream terrain generation fix (more spaced islands / smaller islands (optional?))

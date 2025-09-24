@@ -168,6 +168,27 @@ public class EmoModelProvider extends ModelProvider {
 
         itemModels.generateFlatItem(EmoItems.DREAM_BOAT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.DREAM_CHEST_BOAT.get(), ModelTemplates.FLAT_ITEM);
+
+        // VERTICAL
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_PEAR_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_ORANGE_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_ATLAS_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_PINE_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_COCO_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_DREAM_PLANKS.get());
+
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_OAK_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_SPRUCE_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_BIRCH_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_JUNGLE_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_ACACIA_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_CHERRY_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_DARK_OAK_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_PALE_OAK_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_MANGROVE_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_BAMBOO_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_CRIMSON_PLANKS.get());
+        blockModels.createTrivialCube(EmoBlocks.VERTICAL_WARPED_PLANKS.get());
     }
 
     public static void createBush(Block block, BlockModelGenerators blockModels) {

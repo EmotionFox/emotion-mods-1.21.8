@@ -13,5 +13,8 @@
   "block.emomoddimension.dream_portal": "Dream Portal",
   "block.emomoddimension.dream_stone": "Dream Stone",
   "block.emomoddimension.dream_cobblestone": "Dream Cobblestone",
-  "block.emomoddimension.dream_grass_block": "Dream Grass Block"
+  "block.emomoddimension.dream_grass_block": "Dream Grass Block",
+
+  "advancements.emo.enter_the_dream.title": "Sleepwalker",
+  "advancements.emo.enter_the_dream.description": "Craft a bed and Dream, finally"
 }

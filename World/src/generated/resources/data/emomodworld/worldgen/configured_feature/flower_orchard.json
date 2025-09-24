@@ -6,22 +6,15 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:dual_noise_provider",
+            "type": "minecraft:noise_provider",
             "noise": {
               "amplitudes": [
                 1.0
               ],
-              "firstOctave": -3
+              "firstOctave": 0
             },
-            "scale": 1.0,
+            "scale": 0.020833334,
             "seed": 2345,
-            "slow_noise": {
-              "amplitudes": [
-                1.0
-              ],
-              "firstOctave": -10
-            },
-            "slow_scale": 1.0,
             "states": [
               {
                 "Name": "emomodworld:flower_kitty"
@@ -41,10 +34,6 @@
               {
                 "Name": "minecraft:poppy"
               }
-            ],
-            "variety": [
-              1,
-              3
             ]
           }
         }
@@ -59,7 +48,7 @@
         }
       ]
     },
-    "tries": 96,
+    "tries": 64,
     "xz_spread": 6,
     "y_spread": 2
   }

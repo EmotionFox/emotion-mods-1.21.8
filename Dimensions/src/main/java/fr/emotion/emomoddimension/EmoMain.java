@@ -48,7 +48,6 @@ public class EmoMain {
                     Goal goal = wrappedGoal.getGoal();
 
                     if (goal instanceof EatBlockGoal) {
-                        EmoMain.LOGGER.info("ADDING GOAL !");
                         sheep.goalSelector.removeGoal(goal);
                         sheep.goalSelector.addGoal(wrappedGoal.getPriority(), new EmoEatBlockGoal(sheep));
                     }

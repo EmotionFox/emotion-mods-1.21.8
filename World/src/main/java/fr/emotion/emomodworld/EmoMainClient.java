@@ -334,6 +334,26 @@ public class EmoMainClient {
             event.accept(EmoBlocks.DREAM_TRAPDOOR);
             event.accept(EmoBlocks.DREAM_PRESSURE_PLATE);
             event.accept(EmoBlocks.DREAM_BUTTON);
+
+            event.accept(EmoBlocks.VERTICAL_PEAR_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_ORANGE_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_ATLAS_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_PINE_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_COCO_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_DREAM_PLANKS);
+
+            event.accept(EmoBlocks.VERTICAL_OAK_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_SPRUCE_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_BIRCH_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_JUNGLE_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_ACACIA_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_CHERRY_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_DARK_OAK_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_PALE_OAK_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_MANGROVE_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_BAMBOO_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_CRIMSON_PLANKS);
+            event.accept(EmoBlocks.VERTICAL_WARPED_PLANKS);
         } else if (key==CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(EmoBlocks.PEAR_SIGN);
             event.accept(EmoBlocks.PEAR_HANGING_SIGN);

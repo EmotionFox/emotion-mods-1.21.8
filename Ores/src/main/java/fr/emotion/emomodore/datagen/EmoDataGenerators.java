@@ -1,8 +1,7 @@
 package fr.emotion.emomodore.datagen;
 
 import fr.emotion.emomodore.EmoMain;
-import fr.emotion.emomodore.advancements.MinePurpura;
-import fr.emotion.emomodore.advancements.MineViridis;
+import fr.emotion.emomodore.advancements.EmoAdvancements;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -23,7 +22,9 @@ public class EmoDataGenerators {
         event.createProvider((output, lookupProvider) -> new AdvancementProvider(
                 output,
                 lookupProvider,
-                List.of(MinePurpura::generate, MineViridis::generate)
+                List.of(
+                        new EmoAdvancements()
+                )
         ));
 
         event.createProvider((output, lookupProvider) -> new LootTableProvider(
@@ -49,7 +50,9 @@ public class EmoDataGenerators {
         event.createProvider((output, lookupProvider) -> new AdvancementProvider(
                 output,
                 lookupProvider,
-                List.of(MinePurpura::generate, MineViridis::generate)
+                List.of(
+                        new EmoAdvancements()
+                )
         ));
 
         event.createProvider((output, lookupProvider) -> new LootTableProvider(

@@ -5,11 +5,14 @@ import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -97,6 +100,46 @@ public class EmoRecipeProvider extends RecipeProvider {
         this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_GREEN, Blocks.GREEN_WOOL);
         this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_RED, Blocks.RED_WOOL);
         this.netFromSticksAndWool(EmoItems.BUTTERFLY_NET_BLACK, Blocks.BLACK_WOOL);
+
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_PEAR_PLANKS, EmoBlocks.PEAR_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_ORANGE_PLANKS, EmoBlocks.ORANGE_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_ATLAS_PLANKS, EmoBlocks.ATLAS_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_PINE_PLANKS, EmoBlocks.PINE_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_COCO_PLANKS, EmoBlocks.COCO_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_DREAM_PLANKS, EmoBlocks.DREAM_PLANKS);
+
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_OAK_PLANKS, Blocks.OAK_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_SPRUCE_PLANKS, Blocks.SPRUCE_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_BIRCH_PLANKS, Blocks.BIRCH_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_JUNGLE_PLANKS, Blocks.JUNGLE_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_ACACIA_PLANKS, Blocks.ACACIA_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_CHERRY_PLANKS, Blocks.CHERRY_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_PALE_OAK_PLANKS, Blocks.PALE_OAK_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_MANGROVE_PLANKS, Blocks.MANGROVE_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_BAMBOO_PLANKS, Blocks.BAMBOO_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
+        this.verticalPlanksFromPlanks(EmoBlocks.VERTICAL_WARPED_PLANKS, Blocks.WARPED_PLANKS);
+
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_PEAR_PLANKS, EmoBlocks.PEAR_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_ORANGE_PLANKS, EmoBlocks.ORANGE_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_ATLAS_PLANKS, EmoBlocks.ATLAS_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_PINE_PLANKS, EmoBlocks.PINE_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_COCO_PLANKS, EmoBlocks.COCO_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_DREAM_PLANKS, EmoBlocks.DREAM_PLANKS);
+
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_OAK_PLANKS, Blocks.OAK_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_SPRUCE_PLANKS, Blocks.SPRUCE_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_BIRCH_PLANKS, Blocks.BIRCH_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_JUNGLE_PLANKS, Blocks.JUNGLE_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_ACACIA_PLANKS, Blocks.ACACIA_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_CHERRY_PLANKS, Blocks.CHERRY_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_PALE_OAK_PLANKS, Blocks.PALE_OAK_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_MANGROVE_PLANKS, Blocks.MANGROVE_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_BAMBOO_PLANKS, Blocks.BAMBOO_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
+        this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_WARPED_PLANKS, Blocks.WARPED_PLANKS);
     }
 
     protected void netFromSticksAndWool(ItemLike net, ItemLike wool) {
@@ -109,6 +152,28 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .group("net")
                 .unlockedBy(getHasName(wool), this.has(wool))
                 .save(this.output);
+    }
+
+    protected void verticalPlanksFromPlanks(ItemLike verticalPlanks, ItemLike planks){
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, verticalPlanks, 9)
+                .define('#', planks)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .group("vertical_planks")
+                .unlockedBy(getHasName(planks), this.has(planks))
+                .save(this.output);
+    }
+
+    protected void planksFromVerticalPlanks(ItemLike verticalPlanks, ItemLike planks){
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, planks, 9)
+                .define('#', verticalPlanks)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .group("planks")
+                .unlockedBy(getHasName(verticalPlanks), this.has(verticalPlanks))
+                .save(this.output, ResourceKey.create(Registries.RECIPE, BuiltInRegistries.ITEM.getKey(planks.asItem()).withSuffix("2")));
     }
 
     public static class Runner extends RecipeProvider.Runner {

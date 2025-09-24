@@ -1,6 +1,5 @@
 package fr.emotion.emomodworld.advancements;
 
-import fr.emotion.emomodworld.datagen.EmoItemTagsProvider;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.advancements.Advancement;
@@ -37,7 +36,7 @@ public class EmoAdvancements implements AdvancementSubProvider {
         HolderLookup<Item> itemRegistry = registries.lookupOrThrow(Registries.ITEM);
         HolderLookup<Block> blockRegistry = registries.lookupOrThrow(Registries.BLOCK);
 
-        AdvancementHolder advancementHolder1 = Advancement.Builder.advancement()
+        AdvancementHolder advancementHolder = Advancement.Builder.advancement()
                 .parent(fr.emotion.emomodcore.advancements.EmoAdvancements.mainAdvancementHolder)
                 .display(
                         EmoItems.BUTTERFLY_NET_WHITE,
@@ -53,8 +52,8 @@ public class EmoAdvancements implements AdvancementSubProvider {
                         "get_butterfly_net", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoItemTags.BUTTERFLY_NET))
                 )
                 .save(writer, "emo/get_butterfly_net");
-        AdvancementHolder advancementHolder2 = addButterfliesToGet(Advancement.Builder.advancement(), itemRegistry, BUTTERFLIES_TO_GET)
-                .parent(advancementHolder1)
+        AdvancementHolder advancementHolder1 = addButterfliesToGet(Advancement.Builder.advancement(), itemRegistry, BUTTERFLIES_TO_GET)
+                .parent(advancementHolder)
                 .display(
                         EmoItems.BUTTERFLY_BLUE,
                         Component.translatable("advancements.emo.get_all_butterfly.title"),

@@ -2,6 +2,10 @@
   "feature": "emomodworld:flower_orchard",
   "placement": [
     {
+      "type": "minecraft:count",
+      "count": 3
+    },
+    {
       "type": "minecraft:rarity_filter",
       "chance": 16
     },

@@ -59,9 +59,9 @@
 
   "item.emomodore.phase.tooltip": "Phase",
 
-  "advancements.emomodore.mine_purpura.description": "Gather purpura",
-  "advancements.emomodore.mine_purpura.title": "Purpura?",
+  "advancements.emo.mine_purpura.description": "Gather purpura",
+  "advancements.emo.mine_purpura.title": "Purpura?",
 
-  "advancements.emomodore.mine_viridis.description": "Found it",
-  "advancements.emomodore.mine_viridis.title": "Viridis!"
+  "advancements.emo.mine_viridis.description": "Found it",
+  "advancements.emo.mine_viridis.title": "Viridis!"
 }

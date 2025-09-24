@@ -13,5 +13,8 @@
   "block.emomoddimension.dream_portal": "Portail des rêves",
   "block.emomoddimension.dream_stone": "Roche des rêves",
   "block.emomoddimension.dream_cobblestone": "Pierres des rêves",
-  "block.emomoddimension.dream_grass_block": "Bloc d'herbre des rêves"
+  "block.emomoddimension.dream_grass_block": "Bloc d'herbre des rêves",
+
+  "advancements.emo.enter_the_dream.title": "Somnambule",
+  "advancements.emo.enter_the_dream.description": "Construit un lit et Rêve, enfin"
 }

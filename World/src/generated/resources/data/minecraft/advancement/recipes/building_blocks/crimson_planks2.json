@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:crimson_planks2"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vertical_crimson_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:vertical_crimson_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_vertical_crimson_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:crimson_planks2"
+    ]
+  }
+}

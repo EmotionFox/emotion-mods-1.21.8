@@ -50,6 +50,7 @@ public class EmoVegetationPlacedFeature {
         context.register(
                 FLOWER_ORCHARD,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoVegetationConfiguredFeature.FLOWER_ORCHARD), List.of(
+                        CountPlacement.of(3),
                         RarityFilter.onAverageOnceEvery(16),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
@@ -59,6 +60,7 @@ public class EmoVegetationPlacedFeature {
         context.register(
                 FLOWER_ANCIENT_FOREST,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoVegetationConfiguredFeature.FLOWER_ANCIENT_FOREST), List.of(
+                        CountPlacement.of(3),
                         RarityFilter.onAverageOnceEvery(16),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
