@@ -3,6 +3,7 @@ package fr.emotion.emomodworld.blocks;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import fr.emotion.emomodcore.core.DispenserReactive;
+import fr.emotion.emomodworld.init.EmoEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -98,7 +99,9 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock, 
 
     @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
-        if (entity instanceof LivingEntity && entity.getType()!=EntityType.FOX && entity.getType()!=EntityType.BEE) {
+        boolean flag = entity.getType()!=EntityType.FOX && entity.getType()!=EntityType.BEE && entity.getType()!=EmoEntityType.BUTTERFLY.get();
+
+        if (entity instanceof LivingEntity && flag) {
             entity.makeStuckInBlock(state, new Vec3(0.4F, 0.375F, 0.4F));
         }
     }

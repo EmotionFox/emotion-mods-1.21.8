@@ -7,6 +7,7 @@ import fr.emotion.emomodworld.items.ButterflyNetItem;
 import fr.emotion.emomodworld.items.EmoFoods;
 import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -84,6 +85,12 @@ public class EmoItems {
     public static final DeferredItem<Item> BUTTERFLY_PINK = ITEMS.registerItem("butterfly_pink", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.PINK));
     public static final DeferredItem<Item> BUTTERFLY_RED = ITEMS.registerItem("butterfly_red", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.RED));
     public static final DeferredItem<Item> BUTTERFLY_YELLOW = ITEMS.registerItem("butterfly_yellow", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.YELLOW));
+
+    public static final DeferredItem<Item> HALF_HAM = ITEMS.registerSimpleItem("half_ham", new Item.Properties().food(EmoFoods.HAM).usingConvertsTo(Items.BONE));
+    public static final DeferredItem<Item> HAM = ITEMS.registerItem("ham", props -> new Item(props.food(EmoFoods.HAM).usingConvertsTo(HALF_HAM.get())));
+
+    public static final DeferredItem<Item> COOKED_HALF_HAM = ITEMS.registerSimpleItem("half_cooked_ham", new Item.Properties().food(EmoFoods.COOKED_HAM).usingConvertsTo(Items.BONE));
+    public static final DeferredItem<Item> COOKED_HAM = ITEMS.registerItem("cooked_ham", props -> new Item(props.food(EmoFoods.COOKED_HAM).usingConvertsTo(COOKED_HALF_HAM.get())));
 
     public static void init(IEventBus event) {
         ITEMS.register(event);
