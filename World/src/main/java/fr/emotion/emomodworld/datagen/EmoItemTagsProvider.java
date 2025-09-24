@@ -5,14 +5,20 @@ import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.tags.EmoItemTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
 
 public class EmoItemTagsProvider extends ItemTagsProvider {
+    public static final TagKey<Item> BUTTERFLY_NET = bind("butterfly_net");
+
     public EmoItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, EmoMain.MODID);
     }
@@ -207,19 +213,9 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                         EmoItems.CHERRY.get(),
                         EmoItems.ORANGE.get()
                 );
-        this.tag(Tags.Items.FOODS_RAW_MEAT)
-                .add(
-                        EmoItems.HALF_HAM.get(),
-                        EmoItems.HAM.get()
-                );
-        this.tag(Tags.Items.FOODS_COOKED_MEAT)
-                .add(
-                        EmoItems.COOKED_HALF_HAM.get(),
-                        EmoItems.COOKED_HAM.get()
-                );
 
         // Custom
-        this.tag(EmoItemTags.BUTTERFLY_NET)
+        this.tag(BUTTERFLY_NET)
                 .add(
                         EmoItems.BUTTERFLY_NET_WHITE.get(),
                         EmoItems.BUTTERFLY_NET_ORANGE.get(),
@@ -238,12 +234,9 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                         EmoItems.BUTTERFLY_NET_RED.get(),
                         EmoItems.BUTTERFLY_NET_BLACK.get()
                 );
-        this.tag(EmoItemTags.BOAR_FOOD)
-                .addTags(
-                        ItemTags.FOX_FOOD,
-                        ItemTags.COW_FOOD,
-                        ItemTags.PIG_FOOD,
-                        ItemTags.SHEEP_FOOD
-                );
+    }
+
+    private static TagKey<Item> bind(String name) {
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, name));
     }
 }

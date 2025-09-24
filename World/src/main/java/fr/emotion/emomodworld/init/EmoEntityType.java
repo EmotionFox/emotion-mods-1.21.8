@@ -2,7 +2,6 @@ package fr.emotion.emomodworld.init;
 
 import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
-import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -156,15 +155,6 @@ public class EmoEntityType {
                     .noLootTable()
                     .sized(0.3F, 0.1F)
                     .eyeHeight(0.025F)
-                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
-    );
-
-    public static final DeferredHolder<EntityType<?>, EntityType<Boar>> BOAR = ENTITY_TYPE.register(
-            "boar",
-            resourceLocation -> EntityType.Builder.of(Boar::new, MobCategory.MISC)
-                    .sized(0.9F, 0.9F)
-                    .eyeHeight(0.8F)
-                    .clientTrackingRange(10)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 

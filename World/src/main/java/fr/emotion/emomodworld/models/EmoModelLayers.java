@@ -31,7 +31,4 @@ public class EmoModelLayers {
 
     public static ModelLayerLocation BEETLE = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "beetle"), "main");
     public static ModelLayerLocation BUTTERFLY = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "butterfly"), "main");
-
-    public static ModelLayerLocation BOAR = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "boar"), "main");
-    public static ModelLayerLocation BOARLET = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "boarlet"), "main");
 }

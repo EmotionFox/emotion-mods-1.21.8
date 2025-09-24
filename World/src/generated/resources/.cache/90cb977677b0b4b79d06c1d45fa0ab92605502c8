@@ -1,10 +1,7 @@
-// 1.21.8	2025-09-24T15:17:34.6746546	Tags for minecraft:item mod id emomodworld
+// 1.21.8	2025-09-21T14:58:11.3646908	Tags for minecraft:item mod id emomodworld
 1499a62c3438a6987b3ef84593533cc7d0c8abbd data/c/tags/item/foods/berry.json
-d9937874e3549c5d4c56ec155dc2d4dde717dc72 data/c/tags/item/foods/cooked_meat.json
 fd5ee7143735caaa195660a1f5fe50bf9f0b44da data/c/tags/item/foods/fruit.json
-ec0ab531fe38930f384504baf139e44f065db40e data/c/tags/item/foods/raw_meat.json
 3a3989c1d472e314aceb027fc3922bfdf3586665 data/emomodworld/tags/item/atlas_logs.json
-35f561706388bc5200153fc3ab71fa757eb40684 data/emomodworld/tags/item/boar_food.json
 0af1ea3749174b06bf8a400c9af9f6461128242d data/emomodworld/tags/item/butterfly_net.json
 b313d3df05b36f4c1b9233c3e0a046e15f811d98 data/emomodworld/tags/item/coco_logs.json
 15992477b2284fdce483de3cf73ae6c889c51494 data/emomodworld/tags/item/dream_logs.json

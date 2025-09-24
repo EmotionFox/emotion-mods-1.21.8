@@ -1,12 +1,10 @@
 package fr.emotion.emomodworld;
 
+import com.mojang.blaze3d.platform.NativeImage;
 import fr.emotion.emomodworld.blocks.properties.EmoWoodType;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.beetle.BeetleModel;
 import fr.emotion.emomodworld.entities.beetle.BeetleRenderer;
-import fr.emotion.emomodworld.entities.boar.Boar;
-import fr.emotion.emomodworld.entities.boar.BoarModel;
-import fr.emotion.emomodworld.entities.boar.BoarRenderer;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import fr.emotion.emomodworld.entities.butterfly.ButterflyModel;
 import fr.emotion.emomodworld.entities.butterfly.ButterflyRenderer;
@@ -16,6 +14,7 @@ import fr.emotion.emomodworld.init.EmoItems;
 import fr.emotion.emomodworld.models.EmoBoatRenderer;
 import fr.emotion.emomodworld.models.EmoModelLayers;
 import fr.emotion.emomodworld.utils.EmoColor;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.renderer.BiomeColors;
@@ -24,7 +23,11 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.special.HangingSignSpecialRenderer;
 import net.minecraft.client.renderer.special.StandingSignSpecialRenderer;
+import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.GrassColor;
@@ -38,10 +41,13 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
+import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+
+import java.io.IOException;
 
 import static fr.emotion.emomodworld.utils.EmoColor.blendColors;
 
@@ -158,7 +164,6 @@ public class EmoMainClient {
 
         event.registerEntityRenderer(EmoEntityType.BEETLE.get(), BeetleRenderer::new);
         event.registerEntityRenderer(EmoEntityType.BUTTERFLY.get(), ButterflyRenderer::new);
-        event.registerEntityRenderer(EmoEntityType.BOAR.get(), BoarRenderer::new);
     }
 
     @SubscribeEvent
@@ -189,16 +194,12 @@ public class EmoMainClient {
 
         event.registerLayerDefinition(EmoModelLayers.BEETLE, BeetleModel::createBodyLayer);
         event.registerLayerDefinition(EmoModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
-
-        event.registerLayerDefinition(EmoModelLayers.BOAR, () -> BoarModel.createBodyLayer(false));
-        event.registerLayerDefinition(EmoModelLayers.BOARLET, () -> BoarModel.createBodyLayer(true));
     }
 
     @SubscribeEvent
     public static void onRegisterAttributes(EntityAttributeCreationEvent event) {
         event.put(EmoEntityType.BEETLE.get(), Beetle.createAttributes().build());
         event.put(EmoEntityType.BUTTERFLY.get(), Butterfly.createAttributes().build());
-        event.put(EmoEntityType.BOAR.get(), Boar.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -395,11 +396,7 @@ public class EmoMainClient {
             event.accept(EmoItems.PEAR);
             event.accept(EmoItems.CHERRY);
             event.accept(EmoItems.ORANGE);
-            event.accept(EmoItems.HALF_HAM);
-            event.accept(EmoItems.HAM);
-            event.accept(EmoItems.COOKED_HALF_HAM);
-            event.accept(EmoItems.COOKED_HAM);
-        } else if (key==CreativeModeTabs.SPAWN_EGGS) {
+        } else if(key==CreativeModeTabs.SPAWN_EGGS) {
             event.accept(EmoItems.BUTTERFLY_BLUE);
             event.accept(EmoItems.BUTTERFLY_BROWN);
             event.accept(EmoItems.BUTTERFLY_GREEN);

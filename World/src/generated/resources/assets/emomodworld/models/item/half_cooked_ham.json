@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "emomodworld:item/half_cooked_ham"
-  }
-}

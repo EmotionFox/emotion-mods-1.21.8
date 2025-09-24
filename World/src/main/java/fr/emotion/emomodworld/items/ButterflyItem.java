@@ -36,7 +36,6 @@ public class ButterflyItem extends Item {
                 if (!serverLevel.isEmptyBlock(blockPos)) blockPos = player.blockPosition().above();
 
                 butterfly.setPos(blockPos.getCenter());
-                butterfly.setYHeadRot(player.getYHeadRot());
                 butterfly.setVariant(this.variant);
                 serverLevel.addFreshEntity(butterfly);
 

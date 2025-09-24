@@ -13,7 +13,4 @@ public class EmoItemTags {
     public static final TagKey<Item> PINE_LOGS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pine_logs"));
     public static final TagKey<Item> COCO_LOGS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "coco_logs"));
     public static final TagKey<Item> DREAM_LOGS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "dream_logs"));
-
-    public static final TagKey<Item> BUTTERFLY_NET = ItemTags.create(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "butterfly_net"));
-    public static final TagKey<Item> BOAR_FOOD = ItemTags.create(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "boar_food"));
 }

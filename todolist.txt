@@ -1,15 +1,7 @@
-- Spider nest like beehive (optional but interesting, have to get ideas to differiencate from beehive (can be harevested and produce string maybe?))
-- Dream-catcher block (into dream / nightmare transition)
-- Nightmare dimension (optional~ (but very relevant))
+- Spider nest like beehive
+- Dream-catcher block
 - More feature for the dreams
-- More feature
-- My planks pattern for all and my planks vanilla pattern (how to switch it?)
-- Entities (mouse / mush (mushroom biped) and boar fixing)
-- Bosses (optional)
-- More biome feature (need bush fixing and watering fine-tuning)
-- Dream's dungeons (optional)
-- Make boar rideable (slighlty faster than donkey) so you can charge on it (optional but sooo cool)
-- Dream terrain generation fix (more spaced islands / smaller islands (optional?))
-- Dreams -> biome per islands (possible? Using same noise as terrain gen ? (optional))
-- More variants for all mobs (very optional)
-- Find sound effect to make everything snap together (optional)
+- Entities
+- Bosses
+- More biome feature
+- Dream's dungeons
