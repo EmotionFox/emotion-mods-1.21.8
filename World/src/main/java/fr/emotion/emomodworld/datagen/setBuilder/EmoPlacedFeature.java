@@ -62,7 +62,7 @@ public class EmoPlacedFeature {
         context.register(
                 PATCH_BUSH_BLACKCURRANT,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_BUSH_BLACKCURRANT), List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        RarityFilter.onAverageOnceEvery(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
@@ -71,7 +71,7 @@ public class EmoPlacedFeature {
         context.register(
                 PATCH_BUSH_BLUEBERRY,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_BUSH_BLUEBERRY), List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        RarityFilter.onAverageOnceEvery(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
@@ -80,7 +80,7 @@ public class EmoPlacedFeature {
         context.register(
                 PATCH_BUSH_DREAMCURRANT,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_BUSH_DREAMCURRANT), List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        RarityFilter.onAverageOnceEvery(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
@@ -89,7 +89,7 @@ public class EmoPlacedFeature {
         context.register(
                 PATCH_BUSH_STRAWBERRY,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_BUSH_STRAWBERRY), List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        RarityFilter.onAverageOnceEvery(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
@@ -98,7 +98,7 @@ public class EmoPlacedFeature {
         context.register(
                 PATCH_BUSH_EMOSWEET,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_BUSH_EMOSWEET), List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        RarityFilter.onAverageOnceEvery(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
@@ -116,7 +116,7 @@ public class EmoPlacedFeature {
         context.register(
                 GREEN_MUSHROOM_NORMAL,
                 new PlacedFeature(configuredFeatures.getOrThrow(EmoConfiguredFeature.PATCH_GREEN_MUSHROOM), List.of(
-                        RarityFilter.onAverageOnceEvery(64),
+                        RarityFilter.onAverageOnceEvery(256),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()

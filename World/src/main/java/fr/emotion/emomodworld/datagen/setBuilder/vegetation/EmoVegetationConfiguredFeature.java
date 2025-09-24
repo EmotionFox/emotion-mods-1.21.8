@@ -4,16 +4,15 @@ import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.datagen.setBuilder.EmoConfiguredFeature;
 import fr.emotion.emomodworld.datagen.setBuilder.tree.EmoTreePlacedFeature;
 import fr.emotion.emomodworld.init.EmoBlocks;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.InclusiveRange;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -21,9 +20,8 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.DualNoiseProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
@@ -69,19 +67,16 @@ public class EmoVegetationConfiguredFeature {
                 new ConfiguredFeature<>(
                         Feature.FLOWER,
                         new RandomPatchConfiguration(
-                                96,
+                                64,
                                 6,
                                 2,
                                 PlacementUtils.onlyWhenEmpty(
                                         Feature.SIMPLE_BLOCK,
                                         new SimpleBlockConfiguration(
-                                                new DualNoiseProvider(
-                                                        new InclusiveRange<>(1, 3),
-                                                        new NormalNoise.NoiseParameters(-10, 1.0),
-                                                        1.0F,
+                                                new NoiseProvider(
                                                         2345L,
-                                                        new NormalNoise.NoiseParameters(-3, 1.0),
-                                                        1.0F,
+                                                        new NormalNoise.NoiseParameters(0, 1.0),
+                                                        0.020833334F,
                                                         List.of(
                                                                 EmoBlocks.FLOWER_KITTY.get().defaultBlockState(),
                                                                 EmoBlocks.FLOWER_DELY.get().defaultBlockState(),
@@ -99,28 +94,31 @@ public class EmoVegetationConfiguredFeature {
         context.register(
                 FLOWER_ANCIENT_FOREST,
                 new ConfiguredFeature<>(
-                        Feature.SIMPLE_RANDOM_SELECTOR,
-                        new SimpleRandomFeatureConfiguration(
-                                HolderSet.direct(
-                                        PlacementUtils.inlinePlaced(
-                                                Feature.RANDOM_PATCH,
-                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.FLOWER_NOX.get())))
-                                        ),
-                                        PlacementUtils.inlinePlaced(
-                                                Feature.RANDOM_PATCH,
-                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.FLOWER_THORNY.get())))
-                                        ),
-                                        PlacementUtils.inlinePlaced(
-                                                Feature.RANDOM_PATCH,
-                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.FLOWER_CENTUS.get())))
-                                        ),
-                                        PlacementUtils.inlinePlaced(
-                                                Feature.RANDOM_PATCH,
-                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.CORNFLOWER)))
-                                        ),
-                                        PlacementUtils.inlinePlaced(
-                                                Feature.RANDOM_PATCH,
-                                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.BLUE_ORCHID)))
+                        Feature.FLOWER,
+                        new RandomPatchConfiguration(
+                                64,
+                                6,
+                                2,
+                                PlacementUtils.onlyWhenEmpty(
+                                        Feature.SIMPLE_BLOCK,
+                                        new SimpleBlockConfiguration(
+                                                new NoiseThresholdProvider(
+                                                        2345L,
+                                                        new NormalNoise.NoiseParameters(0, 1.0),
+                                                        0.005F,
+                                                        -0.8F,
+                                                        0.33333334F,
+                                                        EmoBlocks.FLOWER_NOX.get().defaultBlockState(),
+                                                        List.of(
+                                                                EmoBlocks.FLOWER_THORNY.get().defaultBlockState(),
+                                                                EmoBlocks.FLOWER_CENTUS.get().defaultBlockState()
+                                                        ),
+                                                        List.of(
+                                                                Blocks.CORNFLOWER.defaultBlockState(),
+                                                                Blocks.BLUE_ORCHID.defaultBlockState(),
+                                                                Blocks.AZURE_BLUET.defaultBlockState()
+                                                        )
+                                                )
                                         )
                                 )
                         )
