@@ -4,6 +4,7 @@ import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.entities.mouse.Mouse;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -165,6 +166,15 @@ public class EmoEntityType {
                     .sized(0.9F, 0.9F)
                     .eyeHeight(0.8F)
                     .clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Mouse>> MOUSE = ENTITY_TYPE.register(
+            "mouse",
+            resourceLocation -> EntityType.Builder.of(Mouse::new, MobCategory.AMBIENT)
+                    .noLootTable()
+                    .sized(0.15F, 0.15F)
+                    .eyeHeight(0.01F)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 

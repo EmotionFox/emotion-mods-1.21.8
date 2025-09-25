@@ -6,6 +6,7 @@ import fr.emotion.emomodcore.core.PlaceBlockBehavior;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.entities.mouse.Mouse;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
 import net.minecraft.core.dispenser.BoatDispenseItemBehavior;
@@ -245,5 +246,6 @@ public class EmoMain {
         event.register(EmoEntityType.BUTTERFLY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Butterfly::checkButterflySpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EmoEntityType.BEETLE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Beetle::checkBeetleSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EmoEntityType.BOAR.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Boar::checkBoarSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EmoEntityType.MOUSE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mouse::checkMouseSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

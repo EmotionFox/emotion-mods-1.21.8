@@ -127,9 +127,9 @@ public class Beetle extends PathfinderMob {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, Player.class, 1.5F, 1.0, 1.0));
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1.0F));
-        this.goalSelector.addGoal(2, new BeetleGoToDirtGoal(this, 1.0F));
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 1.0F));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.0));
+        this.goalSelector.addGoal(2, new BeetleMoveToDirtGoal(this, 1.0));
+        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 2.0F));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
     }
 
@@ -174,9 +174,9 @@ public class Beetle extends PathfinderMob {
         }
     }
 
-    static class BeetleGoToDirtGoal extends MoveToBlockGoal {
+    static class BeetleMoveToDirtGoal extends MoveToBlockGoal {
 
-        public BeetleGoToDirtGoal(Beetle beetle, double speedModifier) {
+        public BeetleMoveToDirtGoal(Beetle beetle, double speedModifier) {
             super(beetle, speedModifier, 10);
         }
 
@@ -205,7 +205,7 @@ public class Beetle extends PathfinderMob {
         }
 
         public int getId() {
-            return id;
+            return this.id;
         }
 
         public static BeetleVariant byId(int id) {

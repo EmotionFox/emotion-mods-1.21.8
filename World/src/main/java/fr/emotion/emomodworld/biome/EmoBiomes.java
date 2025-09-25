@@ -30,7 +30,7 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
-        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 
@@ -72,7 +72,7 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
-        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
         spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
@@ -116,7 +116,7 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
-        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
         spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);

@@ -10,6 +10,9 @@ import fr.emotion.emomodworld.entities.boar.BoarRenderer;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import fr.emotion.emomodworld.entities.butterfly.ButterflyModel;
 import fr.emotion.emomodworld.entities.butterfly.ButterflyRenderer;
+import fr.emotion.emomodworld.entities.mouse.Mouse;
+import fr.emotion.emomodworld.entities.mouse.MouseModel;
+import fr.emotion.emomodworld.entities.mouse.MouseRenderer;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
@@ -159,6 +162,7 @@ public class EmoMainClient {
         event.registerEntityRenderer(EmoEntityType.BEETLE.get(), BeetleRenderer::new);
         event.registerEntityRenderer(EmoEntityType.BUTTERFLY.get(), ButterflyRenderer::new);
         event.registerEntityRenderer(EmoEntityType.BOAR.get(), BoarRenderer::new);
+        event.registerEntityRenderer(EmoEntityType.MOUSE.get(), MouseRenderer::new);
     }
 
     @SubscribeEvent
@@ -192,6 +196,8 @@ public class EmoMainClient {
 
         event.registerLayerDefinition(EmoModelLayers.BOAR, () -> BoarModel.createBodyLayer(false));
         event.registerLayerDefinition(EmoModelLayers.BOARLET, () -> BoarModel.createBodyLayer(true));
+
+        event.registerLayerDefinition(EmoModelLayers.MOUSE, MouseModel::createBodyLayer);
     }
 
     @SubscribeEvent
@@ -199,6 +205,7 @@ public class EmoMainClient {
         event.put(EmoEntityType.BEETLE.get(), Beetle.createAttributes().build());
         event.put(EmoEntityType.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(EmoEntityType.BOAR.get(), Boar.createAttributes().build());
+        event.put(EmoEntityType.MOUSE.get(), Mouse.createAttributes().build());
     }
 
     @SubscribeEvent

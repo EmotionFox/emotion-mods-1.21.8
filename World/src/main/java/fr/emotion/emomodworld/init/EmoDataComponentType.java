@@ -3,6 +3,7 @@ package fr.emotion.emomodworld.init;
 import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.entities.mouse.Mouse;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
@@ -21,6 +22,11 @@ public class EmoDataComponentType {
     public static final Supplier<DataComponentType<Butterfly.ButterflyVariant>> BUTTERFLY_VARIANT = REGISTER.registerComponentType(
             "butterfly/variant",
             builder -> builder.persistent(Butterfly.ButterflyVariant.CODEC).networkSynchronized(Butterfly.ButterflyVariant.STREAM_CODEC)
+    );
+
+    public static final Supplier<DataComponentType<Mouse.MouseVariant>> MOUSE_VARIANT = REGISTER.registerComponentType(
+            "mouse/variant",
+            builder -> builder.persistent(Mouse.MouseVariant.CODEC).networkSynchronized(Mouse.MouseVariant.STREAM_CODEC)
     );
 
     public static void init(IEventBus event) {
