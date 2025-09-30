@@ -12,4 +12,4 @@ plugins {
 
 rootProject.name = 'neoforge-multimod'
 
-include('Launcher', 'Core', 'Ores', 'World', 'Dimensions')
+include('Launcher', 'Core', 'Ores', 'World', 'Dimensions', 'Foods')
