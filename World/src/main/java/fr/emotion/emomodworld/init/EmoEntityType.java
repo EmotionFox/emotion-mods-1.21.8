@@ -4,6 +4,7 @@ import fr.emotion.emomodworld.EmoMain;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.entities.jumpingSpider.JumpingSpider;
 import fr.emotion.emomodworld.entities.mouse.Mouse;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -175,6 +176,15 @@ public class EmoEntityType {
                     .noLootTable()
                     .sized(0.15F, 0.15F)
                     .eyeHeight(0.01F)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<JumpingSpider>> JUMPING_SPIDER = ENTITY_TYPE.register(
+            "jumping_spider",
+            resourceLocation -> EntityType.Builder.of(JumpingSpider::new, MobCategory.MONSTER)
+                    .sized(0.7F, 0.5F)
+                    .eyeHeight(0.45F)
+                    .clientTrackingRange(8)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 

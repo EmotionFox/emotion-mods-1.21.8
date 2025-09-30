@@ -6,6 +6,7 @@ import fr.emotion.emomodcore.core.PlaceBlockBehavior;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
+import fr.emotion.emomodworld.entities.jumpingSpider.JumpingSpider;
 import fr.emotion.emomodworld.entities.mouse.Mouse;
 import fr.emotion.emomodworld.init.*;
 import fr.emotion.emomodworld.world.biome.ModTerrablender;
@@ -247,5 +248,6 @@ public class EmoMain {
         event.register(EmoEntityType.BEETLE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Beetle::checkBeetleSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EmoEntityType.BOAR.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Boar::checkBoarSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EmoEntityType.MOUSE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mouse::checkMouseSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EmoEntityType.JUMPING_SPIDER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, JumpingSpider::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

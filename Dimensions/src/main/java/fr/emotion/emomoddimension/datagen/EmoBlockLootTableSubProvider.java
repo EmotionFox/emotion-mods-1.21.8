@@ -24,6 +24,7 @@ public class EmoBlockLootTableSubProvider extends BlockLootSubProvider {
         this.add(EmoBlocks.DREAM_STONE.get(), block -> this.createSingleItemTableWithSilkTouch(block, EmoBlocks.DREAM_COBBLESTONE.get()));
         this.dropSelf(EmoBlocks.DREAM_COBBLESTONE.get());
         this.add(EmoBlocks.DREAM_GRASS_BLOCK.get(), block -> this.createSingleItemTableWithSilkTouch(block, EmoBlocks.DREAM_STONE.get()));
+        this.dropSelf(EmoBlocks.DREAM_CATCHER.get());
     }
 
     @Override

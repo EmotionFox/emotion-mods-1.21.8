@@ -10,6 +10,8 @@ import fr.emotion.emomodworld.entities.boar.BoarRenderer;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import fr.emotion.emomodworld.entities.butterfly.ButterflyModel;
 import fr.emotion.emomodworld.entities.butterfly.ButterflyRenderer;
+import fr.emotion.emomodworld.entities.jumpingSpider.JumpingSpider;
+import fr.emotion.emomodworld.entities.jumpingSpider.JumpingSpiderRenderer;
 import fr.emotion.emomodworld.entities.mouse.Mouse;
 import fr.emotion.emomodworld.entities.mouse.MouseModel;
 import fr.emotion.emomodworld.entities.mouse.MouseRenderer;
@@ -21,6 +23,7 @@ import fr.emotion.emomodworld.models.EmoModelLayers;
 import fr.emotion.emomodworld.utils.EmoColor;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.SpiderModel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.Sheets;
@@ -163,6 +166,7 @@ public class EmoMainClient {
         event.registerEntityRenderer(EmoEntityType.BUTTERFLY.get(), ButterflyRenderer::new);
         event.registerEntityRenderer(EmoEntityType.BOAR.get(), BoarRenderer::new);
         event.registerEntityRenderer(EmoEntityType.MOUSE.get(), MouseRenderer::new);
+        event.registerEntityRenderer(EmoEntityType.JUMPING_SPIDER.get(), JumpingSpiderRenderer::new);
     }
 
     @SubscribeEvent
@@ -198,6 +202,7 @@ public class EmoMainClient {
         event.registerLayerDefinition(EmoModelLayers.BOARLET, () -> BoarModel.createBodyLayer(true));
 
         event.registerLayerDefinition(EmoModelLayers.MOUSE, MouseModel::createBodyLayer);
+        event.registerLayerDefinition(EmoModelLayers.JUMPING_SPIDER, SpiderModel::createSpiderBodyLayer);
     }
 
     @SubscribeEvent
@@ -206,6 +211,7 @@ public class EmoMainClient {
         event.put(EmoEntityType.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(EmoEntityType.BOAR.get(), Boar.createAttributes().build());
         event.put(EmoEntityType.MOUSE.get(), Mouse.createAttributes().build());
+        event.put(EmoEntityType.JUMPING_SPIDER.get(), JumpingSpider.createJumpingSpiderAttributes().build());
     }
 
     @SubscribeEvent
@@ -433,6 +439,10 @@ public class EmoMainClient {
             event.accept(EmoItems.BUTTERFLY_PINK);
             event.accept(EmoItems.BUTTERFLY_RED);
             event.accept(EmoItems.BUTTERFLY_YELLOW);
+            event.accept(EmoItems.BEETLE_SPAWN_EGG);
+            event.accept(EmoItems.BOAR_SPAWN_EGG);
+            event.accept(EmoItems.MOUSE_SPAWN_EGG);
+            event.accept(EmoItems.JUMPING_SPIDER_SPAWN_EGG);
         }
     }
 

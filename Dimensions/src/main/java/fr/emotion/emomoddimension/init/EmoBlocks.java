@@ -1,6 +1,7 @@
 package fr.emotion.emomoddimension.init;
 
 import fr.emotion.emomoddimension.EmoMain;
+import fr.emotion.emomoddimension.blocks.DreamCatcher;
 import fr.emotion.emomoddimension.blocks.DreamGrassBlock;
 import fr.emotion.emomoddimension.blocks.DreamPortalBlock;
 import net.minecraft.core.BlockPos;
@@ -13,7 +14,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -51,6 +55,8 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> DREAM_STONE = addBlock("dream_stone", props -> new Block(props.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
     public static final DeferredBlock<Block> DREAM_COBBLESTONE = addBlock("dream_cobblestone", props -> new Block(props.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
     public static final DeferredBlock<Block> DREAM_GRASS_BLOCK = addBlock("dream_grass_block", props -> new DreamGrassBlock(props.mapColor(MapColor.GRASS).randomTicks().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> DREAM_CATCHER = addBlock("dream_catcher", props -> new DreamCatcher(props.mapColor(MapColor.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     public static void init(IEventBus event) {
         BLOCKS.register(event);

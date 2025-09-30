@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:emo/root",
+  "parent": "minecraft:emo/craft_dream_catcher",
   "criteria": {
     "entered_dream": {
       "conditions": {

@@ -75,10 +75,10 @@ public class EmoNoiseGeneratorSettings {
                                         SurfaceRules.state(EmoBlocks.DREAM_STONE.get().defaultBlockState())
                                 ),
                                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR,
-                                        SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())
+                                        SurfaceRules.state(Blocks.DIRT.defaultBlockState())
                                 ),
                                 SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR,
-                                        SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())
+                                        SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())
                                 )
                         )
                 ),

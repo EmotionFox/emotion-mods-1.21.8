@@ -1,13 +1,13 @@
 - Spider nest like beehive (optional but interesting, have to get ideas to differiencate from beehive (can be harevested and produce string maybe?))
-- Dream-catcher block (into dream / nightmare transition)
+- Dream-catcher block (nightmare transition)
 - Nightmare dimension (optional~ (but very relevant))
 - More feature for the dreams
 - More feature
-- Entities (mouse / mush (mushroom biped))
+- Entities (mush (mushroom biped))
 - Bosses (optional)
 - More biome feature (bush need watering fine-tuning)
 - Dream's dungeons (optional)
-- Make boar rideable (slighlty faster than donkey) so you can charge on it (optional but sooo cool)
+- Make boar rideable (slighlty faster than donkey) so you can charge on it (optional but sooooooo cool)
 - Dream terrain generation fix (more spaced islands / smaller islands (optional?))
 - Dreams -> biome per islands (possible? Using same noise as terrain gen ? (optional))
 - More variants for all mobs (very optional)

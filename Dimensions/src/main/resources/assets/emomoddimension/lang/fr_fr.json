@@ -15,6 +15,11 @@
   "block.emomoddimension.dream_cobblestone": "Pierres des rêves",
   "block.emomoddimension.dream_grass_block": "Bloc d'herbre des rêves",
 
+  "block.emomoddimension.dream_catcher": "Attrape-rêve",
+
+  "advancements.emo.craft_dream_catcher.title": "Attrape-rêve",
+  "advancements.emo.craft_dream_catcher.description": "On ce vois au prochain rêve",
+
   "advancements.emo.enter_the_dream.title": "Somnambule",
-  "advancements.emo.enter_the_dream.description": "Construit un lit et Rêve, enfin"
+  "advancements.emo.enter_the_dream.description": "Fabriquez un lit et attrapez un Rêve, enfin"
 }

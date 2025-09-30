@@ -104,12 +104,6 @@
         "weight": 10
       },
       {
-        "type": "emomodworld:beetle",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 10
-      },
-      {
         "type": "emomodworld:butterfly",
         "maxCount": 4,
         "minCount": 2,
@@ -141,6 +135,12 @@
         "maxCount": 4,
         "minCount": 4,
         "weight": 8
+      },
+      {
+        "type": "emomodworld:beetle",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 10
       }
     ],
     "misc": [],

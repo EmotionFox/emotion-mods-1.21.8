@@ -1,0 +1,5 @@
+{
+  "parent": "emomoddimension:block/dream_catcher_model",
+  "gui_light": "front",
+  "render_type": "minecraft:cutout_mipped"
+}

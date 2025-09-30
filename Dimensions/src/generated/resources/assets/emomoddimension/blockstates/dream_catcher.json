@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "emomoddimension:block/dream_catcher",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "emomoddimension:block/dream_catcher"
+    },
+    "facing=south": {
+      "model": "emomoddimension:block/dream_catcher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "emomoddimension:block/dream_catcher",
+      "y": 270
+    }
+  }
+}

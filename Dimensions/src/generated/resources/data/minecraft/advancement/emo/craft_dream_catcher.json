@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:emo/root",
+  "criteria": {
+    "craft_dream_catcher": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomoddimension:dream_catcher"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.emo.craft_dream_catcher.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomoddimension:dream_catcher"
+    },
+    "title": {
+      "translate": "advancements.emo.craft_dream_catcher.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_dream_catcher"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

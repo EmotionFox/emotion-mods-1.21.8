@@ -99,6 +99,11 @@ public class EmoModelProvider extends ModelProvider {
         itemModels.generateFlatItem(EmoItems.COOKED_HALF_HAM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.COOKED_HAM.get(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(EmoItems.BEETLE_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.BOAR_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.MOUSE_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.JUMPING_SPIDER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+
         woodModel(blockModels, itemModels);
     }
 

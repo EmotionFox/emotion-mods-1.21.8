@@ -15,6 +15,11 @@
   "block.emomoddimension.dream_cobblestone": "Dream Cobblestone",
   "block.emomoddimension.dream_grass_block": "Dream Grass Block",
 
+  "block.emomoddimension.dream_catcher": "Dream Catcher",
+
+  "advancements.emo.craft_dream_catcher.title": "Dream Catcher",
+  "advancements.emo.craft_dream_catcher.description": "See you next sleep",
+
   "advancements.emo.enter_the_dream.title": "Sleepwalker",
-  "advancements.emo.enter_the_dream.description": "Craft a bed and Dream, finally"
+  "advancements.emo.enter_the_dream.description": "Craft a bed and catch a Dream, finally"
 }

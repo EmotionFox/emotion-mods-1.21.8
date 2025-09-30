@@ -176,10 +176,7 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "minecraft:deepslate",
-                  "Properties": {
-                    "axis": "y"
-                  }
+                  "Name": "minecraft:dirt"
                 }
               }
             },
@@ -195,7 +192,10 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "minecraft:bedrock"
+                  "Name": "minecraft:deepslate",
+                  "Properties": {
+                    "axis": "y"
+                  }
                 }
               }
             }

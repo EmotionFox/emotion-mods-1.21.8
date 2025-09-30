@@ -25,5 +25,29 @@ public class EmoEntityTypeTagsProvider extends EntityTypeTagsProvider {
                         EmoEntityType.COCO_BOAT.get(),
                         EmoEntityType.DREAM_BOAT.get()
                 );
+        this.tag(EntityTypeTags.DISMOUNTS_UNDERWATER)
+                .add(
+                        EmoEntityType.BOAR.get()
+                );
+        this.tag(EntityTypeTags.CAN_EQUIP_SADDLE)
+                .add(
+                        EmoEntityType.BOAR.get()
+                );
+        this.tag(EntityTypeTags.FALL_DAMAGE_IMMUNE)
+                .add(
+                        EmoEntityType.BUTTERFLY.get()
+                );
+        this.tag(EntityTypeTags.NO_ANGER_FROM_WIND_CHARGE)
+                .add(
+                        EmoEntityType.JUMPING_SPIDER.get()
+                );
+        this.tag(EntityTypeTags.ARTHROPOD)
+                .add(
+                        EmoEntityType.JUMPING_SPIDER.get()
+                );
+        this.tag(EntityTypeTags.FOLLOWABLE_FRIENDLY_MOBS)
+                .add(
+                        EmoEntityType.MOUSE.get()
+                );
     }
 }

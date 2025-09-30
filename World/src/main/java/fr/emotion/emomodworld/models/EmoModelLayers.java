@@ -36,4 +36,6 @@ public class EmoModelLayers {
     public static ModelLayerLocation BOARLET = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "boarlet"), "main");
 
     public static ModelLayerLocation MOUSE = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "mouse"), "main");
+
+    public static ModelLayerLocation JUMPING_SPIDER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "jumping_spider"), "main");
 }

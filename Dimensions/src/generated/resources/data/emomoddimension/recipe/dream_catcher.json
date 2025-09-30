@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "dream_catcher",
+  "key": {
+    "#": "#minecraft:wool",
+    "X": "minecraft:stick",
+    "Z": "minecraft:string"
+  },
+  "pattern": [
+    "ZXZ",
+    "X#X",
+    "ZXZ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomoddimension:dream_catcher"
+  }
+}

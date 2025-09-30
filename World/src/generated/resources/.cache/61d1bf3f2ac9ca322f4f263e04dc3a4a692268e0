@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-24T20:15:32.5074581	Model Definitions - emomodworld
+// 1.21.8	2025-09-30T10:34:06.3506778	Model Definitions - emomodworld
 2bade7855e6eef5c673a0d3b81fe02a1cbac74bb assets/emomodworld/blockstates/atlas_button.json
 fcfe8440703675330b351db4e5974cbd3dbd2909 assets/emomodworld/blockstates/atlas_door.json
 18fe75a0b4e87cca5b1c765f62e653d6811769d6 assets/emomodworld/blockstates/atlas_fence.json
@@ -181,10 +181,12 @@ ae677e1f6406a8cf87465c14c181351842c58e8b assets/emomodworld/items/atlas_sign.jso
 f6ed18a9633f615ee9b5cdc2a42630e5c266a92f assets/emomodworld/items/atlas_stairs.json
 7f9ead9c3eaa0b293bcec98755c599a0874cf9e8 assets/emomodworld/items/atlas_trapdoor.json
 b01188014eea53b93445e0cccfa2fae97d33d109 assets/emomodworld/items/atlas_wood.json
+4e6cad6ca79848535b723c8e507d6a9d81baeaa0 assets/emomodworld/items/beetle_spawn_egg.json
 381abf96efd20cb9a3bcc8cb4dbb2286fed1b8fb assets/emomodworld/items/blackcurrant.json
 67900f6204033bbe6c804a845894a1e5f707f999 assets/emomodworld/items/blueberry.json
 0c82f43a42687c1a69ef09a45f72500806eba9f8 assets/emomodworld/items/blue_mushroom.json
 19e6958c6fb3971e597c53414ea43cc99689e6af assets/emomodworld/items/blue_mushroom_block.json
+0002b634468ea7c69f01f78c84481f95bfcf3113 assets/emomodworld/items/boar_spawn_egg.json
 4d0abaafd3f40e81dbe00bb84230da58d2436bd7 assets/emomodworld/items/bush_blackcurrant.json
 cae86d77406a66930ea86be079f51fbb689d4f21 assets/emomodworld/items/bush_blueberry.json
 36a075b7f58fb997e4a28ed9e1272ea5a932a421 assets/emomodworld/items/bush_dreamcurrant.json
@@ -262,6 +264,8 @@ f3cb357e1dec598a82fe639474066a41151ed52e assets/emomodworld/items/green_mushroom
 090200b019cdade6567064fcd474fa09b5c0f3b3 assets/emomodworld/items/half_cooked_ham.json
 cabd089060c6bcf89c9c0419325b0979c3dd7a9a assets/emomodworld/items/half_ham.json
 4f8fbe9be0ba01d40a019656f00999f782e1131e assets/emomodworld/items/ham.json
+48430873a9c46611cc831de8174799e16314e1e1 assets/emomodworld/items/jumping_spider_spawn_egg.json
+b18534bd2e9668f5fe30bd4b12d7ab7ea686f97d assets/emomodworld/items/mouse_spawn_egg.json
 7de8a8391452b8a3527f2049ed766c75aa6cfd71 assets/emomodworld/items/orange.json
 c853ad64f59767234fabf4abb4209f4f67839999 assets/emomodworld/items/orange_boat.json
 4e86c87645f2e82971ee5a5b3f2d122e8d296f89 assets/emomodworld/items/orange_button.json
@@ -794,9 +798,11 @@ ed90bcc15a5abb1b593fb982786e4d9aa6ab11f2 assets/emomodworld/models/item/atlas_ch
 bee24c40f30c52eb6a4148e1113c7e5fa470e952 assets/emomodworld/models/item/atlas_hanging_sign.json
 63b24b1cd076bb8952d93affdd716b96979b2e00 assets/emomodworld/models/item/atlas_sapling.json
 4aca38309e840212dc82b66111dfe4ae3a05c8c0 assets/emomodworld/models/item/atlas_sign.json
+c0cee19fa1b07da0dedccb5789f3f02e1d7cc47a assets/emomodworld/models/item/beetle_spawn_egg.json
 cc1e225545dd756b8e18edabed347b6eac436a5c assets/emomodworld/models/item/blackcurrant.json
 897e2e0ab75710f1fb62b2fb08ef9444fab879d4 assets/emomodworld/models/item/blueberry.json
 156621f07688536fbbd30b3af0f729e4267cada4 assets/emomodworld/models/item/blue_mushroom.json
+c6e6923d465c293f2f6573ce3db508f9160229a8 assets/emomodworld/models/item/boar_spawn_egg.json
 1617daf94015446cde6c555aaeb098ea483d63d3 assets/emomodworld/models/item/butterfly_blue.json
 8f4792e7cac52ac2685eb66329ff53954e40e8ce assets/emomodworld/models/item/butterfly_brown.json
 da1b6930c8b880d35fa45f19934ceb712bde9f9b assets/emomodworld/models/item/butterfly_green.json
@@ -862,6 +868,8 @@ b0d25f1e9092ef012d52c12fd30497b42395fd29 assets/emomodworld/models/item/green_mu
 e5fcddf4e72646511e5e2ef4000b8e14c0e20ab4 assets/emomodworld/models/item/half_cooked_ham.json
 e6778b73234b98c8361767ca43c91bd423bea4ae assets/emomodworld/models/item/half_ham.json
 aad7f89680e5a6950c2097508c8b4c900b4b957d assets/emomodworld/models/item/ham.json
+6af7cffdb2c500e1db23fa4093f49ac04e47fec9 assets/emomodworld/models/item/jumping_spider_spawn_egg.json
+04ae422fc27ff177c02d4747a9016a7d4c0d04b9 assets/emomodworld/models/item/mouse_spawn_egg.json
 401babeaea297027a9c9b547e921bced69805c96 assets/emomodworld/models/item/orange.json
 94a033bca3aa56d806032b0ee1ba980fc4219dfe assets/emomodworld/models/item/orange_boat.json
 4ef9b2f93a2af95ce42d180fda6dc83fdc3bfca9 assets/emomodworld/models/item/orange_chest_boat.json
