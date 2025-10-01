@@ -1,24 +1,8 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
+	"parent": "emomodfood:block/cake_model",
 	"textures": {
-		"0": "emomodfood:block/cake_strawberry_side",
-		"1": "emomodfood:block/cake_strawberry_top",
-		"2": "emomodfood:block/cake_toffee_bottom",
-		"particle": "emomodfood:block/cake_strawberry_side"
-	},
-	"elements": [
-		{
-			"from": [1, 0, 1],
-			"to": [15, 8, 15],
-			"faces": {
-				"north": {"uv": [1, 8, 15, 16], "texture": "#0"},
-				"east": {"uv": [1, 8, 15, 16], "texture": "#0"},
-				"south": {"uv": [1, 8, 15, 16], "texture": "#0"},
-				"west": {"uv": [1, 8, 15, 16], "texture": "#0"},
-				"up": {"uv": [15, 15, 1, 1], "texture": "#1"},
-				"down": {"uv": [15, 1, 1, 15], "texture": "#2"}
-			}
-		}
-	]
+		"0": "emomodfood:block/cake_strawberry_bottom",
+		"1": "emomodfood:block/cake_strawberry_side",
+		"2": "emomodfood:block/cake_strawberry_top"
+	}
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "emomodfood:block/cake_chocolate_candle_model",
+  "textures": {
+    "candle": "minecraft:block/blue_candle_lit"
+  }
+}

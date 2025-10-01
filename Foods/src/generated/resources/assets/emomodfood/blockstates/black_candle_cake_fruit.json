@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "emomodfood:block/black_candle_cake_fruit"
+    },
+    "lit=true": {
+      "model": "emomodfood:block/black_candle_cake_fruit_lit"
+    }
+  }
+}

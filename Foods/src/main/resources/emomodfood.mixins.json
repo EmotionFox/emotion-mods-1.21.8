@@ -2,7 +2,10 @@
   "required": true,
   "package": "fr.emotion.emomodfood.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "MixinCakeBlock",
+    "MixinCandleCakeBlock"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

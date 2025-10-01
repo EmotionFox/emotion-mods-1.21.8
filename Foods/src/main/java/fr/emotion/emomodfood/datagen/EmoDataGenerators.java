@@ -27,6 +27,7 @@ public class EmoDataGenerators {
 
         event.getGenerator().addProvider(true, setBuilder);
 
+        event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoModelProvider::new);
 
         event.createProvider((packOutput, lookupProvider) -> new AdvancementProvider(
@@ -53,6 +54,7 @@ public class EmoDataGenerators {
 
         event.getGenerator().addProvider(true, setBuilder);
 
+        event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoModelProvider::new);
 
         event.createProvider((packOutput, lookupProvider) -> new AdvancementProvider(

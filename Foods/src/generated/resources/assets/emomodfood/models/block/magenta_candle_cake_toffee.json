@@ -1,0 +1,9 @@
+{
+  "parent": "emomodfood:block/cake_candle_model",
+  "textures": {
+    "bottom": "emomodfood:block/cake_toffee_bottom",
+    "candle": "minecraft:block/magenta_candle",
+    "side": "emomodfood:block/cake_toffee_side",
+    "top": "emomodfood:block/cake_toffee_top"
+  }
+}
