@@ -90,5 +90,9 @@ public class EmoBlockTagsProvider extends BlockTagsProvider {
                         EmoBlocks.RED_CANDLE_CAKE_STRAWBERRY.get(),
                         EmoBlocks.BLACK_CANDLE_CAKE_STRAWBERRY.get()
                 );
+        this.tag(BlockTags.CROPS)
+                .add(
+                        EmoBlocks.TOMATOES.get()
+                );
     }
 }

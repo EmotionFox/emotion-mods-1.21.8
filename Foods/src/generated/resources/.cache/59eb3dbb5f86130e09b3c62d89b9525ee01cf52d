@@ -1,4 +1,4 @@
-// 1.21.8	2025-10-02T16:45:54.4172174	Loot Tables
+// 1.21.8	2025-10-03T00:30:53.7768329	Loot Tables
 3b610eb34a105d08009c301e5067be783a853148 data/emomodfood/loot_table/blocks/black_candle_cake_chocolate.json
 e9d49c6370b13a0f8200647dd5fb835fae4cc1b4 data/emomodfood/loot_table/blocks/black_candle_cake_fruit.json
 e8a9eedbb326b6c204aebfa587a00033d21d6609 data/emomodfood/loot_table/blocks/black_candle_cake_strawberry.json
@@ -55,6 +55,7 @@ a5641231c3b6164e53f8450f4954c69991b722a7 data/emomodfood/loot_table/blocks/orang
 eb6ce0eb454373810b50a1708266f681b7426471 data/emomodfood/loot_table/blocks/pink_candle_cake_fruit.json
 78790f1b3c86f5d645d7353391cdfdeef673fc03 data/emomodfood/loot_table/blocks/pink_candle_cake_strawberry.json
 5bd4fe4ae390dc5a59e783c5c069982a46e71ca4 data/emomodfood/loot_table/blocks/pink_candle_cake_toffee.json
+7511e9468a5602b7e84a34f4b982585bcd267443 data/emomodfood/loot_table/blocks/pot.json
 f9e8f793c63f4d5c747fefa447584016a9c4351e data/emomodfood/loot_table/blocks/purple_candle_cake_chocolate.json
 f276205760829e8a80340ae3faa535395e383b50 data/emomodfood/loot_table/blocks/purple_candle_cake_fruit.json
 7a631ce872a692b234ac11753656a3d9656bb5e9 data/emomodfood/loot_table/blocks/purple_candle_cake_strawberry.json
@@ -63,6 +64,7 @@ f276205760829e8a80340ae3faa535395e383b50 data/emomodfood/loot_table/blocks/purpl
 76e37ef0e33864b6fa3b221728f26e5fc9328563 data/emomodfood/loot_table/blocks/red_candle_cake_fruit.json
 4d8cde473b939d1bbe6f4049c1c8bf4cf1c81f4e data/emomodfood/loot_table/blocks/red_candle_cake_strawberry.json
 37583ea013c0b1be906c2192e6e48ea9a526de05 data/emomodfood/loot_table/blocks/red_candle_cake_toffee.json
+4b5e6459bff95d49ec6ae3f947d6ff3bffced028 data/emomodfood/loot_table/blocks/tomatoes.json
 80ec694a626a400026d9a00763047ad803934ee7 data/emomodfood/loot_table/blocks/white_candle_cake_chocolate.json
 b662c38de9e913f268b62c24281d7b16ba29058b data/emomodfood/loot_table/blocks/white_candle_cake_fruit.json
 c898731e782ff93e830cc8a16e2d52a484b9f415 data/emomodfood/loot_table/blocks/white_candle_cake_strawberry.json

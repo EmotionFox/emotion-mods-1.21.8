@@ -1,6 +1,7 @@
 package fr.emotion.emomodfood;
 
 import com.mojang.logging.LogUtils;
+import fr.emotion.emomodfood.init.EmoBlockEntityTypes;
 import fr.emotion.emomodfood.init.EmoBlocks;
 import fr.emotion.emomodfood.init.EmoItems;
 import net.minecraft.world.level.block.Blocks;
@@ -22,6 +23,7 @@ public class EmoMain {
         modEventBus.addListener(this::commonSetup);
         EmoBlocks.init(modEventBus);
         EmoItems.init(modEventBus);
+        EmoBlockEntityTypes.init(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

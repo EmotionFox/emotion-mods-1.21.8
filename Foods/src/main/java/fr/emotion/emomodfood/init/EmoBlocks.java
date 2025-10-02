@@ -1,11 +1,18 @@
 package fr.emotion.emomodfood.init;
 
 import fr.emotion.emomodfood.EmoMain;
+import fr.emotion.emomodfood.blocks.EmoPotBlock;
 import fr.emotion.emomodfood.blocks.HoleCandleCakeBlock;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -13,7 +20,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.ToIntFunction;
 
 public class EmoBlocks {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EmoMain.MODID);
+    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EmoMain.MODID);
 
     public static final DeferredBlock<Block> CAKE_CHOCOLATE = BLOCKS.registerBlock("cake_chocolate", props -> new CakeBlock(props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> CANDLE_CAKE_CHOCOLATE = BLOCKS.registerBlock("candle_cake_chocolate", props -> new CandleCakeBlock(Blocks.CANDLE, props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3))));
@@ -90,6 +97,20 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> GREEN_CANDLE_CAKE_STRAWBERRY = BLOCKS.registerBlock("green_candle_cake_strawberry", props -> new CandleCakeBlock(Blocks.CANDLE, props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3))));
     public static final DeferredBlock<Block> RED_CANDLE_CAKE_STRAWBERRY = BLOCKS.registerBlock("red_candle_cake_strawberry", props -> new CandleCakeBlock(Blocks.CANDLE, props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3))));
     public static final DeferredBlock<Block> BLACK_CANDLE_CAKE_STRAWBERRY = BLOCKS.registerBlock("black_candle_cake_strawberry", props -> new CandleCakeBlock(Blocks.CANDLE, props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3))));
+
+    public static final DeferredBlock<Block> TOMATOES = BLOCKS.registerBlock("tomatoes", props -> new CropBlock(props.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)){
+        @Override
+        protected ItemLike getBaseSeedId() {
+            return EmoItems.TOMATO.get();
+        }
+
+        @Override
+        protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+            return Block.column(16.0, 0.0, 15);
+        }
+    });
+
+    public static final DeferredBlock<Block> POT = BLOCKS.registerBlock("pot", props -> new EmoPotBlock(props.mapColor(MapColor.WOOD).sound(SoundType.GLASS)));
 
     public static void init(IEventBus eventBus) {
         BLOCKS.register(eventBus);

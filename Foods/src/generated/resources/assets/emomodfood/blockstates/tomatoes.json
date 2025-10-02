@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "emomodfood:block/tomatoes_stage0"
+    },
+    "age=1": {
+      "model": "emomodfood:block/tomatoes_stage1"
+    },
+    "age=2": {
+      "model": "emomodfood:block/tomatoes_stage2"
+    },
+    "age=3": {
+      "model": "emomodfood:block/tomatoes_stage3"
+    },
+    "age=4": {
+      "model": "emomodfood:block/tomatoes_stage4"
+    },
+    "age=5": {
+      "model": "emomodfood:block/tomatoes_stage5"
+    },
+    "age=6": {
+      "model": "emomodfood:block/tomatoes_stage6"
+    },
+    "age=7": {
+      "model": "emomodfood:block/tomatoes_stage7"
+    }
+  }
+}

@@ -34,6 +34,8 @@ public class EmoFoods {
     public static final FoodProperties TOFFEE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build();
     public static final FoodProperties TOFFEE_APPLE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F).build();
 
+    public static final FoodProperties TOMATO = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6F).build();
+
     private static FoodProperties.Builder juice(int nutrition) {
         return new FoodProperties.Builder().nutrition(nutrition).saturationModifier(0.6F);
     }

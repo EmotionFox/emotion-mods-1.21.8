@@ -1,6 +1,7 @@
 package fr.emotion.emomodfood.datagen;
 
 import fr.emotion.emomodfood.EmoMain;
+import fr.emotion.emomodfood.blocks.entity.PotSpecialRenderer;
 import fr.emotion.emomodfood.init.EmoBlocks;
 import fr.emotion.emomodfood.init.EmoItems;
 import fr.emotion.emomodfood.models.EmoModelTemplate;
@@ -12,7 +13,9 @@ import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.item.SpecialModelWrapper;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -141,6 +144,10 @@ public class EmoModelProvider extends ModelProvider {
         createCandleCake(blockModels, EmoModelTemplate.CANDLE_CAKE, EmoTextureMapping.cake(EmoBlocks.CAKE_STRAWBERRY.get()), Blocks.GREEN_CANDLE, EmoBlocks.GREEN_CANDLE_CAKE_STRAWBERRY.get());
         createCandleCake(blockModels, EmoModelTemplate.CANDLE_CAKE, EmoTextureMapping.cake(EmoBlocks.CAKE_STRAWBERRY.get()), Blocks.RED_CANDLE, EmoBlocks.RED_CANDLE_CAKE_STRAWBERRY.get());
         createCandleCake(blockModels, EmoModelTemplate.CANDLE_CAKE, EmoTextureMapping.cake(EmoBlocks.CAKE_STRAWBERRY.get()), Blocks.BLACK_CANDLE, EmoBlocks.BLACK_CANDLE_CAKE_STRAWBERRY.get());
+
+        blockModels.createCropBlock(EmoBlocks.TOMATOES.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+
+        blockModels.createParticleOnlyBlock(EmoBlocks.POT.get());
     }
 
     protected void createCakeBlock(BlockModelGenerators blockModels, Item cakeItem, Block cake) {

@@ -54,6 +54,8 @@ public class EmoItems {
     public static final DeferredItem<Item> TOFFEE = ITEMS.registerItem("toffee", props -> new Item(props.food(EmoFoods.TOFFEE)));
     public static final DeferredItem<Item> TOFFEE_APPLE = ITEMS.registerItem("toffee_apple", props -> new Item(props.food(EmoFoods.TOFFEE_APPLE)));
 
+    public static final DeferredItem<Item> TOMATO = ITEMS.registerItem("tomato", props -> new BlockItem(EmoBlocks.TOMATOES.get(), props.useItemDescriptionPrefix().food(EmoFoods.TOMATO)));
+
     public static void init(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
