@@ -4,6 +4,8 @@ import fr.emotion.emomodfood.EmoMain;
 import fr.emotion.emomodfood.advancements.EmoAdvancements;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementProvider;
+import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
@@ -29,6 +31,13 @@ public class EmoDataGenerators {
 
         event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoModelProvider::new);
+
+        event.createProvider(((packOutput, lookupProvider) -> new LootTableProvider(
+                packOutput,
+                Set.of(),
+                List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootSubProvider::new, LootContextParamSets.BLOCK)),
+                lookupProvider
+        )));
 
         event.createProvider((packOutput, lookupProvider) -> new AdvancementProvider(
                 packOutput,
@@ -56,6 +65,13 @@ public class EmoDataGenerators {
 
         event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoModelProvider::new);
+
+        event.createProvider(((packOutput, lookupProvider) -> new LootTableProvider(
+                packOutput,
+                Set.of(),
+                List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootSubProvider::new, LootContextParamSets.BLOCK)),
+                lookupProvider
+        )));
 
         event.createProvider((packOutput, lookupProvider) -> new AdvancementProvider(
                 packOutput,

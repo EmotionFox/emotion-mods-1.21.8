@@ -1,11 +1,9 @@
 package fr.emotion.emomodore.advancements;
 
-import fr.emotion.emomodore.EmoMain;
 import fr.emotion.emomodore.init.EmoBlocks;
 import fr.emotion.emomodore.init.EmoItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -13,10 +11,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class EmoAdvancements implements AdvancementSubProvider {

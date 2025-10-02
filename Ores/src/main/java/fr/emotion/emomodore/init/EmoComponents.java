@@ -1,8 +1,8 @@
 package fr.emotion.emomodore.init;
 
 import fr.emotion.emomodore.EmoMain;
-import fr.emotion.emomodore.components.PhaseRecord;
 import fr.emotion.emomodore.components.EmoComponentCodecs;
+import fr.emotion.emomodore.components.PhaseRecord;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;

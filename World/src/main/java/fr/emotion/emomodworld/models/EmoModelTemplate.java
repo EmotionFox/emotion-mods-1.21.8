@@ -4,7 +4,6 @@ import fr.emotion.emomodworld.EmoMain;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 
 import java.util.Optional;
 

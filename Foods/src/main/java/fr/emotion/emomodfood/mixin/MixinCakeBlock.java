@@ -29,7 +29,6 @@ import static net.minecraft.world.level.block.CakeBlock.BITES;
 
 @Mixin(CakeBlock.class)
 public abstract class MixinCakeBlock {
-
     @Shadow
     protected static InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
         return null;
