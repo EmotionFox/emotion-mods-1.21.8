@@ -1,3 +1,80 @@
 {
-  
+  "item.emomodfood.slice_bread": "Bread Slice",
+  "item.emomodfood.slice_pear": "Pear Jam Slice",
+  "item.emomodfood.slice_cherry": "Cherry Jam Slice",
+  "item.emomodfood.slice_orange": "Orange Jam Slice",
+  "item.emomodfood.slice_apple": "Apple Jam Slice",
+  "item.emomodfood.slice_blackcurrant": "Blackcurrant Jam Slice",
+  "item.emomodfood.slice_blueberry": "Blueberry Jam Slice",
+  "item.emomodfood.slice_dreamcurrant": "Dreamcurrant Jam Slice",
+  "item.emomodfood.slice_strawberry": "Strawberry Jam Slice",
+  "item.emomodfood.slice_sweetberry": "Sweetberry Jam Slice",
+  "item.emomodfood.slice_chocolate": "Chocolate Spread Slice",
+
+  "item.emomodfood.cake_chocolate": "Chocolate Cake",
+  "item.emomodfood.cake_fruit": "Fruit Cake",
+  "item.emomodfood.cake_toffee": "Toffee Cake",
+  "item.emomodfood.cake_strawberry": "Strawberry Cake",
+
+  "item.emomodfood.glass_bowl": "Glass Bowl",
+  "item.emomodfood.juice_pear": "Pear Juice",
+  "item.emomodfood.juice_cherry": "Cherry Juice",
+  "item.emomodfood.juice_orange": "Orange Juice",
+  "item.emomodfood.juice_tomato": "Tomato Juice",
+  "item.emomodfood.juice_apple": "Apple Juice",
+
+  "item.emomodfood.pie_pear": "Pear Pie",
+  "item.emomodfood.pie_cherry": "Cherry Pie",
+  "item.emomodfood.pie_orange": "Orange Pie",
+  "item.emomodfood.pie_apple": "Apple pie",
+  "item.emomodfood.pie_melon": "Melon Pie",
+
+  "item.emomodfood.muffin_pear": "Pear Muffin",
+  "item.emomodfood.muffin_cherry": "Cherry Muffin",
+  "item.emomodfood.muffin_orange": "Orange Muffin",
+  "item.emomodfood.muffin_apple": "Apple Muffin",
+  "item.emomodfood.muffin_blackcurrant": "Blackcurrant Muffin",
+  "item.emomodfood.muffin_blueberry": "Blueberry Muffin",
+  "item.emomodfood.muffin_dreamcurrant": "Dreamcurrant Muffin",
+  "item.emomodfood.muffin_strawberry": "Strawberry Muffin",
+  "item.emomodfood.muffin_sweetberry": "Sweetberry Muffin",
+
+  "item.emomodfood.toffee": "Toffee",
+  "item.emomodfood.toffee_apple": "Toffee Apple",
+
+  "item.emomodfood.tomato": "Tomato",
+
+  "item.emomodfood.pot": "Empty Glass Pot",
+  "item.emomodfood.pot_empty": "Empty Glass Pot",
+  "item.emomodfood.pot_sweetberry": "Sweetberry Jam Pot",
+  "item.emomodfood.pot_chocolate": "Chocolate Spread Pot",
+  "item.emomodfood.pot_apple": "Apple Jam Pot",
+  "item.emomodfood.pot_blackcurrant": "Blackcurrant Jam Pot",
+  "item.emomodfood.pot_blueberry": "Blueberry Jam Pot",
+  "item.emomodfood.pot_dreamcurrant": "Dreamcurrant Jam Pot",
+  "item.emomodfood.pot_strawberry": "Strawberry Jam Pot",
+  "item.emomodfood.pot_pear": "Pear Jam Pot",
+  "item.emomodfood.pot_cherry": "Cherry Jam Pot",
+  "item.emomodfood.pot_orange": "Orange Jam Pot",
+  "item.emomodfood.pot_water": "Water Pot",
+  "item.emomodfood.pot_lava": "Lava Pot",
+  "item.emomodfood.pot_milk": "Milk Pot",
+  "item.emomodfood.pot_rabbit_stew": "Rabbit Stew Pot",
+  "item.emomodfood.pot_mushroom_stew": "Mushroom Stew Pot",
+  "tooltip.emomodfood.pot.fill_level": "Filling: %s/%s",
+
+  "advancements.emo.craft_pot.title": "Glass Pot",
+  "advancements.emo.craft_pot.description": "Craft A Glass Pot",
+
+  "advancements.emo.craft_special_pot.title": "Jam Pot?",
+  "advancements.emo.craft_special_pot.description": "Try Adding Fruits And Sugar In It",
+
+  "advancements.emo.use_pot.title": "Carafe Or Pot",
+  "advancements.emo.use_pot.description": "Put Liquid In Your Pot",
+
+  "advancements.emo.use_special_pot.title": "Slice With Jam",
+  "advancements.emo.use_special_pot.description": "Now Time To Taste",
+
+  "advancements.emo.craft_muffin.title": "Muffin",
+  "advancements.emo.craft_muffin.description": "Craft A Muffin"
 }

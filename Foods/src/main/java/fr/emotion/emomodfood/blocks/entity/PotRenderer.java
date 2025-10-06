@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 public class PotRenderer implements BlockEntityRenderer<PotBlockEntity> {
+    private static final ResourceLocation potTexture = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot.png");
     private final PotModel model;
 
     public PotRenderer(BlockEntityRendererProvider.Context context) {
@@ -21,24 +22,25 @@ public class PotRenderer implements BlockEntityRenderer<PotBlockEntity> {
     @Override
     public void render(PotBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, Vec3 cameraPos) {
         poseStack.pushPose();
-        poseStack.translate(0.5, 1.5, 0.5);
+
+        poseStack.translate(0.5F, 1.5F, 0.5F);
         poseStack.scale(1.0F, -1.0F, -1.0F);
-        ResourceLocation potTexture = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot.png");
-        VertexConsumer potConsumer = bufferSource.getBuffer(RenderType.entityCutout(potTexture));
+
+        VertexConsumer potConsumer = bufferSource.getBuffer(RenderType.entityTranslucent(potTexture));
         model.pot.render(poseStack, potConsumer, packedLight, packedOverlay);
 
-        //EmoMain.LOGGER.info("Content: " + blockEntity.getContentType().getName() + " | FillLevel: " + blockEntity.getFillLevel());
+        int fillLevel = blockEntity.getFillLevel();
 
-        if(blockEntity.getFillLevel() > 0 && blockEntity.getContentType() != PotBlockEntity.PotContentType.EMPTY){
+        if (fillLevel > 0) {
             ResourceLocation contentTexture = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot_" + blockEntity.getContentType().getName() + ".png");
-            VertexConsumer contentConsumer = bufferSource.getBuffer(RenderType.entityCutout(contentTexture));
-
-            float scaleY = ((float) blockEntity.getFillLevel() / PotBlockEntity.maxLevel);
+            VertexConsumer contentConsumer = bufferSource.getBuffer(RenderType.entityTranslucent(contentTexture));
 
             poseStack.pushPose();
-            poseStack.translate(0.0, (1.0 - scaleY), 0.0);
-            poseStack.scale(1.0F, scaleY, 1.0F);
-            model.content.render(poseStack, contentConsumer, packedLight, packedOverlay);
+            model.layer_1.render(poseStack, contentConsumer, packedLight, packedOverlay);
+
+            if (fillLevel > 1) model.layer_2.render(poseStack, contentConsumer, packedLight, packedOverlay);
+            if (fillLevel > 2) model.layer_3.render(poseStack, contentConsumer, packedLight, packedOverlay);
+            if (fillLevel > 3) model.layer_4.render(poseStack, contentConsumer, packedLight, packedOverlay);
 
             poseStack.popPose();
         }

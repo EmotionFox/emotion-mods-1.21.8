@@ -2,6 +2,7 @@ package fr.emotion.emomodfood.init;
 
 import fr.emotion.emomodfood.EmoMain;
 import fr.emotion.emomodfood.items.EmoFoods;
+import fr.emotion.emomodfood.items.PotBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -55,6 +56,8 @@ public class EmoItems {
     public static final DeferredItem<Item> TOFFEE_APPLE = ITEMS.registerItem("toffee_apple", props -> new Item(props.food(EmoFoods.TOFFEE_APPLE)));
 
     public static final DeferredItem<Item> TOMATO = ITEMS.registerItem("tomato", props -> new BlockItem(EmoBlocks.TOMATOES.get(), props.useItemDescriptionPrefix().food(EmoFoods.TOMATO)));
+
+    public static final DeferredItem<Item> POT = ITEMS.registerItem("pot", props -> new PotBlockItem(EmoBlocks.POT.get(), props));
 
     public static void init(IEventBus eventBus) {
         ITEMS.register(eventBus);

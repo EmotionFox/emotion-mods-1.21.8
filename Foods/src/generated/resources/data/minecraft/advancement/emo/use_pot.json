@@ -1,0 +1,51 @@
+{
+  "parent": "minecraft:emo/craft_pot",
+  "criteria": {
+    "use_pot": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "emomodfood:pot"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:water_bucket"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.emo.use_pot.description"
+    },
+    "icon": {
+      "components": {
+        "emomodfood:pot": {
+          "contentType": "lava",
+          "fillLevel": 4
+        }
+      },
+      "count": 1,
+      "id": "emomodfood:pot"
+    },
+    "title": {
+      "translate": "advancements.emo.use_pot.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "emomodworld:pear",
+    "&": "emomodworld:orange",
+    "=": "emomodworld:cherry",
+    "S": "minecraft:wheat",
+    "X": "minecraft:milk_bucket",
+    "Y": "#minecraft:eggs",
+    "Z": "minecraft:sugar"
+  },
+  "pattern": [
+    "#X&",
+    "=YZ",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodfood:cake_fruit"
+  }
+}

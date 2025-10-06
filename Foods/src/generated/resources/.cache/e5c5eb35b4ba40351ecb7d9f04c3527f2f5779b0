@@ -1,1 +1,6 @@
-// 1.21.8	2025-09-30T21:43:22.794267	Advancements
+// 1.21.8	2025-10-06T17:05:06.930249	Advancements
+f7e1075e5ea248ed6cd29a970cb07f8d8e31b6e9 data/minecraft/advancement/emo/craft_muffin.json
+8536225f26333b3de507f5e16dd959cd290d9167 data/minecraft/advancement/emo/craft_pot.json
+f31a0e4eb76bd043b5bd86ae05f811995ad0394c data/minecraft/advancement/emo/craft_special_pot.json
+b0bb3900c460fab955dfa0f6e2454c9b3011e22a data/minecraft/advancement/emo/use_pot.json
+65766b6e3cf00db914c35be0fb85d6bbe5cf4664 data/minecraft/advancement/emo/use_special_pot.json

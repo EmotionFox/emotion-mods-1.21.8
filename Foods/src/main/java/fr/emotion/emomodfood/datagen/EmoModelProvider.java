@@ -147,7 +147,17 @@ public class EmoModelProvider extends ModelProvider {
 
         blockModels.createCropBlock(EmoBlocks.TOMATOES.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
 
-        blockModels.createParticleOnlyBlock(EmoBlocks.POT.get());
+        blockModels.createParticleOnlyBlock(EmoBlocks.POT.get(), Blocks.GLASS);
+        
+        itemModels.itemModelOutput.accept(
+                EmoItems.POT.get(),
+                new SpecialModelWrapper.Unbaked(
+                        ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_chest"),
+                        new PotSpecialRenderer.Unbaked(
+                                ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pot/pot")
+                        )
+                )
+        );
     }
 
     protected void createCakeBlock(BlockModelGenerators blockModels, Item cakeItem, Block cake) {

@@ -21,7 +21,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
+import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -50,6 +50,14 @@ public class EmoMainClient {
     @SubscribeEvent
     public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(EmoModelLayers.POT, PotModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterSpecialRenderers(RegisterSpecialModelRendererEvent event) {
+        event.register(
+                ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pot_special"),
+                PotSpecialRenderer.Unbaked.MAP_CODEC
+        );
     }
 
     @SubscribeEvent

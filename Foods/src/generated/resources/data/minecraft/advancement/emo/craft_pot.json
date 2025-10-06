@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:emo/root",
+  "criteria": {
+    "craft_pot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodfood:pot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.emo.craft_pot.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomodfood:pot"
+    },
+    "title": {
+      "translate": "advancements.emo.craft_pot.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

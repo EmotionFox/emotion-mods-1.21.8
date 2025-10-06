@@ -1,1 +1,12 @@
-// 1.21.8	2025-09-30T21:43:22.7912668	emomodfood recipes
+// 1.21.8	2025-10-06T16:11:28.9606833	emomodfood recipes
+e62f0938cbbdf03077856c42b15292afeb42d824 data/emomodfood/advancement/recipes/food/cake_chocolate.json
+fb121e7b94ef01effd02ce1320b5681daff189ae data/emomodfood/advancement/recipes/food/cake_fruit.json
+2324e4bedafed2e45c749a06f26a3e85b8610a12 data/emomodfood/advancement/recipes/food/cake_strawberry.json
+899b991c6a090d7aef68c59122b755344bd6bb9a data/emomodfood/advancement/recipes/food/cake_toffee.json
+712e735fc10537828a981ca3e8d1cd20f62391ac data/emomodfood/advancement/recipes/misc/pot.json
+48af03e083b7172341ac31df5f3becc533284393 data/emomodfood/recipe/cake_chocolate.json
+9ebad2f450af539c17a2928608b65ee0dbe85404 data/emomodfood/recipe/cake_fruit.json
+4bd53b0777d600af181756a917ca45ab9158773a data/emomodfood/recipe/cake_strawberry.json
+14547084dd4fb933bb81ea418f5ed8a520d70b5f data/emomodfood/recipe/cake_toffee.json
+048021498628f6ecca69f96b3602553f7ceb52d0 data/emomodfood/recipe/pot.json
+c207bae3bb2c90f98070c505aa496e62a9e174be data/emomodfood/recipe/pot_fruit.json

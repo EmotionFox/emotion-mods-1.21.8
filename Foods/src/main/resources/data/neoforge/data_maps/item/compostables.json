@@ -1,0 +1,49 @@
+{
+  "values": {
+    "emomodfood:slice_bread": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_pear": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_cherry": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_orange": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_apple": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_blackcurrant": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_blueberry": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_dreamcurrant": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_strawberry": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_sweetberry": {
+      "chance": 0.85
+    },
+    "emomodfood:slice_chocolate": {
+      "chance": 0.85
+    },
+    "emomodfood:cake_chocolate": {
+      "chance": 1.0
+    },
+    "emomodfood:cake_fruit": {
+      "chance": 1.0
+    },
+    "emomodfood:cake_toffee": {
+      "chance": 1.0
+    },
+    "emomodfood:cake_strawberry": {
+      "chance": 1.0
+    }
+  }
+}

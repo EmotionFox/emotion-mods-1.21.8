@@ -1,3 +1,80 @@
 {
-  
+  "item.emomodfood.slice_bread": "Tranche de pain",
+  "item.emomodfood.slice_pear": "Tartine de poire",
+  "item.emomodfood.slice_cherry": "Tartine de cerise",
+  "item.emomodfood.slice_orange": "Tartine d'orange",
+  "item.emomodfood.slice_apple": "Tartine de pomme",
+  "item.emomodfood.slice_blackcurrant": "Tartine de cassis",
+  "item.emomodfood.slice_blueberry": "Tartine de myrtille",
+  "item.emomodfood.slice_dreamcurrant": "Tartine de baie des rêves",
+  "item.emomodfood.slice_strawberry": "Tartine de fraise",
+  "item.emomodfood.slice_sweetberry": "Tartine de baie sucrée",
+  "item.emomodfood.slice_chocolate": "Tartine de chocolat",
+
+  "item.emomodfood.cake_chocolate": "Gâteau au chocolat",
+  "item.emomodfood.cake_fruit": "Gâteau aux fruits",
+  "item.emomodfood.cake_toffee": "Gâteau au caramel",
+  "item.emomodfood.cake_strawberry": "Gâteau aux fraises",
+
+  "item.emomodfood.glass_bowl": "Bol en verre",
+  "item.emomodfood.juice_pear": "Jus de poire",
+  "item.emomodfood.juice_cherry": "Jus de cerise",
+  "item.emomodfood.juice_orange": "Jus d'orange",
+  "item.emomodfood.juice_tomato": "Jus de tomate",
+  "item.emomodfood.juice_apple": "Jus de pomme",
+
+  "item.emomodfood.pie_pear": "Tarte aux poires",
+  "item.emomodfood.pie_cherry": "Tarte aux cerises",
+  "item.emomodfood.pie_orange": "Tarte à l'orange",
+  "item.emomodfood.pie_apple": "Tarte à la pomme",
+  "item.emomodfood.pie_melon": "Tarte au melon",
+
+  "item.emomodfood.muffin_pear": "Muffin poire",
+  "item.emomodfood.muffin_cherry": "Muffin cerise",
+  "item.emomodfood.muffin_orange": "Muffin orange",
+  "item.emomodfood.muffin_apple": "Muffin pomme",
+  "item.emomodfood.muffin_blackcurrant": "Muffin cassis",
+  "item.emomodfood.muffin_blueberry": "Muffin myrtille",
+  "item.emomodfood.muffin_dreamcurrant": "Muffin baie des rêves",
+  "item.emomodfood.muffin_strawberry": "Muffin fraise",
+  "item.emomodfood.muffin_sweetberry": "Muffin baie sucrée",
+
+  "item.emomodfood.toffee": "Caramel",
+  "item.emomodfood.toffee_apple": "Pomme d'amour",
+
+  "item.emomodfood.tomato": "Tomate",
+
+  "item.emomodfood.pot": "Pot en verre",
+  "item.emomodfood.pot_empty": "Pot en verre",
+  "item.emomodfood.pot_sweetberry": "Pot de confiture de baie sucrée",
+  "item.emomodfood.pot_chocolate": "Pot de chocolat à tartiner",
+  "item.emomodfood.pot_apple": "Pot de confiture de pomme",
+  "item.emomodfood.pot_blackcurrant": "Pot de confiture de cassis",
+  "item.emomodfood.pot_blueberry": "Pot de confiture de myrtille",
+  "item.emomodfood.pot_dreamcurrant": "Pot de confiture de baie des rêves",
+  "item.emomodfood.pot_strawberry": "Pot de confiture de fraise",
+  "item.emomodfood.pot_pear": "Pot de confiture de poire",
+  "item.emomodfood.pot_cherry": "Pot de confiture de cerise",
+  "item.emomodfood.pot_orange": "Pot de confiture d'orange",
+  "item.emomodfood.pot_water": "Pot d'eau",
+  "item.emomodfood.pot_lava": "Pot de lave",
+  "item.emomodfood.pot_milk": "Pot de lait",
+  "item.emomodfood.pot_rabbit_stew": "Pot de ragoût de lapin",
+  "item.emomodfood.pot_mushroom_stew": "Pot de soupe de champignons",
+  "tooltip.emomodfood.pot.fill_level": "Remplissage : %s/%s",
+
+  "advancements.emo.craft_pot.title": "Pot en verre",
+  "advancements.emo.craft_pot.description": "Farbriquez un pot en verre",
+
+  "advancements.emo.craft_special_pot.title": "Pot de confiture ?",
+  "advancements.emo.craft_special_pot.description": "Essayez d'y ajouter des fruits et du sucre",
+
+  "advancements.emo.use_pot.title": "Carafe ou pot",
+  "advancements.emo.use_pot.description": "Ajoutez du liquide dans votre pot",
+
+  "advancements.emo.use_special_pot.title": "Tartine de confiture",
+  "advancements.emo.use_special_pot.description": "Place à la dégustation",
+
+  "advancements.emo.craft_muffin.title": "Muffin",
+  "advancements.emo.craft_muffin.description": "Fabriquez un muffin"
 }

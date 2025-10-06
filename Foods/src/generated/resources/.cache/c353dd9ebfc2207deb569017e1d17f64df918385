@@ -1,4 +1,4 @@
-// 1.21.8	2025-10-03T00:30:53.7813355	Model Definitions - emomodfood
+// 1.21.8	2025-10-03T23:18:59.3914465	Model Definitions - emomodfood
 8502fa237077540755ce88666cff57582ce03cef assets/emomodfood/blockstates/black_candle_cake_chocolate.json
 45d1f2cce6bf21c66a345e1220736ee31e56dd90 assets/emomodfood/blockstates/black_candle_cake_fruit.json
 97758a6fb98de455a50d58842b6dd4974da16323 assets/emomodfood/blockstates/black_candle_cake_strawberry.json
@@ -97,6 +97,7 @@ e87478d8f7dc28b694010239c7ea22259db29a56 assets/emomodfood/items/pie_cherry.json
 40edaa3a57acb18aeff7ad096c5639c4e23f794e assets/emomodfood/items/pie_melon.json
 f3098133b1b9ed0ec99e8adf2227c902dbad3bc8 assets/emomodfood/items/pie_orange.json
 7dbab6dc472efb98c453a7572cb45e8e37b2bfb8 assets/emomodfood/items/pie_pear.json
+aa46efad09c111d06e62c269d94a265e45e17cd0 assets/emomodfood/items/pot.json
 6cb2eeff30bedd8bf540559b09dc69f82b498476 assets/emomodfood/items/slice_apple.json
 381b420e36cb92eed11f30b311da687466f25dba assets/emomodfood/items/slice_blackcurrant.json
 6b0ef29785cd945eaa42f8b3cfb65d6ec6b2e317 assets/emomodfood/items/slice_blueberry.json
@@ -215,7 +216,7 @@ e428fdf091d715f07b6b8a4d4a915c49c70beed5 assets/emomodfood/models/block/pink_can
 065a7ed26e76252b6205df1c1abde1b34e2e5f9d assets/emomodfood/models/block/pink_candle_cake_strawberry_lit.json
 91ad2fb554476371561d4cc18fc7ef1b0b6510d2 assets/emomodfood/models/block/pink_candle_cake_toffee.json
 3c7cade35809275d17f21925beed93a312cc5bca assets/emomodfood/models/block/pink_candle_cake_toffee_lit.json
-9e2b6a65058643bd3ab46e1298b70ed4c9493652 assets/emomodfood/models/block/pot.json
+5a30b1bc2eb56f34cd04ab7b7394e52a11788f15 assets/emomodfood/models/block/pot.json
 bfba1262da9732f9ebbd7dec022aa86af6edf914 assets/emomodfood/models/block/purple_candle_cake_chocolate.json
 376f657c20f342ce5c424133cdd359687b69cb1c assets/emomodfood/models/block/purple_candle_cake_chocolate_lit.json
 6327ac9475da76b3434a372b3c31f3645db0e71a assets/emomodfood/models/block/purple_candle_cake_fruit.json

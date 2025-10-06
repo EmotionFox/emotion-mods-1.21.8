@@ -1,0 +1,7 @@
+// 1.21.8	2025-10-06T17:03:15.0539446	Tags for minecraft:item mod id emomodfood
+a52e05009bfa6b8168b91528953735f52a00ad18 data/c/tags/item/foods/bread.json
+cf5989616ba5a303c0a05ce97534ee3766eb1430 data/c/tags/item/foods/candy.json
+9d1715f71ab407f95f5b96fb0e8b1cc2adf9768e data/c/tags/item/foods/edible_when_placed.json
+0c5191235923a0c5d30292007e9a4df7e33ba9a6 data/c/tags/item/foods/pie.json
+9570fd0e36c2a13464f9659c4ad825c4ac4c186c data/emomodfood/tags/item/juice.json
+ad9905d1c151fe2db0f10ccb354ee97dbd3258e4 data/emomodfood/tags/item/muffin.json

@@ -1,7 +1,7 @@
 package fr.emotion.emomodfood.init;
 
 import fr.emotion.emomodfood.EmoMain;
-import fr.emotion.emomodfood.blocks.EmoPotBlock;
+import fr.emotion.emomodfood.blocks.PotBlock;
 import fr.emotion.emomodfood.blocks.HoleCandleCakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -110,7 +110,7 @@ public class EmoBlocks {
         }
     });
 
-    public static final DeferredBlock<Block> POT = BLOCKS.registerBlock("pot", props -> new EmoPotBlock(props.mapColor(MapColor.WOOD).sound(SoundType.GLASS)));
+    public static final DeferredBlock<Block> POT = BLOCKS.registerBlock("pot", props -> new PotBlock(props.mapColor(MapColor.WOOD).sound(SoundType.GLASS)));
 
     public static void init(IEventBus eventBus) {
         BLOCKS.register(eventBus);

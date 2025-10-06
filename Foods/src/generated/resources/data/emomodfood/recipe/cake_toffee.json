@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "emomodfood:toffee",
+    "S": "minecraft:wheat",
+    "X": "minecraft:milk_bucket",
+    "Y": "#minecraft:eggs",
+    "Z": "minecraft:sugar"
+  },
+  "pattern": [
+    "#X#",
+    "ZYZ",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodfood:cake_toffee"
+  }
+}

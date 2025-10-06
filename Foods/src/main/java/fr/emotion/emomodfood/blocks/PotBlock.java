@@ -2,6 +2,8 @@ package fr.emotion.emomodfood.blocks;
 
 import com.mojang.serialization.MapCodec;
 import fr.emotion.emomodfood.blocks.entity.PotBlockEntity;
+import fr.emotion.emomodfood.components.PotRecord;
+import fr.emotion.emomodfood.utils.EmoUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -9,6 +11,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -19,14 +22,14 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class EmoPotBlock extends Block implements EntityBlock {
-    public static final MapCodec<EmoPotBlock> CODEC = simpleCodec(EmoPotBlock::new);
+public class PotBlock extends Block implements EntityBlock {
+    public static final MapCodec<PotBlock> CODEC = simpleCodec(PotBlock::new);
     private static final VoxelShape JAR = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
     private static final VoxelShape CORK = Block.box(5.0D, 9.0D, 5.0D, 11.0D, 11.0D, 11.0D);
 
     private static final VoxelShape POT = Shapes.or(JAR, CORK);
 
-    public EmoPotBlock(Properties properties) {
+    public PotBlock(Properties properties) {
         super(properties);
     }
 
@@ -45,12 +48,22 @@ public class EmoPotBlock extends Block implements EntityBlock {
     }
 
     @Override
-    protected MapCodec<EmoPotBlock> codec() {
+    protected MapCodec<PotBlock> codec() {
         return CODEC;
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new PotBlockEntity(pos, state);
+    }
+
+    @Override
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData, Player player) {
+        if (level.getBlockEntity(pos)!=null && level.getBlockEntity(pos) instanceof PotBlockEntity potBlockEntity) {
+            ItemStack stack = new ItemStack(this.asItem());
+            return EmoUtils.definePotDataComponents(stack, new PotRecord(potBlockEntity.getContentType().getName(), potBlockEntity.getFillLevel()));
+        } else {
+            return super.getCloneItemStack(level, pos, state, includeData, player);
+        }
     }
 }

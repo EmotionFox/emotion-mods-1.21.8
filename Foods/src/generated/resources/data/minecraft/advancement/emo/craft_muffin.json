@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:emo/root",
+  "criteria": {
+    "craft_muffin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#emomodfood:muffin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.emo.craft_muffin.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomodfood:muffin_apple"
+    },
+    "title": {
+      "translate": "advancements.emo.craft_muffin.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_muffin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

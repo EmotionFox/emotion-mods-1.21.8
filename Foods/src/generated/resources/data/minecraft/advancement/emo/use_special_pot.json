@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:emo/craft_special_pot",
+  "criteria": {
+    "use_special_pot": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "emomodfood:pot"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "emomodfood:slice_bread"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.emo.use_special_pot.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "emomodfood:slice_cherry"
+    },
+    "title": {
+      "translate": "advancements.emo.use_special_pot.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_special_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

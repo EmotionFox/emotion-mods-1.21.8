@@ -3,6 +3,11 @@ package fr.emotion.emomodfood.blocks.entity;
 import fr.emotion.emomodfood.init.EmoBlockEntityTypes;
 import fr.emotion.emomodfood.init.EmoItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,13 +20,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.fml.common.asm.enumextension.IExtensibleEnum;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 
 public class PotBlockEntity extends BlockEntity {
     private PotContentType contentType = PotContentType.EMPTY;
     private int fillLevel = 0;
-    public static final int maxLevel = 5;
+    public static final int maxLevel = 4;
 
     public PotBlockEntity(BlockPos pos, BlockState blockState) {
         super(EmoBlockEntityTypes.POT.get(), pos, blockState);
@@ -37,7 +43,8 @@ public class PotBlockEntity extends BlockEntity {
             ItemStack out = new ItemStack(type.getResult());
             this.fillLevel--;
 
-            player.setItemInHand(hand, out);
+            held.consume(1, player);
+            player.addItem(out);
 
             if (this.fillLevel <= 0) {
                 this.contentType = PotContentType.EMPTY;
@@ -54,7 +61,8 @@ public class PotBlockEntity extends BlockEntity {
                 this.contentType = newType;
                 this.fillLevel = 1;
 
-                player.setItemInHand(hand, new ItemStack(newType.getItem()));
+                held.consume(1, player);
+                player.addItem(new ItemStack(newType.getItem()));
 
                 setChanged();
                 return InteractionResult.SUCCESS;
@@ -65,7 +73,10 @@ public class PotBlockEntity extends BlockEntity {
             PotContentType addType = PotContentType.byResult(heldItem);
             if (addType==type) {
                 this.fillLevel++;
-                player.setItemInHand(hand, new ItemStack(addType.getItem()));
+
+                held.consume(1, player);
+                player.addItem(new ItemStack(addType.getItem()));
+
                 setChanged();
                 return InteractionResult.SUCCESS;
             }
@@ -82,6 +93,12 @@ public class PotBlockEntity extends BlockEntity {
         return this.fillLevel;
     }
 
+    public void setPot(String contentType, int fillLevel) {
+        this.contentType = PotContentType.byName(contentType);
+        this.fillLevel = fillLevel;
+        setChanged();
+    }
+
     @Override
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
@@ -96,6 +113,22 @@ public class PotBlockEntity extends BlockEntity {
         output.putInt("FillLevel", this.fillLevel);
     }
 
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        tag.putString("ContentType", this.contentType.getName());
+        tag.putInt("FillLevel", this.fillLevel);
+        return tag;
+    }
+
+    @Override
+    public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
+        CompoundTag tag = new CompoundTag();
+        tag.putString("ContentType", this.contentType.getName());
+        tag.putInt("FillLevel", this.fillLevel);
+        return ClientboundBlockEntityDataPacket.create(this, (be, access) -> tag);
+    }
+
     public enum PotContentType implements IExtensibleEnum {
         EMPTY("empty", Items.BARRIER, Items.BARRIER),
         SWEETBERRY("sweetberry", EmoItems.SLICE_BREAD, EmoItems.SLICE_SWEETBERRY),
@@ -104,7 +137,7 @@ public class PotBlockEntity extends BlockEntity {
         BLACKCURRANT("blackcurrant", EmoItems.SLICE_BREAD, EmoItems.SLICE_BLACKCURRANT),
         BLUEBERRY("blueberry", EmoItems.SLICE_BREAD, EmoItems.SLICE_BLUEBERRY),
         DREAMCURRANT("dreamcurrant", EmoItems.SLICE_BREAD, EmoItems.SLICE_DREAMCURRANT),
-        STARWBERRY("strawberry", EmoItems.SLICE_BREAD, EmoItems.SLICE_STRAWBERRY),
+        STRAWBERRY("strawberry", EmoItems.SLICE_BREAD, EmoItems.SLICE_STRAWBERRY),
         PEAR("pear", EmoItems.SLICE_BREAD, EmoItems.SLICE_PEAR),
         CHERRY("cherry", EmoItems.SLICE_BREAD, EmoItems.SLICE_CHERRY),
         ORANGE("orange", EmoItems.SLICE_BREAD, EmoItems.SLICE_ORANGE),

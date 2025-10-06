@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:emo/craft_pot",
+  "criteria": {
+    "craft_special_pot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodfood:pot",
+            "predicates": {
+              "emomodfood:pot": {
+                "fillLevel": 4
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.emo.craft_special_pot.description"
+    },
+    "icon": {
+      "components": {
+        "emomodfood:pot": {
+          "contentType": "cherry",
+          "fillLevel": 2
+        }
+      },
+      "count": 1,
+      "id": "emomodfood:pot"
+    },
+    "title": {
+      "translate": "advancements.emo.craft_special_pot.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_special_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
