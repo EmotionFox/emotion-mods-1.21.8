@@ -32,7 +32,10 @@ public class EmoAdvancements implements AdvancementSubProvider {
                         true,
                         false
                 )
-                .addCriterion("purpura", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoItems.PURPURA_SHARD.get())))
+                .addCriterion(
+                        "mine_purpura",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoItems.PURPURA_SHARD.get()))
+                )
                 .save(writer, "emo/mine_purpura");
         AdvancementHolder advancementHolder1 = Advancement.Builder.advancement()
                 .parent(advancementHolder)
@@ -46,7 +49,27 @@ public class EmoAdvancements implements AdvancementSubProvider {
                         true,
                         false
                 )
-                .addCriterion("viridis", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoBlocks.VIRIDIS_CRYSTAL.get())))
+                .addCriterion(
+                        "mine_viridis",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoBlocks.VIRIDIS_CRYSTAL.get()))
+                )
                 .save(writer, "emo/mine_viridis");
+        AdvancementHolder advancementHolderB = Advancement.Builder.advancement()
+                .parent(fr.emotion.emomodcore.advancements.EmoAdvancements.mainAdvancementHolder)
+                .display(
+                        EmoItems.FOSSIL,
+                        Component.translatable("advancements.emo.mine_fossil.title"),
+                        Component.translatable("advancements.emo.mine_fossil.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true,
+                        false,
+                        false
+                )
+                .addCriterion(
+                        "mine_fossil",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemRegistry, EmoItems.FOSSIL))
+                )
+                .save(writer, "emo/mine_fossil");
     }
 }

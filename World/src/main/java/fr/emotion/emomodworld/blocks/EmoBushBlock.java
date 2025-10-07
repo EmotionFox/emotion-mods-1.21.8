@@ -124,7 +124,7 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock, 
             return InteractionResult.CONSUME;
         }
 
-        return (InteractionResult) (stack.is(Items.BONE_MEAL) ? InteractionResult.PASS:super.useItemOn(stack, state, level, pos, player, hand, hitResult));
+        return stack.is(Items.BONE_MEAL) ? InteractionResult.PASS:super.useItemOn(stack, state, level, pos, player, hand, hitResult);
     }
 
     @Override

@@ -1,0 +1,7 @@
+{
+  "parent": "emomodfurniture:block/wood_table_ns",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "wood": "minecraft:block/spruce_planks"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": "minecraft:sugar",
+  "result": {
+    "count": 1,
+    "id": "emomodfood:toffee"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "emomodfurniture:block/stone_table",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "stone": "minecraft:block/sandstone"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "emomodfood:toffee",
+    "X": "minecraft:apple",
+    "Y": "minecraft:stick"
+  },
+  "pattern": [
+    "#",
+    "X",
+    "Y"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodfood:toffee_apple"
+  }
+}

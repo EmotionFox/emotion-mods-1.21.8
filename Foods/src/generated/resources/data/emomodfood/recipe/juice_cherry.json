@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "emomodfood:glass_bowl",
+    "emomodworld:cherry",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodfood:juice_cherry"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_andesite_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_andesite_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_andesite"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_andesite_ns"
+    }
+  }
+}

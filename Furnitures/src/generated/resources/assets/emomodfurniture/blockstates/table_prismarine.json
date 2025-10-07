@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_prismarine_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_prismarine_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_prismarine"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_prismarine_ns"
+    }
+  }
+}

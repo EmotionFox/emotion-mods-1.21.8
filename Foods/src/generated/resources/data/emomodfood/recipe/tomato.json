@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "emomodfood:glass_bowl",
+    "emomodfood:tomato"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodfood:tomato"
+  }
+}

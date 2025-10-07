@@ -1,0 +1,13 @@
+{
+  "itemGroup.emomodfurniture": "Example Mod Tab",
+  "block.emomodfurniture.example_block": "Example Block",
+  "item.emomodfurniture.example_item": "Example Item",
+
+  "emomodfurniture.configuration.title": "Emotion's Mod - Furniture Configs",
+  "emomodfurniture.configuration.section.emomodfurniture.common.toml": "Emotion's Mod - Furniture Configs",
+  "emomodfurniture.configuration.section.emomodfurniture.common.toml.title": "Emotion's Mod - Furniture Configs",
+  "emomodfurniture.configuration.items": "Item List",
+  "emomodfurniture.configuration.logDirtBlock": "Log Dirt Block",
+  "emomodfurniture.configuration.magicNumberIntroduction": "Magic Number Text",
+  "emomodfurniture.configuration.magicNumber": "Magic Number"
+}

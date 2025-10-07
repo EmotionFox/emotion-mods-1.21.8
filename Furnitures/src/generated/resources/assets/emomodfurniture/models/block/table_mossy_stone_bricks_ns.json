@@ -1,0 +1,7 @@
+{
+  "parent": "emomodfurniture:block/stone_table_ns",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "stone": "minecraft:block/mossy_stone_bricks"
+  }
+}

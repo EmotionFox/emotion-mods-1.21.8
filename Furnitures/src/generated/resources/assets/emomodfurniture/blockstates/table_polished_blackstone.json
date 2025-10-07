@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_polished_blackstone_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_polished_blackstone_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_polished_blackstone"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_polished_blackstone_ns"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_spruce_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_spruce_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_spruce"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_spruce_ns"
+    }
+  }
+}

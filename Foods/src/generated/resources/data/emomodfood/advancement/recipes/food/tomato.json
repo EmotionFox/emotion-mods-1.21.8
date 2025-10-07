@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glass_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodfood:glass_bowl"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "emomodfood:tomato"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tomato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodfood:tomato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glass_bowl",
+      "has_tomato"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "emomodfood:tomato"
+    ]
+  }
+}

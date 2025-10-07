@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_deepslate_tile_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_deepslate_tile_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_deepslate_tile"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_deepslate_tile_ns"
+    }
+  }
+}

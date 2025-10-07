@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glass_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodfood:glass_bowl"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pear": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:pear"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sugar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "emomodfood:juice_pear"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glass_bowl",
+      "has_pear",
+      "has_sugar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "emomodfood:juice_pear"
+    ]
+  }
+}

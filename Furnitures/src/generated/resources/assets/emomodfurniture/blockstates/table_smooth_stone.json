@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_smooth_stone_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_smooth_stone_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_smooth_stone"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_smooth_stone_ns"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_pale_oak_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_pale_oak_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_pale_oak"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_pale_oak_ns"
+    }
+  }
+}

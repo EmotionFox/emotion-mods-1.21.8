@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_atlas_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_atlas_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_atlas"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_atlas_ns"
+    }
+  }
+}

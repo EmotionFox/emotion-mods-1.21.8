@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "table=ew": {
+      "model": "emomodfurniture:block/table_dream_ew"
+    },
+    "table=full": {
+      "model": "emomodfurniture:block/table_dream_full"
+    },
+    "table=normal": {
+      "model": "emomodfurniture:block/table_dream"
+    },
+    "table=ns": {
+      "model": "emomodfurniture:block/table_dream_ns"
+    }
+  }
+}

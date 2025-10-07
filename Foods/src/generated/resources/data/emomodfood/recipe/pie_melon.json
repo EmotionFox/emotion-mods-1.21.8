@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:egg",
+    "minecraft:sugar",
+    "minecraft:melon"
+  ],
+  "result": {
+    "count": 1,
+    "id": "emomodfood:pie_melon"
+  }
+}

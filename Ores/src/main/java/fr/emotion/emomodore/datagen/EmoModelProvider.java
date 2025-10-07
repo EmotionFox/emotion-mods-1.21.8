@@ -93,7 +93,6 @@ public class EmoModelProvider extends ModelProvider {
     }
 
     private static void createCrystalFadingBlock(BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block block) {
-
         createFadingBlock(blockModels, itemModels, block, CustomModelTemplate.CRYSTAL, EmoModelProvider::crystal);
     }
 
