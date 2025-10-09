@@ -6,6 +6,7 @@ import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
 import fr.emotion.emomodworld.entities.jumpingSpider.JumpingSpider;
 import fr.emotion.emomodworld.entities.mouse.Mouse;
+import fr.emotion.emomodworld.entities.sittable.Sittable;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -185,6 +186,14 @@ public class EmoEntityType {
                     .sized(0.7F, 0.5F)
                     .eyeHeight(0.45F)
                     .clientTrackingRange(8)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Sittable>> SITTABLE = ENTITY_TYPE.register(
+            "sittable",
+            resourceLocation -> EntityType.Builder.of(Sittable::new, MobCategory.MISC)
+                    .noLootTable()
+                    .sized(0.6F, 0.75F)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, resourceLocation))
     );
 

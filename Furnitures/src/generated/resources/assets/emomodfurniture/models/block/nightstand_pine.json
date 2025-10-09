@@ -1,0 +1,6 @@
+{
+  "parent": "emomodfurniture:block/nightstand",
+  "textures": {
+    "wood": "emomodworld:block/pine_planks"
+  }
+}

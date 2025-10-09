@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wood_table",
+  "key": {
+    "#": "emomodworld:atlas_planks",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "XXX",
+    " # ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "emomodfurniture:table_atlas"
+  }
+}

@@ -18,6 +18,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Supplier;
+
 public class TableBlock extends Block {
     public static final EnumProperty<TableDir> DIR = EnumProperty.create("table", TableDir.class);
     public static final VoxelShape shelf = Block.box(0d, 12d, 0d, 16d, 16d, 16d);
@@ -37,14 +39,16 @@ public class TableBlock extends Block {
     public static final VoxelShape s_normal = Shapes.or(shelf, s_pillar, s_foot_shelf_t, s_foot_shelf_b);
 
     public boolean isStone = false;
+    public Supplier<Block> texture;
 
-    public TableBlock(boolean isStone, Properties props) {
-        this(props);
+    public TableBlock(boolean isStone, Properties props, Supplier<Block> texture) {
+        this(props, texture);
         this.isStone = isStone;
     }
 
-    public TableBlock(Properties props) {
+    public TableBlock(Properties props, Supplier<Block> texture) {
         super(props);
+        this.texture = texture;
         this.registerDefaultState(this.getStateDefinition().any().setValue(DIR, TableDir.NORMAL));
     }
 

@@ -1,6 +1,7 @@
 package fr.emotion.emomodfurniture;
 
 import com.mojang.logging.LogUtils;
+import fr.emotion.emomodfurniture.init.EmoBlockEntityTypes;
 import fr.emotion.emomodfurniture.init.EmoBlocks;
 import fr.emotion.emomodfurniture.init.EmoItems;
 import net.neoforged.bus.api.IEventBus;
@@ -16,5 +17,6 @@ public class EmoMain {
     public EmoMain(IEventBus modEventBus, ModContainer modContainer) {
         EmoBlocks.init(modEventBus);
         EmoItems.init(modEventBus);
+        EmoBlockEntityTypes.init(modEventBus);
     }
 }

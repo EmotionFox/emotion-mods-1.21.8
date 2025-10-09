@@ -1,0 +1,7 @@
+{
+  "parent": "emomodfurniture:block/wood_stool",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "wood": "emomodworld:block/pear_planks"
+  }
+}

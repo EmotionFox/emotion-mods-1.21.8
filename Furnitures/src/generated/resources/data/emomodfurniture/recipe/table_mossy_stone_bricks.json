@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stone_table",
+  "key": {
+    "#": "minecraft:mossy_stone_bricks",
+    "X": "minecraft:smooth_stone_slab"
+  },
+  "pattern": [
+    "XXX",
+    " # ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "emomodfurniture:table_mossy_stone_bricks"
+  }
+}

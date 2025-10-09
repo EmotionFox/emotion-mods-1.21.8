@@ -53,4 +53,21 @@ public class EmoModelTemplate {
             .requiredTextureSlot(EmoTextureSlot.STONE)
             .renderType("cutout")
             .build();
+
+    public static final ModelTemplate WOOD_STOOL = ExtendedModelTemplateBuilder.builder()
+            .parent(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "block/wood_stool"))
+            .requiredTextureSlot(EmoTextureSlot.WOOD)
+            .renderType("cutout")
+            .build();
+
+    public static final ModelTemplate STONE_STOOL = ExtendedModelTemplateBuilder.builder()
+            .parent(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "block/stone_stool"))
+            .requiredTextureSlot(EmoTextureSlot.STONE)
+            .renderType("cutout")
+            .build();
+
+    public static final ModelTemplate NIGHT_STAND = ExtendedModelTemplateBuilder.builder()
+            .parent(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "block/nightstand"))
+            .requiredTextureSlot(EmoTextureSlot.WOOD)
+            .build();
 }

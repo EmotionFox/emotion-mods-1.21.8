@@ -15,6 +15,7 @@ import fr.emotion.emomodworld.entities.jumpingSpider.JumpingSpiderRenderer;
 import fr.emotion.emomodworld.entities.mouse.Mouse;
 import fr.emotion.emomodworld.entities.mouse.MouseModel;
 import fr.emotion.emomodworld.entities.mouse.MouseRenderer;
+import fr.emotion.emomodworld.entities.sittable.SittableRenderer;
 import fr.emotion.emomodworld.init.EmoBlocks;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoItems;
@@ -167,6 +168,7 @@ public class EmoMainClient {
         event.registerEntityRenderer(EmoEntityType.BOAR.get(), BoarRenderer::new);
         event.registerEntityRenderer(EmoEntityType.MOUSE.get(), MouseRenderer::new);
         event.registerEntityRenderer(EmoEntityType.JUMPING_SPIDER.get(), JumpingSpiderRenderer::new);
+        event.registerEntityRenderer(EmoEntityType.SITTABLE.get(), SittableRenderer::new);
     }
 
     @SubscribeEvent
