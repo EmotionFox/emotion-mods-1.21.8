@@ -43,7 +43,7 @@ public class EmoDataGenerators {
         event.createProvider(((packOutput, lookupProvider) -> new LootTableProvider(
                 packOutput,
                 Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootTableSubProvider::new, LootContextParamSets.BLOCK)),
+                List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootTableSubProvider::new, LootContextParamSets.BLOCK), new LootTableProvider.SubProviderEntry(EmoEntityLootTableSubProvider::new, LootContextParamSets.ENTITY)),
                 lookupProvider
         )));
 
@@ -80,10 +80,10 @@ public class EmoDataGenerators {
 
         event.createProvider(EmoModelProvider::new);
 
-        event.createProvider(((output1, lookupProvider) -> new LootTableProvider(
-                output,
+        event.createProvider(((packOutput, lookupProvider) -> new LootTableProvider(
+                packOutput,
                 Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootTableSubProvider::new, LootContextParamSets.BLOCK)),
+                List.of(new LootTableProvider.SubProviderEntry(EmoBlockLootTableSubProvider::new, LootContextParamSets.BLOCK), new LootTableProvider.SubProviderEntry(EmoEntityLootTableSubProvider::new, LootContextParamSets.ENTITY)),
                 lookupProvider
         )));
 

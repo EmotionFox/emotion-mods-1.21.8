@@ -48,7 +48,6 @@ public class DreamTeleporter {
                     vec3 = vec3.subtract(0.0, 1.0, 0.0);
                 }
             } else {
-                f = serverLevel.getSharedSpawnAngle();
                 set = Relative.union(Relative.DELTA, Relative.ROTATION);
                 if (entity instanceof ServerPlayer serverPlayer) {
                     return serverPlayer.findRespawnPositionAndUseSpawnBlock(false, TeleportTransition.DO_NOTHING);
@@ -58,7 +57,7 @@ public class DreamTeleporter {
             }
 
             return new TeleportTransition(
-                    serverLevel, vec3, Vec3.ZERO, f, 0.0F, set, TeleportTransition.PLAY_PORTAL_SOUND.then(TeleportTransition.PLACE_PORTAL_TICKET)
+                    serverLevel, vec3, Vec3.ZERO, 90, 0.0F, set, TeleportTransition.PLAY_PORTAL_SOUND.then(TeleportTransition.PLACE_PORTAL_TICKET)
             );
         }
     }

@@ -117,5 +117,7 @@
   "block.emomodfurniture.stool_nether_bricks": "Nether Bricks Stool",
   "block.emomodfurniture.stool_red_nether_bricks": "Red Nether Bricks Stool",
 
-  "container.nightstand": "Nightstand"
+  "container.nightstand": "Nightstand",
+  "stat.emomodfurniture.open_nightstand": "Nightstands Opened",
+  "stat.emomodfurniture.stool_sit": "Stools Seated"
 }

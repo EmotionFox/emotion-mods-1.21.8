@@ -27,7 +27,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-import net.neoforged.neoforge.items.wrapper.InvWrapper;
+import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
 import org.slf4j.Logger;
 
 @Mod(EmoMain.MODID)
@@ -219,28 +219,28 @@ public class EmoMain {
 
     private void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         // PEAR
-        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.PEAR_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
-        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.PEAR_CHEST_BOAT.get(), ((entity, ctx) -> new InvWrapper(entity)));
+        event.registerEntity(Capabilities.Item.ENTITY, EmoEntityType.PEAR_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
+        event.registerEntity(Capabilities.Item.ENTITY_AUTOMATION, EmoEntityType.PEAR_CHEST_BOAT.get(), ((entity, ctx) -> VanillaContainerWrapper.of(entity)));
 
         // ORANGE
-        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.ORANGE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
-        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.ORANGE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.Item.ENTITY, EmoEntityType.ORANGE_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
+        event.registerEntity(Capabilities.Item.ENTITY_AUTOMATION, EmoEntityType.ORANGE_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
 
         // ATLAS
-        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.ATLAS_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
-        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.ATLAS_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.Item.ENTITY, EmoEntityType.ATLAS_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
+        event.registerEntity(Capabilities.Item.ENTITY_AUTOMATION, EmoEntityType.ATLAS_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
 
         // PINE
-        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.PINE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
-        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.PINE_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.Item.ENTITY, EmoEntityType.PINE_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
+        event.registerEntity(Capabilities.Item.ENTITY_AUTOMATION, EmoEntityType.PINE_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
 
         // COCO
-        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.COCO_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
-        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.COCO_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.Item.ENTITY, EmoEntityType.COCO_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
+        event.registerEntity(Capabilities.Item.ENTITY_AUTOMATION, EmoEntityType.COCO_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
 
         // DREAM
-        event.registerEntity(Capabilities.ItemHandler.ENTITY, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
-        event.registerEntity(Capabilities.ItemHandler.ENTITY_AUTOMATION, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> new InvWrapper(entity));
+        event.registerEntity(Capabilities.Item.ENTITY, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
+        event.registerEntity(Capabilities.Item.ENTITY_AUTOMATION, EmoEntityType.DREAM_CHEST_BOAT.get(), (entity, ctx) -> VanillaContainerWrapper.of(entity));
     }
 
     private void onRegisterSpawnPlacements(RegisterSpawnPlacementsEvent event) {

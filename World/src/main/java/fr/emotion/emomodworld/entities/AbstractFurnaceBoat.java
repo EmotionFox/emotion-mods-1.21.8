@@ -7,10 +7,7 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.HasCustomInventoryScreen;
-import net.minecraft.world.entity.SlotAccess;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -70,7 +67,7 @@ public abstract class AbstractFurnaceBoat extends AbstractBoat implements HasCus
 
     @Override
     public void remove(Entity.RemovalReason p_376764_) {
-        if (!this.level().isClientSide && p_376764_.shouldDestroy()) {
+        if (!this.level().isClientSide() && p_376764_.shouldDestroy()) {
             Containers.dropContents(this.level(), this, this);
         }
 
@@ -195,7 +192,7 @@ public abstract class AbstractFurnaceBoat extends AbstractBoat implements HasCus
     }
 
     @Override
-    public void stopOpen(Player p_376820_) {
-        this.level().gameEvent(GameEvent.CONTAINER_CLOSE, this.position(), GameEvent.Context.of(p_376820_));
+    public void stopOpen(ContainerUser user) {
+        this.level().gameEvent(GameEvent.CONTAINER_CLOSE, this.position(), GameEvent.Context.of(user.getLivingEntity()));
     }
 }

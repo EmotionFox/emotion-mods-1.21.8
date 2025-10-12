@@ -12,3 +12,8 @@
 - Dreams -> biome per islands (possible? Using same noise as terrain gen ? (optional))
 - More variants for all mobs (very optional)
 - Find sound effect to make everything snap together (optional)
+
+HOTFIXE
+
+- Add dye loot for flowers
+- Entities attributes problem?

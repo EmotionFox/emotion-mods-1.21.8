@@ -189,6 +189,17 @@
   "item.emomodworld.butterfly_red": "Red Butterfly",
   "item.emomodworld.butterfly_yellow": "Yellow Butterfly",
 
+  "item.emomodworld.half_ham": "Raw Half Ham",
+  "item.emomodworld.ham": "Raw Ham",
+
+  "item.emomodworld.half_cooked_ham": "Cooked Half Ham",
+  "item.emomodworld.cooked_ham": "Cooked Ham",
+
+  "item.emomodworld.beetle_spawn_egg": "Beetle Spawn Egg",
+  "item.emomodworld.boar_spawn_egg": "Boar Spawn Egg",
+  "item.emomodworld.mouse_spawn_egg": "Mouse Spawn Egg",
+  "item.emomodworld.jumping_spider_spawn_egg": "Jumping Spider Spawn Egg",
+
   "entity.emomodworld.pear_boat": "Pear Boat",
   "entity.emomodworld.orange_boat": "Orange Boat",
   "entity.emomodworld.atlas_boat": "Atlas Boat",

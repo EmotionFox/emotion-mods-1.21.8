@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:emo/root",
   "criteria": {
-    "mine_purpura": {
+    "mine_fossil": {
       "conditions": {
         "items": [
           {
-            "items": "emomodore:purpura_shard"
+            "items": "emomodore:fossil"
           }
         ]
       },
@@ -13,20 +13,21 @@
     }
   },
   "display": {
+    "announce_to_chat": false,
     "description": {
-      "translate": "advancements.emo.mine_purpura.description"
+      "translate": "advancements.emo.mine_fossil.description"
     },
     "icon": {
       "count": 1,
-      "id": "emomodore:purpura_shard"
+      "id": "emomodore:fossil"
     },
     "title": {
-      "translate": "advancements.emo.mine_purpura.title"
+      "translate": "advancements.emo.mine_fossil.title"
     }
   },
   "requirements": [
     [
-      "mine_purpura"
+      "mine_fossil"
     ]
   ],
   "sends_telemetry_event": true

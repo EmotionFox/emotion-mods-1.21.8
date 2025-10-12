@@ -1,93 +1,120 @@
 package fr.emotion.emomodfood.blocks.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import fr.emotion.emomodfood.EmoMain;
 import fr.emotion.emomodfood.blocks.PotBlock;
+import fr.emotion.emomodfood.init.EmoBlocks;
 import fr.emotion.emomodfood.models.EmoModelLayers;
 import fr.emotion.emomodfood.utils.EmoUtils;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
+import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.model.MaterialSet;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.FormattedCharSequence;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 
-public class PotRenderer implements BlockEntityRenderer<PotBlockEntity> {
-    private static final ResourceLocation potTexture = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot.png");
-    private final PotModel model;
+import java.util.List;
+
+public class PotRenderer implements BlockEntityRenderer<PotBlockEntity, PotRenderState> {
+    private final List<PotModel> models;
 
     public PotRenderer(BlockEntityRendererProvider.Context context) {
-        this.model = new PotModel(context.bakeLayer(EmoModelLayers.POT));
+        this.models = EmoUtils.getPots(context);
     }
 
     @Override
-    public void render(PotBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, Vec3 cameraPos) {
+    public PotRenderState createRenderState() {
+        return new PotRenderState();
+    }
+
+    @Override
+    public void extractRenderState(PotBlockEntity blockEntity, PotRenderState renderState, float partialTick, Vec3 cameraPosition, @Nullable ModelFeatureRenderer.CrumblingOverlay breakProgress) {
+        BlockEntityRenderer.super.extractRenderState(blockEntity, renderState, partialTick, cameraPosition, breakProgress);
+        boolean flag = blockEntity.getLevel()!=null;
+        BlockState state = flag ? blockEntity.getBlockState():EmoBlocks.POT.get().defaultBlockState().setValue(PotBlock.FACING, Direction.NORTH);
+        renderState.angle = state.getValue(PotBlock.FACING).toYRot();
+        renderState.contentType = blockEntity.getContentType().getName();
+        renderState.layers = blockEntity.getFillLevel();
+    }
+
+    @Override
+    public void submit(PotRenderState renderState, PoseStack poseStack, SubmitNodeCollector nodeCollector, CameraRenderState cameraRenderState) {
         poseStack.pushPose();
 
         poseStack.translate(0.5F, 1.5F, 0.5F);
-        poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValueOrElse(PotBlock.FACING, Direction.NORTH).toYRot()));
+        poseStack.mulPose(Axis.YP.rotationDegrees(-renderState.angle));
         poseStack.scale(1.0F, -1.0F, -1.0F);
 
-        VertexConsumer potConsumer = bufferSource.getBuffer(RenderType.entityCutout(potTexture));
-        model.pot.render(poseStack, potConsumer, packedLight, packedOverlay);
+        PotModel model = models.get(renderState.layers);
+        PotModel.State state = new PotModel.State();
 
-        int fillLevel = blockEntity.getFillLevel();
+        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot" + (renderState.layers > 0 ? "_" + renderState.contentType : "") + ".png");
+        RenderType renderType = RenderType.itemEntityTranslucentCull(location);
 
-        if (fillLevel > 0) {
-            ResourceLocation contentTexture = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot_" + blockEntity.getContentType().getName() + ".png");
-            VertexConsumer contentConsumer = bufferSource.getBuffer(RenderType.itemEntityTranslucentCull(contentTexture));
-
-            model.layer_1.render(poseStack, contentConsumer, packedLight, packedOverlay);
-
-            if (fillLevel > 1) model.layer_2.render(poseStack, contentConsumer, packedLight, packedOverlay);
-            if (fillLevel > 2) model.layer_3.render(poseStack, contentConsumer, packedLight, packedOverlay);
-            if (fillLevel > 3) model.layer_4.render(poseStack, contentConsumer, packedLight, packedOverlay);
-        }
+        nodeCollector.submitModel(
+                model,
+                state,
+                poseStack,
+                renderType,
+                renderState.lightCoords,
+                OverlayTexture.NO_OVERLAY,
+                0,
+                renderState.breakProgress
+        );
 
         Font font = Minecraft.getInstance().font;
-        Component firstRow = Component.translatable("item." + EmoMain.MODID + ".pot_" + blockEntity.getContentType().getName());
-        String secondRow = fillLevel + "/" + PotBlockEntity.maxLevel;
+        Component firstRow = Component.translatable("item." + EmoMain.MODID + ".pot_" + renderState.contentType);
+        String secondRow = renderState.layers + "/" + PotBlockEntity.maxLevel;
         float scale = 0.010416667F / 2;
 
         poseStack.translate(0.0F, 1.14F, -0.3125F);
         poseStack.scale(scale, scale, scale);
 
-        Matrix4f matrix4f = poseStack.last().pose();
         float x = -font.width(firstRow) / 2.0F;
         float xB = -font.width(secondRow) / 2.0F;
         int color = 0xFF403c34;
 
-        font.drawInBatch(
-                firstRow,
+        nodeCollector.submitText(
+                poseStack,
                 x,
                 0,
-                color,
+                FormattedCharSequence.forward(firstRow.getString(), Style.EMPTY),
                 false,
-                matrix4f,
-                bufferSource,
                 Font.DisplayMode.POLYGON_OFFSET,
+                renderState.lightCoords,
+                color,
                 0,
-                packedLight
+                0
         );
 
-        font.drawInBatch(
-                secondRow,
+        nodeCollector.submitText(
+                poseStack,
                 xB,
-                0,
-                color,
+                font.lineHeight + 1.0F,
+                FormattedCharSequence.forward(secondRow, Style.EMPTY),
                 false,
-                matrix4f.translate(0.0F, font.lineHeight + 1.0F, 0.0F),
-                bufferSource,
                 Font.DisplayMode.POLYGON_OFFSET,
+                renderState.lightCoords,
+                color,
                 0,
-                packedLight
+                0
         );
 
         poseStack.popPose();

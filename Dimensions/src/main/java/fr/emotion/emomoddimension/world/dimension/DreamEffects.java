@@ -1,14 +1,14 @@
 package fr.emotion.emomoddimension.world.dimension;
 
-import net.minecraft.client.Camera;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
+import net.minecraft.client.renderer.state.LevelRenderState;
+import net.minecraft.client.renderer.state.SkyRenderState;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
 
 public class DreamEffects extends DimensionSpecialEffects {
     public DreamEffects() {
-        super(SkyType.OVERWORLD, false, true);
+        super(SkyType.NONE, false, true);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class DreamEffects extends DimensionSpecialEffects {
     }
 
     @Override
-    public boolean renderSky(ClientLevel level, int ticks, float partialTick, Matrix4f modelViewMatrix, Camera camera, Runnable setupFog) {
+    public boolean renderSky(LevelRenderState levelRenderState, SkyRenderState skyRenderState, Matrix4f modelViewMatrix, Runnable setupFog) {
         return true;
     }
 }

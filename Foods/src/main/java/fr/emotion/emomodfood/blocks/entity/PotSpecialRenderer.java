@@ -1,15 +1,14 @@
 package fr.emotion.emomodfood.blocks.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.serialization.MapCodec;
 import fr.emotion.emomodfood.EmoMain;
 import fr.emotion.emomodfood.components.PotRecord;
 import fr.emotion.emomodfood.init.EmoComponents;
 import fr.emotion.emomodfood.models.EmoModelLayers;
-import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.renderer.MultiBufferSource;
+import fr.emotion.emomodfood.utils.EmoUtils;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.resources.ResourceLocation;
@@ -18,14 +17,20 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
+import java.util.List;
 import java.util.Set;
 
-public record PotSpecialRenderer(PotModel model,
-                                 ResourceLocation texture) implements SpecialModelRenderer<DataComponentMap> {
+public class PotSpecialRenderer implements SpecialModelRenderer<DataComponentMap> {
+    private final List<PotModel> models;
+
+    public PotSpecialRenderer(List<PotModel> models) {
+        this.models = models;
+    }
+
     @Override
-    public void render(@Nullable DataComponentMap patterns, ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, boolean hasFoilType) {
-        assert patterns!=null;
-        PotRecord potRecord = patterns.getOrDefault(EmoComponents.POT.get(), new PotRecord("empty", 0));
+    public void submit(@Nullable DataComponentMap argument, ItemDisplayContext displayContext, PoseStack poseStack, SubmitNodeCollector nodeCollector, int packedLight, int packedOverlay, boolean hasFoil, int outlineColor) {
+        assert argument!=null;
+        PotRecord potRecord = argument.getOrDefault(EmoComponents.POT.get(), new PotRecord("empty", 0));
 
         poseStack.pushPose();
 
@@ -33,24 +38,23 @@ public record PotSpecialRenderer(PotModel model,
         else poseStack.translate(0.5F, 1.5F, 0.5F);
         poseStack.scale(1.0F, -1.0F, -1.0F);
 
-        VertexConsumer potConsumer = bufferSource.getBuffer(RenderType.entityCutout(texture));
-        this.model.pot.render(poseStack, potConsumer, packedLight, packedOverlay);
+        PotModel model = models.get(potRecord.fillLevel());
+        PotModel.State state = new PotModel.State();
 
-        int fillLevel = potRecord.fillLevel();
+        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot" + (potRecord.fillLevel() > 0 ? "_" + potRecord.contentType():"") + ".png");
 
-        if (fillLevel > 0) {
-            ResourceLocation contentTexture = ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "textures/entity/pot/pot_" + potRecord.contentType() + ".png");
-            VertexConsumer contentConsumer = bufferSource.getBuffer(RenderType.entityCutout(contentTexture));
+        RenderType renderType = RenderType.entityCutout(location);
 
-            poseStack.pushPose();
-            this.model.layer_1.render(poseStack, contentConsumer, packedLight, packedOverlay);
-
-            if (fillLevel > 1) model.layer_2.render(poseStack, contentConsumer, packedLight, packedOverlay);
-            if (fillLevel > 2) model.layer_3.render(poseStack, contentConsumer, packedLight, packedOverlay);
-            if (fillLevel > 3) model.layer_4.render(poseStack, contentConsumer, packedLight, packedOverlay);
-
-            poseStack.popPose();
-        }
+        nodeCollector.submitModel(
+                model,
+                state,
+                poseStack,
+                renderType,
+                packedLight,
+                packedOverlay,
+                outlineColor,
+                null
+        );
 
         poseStack.popPose();
     }
@@ -58,7 +62,7 @@ public record PotSpecialRenderer(PotModel model,
     @Override
     public void getExtents(Set<Vector3f> output) {
         PoseStack poseStack = new PoseStack();
-        this.model.root().getExtentsForGui(poseStack, output);
+        this.models.getFirst().root().getExtentsForGui(poseStack, output);
     }
 
     @Override
@@ -66,20 +70,17 @@ public record PotSpecialRenderer(PotModel model,
         return stack.immutableComponents();
     }
 
-    public record Unbaked(ResourceLocation texture) implements SpecialModelRenderer.Unbaked {
-        public static final MapCodec<PotSpecialRenderer.Unbaked> MAP_CODEC = ResourceLocation.CODEC.fieldOf("texture")
-                .xmap(PotSpecialRenderer.Unbaked::new, PotSpecialRenderer.Unbaked::texture);
-
-        @Override
-        public SpecialModelRenderer<?> bake(EntityModelSet modelSet) {
-            PotModel model = new PotModel(modelSet.bakeLayer(EmoModelLayers.POT));
-            ResourceLocation texture = this.texture.withPath(path -> "textures/entity/" + path + ".png");
-            return new PotSpecialRenderer(model, texture);
-        }
+    public record Unbaked() implements SpecialModelRenderer.Unbaked {
+        public static final MapCodec<PotSpecialRenderer.Unbaked> MAP_CODEC = MapCodec.unit(new PotSpecialRenderer.Unbaked());
 
         @Override
         public MapCodec<? extends SpecialModelRenderer.Unbaked> type() {
             return MAP_CODEC;
+        }
+
+        @Override
+        public @Nullable SpecialModelRenderer<?> bake(BakingContext context) {
+            return new PotSpecialRenderer(EmoUtils.getPots(context));
         }
     }
 }

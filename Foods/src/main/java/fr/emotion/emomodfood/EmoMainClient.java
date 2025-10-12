@@ -21,6 +21,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
 import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -49,7 +50,11 @@ public class EmoMainClient {
 
     @SubscribeEvent
     public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(EmoModelLayers.POT, PotModel::createBodyLayer);
+        event.registerLayerDefinition(EmoModelLayers.POT, PotModel::createPot);
+        event.registerLayerDefinition(EmoModelLayers.POT_LAYER1, PotModel::createPotOneLayer);
+        event.registerLayerDefinition(EmoModelLayers.POT_LAYER2, PotModel::createPotTwoLayers);
+        event.registerLayerDefinition(EmoModelLayers.POT_LAYER3, PotModel::createPotThreeLayers);
+        event.registerLayerDefinition(EmoModelLayers.POT_LAYER4, PotModel::createPotFourLayers);
     }
 
     @SubscribeEvent
@@ -65,6 +70,14 @@ public class EmoMainClient {
         event.registerBlockEntityRenderer(
                 EmoBlockEntityTypes.POT.get(),
                 PotRenderer::new
+        );
+    }
+
+    @SubscribeEvent
+    public static void onRegisterSpecialBlockRenderers(RegisterSpecialBlockModelRendererEvent event) {
+        event.register(
+                EmoBlocks.POT.get(),
+                new PotSpecialRenderer.Unbaked()
         );
     }
 }

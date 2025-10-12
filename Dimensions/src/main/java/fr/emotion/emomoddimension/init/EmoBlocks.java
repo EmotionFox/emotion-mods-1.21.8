@@ -33,7 +33,7 @@ import java.util.function.Function;
 public class EmoBlocks {
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EmoMain.MODID);
 
-    public static final DeferredBlock<Block> DREAM_SHORT_GRASS = addBlock("dream_short_grass", props -> new TallGrassBlock(props.mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(fr.emotion.emomodworld.EmoMain.MODID, "flower_tallgrass")))) {
+    public static final DeferredBlock<Block> DREAM_SHORT_GRASS = addBlock("dream_short_grass", props -> new TallGrassBlock(props.mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(fr.emotion.emomodworld.EmoMain.MODID, "flower_tallgrass")))) {
         @Override
         public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state) {
             return getEmoGrownBlock(state).defaultBlockState().canSurvive(levelReader, pos) && levelReader.isEmptyBlock(pos.above());
@@ -49,9 +49,9 @@ public class EmoBlocks {
         }
     });
 
-    public static final DeferredBlock<Block> DREAM_TALL_GRASS = addBlock("dream_tall_grass", props -> new DoublePlantBlock(props.mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)), DoubleHighBlockItem.class);
+    public static final DeferredBlock<Block> DREAM_TALL_GRASS = addBlock("dream_tall_grass", props -> new DoublePlantBlock(props.mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)), DoubleHighBlockItem.class);
 
-    public static final DeferredBlock<Block> DREAM_PORTAL = BLOCKS.registerBlock("dream_portal", props -> new DreamPortalBlock(props.noCollission().strength(-1.0F).sound(SoundType.GLASS).lightLevel(state -> 11).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> DREAM_PORTAL = BLOCKS.registerBlock("dream_portal", props -> new DreamPortalBlock(props.noCollision().strength(-1.0F).sound(SoundType.GLASS).lightLevel(state -> 11).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> DREAM_STONE = addBlock("dream_stone", props -> new Block(props.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
     public static final DeferredBlock<Block> DREAM_COBBLESTONE = addBlock("dream_cobblestone", props -> new Block(props.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
     public static final DeferredBlock<Block> DREAM_GRASS_BLOCK = addBlock("dream_grass_block", props -> new DreamGrassBlock(props.mapColor(MapColor.GRASS).randomTicks().strength(1.5F, 6.0F).sound(SoundType.STONE)));

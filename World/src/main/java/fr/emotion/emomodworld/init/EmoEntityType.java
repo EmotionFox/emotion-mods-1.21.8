@@ -201,6 +201,10 @@ public class EmoEntityType {
         ENTITY_TYPE.register(eventBus);
     }
 
+    public static DeferredRegister<EntityType<?>> getEntities(){
+        return ENTITY_TYPE;
+    }
+
     private static EntityType.EntityFactory<Boat> boatFactory(Supplier<Item> boatItemGetter) {
         return (p_375558_, p_375559_) -> new Boat(p_375558_, p_375559_, boatItemGetter);
     }

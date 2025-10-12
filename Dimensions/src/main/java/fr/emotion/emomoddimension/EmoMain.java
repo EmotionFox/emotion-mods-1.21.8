@@ -89,7 +89,7 @@ public class EmoMain {
                 CompoundTag data = player.getPersistentData();
                 data.putBoolean("Dreaming", true);
                 // SHOULD BE 12000 OTHER VALUE FOR TESTING PURPOSE
-                data.putLong("Awakening", serverLevel.getGameTime() + 200);
+                data.putLong("Awakening", serverLevel.getGameTime() + 1000);
                 event.setProblem(Player.BedSleepingProblem.OTHER_PROBLEM);
 
                 TeleportTransition transition = DreamTeleporter.getPortalDestination(serverLevel, player, playerPos);

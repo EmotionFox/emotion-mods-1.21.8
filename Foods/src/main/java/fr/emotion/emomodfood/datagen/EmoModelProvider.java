@@ -153,9 +153,7 @@ public class EmoModelProvider extends ModelProvider {
                 EmoItems.POT.get(),
                 new SpecialModelWrapper.Unbaked(
                         ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_chest"),
-                        new PotSpecialRenderer.Unbaked(
-                                ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pot/pot")
-                        )
+                        new PotSpecialRenderer.Unbaked()
                 )
         );
     }

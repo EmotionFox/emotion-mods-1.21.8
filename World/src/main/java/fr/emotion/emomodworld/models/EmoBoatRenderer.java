@@ -6,13 +6,14 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.AbstractBoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.state.BoatRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Unit;
 
 public class EmoBoatRenderer extends AbstractBoatRenderer {
     private final Model waterPatchModel;
@@ -37,10 +38,18 @@ public class EmoBoatRenderer extends AbstractBoatRenderer {
     }
 
     @Override
-    protected void renderTypeAdditions(BoatRenderState renderState, PoseStack posStack, MultiBufferSource multiBufferSource, int packedLight) {
+    protected void submitTypeAdditions(BoatRenderState renderState, PoseStack poseStack, SubmitNodeCollector nodeCollector, int lightCoords) {
         if (!renderState.isUnderWater) {
-            this.waterPatchModel
-                    .renderToBuffer(posStack, multiBufferSource.getBuffer(this.waterPatchModel.renderType(this.texture)), packedLight, OverlayTexture.NO_OVERLAY);
+            nodeCollector.submitModel(
+                    this.waterPatchModel,
+                    Unit.INSTANCE,
+                    poseStack,
+                    this.waterPatchModel.renderType(this.texture),
+                    lightCoords,
+                    OverlayTexture.NO_OVERLAY,
+                    renderState.outlineColor,
+                    null
+            );
         }
     }
 }

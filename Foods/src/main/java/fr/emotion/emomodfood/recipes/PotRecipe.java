@@ -53,7 +53,7 @@ public class PotRecipe extends CustomRecipe {
                     hasSugar = true;
                 } else if (!stack.is(Items.AIR)) {
                     if (this.fruit==null) {
-                        if (stack.is(Items.COCOA_BEANS) || PotBlockEntity.PotContentType.byName(BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath())!=PotBlockEntity.PotContentType.EMPTY) {
+                        if (stack.is(Items.COCOA_BEANS) || stack.is(Items.SWEET_BERRIES) || PotBlockEntity.PotContentType.byName(BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath())!=PotBlockEntity.PotContentType.EMPTY) {
                             this.fruit = stack;
                             fruitCount++;
                         } else {
@@ -79,6 +79,7 @@ public class PotRecipe extends CustomRecipe {
 
         if (this.fruit!=null) {
             if (this.fruit.is(Items.COCOA_BEANS)) component = new PotRecord("chocolate", 4);
+            else if (this.fruit.is(Items.SWEET_BERRIES)) component = new PotRecord("sweetberry", 4);
             else component = new PotRecord(BuiltInRegistries.ITEM.getKey(this.fruit.getItem()).getPath(), 4);
         }
 

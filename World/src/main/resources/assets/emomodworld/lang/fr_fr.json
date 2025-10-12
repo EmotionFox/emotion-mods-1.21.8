@@ -189,6 +189,17 @@
   "item.emomodworld.butterfly_red": "Papillon rouge",
   "item.emomodworld.butterfly_yellow": "Papillon jaune",
 
+  "item.emomodworld.half_ham": "Demi-jambon cru",
+  "item.emomodworld.ham": "Jambon cru",
+
+  "item.emomodworld.half_cooked_ham": "Demi-jambon cuit",
+  "item.emomodworld.cooked_ham": "Jambon cuit",
+
+  "item.emomodworld.beetle_spawn_egg": "Oeuf d'apparition de scarabée",
+  "item.emomodworld.boar_spawn_egg": "Oeuf d'apparition de sanglier",
+  "item.emomodworld.mouse_spawn_egg": "Oeuf d'apparition de souris",
+  "item.emomodworld.jumping_spider_spawn_egg": "Oeuf d'apparition d'araignée saltique",
+
   "entity.emomodworld.pear_boat": "Bateau en poirier",
   "entity.emomodworld.orange_boat": "Bateau en oranger",
   "entity.emomodworld.atlas_boat": "Bateau en atlas",

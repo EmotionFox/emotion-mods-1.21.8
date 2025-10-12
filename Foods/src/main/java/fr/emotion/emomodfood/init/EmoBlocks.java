@@ -1,8 +1,8 @@
 package fr.emotion.emomodfood.init;
 
 import fr.emotion.emomodfood.EmoMain;
-import fr.emotion.emomodfood.blocks.PotBlock;
 import fr.emotion.emomodfood.blocks.HoleCandleCakeBlock;
+import fr.emotion.emomodfood.blocks.PotBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
@@ -98,7 +98,7 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> RED_CANDLE_CAKE_STRAWBERRY = BLOCKS.registerBlock("red_candle_cake_strawberry", props -> new CandleCakeBlock(Blocks.CANDLE, props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3))));
     public static final DeferredBlock<Block> BLACK_CANDLE_CAKE_STRAWBERRY = BLOCKS.registerBlock("black_candle_cake_strawberry", props -> new CandleCakeBlock(Blocks.CANDLE, props.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(3))));
 
-    public static final DeferredBlock<Block> TOMATOES = BLOCKS.registerBlock("tomatoes", props -> new CropBlock(props.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)){
+    public static final DeferredBlock<Block> TOMATOES = BLOCKS.registerBlock("tomatoes", props -> new CropBlock(props.mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)){
         @Override
         protected ItemLike getBaseSeedId() {
             return EmoItems.TOMATO.get();

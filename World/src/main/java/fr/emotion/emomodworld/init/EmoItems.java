@@ -93,10 +93,10 @@ public class EmoItems {
     public static final DeferredItem<Item> COOKED_HALF_HAM = ITEMS.registerSimpleItem("half_cooked_ham", new Item.Properties().food(EmoFoods.COOKED_HAM).usingConvertsTo(Items.BONE));
     public static final DeferredItem<Item> COOKED_HAM = ITEMS.registerItem("cooked_ham", props -> new Item(props.food(EmoFoods.COOKED_HAM).usingConvertsTo(COOKED_HALF_HAM.get())));
 
-    public static final DeferredItem<Item> BEETLE_SPAWN_EGG = ITEMS.registerItem("beetle_spawn_egg", props -> new SpawnEggItem(EmoEntityType.BEETLE.get(), props));
-    public static final DeferredItem<Item> BOAR_SPAWN_EGG = ITEMS.registerItem("boar_spawn_egg", props -> new SpawnEggItem(EmoEntityType.BOAR.get(), props));
-    public static final DeferredItem<Item> MOUSE_SPAWN_EGG = ITEMS.registerItem("mouse_spawn_egg", props -> new SpawnEggItem(EmoEntityType.MOUSE.get(), props));
-    public static final DeferredItem<Item> JUMPING_SPIDER_SPAWN_EGG = ITEMS.registerItem("jumping_spider_spawn_egg", props -> new SpawnEggItem(EmoEntityType.JUMPING_SPIDER.get(), props));
+    public static final DeferredItem<Item> BEETLE_SPAWN_EGG = ITEMS.registerItem("beetle_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(EmoEntityType.BEETLE.get())));
+    public static final DeferredItem<Item> BOAR_SPAWN_EGG = ITEMS.registerItem("boar_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(EmoEntityType.BOAR.get())));
+    public static final DeferredItem<Item> MOUSE_SPAWN_EGG = ITEMS.registerItem("mouse_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(EmoEntityType.MOUSE.get())));
+    public static final DeferredItem<Item> JUMPING_SPIDER_SPAWN_EGG = ITEMS.registerItem("jumping_spider_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(EmoEntityType.JUMPING_SPIDER.get())));
 
     public static void init(IEventBus event) {
         ITEMS.register(event);

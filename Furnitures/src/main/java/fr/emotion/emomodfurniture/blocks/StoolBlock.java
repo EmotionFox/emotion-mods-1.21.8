@@ -1,5 +1,6 @@
 package fr.emotion.emomodfurniture.blocks;
 
+import fr.emotion.emomodfurniture.init.EmoStats;
 import fr.emotion.emomodworld.entities.sittable.Sittable;
 import fr.emotion.emomodworld.init.EmoEntityType;
 import net.minecraft.core.BlockPos;
@@ -72,6 +73,7 @@ public class StoolBlock extends Block {
             }
 
             player.startRiding(entity);
+            player.awardStat(EmoStats.STOOL_SIT.get());
         }
 
         return InteractionResult.SUCCESS;

@@ -117,5 +117,7 @@
   "block.emomodfurniture.stool_nether_bricks": "Tabouret en briques du Nether",
   "block.emomodfurniture.stool_red_nether_bricks": "Tabouret en briques rouges du Nether",
 
-  "container.nightstand": "Table de nuit"
+  "container.nightstand": "Table de nuit",
+  "stat.emomodfurniture.open_nightstand": "Table de nuit ouverts",
+  "stat.emomodfurniture.stool_sit": "Tabourets assis"
 }

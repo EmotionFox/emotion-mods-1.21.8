@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-24T20:15:32.5014588	Loot Tables
+// 1.21.9	2025-10-12T09:19:06.5819937	Loot Tables
 0d556318d1671287aa87763f467ac5098783e258 data/emomodworld/loot_table/blocks/atlas_button.json
 ac65a30ca53604d7f7c640cb16b599130cc5f162 data/emomodworld/loot_table/blocks/atlas_door.json
 084eb39ed14f780f72ce4bad6603cc116a384c87 data/emomodworld/loot_table/blocks/atlas_fence.json
@@ -152,3 +152,5 @@ a61b7d15c76ae36e1a5666de053c961875cc394a data/emomodworld/loot_table/blocks/vert
 d77106ba184af7860f6ba9ad7f6c755a9937d66e data/emomodworld/loot_table/blocks/vertical_pine_planks.json
 84b171d152672b3a4434eddff60e8ca2fccea185 data/emomodworld/loot_table/blocks/vertical_spruce_planks.json
 c54a15163b4ee7cd9759b48c64a9b18b3ed73620 data/emomodworld/loot_table/blocks/vertical_warped_planks.json
+1314cca67b71ecbbb470b0110a244bd38264c8bc data/emomodworld/loot_table/entities/boar.json
+b6306db0945401f3ed738bd98ff4a178ddac6f8b data/emomodworld/loot_table/entities/jumping_spider.json

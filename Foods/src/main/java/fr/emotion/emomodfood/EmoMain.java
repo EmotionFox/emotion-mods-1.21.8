@@ -1,9 +1,7 @@
 package fr.emotion.emomodfood;
 
 import com.mojang.logging.LogUtils;
-import fr.emotion.emomodfood.blocks.entity.PotSpecialRenderer;
 import fr.emotion.emomodfood.init.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.CandleBlock;
@@ -12,7 +10,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
 import org.slf4j.Logger;
 
 @Mod(EmoMain.MODID)
@@ -21,8 +18,6 @@ public class EmoMain {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public EmoMain(IEventBus modEventBus, ModContainer modContainer) {
-        modEventBus.addListener(this::onRegisterSpecialBlockRenderers);
-
         modEventBus.addListener(this::commonSetup);
         EmoBlocks.init(modEventBus);
         EmoItems.init(modEventBus);
@@ -124,12 +119,5 @@ public class EmoMain {
             CandleCakeRegistry.register((CakeBlock) EmoBlocks.CAKE_STRAWBERRY.get(), (CandleBlock) Blocks.RED_CANDLE, (CandleCakeBlock) EmoBlocks.RED_CANDLE_CAKE_STRAWBERRY.get());
             CandleCakeRegistry.register((CakeBlock) EmoBlocks.CAKE_STRAWBERRY.get(), (CandleBlock) Blocks.BLACK_CANDLE, (CandleCakeBlock) EmoBlocks.BLACK_CANDLE_CAKE_STRAWBERRY.get());
         });
-    }
-
-    public void onRegisterSpecialBlockRenderers(RegisterSpecialBlockModelRendererEvent event) {
-        event.register(
-                EmoBlocks.POT.get(),
-                new PotSpecialRenderer.Unbaked(ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "entity/pot_special"))
-        );
     }
 }

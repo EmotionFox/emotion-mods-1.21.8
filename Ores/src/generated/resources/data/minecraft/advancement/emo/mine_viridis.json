@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:emo/mine_purpura",
   "criteria": {
-    "viridis": {
+    "mine_viridis": {
       "conditions": {
         "items": [
           {
@@ -26,7 +26,7 @@
   },
   "requirements": [
     [
-      "viridis"
+      "mine_viridis"
     ]
   ],
   "sends_telemetry_event": true

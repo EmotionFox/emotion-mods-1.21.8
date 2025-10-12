@@ -1,13 +1,12 @@
 package fr.emotion.emomodore.models;
 
-import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 
-public class ViridisHumanoidArmorModel<S extends HumanoidRenderState> extends HumanoidArmorModel<S> {
+public class ViridisHumanoidArmorModel<S extends HumanoidRenderState> extends HumanoidModel<S> {
     public ViridisHumanoidArmorModel(ModelPart root) {
         super(root);
     }
