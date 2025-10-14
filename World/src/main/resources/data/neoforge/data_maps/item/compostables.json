@@ -13,13 +13,19 @@
 			"chance": 0.65
 		},
 		"emomodworld:flower_thorny": {
-			"chance": 0.65
+			"chance": 0.3
+		},
+		"minecraft:dead_bush": {
+			"chance": 0.3
 		},
 		"emomodworld:flower_centus": {
 			"chance": 0.65
 		},
 		"emomodworld:flower_nebula": {
 			"chance": 0.65
+		},
+		"emomodworld:flower_narcota": {
+			"chance": 0.75
 		},
 		"emomodworld:dream_short_grass": {
 			"chance": 0.3

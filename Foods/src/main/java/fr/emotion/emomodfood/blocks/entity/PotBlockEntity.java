@@ -44,13 +44,13 @@ public class PotBlockEntity extends BlockEntity {
             this.fillLevel--;
 
             held.consume(1, player);
-            player.addItem(out);
+            if (!player.isCreative()) player.addItem(out);
 
             if (this.fillLevel <= 0) {
                 this.contentType = PotContentType.EMPTY;
             }
 
-            setChanged();
+            sync();
             return InteractionResult.SUCCESS;
         }
 
@@ -62,9 +62,9 @@ public class PotBlockEntity extends BlockEntity {
                 this.fillLevel = 1;
 
                 held.consume(1, player);
-                player.addItem(new ItemStack(newType.getItem()));
+                if (!player.isCreative()) player.addItem(new ItemStack(newType.getItem()));
 
-                setChanged();
+                sync();
                 return InteractionResult.SUCCESS;
             }
         }
@@ -75,9 +75,9 @@ public class PotBlockEntity extends BlockEntity {
                 this.fillLevel++;
 
                 held.consume(1, player);
-                player.addItem(new ItemStack(addType.getItem()));
+                if (!player.isCreative()) player.addItem(new ItemStack(addType.getItem()));
 
-                setChanged();
+                sync();
                 return InteractionResult.SUCCESS;
             }
         }
@@ -96,7 +96,7 @@ public class PotBlockEntity extends BlockEntity {
     public void setPot(String contentType, int fillLevel) {
         this.contentType = PotContentType.byName(contentType);
         this.fillLevel = fillLevel;
-        setChanged();
+        sync();
     }
 
     @Override
@@ -127,6 +127,13 @@ public class PotBlockEntity extends BlockEntity {
         tag.putString("ContentType", this.contentType.getName());
         tag.putInt("FillLevel", this.fillLevel);
         return ClientboundBlockEntityDataPacket.create(this, (be, access) -> tag);
+    }
+
+    public void sync() {
+        if (this.getLevel()!=null && !this.getLevel().isClientSide()) {
+            setChanged();
+            this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+        }
     }
 
     public enum PotContentType implements IExtensibleEnum {

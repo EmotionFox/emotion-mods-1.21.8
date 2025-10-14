@@ -86,7 +86,7 @@ public class EmoModelProvider extends ModelProvider {
 
         createCrystalFadingBlock(blockModels, itemModels, EmoBlocks.VIRIDIS_CRYSTAL.get());
 
-        blockModels.createTrivialCube(EmoBlocks.VIRIDIS_BLOCK.get());
+        createFadingBlock(blockModels, itemModels, EmoBlocks.VIRIDIS_BLOCK.get());
 
         createFadingBlock(blockModels, itemModels, EmoBlocks.NETHER_LUME_ORE.get());
         createFadingBlock(blockModels, itemModels, EmoBlocks.LUME_BLOCK.get());

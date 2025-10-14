@@ -207,14 +207,6 @@ public class EmoMainClient {
         event.registerLayerDefinition(EmoModelLayers.JUMPING_SPIDER, SpiderModel::createSpiderBodyLayer);
     }
 
-    @SubscribeEvent
-    public static void onRegisterAttributes(EntityAttributeCreationEvent event) {
-        event.put(EmoEntityType.BEETLE.get(), Beetle.createAttributes().build());
-        event.put(EmoEntityType.BUTTERFLY.get(), Butterfly.createAttributes().build());
-        event.put(EmoEntityType.BOAR.get(), Boar.createAttributes().build());
-        event.put(EmoEntityType.MOUSE.get(), Mouse.createAttributes().build());
-        event.put(EmoEntityType.JUMPING_SPIDER.get(), JumpingSpider.createJumpingSpiderAttributes().build());
-    }
 
     @SubscribeEvent
     public static void BuildContents(BuildCreativeModeTabContentsEvent event) {

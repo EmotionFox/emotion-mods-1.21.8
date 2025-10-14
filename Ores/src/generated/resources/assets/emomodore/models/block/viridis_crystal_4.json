@@ -1,5 +1,7 @@
 {
   "parent": "emomodore:block/crystal",
+  "gui_light": "front",
+  "render_type": "minecraft:cutout",
   "textures": {
     "crystal": "emomodore:block/viridis_crystal_4"
   }

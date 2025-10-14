@@ -1,6 +1,5 @@
 package fr.emotion.emomoddimension.entity;
 
-import fr.emotion.emomoddimension.EmoMain;
 import fr.emotion.emomoddimension.init.EmoBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -28,28 +27,31 @@ public class DreamCatcherBlockEntity extends RandomizableContainerBlockEntity {
 
     public void storePlayerInventory(Player player) {
         for (int i = 0; i < 36; i++) {
-            items.set(i, player.getInventory().getItem(i).copy());
+            this.items.set(i, player.getInventory().getItem(i).copy());
             player.getInventory().setItem(i, ItemStack.EMPTY);
         }
 
-        playerUUID = player.getUUID();
+        this.playerUUID = player.getUUID();
         this.getPersistentData().putString("playerUUID", playerUUID.toString());
+        this.setChanged();
     }
 
     public void restorePlayerInventory(Player player) {
-        EmoMain.LOGGER.info("RESTORING INV");
         for (int i = 0; i < 36; i++) {
-            ItemStack stack = items.get(i);
+            ItemStack stack = this.items.get(i);
 
             if (!stack.isEmpty()) {
                 player.getInventory().setItem(i, stack);
-                items.set(i, ItemStack.EMPTY);
+                this.items.set(i, ItemStack.EMPTY);
+            } else {
+                player.getInventory().setItem(i, ItemStack.EMPTY);
             }
         }
+        this.setChanged();
     }
 
     public boolean playerUUIDMatch(UUID testUUID) {
-        return playerUUID.equals(testUUID);
+        return this.playerUUID.equals(testUUID);
     }
 
     @Override
@@ -60,8 +62,8 @@ public class DreamCatcherBlockEntity extends RandomizableContainerBlockEntity {
             ContainerHelper.saveAllItems(output, this.items);
         }
 
-        if (playerUUID!=null) {
-            output.putString("playerUUID", playerUUID.toString());
+        if (this.playerUUID!=null) {
+            output.putString("playerUUID", this.playerUUID.toString());
         }
     }
 
@@ -74,7 +76,7 @@ public class DreamCatcherBlockEntity extends RandomizableContainerBlockEntity {
         }
 
         Optional<String> optional = input.getString("playerUUID");
-        optional.ifPresent(s -> playerUUID = UUID.fromString(s));
+        optional.ifPresent(s -> this.playerUUID = UUID.fromString(s));
 
     }
 
@@ -90,7 +92,7 @@ public class DreamCatcherBlockEntity extends RandomizableContainerBlockEntity {
 
     @Override
     protected NonNullList<ItemStack> getItems() {
-        return items;
+        return this.items;
     }
 
     @Override

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "nightstand",
+  "key": {
+    "#": "emomodworld:coco_planks",
+    "X": "minecraft:stick",
+    "Y": "minecraft:chest"
+  },
+  "pattern": [
+    "XXX",
+    "#Y#",
+    "# #"
+  ],
+  "result": {
+    "count": 4,
+    "id": "emomodfurniture:nightstand_coco"
+  }
+}

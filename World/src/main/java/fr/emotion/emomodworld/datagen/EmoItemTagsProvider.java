@@ -79,6 +79,15 @@ public class EmoItemTagsProvider extends ItemTagsProvider {
                         EmoBlocks.STRIPPED_DREAM_LOG.asItem(),
                         EmoBlocks.STRIPPED_DREAM_WOOD.asItem()
                 );
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .addTags(
+                        EmoItemTags.PEAR_LOGS,
+                        EmoItemTags.ORANGE_LOGS,
+                        EmoItemTags.ATLAS_LOGS,
+                        EmoItemTags.PINE_LOGS,
+                        EmoItemTags.COCO_LOGS,
+                        EmoItemTags.DREAM_LOGS
+                );
         this.tag(ItemTags.LEAVES)
                 .add(
                         EmoBlocks.PEAR_LEAVES.asItem(),

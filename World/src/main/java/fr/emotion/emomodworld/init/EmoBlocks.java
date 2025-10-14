@@ -104,42 +104,42 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> PEAR_LOG = addBlock("pear_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_log")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PEAR_LOG.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PEAR_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> ORANGE_LOG = addBlock("orange_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "orange_log")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ORANGE_LOG.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ORANGE_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> ATLAS_LOG = addBlock("atlas_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "atlas_log")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ATLAS_LOG.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ATLAS_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> PINE_LOG = addBlock("pine_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pine_log")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PINE_LOG.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PINE_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> COCO_LOG = addBlock("coco_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "coco_log")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_COCO_LOG.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_COCO_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> DREAM_LOG = addBlock("dream_log", props -> new RotatedPillarBlock(props.mapColor(state -> state.getValue(RotatedPillarBlock.AXIS)==Direction.Axis.Y ? MapColor.WOOD:MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "dream_log")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_DREAM_LOG.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_DREAM_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
@@ -154,42 +154,42 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> PEAR_WOOD = addBlock("pear_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pear_wood")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PEAR_WOOD.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PEAR_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> ORANGE_WOOD = addBlock("orange_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "orange_wood")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ORANGE_WOOD.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ORANGE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> ATLAS_WOOD = addBlock("atlas_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_LIGHT_BLUE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "atlas_wood")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ATLAS_WOOD.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_ATLAS_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> PINE_WOOD = addBlock("pine_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "pine_wood")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PINE_WOOD.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_PINE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> COCO_WOOD = addBlock("coco_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "coco_wood")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_COCO_WOOD.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_COCO_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });
     public static final DeferredBlock<Block> DREAM_WOOD = addBlock("dream_wood", props -> new RotatedPillarBlock(props.mapColor(MapColor.COLOR_LIGHT_GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(EmoMain.MODID, "dream_wood")))) {
         @Override
         public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
-            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_DREAM_WOOD.get().defaultBlockState();
+            if (ItemAbilities.AXE_STRIP==itemAbility) return STRIPPED_DREAM_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             else return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
     });

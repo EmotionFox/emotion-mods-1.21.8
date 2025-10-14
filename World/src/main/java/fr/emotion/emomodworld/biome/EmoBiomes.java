@@ -7,6 +7,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -30,7 +31,8 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
-        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.MOUSE.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 
@@ -72,8 +74,9 @@ public class EmoBiomes {
 
         BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
-        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
-        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.MOUSE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.AMBIENT, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 
@@ -114,10 +117,13 @@ public class EmoBiomes {
 
         MobSpawnSettings.Builder spawn = new MobSpawnSettings.Builder();
 
-        BiomeDefaultFeatures.farmAnimals(spawn);
         BiomeDefaultFeatures.commonSpawns(spawn);
-        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
-        spawn.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 12, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 4, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 4, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.MOUSE.get(), 2, 4));
+        spawn.addSpawn(MobCategory.AMBIENT, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.BUTTERFLY.get(), 2, 4));
+        spawn.addSpawn(MobCategory.CREATURE, 8, new MobSpawnSettings.SpawnerData(EmoEntityType.BOAR.get(), 4, 4));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 

@@ -107,7 +107,7 @@
         "type": "emomodworld:butterfly",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 10
+        "weight": 16
       }
     ],
     "axolotls": [],
@@ -119,28 +119,28 @@
         "weight": 12
       },
       {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
         "type": "minecraft:chicken",
         "maxCount": 4,
         "minCount": 4,
         "weight": 10
       },
       {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
-      },
-      {
         "type": "emomodworld:beetle",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 10
+        "weight": 16
+      },
+      {
+        "type": "emomodworld:mouse",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 16
+      },
+      {
+        "type": "minecraft:pig",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 8
       }
     ],
     "misc": [],

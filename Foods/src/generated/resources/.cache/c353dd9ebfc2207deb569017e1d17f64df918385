@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-11T23:14:41.7189417	Model Definitions - emomodfood
+// 1.21.9	2025-10-14T10:46:40.3789789	Model Definitions - emomodfood
 8502fa237077540755ce88666cff57582ce03cef assets/emomodfood/blockstates/black_candle_cake_chocolate.json
 45d1f2cce6bf21c66a345e1220736ee31e56dd90 assets/emomodfood/blockstates/black_candle_cake_fruit.json
 97758a6fb98de455a50d58842b6dd4974da16323 assets/emomodfood/blockstates/black_candle_cake_strawberry.json
@@ -97,7 +97,7 @@ e87478d8f7dc28b694010239c7ea22259db29a56 assets/emomodfood/items/pie_cherry.json
 40edaa3a57acb18aeff7ad096c5639c4e23f794e assets/emomodfood/items/pie_melon.json
 f3098133b1b9ed0ec99e8adf2227c902dbad3bc8 assets/emomodfood/items/pie_orange.json
 7dbab6dc472efb98c453a7572cb45e8e37b2bfb8 assets/emomodfood/items/pie_pear.json
-aa46efad09c111d06e62c269d94a265e45e17cd0 assets/emomodfood/items/pot.json
+3dfc08a5d8a1de27fb21c1c71dc639d48aec567f assets/emomodfood/items/pot.json
 6cb2eeff30bedd8bf540559b09dc69f82b498476 assets/emomodfood/items/slice_apple.json
 381b420e36cb92eed11f30b311da687466f25dba assets/emomodfood/items/slice_blackcurrant.json
 6b0ef29785cd945eaa42f8b3cfb65d6ec6b2e317 assets/emomodfood/items/slice_blueberry.json

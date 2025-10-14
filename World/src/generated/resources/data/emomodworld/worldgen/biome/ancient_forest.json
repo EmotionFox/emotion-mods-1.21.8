@@ -110,7 +110,7 @@
         "type": "emomodworld:butterfly",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 10
+        "weight": 16
       }
     ],
     "axolotls": [],
@@ -143,7 +143,13 @@
         "type": "emomodworld:beetle",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 10
+        "weight": 16
+      },
+      {
+        "type": "emomodworld:mouse",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 16
       }
     ],
     "misc": [],

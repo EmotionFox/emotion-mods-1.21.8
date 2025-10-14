@@ -122,7 +122,7 @@ public class EmoMain {
                     player.teleport(transition);
                 }
             }
-        } else if (awakening.isPresent() && serverLevel.getGameTime() >= awakening.get()) {
+        } else if (awakening.isPresent() && serverLevel.getGameTime() >= awakening.get() && player.getUUID() != null) {
             data.remove("Awakening");
             List<DreamCatcherBlockEntity> blockEntities = DreamTeleporter.findDreamCatcherBlockEntity(serverLevel, playerPos, 4, false);
 

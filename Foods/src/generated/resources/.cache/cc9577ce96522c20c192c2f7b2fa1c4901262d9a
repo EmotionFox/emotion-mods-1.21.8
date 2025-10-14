@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-11T23:14:41.7159417	emomodfood recipes
+// 1.21.9	2025-10-14T10:46:40.3759787	emomodfood recipes
 e62f0938cbbdf03077856c42b15292afeb42d824 data/emomodfood/advancement/recipes/food/cake_chocolate.json
 fb121e7b94ef01effd02ce1320b5681daff189ae data/emomodfood/advancement/recipes/food/cake_fruit.json
 2324e4bedafed2e45c749a06f26a3e85b8610a12 data/emomodfood/advancement/recipes/food/cake_strawberry.json
@@ -21,6 +21,7 @@ ad1a6b02031ac580a4c33387d7e10280cb45daff data/emomodfood/advancement/recipes/foo
 f522b420019664c92ebcb77cbcfe1d9b2e411fa9 data/emomodfood/advancement/recipes/food/pie_melon.json
 42f272850aaf9a316df26dcb5d0c011e693a8294 data/emomodfood/advancement/recipes/food/pie_orange.json
 bbf3a9337eb91abe0f5d7aa368b3587b8bcf9af3 data/emomodfood/advancement/recipes/food/pie_pear.json
+0d0c4368a4e53085404d5d6cae9e6aa12d340ec1 data/emomodfood/advancement/recipes/food/slice_bread.json
 26fca92d72b448dff5999337444bfed8963897e2 data/emomodfood/advancement/recipes/food/toffee.json
 9a0d94e491b22625d3bda5f263b02dcb32efaed2 data/emomodfood/advancement/recipes/food/toffee_apple.json
 794b0b742f92410e2ae2441dce9e1a2cd0f562d1 data/emomodfood/advancement/recipes/food/toffee_smoking.json
@@ -52,6 +53,7 @@ f6e05d47c786d1d62426cd68bb5cabc263775f57 data/emomodfood/recipe/pie_orange.json
 928542341147196ed6d2673e5527830076b191cf data/emomodfood/recipe/pie_pear.json
 048021498628f6ecca69f96b3602553f7ceb52d0 data/emomodfood/recipe/pot.json
 c207bae3bb2c90f98070c505aa496e62a9e174be data/emomodfood/recipe/pot_fruit.json
+8cf02a502eb4351d5ea304fb69215470069d531c data/emomodfood/recipe/slice_bread.json
 e0305a0ac451453a6a060d5947ee44146b270286 data/emomodfood/recipe/toffee.json
 bd0130d8c37abe5545a006abc766c7d7966d587d data/emomodfood/recipe/toffee_apple.json
 476587418a6cf69a244820042be345ce3c69a279 data/emomodfood/recipe/toffee_smoking.json

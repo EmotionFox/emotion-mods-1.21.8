@@ -1,6 +1,47 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "emomodore:block/viridis_block"
+    "type": "minecraft:range_dispatch",
+    "entries": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_block_0"
+        },
+        "threshold": 0.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_block_1"
+        },
+        "threshold": 1.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_block_2"
+        },
+        "threshold": 2.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_block_3"
+        },
+        "threshold": 3.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "emomodore:block/viridis_block_4"
+        },
+        "threshold": 4.0
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "emomodore:block/viridis_block"
+    },
+    "property": "emomodore:phase_value"
   }
 }

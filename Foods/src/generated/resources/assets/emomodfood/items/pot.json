@@ -3,8 +3,7 @@
     "type": "minecraft:special",
     "base": "minecraft:item/template_chest",
     "model": {
-      "type": "emomodfood:pot_special",
-      "texture": "emomodfood:pot/pot"
+      "type": "emomodfood:pot_special"
     }
   }
 }

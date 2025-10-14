@@ -20,12 +20,14 @@ import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
 import org.slf4j.Logger;
@@ -39,6 +41,7 @@ public class EmoMain {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onRegisterCapabilities);
         modEventBus.addListener(this::onRegisterSpawnPlacements);
+        modEventBus.addListener(this::onRegisterAttributes);
 
         EmoItems.init(modEventBus);
         EmoBlocks.init(modEventBus);
@@ -249,5 +252,13 @@ public class EmoMain {
         event.register(EmoEntityType.BOAR.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Boar::checkBoarSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EmoEntityType.MOUSE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mouse::checkMouseSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EmoEntityType.JUMPING_SPIDER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, JumpingSpider::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+    }
+
+    public void onRegisterAttributes(EntityAttributeCreationEvent event) {
+        event.put(EmoEntityType.BEETLE.get(), Beetle.createAttributes().build());
+        event.put(EmoEntityType.BUTTERFLY.get(), Butterfly.createAttributes().build());
+        event.put(EmoEntityType.BOAR.get(), Boar.createAttributes().build());
+        event.put(EmoEntityType.MOUSE.get(), Mouse.createAttributes().build());
+        event.put(EmoEntityType.JUMPING_SPIDER.get(), JumpingSpider.createJumpingSpiderAttributes().build());
     }
 }

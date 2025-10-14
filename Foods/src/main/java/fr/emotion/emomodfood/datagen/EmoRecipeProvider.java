@@ -293,6 +293,11 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .save(this.output);
 
         SpecialRecipeBuilder.special(PotRecipe::new).save(this.output, EmoMain.MODID + ":pot_fruit");
+
+        this.shapeless(RecipeCategory.FOOD, EmoItems.SLICE_BREAD, 3)
+                .requires(Items.BREAD)
+                .unlockedBy("has_bread", this.has(Items.BREAD))
+                .save(this.output);
     }
 
     public static class Runner extends RecipeProvider.Runner {

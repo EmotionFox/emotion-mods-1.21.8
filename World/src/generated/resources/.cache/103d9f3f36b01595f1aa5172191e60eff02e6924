@@ -1,10 +1,10 @@
-// 1.21.9	2025-10-12T09:19:06.5829921	Registries
+// 1.21.9	2025-10-14T10:13:28.9970036	Registries
 b4a68717ef3712550a4a6029f967c46a654b2b52 data/emomodworld/neoforge/biome_modifier/add_beetle.json
 bbcac7c2153b9876a9743f379d209998f10ff215 data/emomodworld/neoforge/biome_modifier/add_bush_emosweet.json
 42a2adf2409a223a5f3fe1da0aaec46c05dc8056 data/emomodworld/neoforge/biome_modifier/add_butterfly.json
-37f1a2cd3004667c564fcd75cc72c968a2fa14c0 data/emomodworld/worldgen/biome/ancient_forest.json
-1412524b377fb37cc06fe81847d67ca7e5ed9e2c data/emomodworld/worldgen/biome/orchard.json
-8cbf831e88cf2361ed88e16fd0f0f536711319c8 data/emomodworld/worldgen/biome/verdant_slopes.json
+65659aa265979a2942873b8b34de6b21cff90776 data/emomodworld/worldgen/biome/ancient_forest.json
+a50509d226ca165fc0f90f2fecd0924f04a436fa data/emomodworld/worldgen/biome/orchard.json
+f380a0a4e7f551d0e1168a350246db7762bb28ab data/emomodworld/worldgen/biome/verdant_slopes.json
 d3be8e25cbd6220b2264442b0e24c046fcc64df5 data/emomodworld/worldgen/configured_feature/ancient_forest_vegetation.json
 d9e344f591e0f288636f79d6d37aff3a6ab9e914 data/emomodworld/worldgen/configured_feature/atlas.json
 01a53f4b0779900e0f5f59b0cce9a2e3ad770735 data/emomodworld/worldgen/configured_feature/coco.json

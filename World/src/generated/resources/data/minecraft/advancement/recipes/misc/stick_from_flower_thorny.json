@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flower_thorny": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:flower_thorny"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:stick_from_flower_thorny"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flower_thorny"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:stick_from_flower_thorny"
+    ]
+  }
+}

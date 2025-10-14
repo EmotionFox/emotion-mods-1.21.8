@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stone_stool",
+  "key": {
+    "#": "minecraft:stone",
+    "X": "minecraft:smooth_stone_slab"
+  },
+  "pattern": [
+    "XX",
+    "##"
+  ],
+  "result": {
+    "count": 2,
+    "id": "emomodfurniture:stool_stone"
+  }
+}

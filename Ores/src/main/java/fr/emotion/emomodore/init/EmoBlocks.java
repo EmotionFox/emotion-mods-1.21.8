@@ -50,7 +50,7 @@ public class EmoBlocks {
     });
 
     public static final DeferredBlock<Block> VIRIDIS_CRYSTAL = addBlock("viridis_crystal", (props) -> new ViridisCrystalFadingBlock(props.mapColor(MapColor.STONE).forceSolidOn().noOcclusion().requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER).strength(7F, 14.0F).lightLevel(state -> 5)), FadedBlockItem.class);
-    public static final DeferredBlock<Block> VIRIDIS_BLOCK = addBlock("viridis_block", (props) -> new Block(props.mapColor(MapColor.COLOR_LIGHT_GREEN).requiresCorrectToolForDrops().strength(7.0F, 14.0F).sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> VIRIDIS_BLOCK = addBlock("viridis_block", (props) -> new FadingBlock(props.mapColor(MapColor.COLOR_LIGHT_GREEN).requiresCorrectToolForDrops().strength(7.0F, 14.0F).sound(SoundType.METAL)), LumeBlockItem.class);
 
     public static final DeferredBlock<Block> NETHER_LUME_ORE = addBlock("nether_lume_ore", (props) -> new LumeOreFadingBlock(props.mapColor(MapColor.NETHER).requiresCorrectToolForDrops().strength(4.0F, 4.0F).sound(SoundType.NETHER_ORE).lightLevel(state -> 8)), FadedBlockItem.class);
     public static final DeferredBlock<Block> LUME_BLOCK = addBlock("lume_block", (props) -> new FadingBlock(props.mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(7.0F, 14.0F).sound(SoundType.METAL).lightLevel(state -> 8)), LumeBlockItem.class);

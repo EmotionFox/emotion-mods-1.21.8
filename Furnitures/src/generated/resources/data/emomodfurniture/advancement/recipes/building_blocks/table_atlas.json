@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:planks"
+            "items": "emomodworld:atlas_planks"
           }
         ]
       },

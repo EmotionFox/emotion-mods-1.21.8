@@ -1,6 +1,5 @@
 package fr.emotion.emomodfood.recipes;
 
-import fr.emotion.emomodfood.EmoMain;
 import fr.emotion.emomodfood.blocks.entity.PotBlockEntity;
 import fr.emotion.emomodfood.components.PotRecord;
 import fr.emotion.emomodfood.init.EmoComponents;
@@ -36,8 +35,6 @@ public class PotRecipe extends CustomRecipe {
 
             for (int i = 0; i < input.size(); i++) {
                 ItemStack stack = input.getItem(i);
-
-                EmoMain.LOGGER.info("Stack: " + stack.toString());
 
                 if (stack.is(EmoItems.POT.get())) {
                     PotRecord component = stack.getComponents().get(EmoComponents.POT);

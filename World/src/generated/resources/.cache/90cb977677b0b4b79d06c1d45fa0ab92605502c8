@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-12T09:19:06.5809927	Tags for minecraft:item mod id emomodworld
+// 1.21.9	2025-10-14T10:29:14.3576679	Tags for minecraft:item mod id emomodworld
 1499a62c3438a6987b3ef84593533cc7d0c8abbd data/c/tags/item/foods/berry.json
 d9937874e3549c5d4c56ec155dc2d4dde717dc72 data/c/tags/item/foods/cooked_meat.json
 fd5ee7143735caaa195660a1f5fe50bf9f0b44da data/c/tags/item/foods/fruit.json
@@ -16,6 +16,7 @@ b0a36ff60c72fbc7293b778a5552b9b3e874c042 data/minecraft/tags/item/chest_boats.js
 52fa6404fdb35bfe64cda6f17dff26e544ef241f data/minecraft/tags/item/fence_gates.json
 1499a62c3438a6987b3ef84593533cc7d0c8abbd data/minecraft/tags/item/fox_food.json
 bdadfd28a685aa101c06e0bbf63174e82c7db6e9 data/minecraft/tags/item/leaves.json
+1cb69d3722cf831182f94838e0ba3431df156aa3 data/minecraft/tags/item/logs_that_burn.json
 85f9f3ba121d4e6bba6d369e27ad4c4a1f1075b7 data/minecraft/tags/item/planks.json
 23d49d4f900240fa97a877dcb96fecadb4555d0e data/minecraft/tags/item/saplings.json
 67d80b13d01dc10a31aab6ad5de5e3179efeb6b2 data/minecraft/tags/item/signs.json

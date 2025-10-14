@@ -3,8 +3,8 @@ package fr.emotion.emomodore.datagen;
 import fr.emotion.emomodore.EmoMain;
 import fr.emotion.emomodore.init.EmoBlocks;
 import fr.emotion.emomodore.init.EmoItems;
-import fr.emotion.emomodore.recipes.LumeBlockRecipe;
-import fr.emotion.emomodore.recipes.LumeRecipe;
+import fr.emotion.emomodore.recipes.FadingBlockItemRecipe;
+import fr.emotion.emomodore.recipes.FadingBlockRecipe;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -60,17 +60,6 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .requires(EmoBlocks.PURPURA_BLOCK)
                 .unlockedBy("has_purpura", has(EmoItems.PURPURA_SHARD)).save(output);
 
-        shaped(RecipeCategory.BUILDING_BLOCKS, EmoBlocks.VIRIDIS_BLOCK.get())
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', EmoBlocks.VIRIDIS_CRYSTAL)
-                .unlockedBy("has_viridis", has(EmoBlocks.VIRIDIS_CRYSTAL)).save(output);
-
-        shapeless(RecipeCategory.BUILDING_BLOCKS, EmoBlocks.VIRIDIS_CRYSTAL, 9)
-                .requires(EmoBlocks.VIRIDIS_BLOCK)
-                .unlockedBy("has_viridis", has(EmoBlocks.VIRIDIS_CRYSTAL)).save(output);
-
         shaped(RecipeCategory.MISC, Items.TORCH, 8)
                 .pattern("#")
                 .pattern("X")
@@ -78,8 +67,8 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .define('X', Items.STICK)
                 .unlockedBy("has_lume", has(EmoItems.LUME_STONE)).save(output, "lume_torch");
 
-        SpecialRecipeBuilder.special(LumeRecipe::new).save(this.output, "lume_block");
-        SpecialRecipeBuilder.special(LumeBlockRecipe::new).save(this.output, "lume_stone");
+        SpecialRecipeBuilder.special(FadingBlockRecipe::new).save(this.output, "fading_block");
+        SpecialRecipeBuilder.special(FadingBlockItemRecipe::new).save(this.output, "fading_block_item");
     }
 
     protected void buildTools() {

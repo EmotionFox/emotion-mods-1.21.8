@@ -12,7 +12,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -28,6 +30,16 @@ public class EmoRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        this.oneToOneConversionRecipe(Items.YELLOW_DYE, EmoBlocks.FLOWER_KITTY, "yellow_dye");
+        this.oneToOneConversionRecipe(Items.CYAN_DYE, EmoBlocks.FLOWER_NOX, "cyan_dye");
+        this.oneToOneConversionRecipe(Items.PURPLE_DYE, EmoBlocks.FLOWER_DELY, "purple_dye");
+        this.oneToOneConversionRecipe(Items.ORANGE_DYE, EmoBlocks.FLOWER_GNON, "orange_dye");
+        this.oneToOneConversionRecipe(Items.STICK, EmoBlocks.FLOWER_THORNY, "stick", 2);
+        this.oneToOneConversionRecipe(Items.STICK, Blocks.DEAD_BUSH, "stick", 2);
+        this.oneToOneConversionRecipe(Items.BLUE_DYE, EmoBlocks.FLOWER_CENTUS, "blue_dye");
+        this.oneToOneConversionRecipe(Items.LIGHT_GRAY_DYE, EmoBlocks.FLOWER_NEBULA, "light_gray_dye");
+        this.oneToOneConversionRecipe(Items.LIGHT_GRAY_DYE, EmoBlocks.FLOWER_NARCOTA, "light_gray_dye");
+
         // PEAR
         this.planksFromLogs(EmoBlocks.PEAR_PLANKS, EmoItemTags.PEAR_LOGS, 4);
         this.woodFromLogs(EmoBlocks.PEAR_WOOD, EmoBlocks.PEAR_LOG);
@@ -154,7 +166,7 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .save(this.output);
     }
 
-    protected void verticalPlanksFromPlanks(ItemLike verticalPlanks, ItemLike planks){
+    protected void verticalPlanksFromPlanks(ItemLike verticalPlanks, ItemLike planks) {
         this.shaped(RecipeCategory.BUILDING_BLOCKS, verticalPlanks, 9)
                 .define('#', planks)
                 .pattern("###")
@@ -165,7 +177,7 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .save(this.output);
     }
 
-    protected void planksFromVerticalPlanks(ItemLike verticalPlanks, ItemLike planks){
+    protected void planksFromVerticalPlanks(ItemLike verticalPlanks, ItemLike planks) {
         this.shaped(RecipeCategory.BUILDING_BLOCKS, planks, 9)
                 .define('#', verticalPlanks)
                 .pattern("###")
