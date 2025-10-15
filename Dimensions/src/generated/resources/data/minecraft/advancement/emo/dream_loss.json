@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:emo/craft_dream_catcher",
+  "criteria": {
+    "dream_loss": {
+      "trigger": "emomoddimension:dream_loss"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.emo.dream_loss.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:white_banner"
+    },
+    "title": {
+      "translate": "advancements.emo.dream_loss.title"
+    }
+  },
+  "requirements": [
+    [
+      "dream_loss"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

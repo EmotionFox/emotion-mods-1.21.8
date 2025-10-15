@@ -21,5 +21,10 @@
   "advancements.emo.craft_dream_catcher.description": "See you next sleep",
 
   "advancements.emo.enter_the_dream.title": "Sleepwalker",
-  "advancements.emo.enter_the_dream.description": "Craft a bed and catch a Dream, finally"
+  "advancements.emo.enter_the_dream.description": "Craft a bed and catch a Dream, finally",
+
+  "advancements.emo.dream_loss.title": "Lost It All",
+  "advancements.emo.dream_loss.description": "Don't worry, it's was just a dream",
+
+  "dream.lost_item": "Lost in a dream: "
 }

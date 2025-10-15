@@ -4,6 +4,8 @@ package fr.emotion.emomodcore;
 import com.mojang.logging.LogUtils;
 import fr.emotion.emomodcore.core.PlaceBlockBehavior;
 import fr.emotion.emomodcore.init.EmoBlocksAndItems;
+import fr.emotion.emomodcore.utils.DreamClientData;
+import fr.emotion.emomodcore.utils.DreamSyncPayload;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.bus.api.IEventBus;
@@ -11,6 +13,8 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 
 @Mod(EmoMain.MODID)
@@ -20,6 +24,7 @@ public class EmoMain {
 
     public EmoMain(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::onRegisterPayload);
         modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
 
         EmoBlocksAndItems.init(modEventBus);
@@ -72,5 +77,20 @@ public class EmoMain {
         DispenserBlock.registerBehavior(Items.CHORUS_FLOWER, new PlaceBlockBehavior());
         DispenserBlock.registerBehavior(Items.SMALL_DRIPLEAF, new PlaceBlockBehavior());
         DispenserBlock.registerBehavior(Items.BIG_DRIPLEAF, new PlaceBlockBehavior());
+    }
+
+    public void onRegisterPayload(RegisterPayloadHandlersEvent event) {
+        PayloadRegistrar registrar = event.registrar("1");
+        registrar.playToClient(
+                DreamSyncPayload.TYPE,
+                DreamSyncPayload.STREAM_CODEC,
+                ((payload, context) -> {
+                    context.enqueueWork(() -> {
+                        DreamClientData.setDreaming(payload.dreaming());
+                        DreamClientData.setAwakening(payload.awakening());
+                        DreamClientData.setPeriod(payload.period());
+                    });
+                })
+        );
     }
 }

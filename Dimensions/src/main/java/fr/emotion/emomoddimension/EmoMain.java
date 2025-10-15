@@ -1,12 +1,10 @@
 package fr.emotion.emomoddimension;
 
 import com.mojang.logging.LogUtils;
+import fr.emotion.emomodcore.utils.DreamDataSyncer;
 import fr.emotion.emomoddimension.entity.DreamCatcherBlockEntity;
 import fr.emotion.emomoddimension.entity.goal.EmoEatBlockGoal;
-import fr.emotion.emomoddimension.init.EmoBlockEntityType;
-import fr.emotion.emomoddimension.init.EmoBlockType;
-import fr.emotion.emomoddimension.init.EmoBlocks;
-import fr.emotion.emomoddimension.init.EmoItems;
+import fr.emotion.emomoddimension.init.*;
 import fr.emotion.emomoddimension.utils.DreamTeleporter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -17,6 +15,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.portal.TeleportTransition;
@@ -29,6 +28,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.level.SleepFinishedTimeEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import org.slf4j.Logger;
 
@@ -47,6 +48,7 @@ public class EmoMain {
         EmoBlocks.init(modEventBus);
         EmoBlockEntityType.init(modEventBus);
         EmoBlockType.init(modEventBus);
+        EmoCriteriaTriggers.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         NeoForge.EVENT_BUS.register(this);
@@ -78,26 +80,36 @@ public class EmoMain {
         boolean flag = event.getProblem()==null;
         ServerPlayer player = event.getEntity();
 
-        if (flag) {
+        if (flag && player.getRandom().nextInt(2)==0) {
             ServerLevel serverLevel = player.level();
             BlockPos playerPos = player.blockPosition();
             List<DreamCatcherBlockEntity> blockEntities = DreamTeleporter.findDreamCatcherBlockEntity(serverLevel, playerPos, 4, true);
+            CompoundTag data = player.getPersistentData();
 
             if (!blockEntities.isEmpty()) {
-                blockEntities.getFirst().storePlayerInventory(player);
-
-                CompoundTag data = player.getPersistentData();
-                data.putBoolean("Dreaming", true);
-                // SHOULD BE 12000 OTHER VALUE FOR TESTING PURPOSE
-                data.putLong("Awakening", serverLevel.getGameTime() + 1000);
-                event.setProblem(Player.BedSleepingProblem.OTHER_PROBLEM);
-
-                TeleportTransition transition = DreamTeleporter.getPortalDestination(serverLevel, player, playerPos);
-
-                if (transition!=null) player.teleport(transition);
+                data.putLong("DreamCatcher", blockEntities.getFirst().getBlockPos().asLong());
+                data.putBoolean("BadDream", player.getRandom().nextBoolean());
+            } else {
+                data.remove("DreamCatcher");
+                data.remove("BadDream");
             }
         }
     }
+
+    @SubscribeEvent
+    public void onSleepFinished(SleepFinishedTimeEvent event) {
+        if (!event.getLevel().isClientSide()) {
+            LevelAccessor level = event.getLevel();
+            for (Player player : level.players()) {
+                CompoundTag data = player.getPersistentData();
+
+                if (data.getLong("DreamCatcher").isPresent()) {
+                    data.putBoolean("Dreaming", true);
+                }
+            }
+        }
+    }
+
 
     @SubscribeEvent
     public void onPlayerTick(PlayerTickEvent.Post event) {
@@ -109,31 +121,73 @@ public class EmoMain {
 
         BlockPos playerPos = player.blockPosition();
         CompoundTag data = player.getPersistentData();
+
+        Optional<Long> dreamCatcher = data.getLong("DreamCatcher");
+        Optional<Boolean> badDream = data.getBoolean("BadDream");
+        Optional<Boolean> dreaming = data.getBoolean("Dreaming");
         Optional<Long> awakening = data.getLong("Awakening");
 
-        if (data.getBooleanOr("Dreaming", false)) {
+        if (dreaming.isPresent() && dreaming.get()) {
             if (awakening.isPresent() && serverLevel.getGameTime() >= awakening.get()) {
                 data.remove("Dreaming");
                 data.putLong("Awakening", serverLevel.getGameTime() + 10);
+                DreamDataSyncer.reset((ServerPlayer) player);
 
                 TeleportTransition transition = DreamTeleporter.getPortalDestination(serverLevel, player, playerPos);
 
                 if (transition!=null) {
                     player.teleport(transition);
                 }
-            }
-        } else if (awakening.isPresent() && serverLevel.getGameTime() >= awakening.get() && player.getUUID() != null) {
-            data.remove("Awakening");
-            List<DreamCatcherBlockEntity> blockEntities = DreamTeleporter.findDreamCatcherBlockEntity(serverLevel, playerPos, 4, false);
+            } else if (awakening.isEmpty()) {
+                if (dreamCatcher.isPresent()) {
+                    BlockPos catcherPos = BlockPos.of(dreamCatcher.get());
 
-            if (!blockEntities.isEmpty()) {
-                for (DreamCatcherBlockEntity blockEntity : blockEntities) {
-                    if (blockEntity.playerUUIDMatch(player.getUUID())) {
-                        blockEntity.restorePlayerInventory(player);
-                        break;
+                    if (serverLevel.getBlockEntity(catcherPos)!=null && serverLevel.getBlockEntity(catcherPos) instanceof DreamCatcherBlockEntity blockEntity) {
+                        blockEntity.storePlayerInventory((ServerPlayer) player);
                     }
                 }
+
+                // SHOULD BE DreamClientData.period
+                long awakeningValue = serverLevel.getGameTime() + DreamTeleporter.dreamPeriod;
+                DreamDataSyncer.sync((ServerPlayer) player, awakeningValue, DreamTeleporter.dreamPeriod, true);
+                data.putLong("Awakening", awakeningValue);
+
+                EmoMain.LOGGER.info("BadDream = {}", badDream.orElseGet(() -> false));
+
+                TeleportTransition transition = DreamTeleporter.getPortalDestination(serverLevel, player, playerPos);
+
+                if (transition!=null) player.teleport(transition);
+
+                data.remove("BadDream");
             }
+        } else {
+            if (awakening.isPresent() && serverLevel.getGameTime() >= awakening.get()) {
+                if (dreamCatcher.isPresent()) {
+                    BlockPos catcherPos = BlockPos.of(dreamCatcher.get());
+
+                    if (serverLevel.getBlockEntity(catcherPos)!=null && serverLevel.getBlockEntity(catcherPos) instanceof DreamCatcherBlockEntity blockEntity) {
+                        blockEntity.restorePlayerInventory((ServerPlayer) player);
+                    }
+                }
+
+                data.remove("DreamCatcher");
+                data.remove("BadDream");
+                data.remove("Dreaming");
+                data.remove("Awakening");
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+        Optional<Long> awakening = event.getEntity().getPersistentData().getLong("Awakening");
+
+        if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) return;
+
+        if (awakening.isPresent()) {
+            DreamDataSyncer.sync(serverPlayer, awakening.get(), DreamTeleporter.dreamPeriod, true);
+        } else {
+            DreamDataSyncer.reset(serverPlayer);
         }
     }
 }

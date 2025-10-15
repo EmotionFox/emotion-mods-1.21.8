@@ -30,7 +30,13 @@ public class EmoBiomes {
         MobSpawnSettings.Builder spawn = new MobSpawnSettings.Builder();
 
         BiomeDefaultFeatures.farmAnimals(spawn);
-        BiomeDefaultFeatures.commonSpawns(spawn);
+        BiomeDefaultFeatures.caveSpawns(spawn);
+        spawn.addSpawn(MobCategory.MONSTER, 100, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 4, 4));
+        spawn.addSpawn(MobCategory.MONSTER, 100, new MobSpawnSettings.SpawnerData(EntityType.CAVE_SPIDER, 4, 4));
+        spawn.addSpawn(MobCategory.MONSTER, 100, new MobSpawnSettings.SpawnerData(EmoEntityType.JUMPING_SPIDER.get(), 4, 4));
+        spawn.addSpawn(MobCategory.MONSTER, 100, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 4, 4));
+        spawn.addSpawn(MobCategory.MONSTER, 100, new MobSpawnSettings.SpawnerData(EntityType.CREEPER, 4, 4));
+        spawn.addSpawn(MobCategory.MONSTER, 100, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 4, 4));
         spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.BEETLE.get(), 2, 4));
         spawn.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(EmoEntityType.MOUSE.get(), 2, 4));
 

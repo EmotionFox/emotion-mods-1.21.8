@@ -2,8 +2,11 @@ package fr.emotion.emomoddimension.advancements;
 
 import fr.emotion.emomoddimension.datagen.setBuilder.EmoDimension;
 import fr.emotion.emomoddimension.init.EmoBlocks;
+import fr.emotion.emomoddimension.init.EmoCriteriaTriggers;
+import fr.emotion.emomoddimension.utils.DreamLossCriterion;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -13,6 +16,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
@@ -49,5 +53,20 @@ public class EmoAdvancements implements AdvancementSubProvider {
                 )
                 .addCriterion("entered_dream", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(EmoDimension.DREAM))
                 .save(writer, "emo/enter_the_dream");
+        AdvancementHolder advancementHolder1b = Advancement.Builder.advancement()
+                .parent(advancementHolder)
+                .display(
+                        Blocks.WHITE_BANNER,
+                        Component.translatable("advancements.emo.dream_loss.title"),
+                        Component.translatable("advancements.emo.dream_loss.description"),
+                        null,
+                        AdvancementType.CHALLENGE,
+                        true,
+                        true,
+                        true
+                )
+                .addCriterion("dream_loss", EmoCriteriaTriggers.DREAM_LOSS.get().createCriterion(new DreamLossCriterion.TriggerInstance()))
+                .rewards(AdvancementRewards.Builder.experience(100))
+                .save(writer, "emo/dream_loss");
     }
 }

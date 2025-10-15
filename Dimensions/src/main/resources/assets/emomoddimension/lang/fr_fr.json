@@ -21,5 +21,10 @@
   "advancements.emo.craft_dream_catcher.description": "On ce vois au prochain rêve",
 
   "advancements.emo.enter_the_dream.title": "Somnambule",
-  "advancements.emo.enter_the_dream.description": "Fabriquez un lit et attrapez un Rêve, enfin"
+  "advancements.emo.enter_the_dream.description": "Fabriquez un lit et attrapez un Rêve, enfin",
+
+  "advancements.emo.dream_loss.title": "Perdez tout",
+  "advancements.emo.dream_loss.description": "Ne vous inquietez pas, ce n'était qu'un rêve",
+
+  "dream.lost_item": "Perdu dans les rêves: "
 }

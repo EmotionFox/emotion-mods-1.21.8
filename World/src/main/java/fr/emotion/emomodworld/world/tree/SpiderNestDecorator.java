@@ -2,6 +2,7 @@ package fr.emotion.emomodworld.world.tree;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import fr.emotion.emomodworld.init.EmoEntityType;
 import fr.emotion.emomodworld.init.EmoTreeDecoratorType;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -65,7 +66,7 @@ public class SpiderNestDecorator extends TreeDecorator {
                         context.setBlock(optional.get(), Blocks.SPAWNER.defaultBlockState());
 
                         context.level().getBlockEntity(optional.get(), BlockEntityType.MOB_SPAWNER).ifPresent(blockEntity -> {
-                            blockEntity.setEntityId(EntityType.CAVE_SPIDER, random);
+                            blockEntity.setEntityId(EmoEntityType.JUMPING_SPIDER.get(), random);
                         });
                     }
                 }

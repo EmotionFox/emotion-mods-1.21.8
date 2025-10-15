@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Set;
 
 public class DreamTeleporter {
+    public static final long dreamPeriod = 400;
+
     public static @Nullable TeleportTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos pos) {
         ResourceKey<Level> levelKey = level.dimension()==EmoDimension.DREAM ? Level.OVERWORLD:EmoDimension.DREAM;
         ServerLevel serverLevel = level.getServer().getLevel(levelKey);

@@ -9,5 +9,7 @@
   "emomodcore.configuration.guiHealth": "Afficher la santé de l'entité ciblée",
 
   "advancements.emo.root.description": "le mod d'extension vanilla",
-  "advancements.emo.root.title": "Emotion's Mod"
+  "advancements.emo.root.title": "Emotion's Mod",
+
+  "dream.awakening_in": "Éveil dans: "
 }

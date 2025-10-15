@@ -48,7 +48,7 @@ public class EmoMainClient {
             event.accept(EmoBlocks.DREAM_STONE);
             event.accept(EmoBlocks.DREAM_GRASS_BLOCK);
         }
-        if(key==CreativeModeTabs.BUILDING_BLOCKS){
+        if (key==CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EmoBlocks.DREAM_CATCHER);
         }
     }
