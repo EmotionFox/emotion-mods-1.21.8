@@ -98,7 +98,7 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock, 
     }
 
     @Override
-    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier applier, boolean intersects) {
         boolean flag = entity.getType()!=EntityType.FOX && entity.getType()!=EntityType.BEE && entity.getType()!=EmoEntityType.BUTTERFLY.get();
 
         if (entity instanceof LivingEntity && flag) {

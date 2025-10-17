@@ -7,6 +7,7 @@
   "emomodcore.configuration.section.emomodcore.common.toml": "Emotion's Mod - Core | Configurations",
   "emomodcore.configuration.section.emomodcore.common.toml.title": "Emotion's Mod - Core | Configurations",
   "emomodcore.configuration.guiHealth": "Afficher la santé de l'entité ciblée",
+  "emomodcore.configuration.guiPosition": "Choisir ou placé le IGU supplémentaire",
 
   "advancements.emo.root.description": "le mod d'extension vanilla",
   "advancements.emo.root.title": "Emotion's Mod",

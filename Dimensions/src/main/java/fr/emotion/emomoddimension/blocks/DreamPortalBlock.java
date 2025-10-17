@@ -27,7 +27,7 @@ public class DreamPortalBlock extends Block implements Portal {
     }
 
     @Override
-    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier blockEffectApplier) {
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier applier, boolean intersects) {
         if (entity.canUsePortal(false)) {
             entity.setAsInsidePortal(this, pos);
         }

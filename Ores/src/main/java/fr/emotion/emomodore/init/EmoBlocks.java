@@ -13,6 +13,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -40,7 +41,7 @@ public class EmoBlocks {
 
     public static final DeferredBlock<Block> VIRIDIS_ORE = addBlock("viridis_ore", (props) -> new DropExperienceBlock(UniformInt.of(3, 7), props.mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(5F, 6F)) {
         @Override
-        public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+        public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
             if (level.isClientSide()) {
                 return level.setBlock(pos, fluid.createLegacyBlock(), 11);
             } else {

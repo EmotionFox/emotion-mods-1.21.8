@@ -54,14 +54,14 @@ public class EmoItems {
             "dream_chest_boat", props -> new BoatItem(EmoEntityType.DREAM_CHEST_BOAT.get(), props.stacksTo(1))
     );
 
-    public static final DeferredItem<Item> BLACKCURRANT = ITEMS.registerSimpleItem("blackcurrant", new Item.Properties().food(EmoFoods.BLACKCURRANT));
-    public static final DeferredItem<Item> BLUEBERRY = ITEMS.registerSimpleItem("blueberry", new Item.Properties().food(EmoFoods.BLUEBERRY));
-    public static final DeferredItem<Item> DREAMCURRANT = ITEMS.registerSimpleItem("dreamcurrant", new Item.Properties().food(EmoFoods.DREAMCURRANT));
-    public static final DeferredItem<Item> STRAWBERRY = ITEMS.registerSimpleItem("strawberry", new Item.Properties().food(EmoFoods.STRAWBERRY));
+    public static final DeferredItem<Item> BLACKCURRANT = ITEMS.registerSimpleItem("blackcurrant", props -> props.food(EmoFoods.BLACKCURRANT));
+    public static final DeferredItem<Item> BLUEBERRY = ITEMS.registerSimpleItem("blueberry", props -> props.food(EmoFoods.BLUEBERRY));
+    public static final DeferredItem<Item> DREAMCURRANT = ITEMS.registerSimpleItem("dreamcurrant", props -> props.food(EmoFoods.DREAMCURRANT));
+    public static final DeferredItem<Item> STRAWBERRY = ITEMS.registerSimpleItem("strawberry", props -> props.food(EmoFoods.STRAWBERRY));
 
-    public static final DeferredItem<Item> PEAR = ITEMS.registerSimpleItem("pear", new Item.Properties().food(EmoFoods.PEAR));
-    public static final DeferredItem<Item> CHERRY = ITEMS.registerSimpleItem("cherry", new Item.Properties().food(EmoFoods.CHERRY));
-    public static final DeferredItem<Item> ORANGE = ITEMS.registerSimpleItem("orange", new Item.Properties().food(EmoFoods.ORANGE));
+    public static final DeferredItem<Item> PEAR = ITEMS.registerSimpleItem("pear", props -> props.food(EmoFoods.PEAR));
+    public static final DeferredItem<Item> CHERRY = ITEMS.registerSimpleItem("cherry", props -> props.food(EmoFoods.CHERRY));
+    public static final DeferredItem<Item> ORANGE = ITEMS.registerSimpleItem("orange", props -> props.food(EmoFoods.ORANGE));
 
     public static final DeferredItem<Item> BUTTERFLY_NET_WHITE = ITEMS.registerItem("butterfly_net_white", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
     public static final DeferredItem<Item> BUTTERFLY_NET_ORANGE = ITEMS.registerItem("butterfly_net_orange", props -> new ButterflyNetItem(props.stacksTo(1).durability(10)));
@@ -87,10 +87,10 @@ public class EmoItems {
     public static final DeferredItem<Item> BUTTERFLY_RED = ITEMS.registerItem("butterfly_red", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.RED));
     public static final DeferredItem<Item> BUTTERFLY_YELLOW = ITEMS.registerItem("butterfly_yellow", props -> new ButterflyItem(props, Butterfly.ButterflyVariant.YELLOW));
 
-    public static final DeferredItem<Item> HALF_HAM = ITEMS.registerSimpleItem("half_ham", new Item.Properties().food(EmoFoods.HAM).usingConvertsTo(Items.BONE));
+    public static final DeferredItem<Item> HALF_HAM = ITEMS.registerSimpleItem("half_ham", props -> props.food(EmoFoods.HAM).usingConvertsTo(Items.BONE));
     public static final DeferredItem<Item> HAM = ITEMS.registerItem("ham", props -> new Item(props.food(EmoFoods.HAM).usingConvertsTo(HALF_HAM.get())));
 
-    public static final DeferredItem<Item> COOKED_HALF_HAM = ITEMS.registerSimpleItem("half_cooked_ham", new Item.Properties().food(EmoFoods.COOKED_HAM).usingConvertsTo(Items.BONE));
+    public static final DeferredItem<Item> COOKED_HALF_HAM = ITEMS.registerSimpleItem("half_cooked_ham", props -> props.food(EmoFoods.COOKED_HAM).usingConvertsTo(Items.BONE));
     public static final DeferredItem<Item> COOKED_HAM = ITEMS.registerItem("cooked_ham", props -> new Item(props.food(EmoFoods.COOKED_HAM).usingConvertsTo(COOKED_HALF_HAM.get())));
 
     public static final DeferredItem<Item> BEETLE_SPAWN_EGG = ITEMS.registerItem("beetle_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(EmoEntityType.BEETLE.get())));
