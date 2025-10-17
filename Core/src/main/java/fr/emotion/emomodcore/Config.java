@@ -12,12 +12,12 @@ public class Config {
 
     public static final ModConfigSpec.EnumValue<GuiPosition> GUI_POSITION = BUILDER
             .comment("Choose GUI position")
-            .defineEnum("guiPosition", GuiPosition.MAIN);
+            .defineEnum("guiPosition", GuiPosition.LEFT_RIGHT);
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public enum GuiPosition implements StringRepresentable {
-        MAIN("main"),
+        LEFT_RIGHT("left_right"),
         FULL_RIGHT("full_right"),
         BOTTOM_LEFT("bottom_left"),
         BOTTOM_RIGHT("bottom_right");

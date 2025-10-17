@@ -111,17 +111,21 @@ public class EmoBushBlock extends VegetationBlock implements BonemealableBlock, 
         int moisture = state.getValue(MOISTURE);
         boolean flag = moisture==7;
 
-        if (stack.is(Items.WATER_BUCKET) && !flag) {
-            if (!player.isCreative()) {
-                player.setItemInHand(hand, new ItemStack(Items.BUCKET));
-                level.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.PLAYERS, 1.0F, 1.0F);
+        if (stack.is(Items.WATER_BUCKET)) {
+            if (!flag) {
+                if (!player.isCreative()) {
+                    player.setItemInHand(hand, new ItemStack(Items.BUCKET));
+                    level.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.PLAYERS, 1.0F, 1.0F);
+                }
+
+                BlockState newState = state.setValue(MOISTURE, 7);
+                level.setBlock(pos, newState, 2);
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
+
+                return InteractionResult.CONSUME;
+            } else {
+                return InteractionResult.SUCCESS;
             }
-
-            BlockState newState = state.setValue(MOISTURE, 7);
-            level.setBlock(pos, newState, 2);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
-
-            return InteractionResult.CONSUME;
         }
 
         return stack.is(Items.BONE_MEAL) ? InteractionResult.PASS:super.useItemOn(stack, state, level, pos, player, hand, hitResult);

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": "emomodworld:half_ham",
+  "result": {
+    "count": 1,
+    "id": "emomodworld:half_cooked_ham"
+  }
+}

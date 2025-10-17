@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.2,
+  "ingredient": "emomodworld:half_ham",
+  "result": {
+    "count": 1,
+    "id": "emomodworld:half_cooked_ham"
+  }
+}

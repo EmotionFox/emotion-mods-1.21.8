@@ -12,12 +12,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.AbstractCookingRecipe;
+import net.minecraft.world.item.crafting.CampfireCookingRecipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.SmokingRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
@@ -152,6 +154,12 @@ public class EmoRecipeProvider extends RecipeProvider {
         this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_BAMBOO_PLANKS, Blocks.BAMBOO_PLANKS);
         this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
         this.planksFromVerticalPlanks(EmoBlocks.VERTICAL_WARPED_PLANKS, Blocks.WARPED_PLANKS);
+
+        this.smeltingResultFromBase(EmoItems.COOKED_HALF_HAM, EmoItems.HALF_HAM);
+        this.smeltingResultFromBase(EmoItems.COOKED_HAM, EmoItems.HAM);
+
+        this.cookRecipes("smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100);
+        this.cookRecipes("campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new, 600);
     }
 
     protected void netFromSticksAndWool(ItemLike net, ItemLike wool) {
@@ -186,6 +194,13 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .group("planks")
                 .unlockedBy(getHasName(verticalPlanks), this.has(verticalPlanks))
                 .save(this.output, ResourceKey.create(Registries.RECIPE, BuiltInRegistries.ITEM.getKey(planks.asItem()).withSuffix("2")));
+    }
+
+    protected <T extends AbstractCookingRecipe> void cookRecipes(
+            String cookingMethod, RecipeSerializer<T> cookingSerializer, AbstractCookingRecipe.Factory<T> recipeFactory, int cookingTime
+    ) {
+        this.simpleCookingRecipe(cookingMethod, cookingSerializer, recipeFactory, cookingTime, EmoItems.HALF_HAM, EmoItems.COOKED_HALF_HAM, 0.2F);
+        this.simpleCookingRecipe(cookingMethod, cookingSerializer, recipeFactory, cookingTime, EmoItems.HAM, EmoItems.COOKED_HAM, 0.4F);
     }
 
     public static class Runner extends RecipeProvider.Runner {

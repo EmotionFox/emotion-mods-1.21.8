@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_half_ham": {
+      "conditions": {
+        "items": [
+          {
+            "items": "emomodworld:half_ham"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "emomodworld:half_cooked_ham"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_half_ham"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "emomodworld:half_cooked_ham"
+    ]
+  }
+}

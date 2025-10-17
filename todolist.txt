@@ -13,14 +13,9 @@
 - More variants for all mobs (very optional)
 - Find sound effect to make everything snap together (optional)
 
-- Brighter ham like chicken
-- More saturation on light edge of cherry apple style
 - Add leaf on orange texture
-- Finish dream countdown with custom bar like boss bar
 - Add fullscreen text when changing dimension with sound effect
 - Sit sync issue ?
 
 FIX:
 - Jam Pot when empty could give back full pot in multiplayer, sync issue
-- On gui entity health should be slightly upper bcs of armor (maybe even more bcs of extra health)
-- Ham cook recipe for smoker / furnace and fireplace

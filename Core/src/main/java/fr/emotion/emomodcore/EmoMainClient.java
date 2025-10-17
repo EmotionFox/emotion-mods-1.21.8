@@ -117,7 +117,7 @@ public class EmoMainClient {
                 textX = event.getGuiGraphics().guiWidth() - (10 + textWidth);
                 textY = posY - 10;
                 break;
-            case MAIN:
+            case LEFT_RIGHT:
                 posX -= (vanillaOffset - ((maxHearts / 2) * 8));
                 textX += vanillaOffset - textWidth;
                 posY -= hasArmor ? 10:0;
