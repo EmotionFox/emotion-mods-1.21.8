@@ -1,5 +1,5 @@
 
-# 🧊 Emotion's Mod - 1.21.8
+# 🧊 Emotion's Mod - 1.21.10
 
 Bienvenue sur le GitHub **Emotion's Mod**, un mod d’extension vanilla riche, immersif et cohérent, conçu pour sublimer votre expérience Minecraft sans la trahir.  
 Initialement développé intimement en 1.8 avec ma conjointe, le mod revient en **1.21.8** avec une toute nouvelle base, nettoyée et mieux intégrée à la version moderne du jeu.

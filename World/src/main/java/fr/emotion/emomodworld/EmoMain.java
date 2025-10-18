@@ -3,6 +3,7 @@ package fr.emotion.emomodworld;
 import com.mojang.logging.LogUtils;
 import fr.emotion.emomodcore.core.InteractBehavior;
 import fr.emotion.emomodcore.core.PlaceBlockBehavior;
+import fr.emotion.emomodworld.init.EmoEnchantmentEffects;
 import fr.emotion.emomodworld.entities.beetle.Beetle;
 import fr.emotion.emomodworld.entities.boar.Boar;
 import fr.emotion.emomodworld.entities.butterfly.Butterfly;
@@ -20,7 +21,6 @@ import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -55,6 +55,7 @@ public class EmoMain {
         EmoFeature.init(modEventBus);
         EmoTreeDecoratorType.init(modEventBus);
         EmoDataComponentType.init(modEventBus);
+        EmoEnchantmentEffects.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

@@ -23,7 +23,7 @@ public class EmoDataGenerators {
     public static void gatherData(GatherDataEvent.Client event) {
         PackOutput output = event.getGenerator().getPackOutput();
 
-        DatapackBuiltinEntriesProvider biomeProvider = new DatapackBuiltinEntriesProvider(
+        DatapackBuiltinEntriesProvider datapackProvider = new DatapackBuiltinEntriesProvider(
                 output,
                 event.getLookupProvider(),
                 EmoSetBuilder.createBuilder(),
@@ -31,9 +31,10 @@ public class EmoDataGenerators {
         );
 
 
-        event.getGenerator().addProvider(true, biomeProvider);
-        event.getGenerator().addProvider(true, new EmoWorldPresetTagsProvider(output, biomeProvider.getRegistryProvider()));
-        event.getGenerator().addProvider(true, new EmoBiomeTagsProvider(output, biomeProvider.getRegistryProvider()));
+        event.getGenerator().addProvider(true, datapackProvider);
+        event.getGenerator().addProvider(true, new EmoWorldPresetTagsProvider(output, datapackProvider.getRegistryProvider()));
+        event.getGenerator().addProvider(true, new EmoBiomeTagsProvider(output, datapackProvider.getRegistryProvider()));
+        event.getGenerator().addProvider(true, new EmoEnchantmentTagsProvider(output, datapackProvider.getRegistryProvider()));
 
         event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoItemTagsProvider::new);
@@ -77,8 +78,8 @@ public class EmoDataGenerators {
         event.createProvider(EmoBlockTagsProvider::new);
         event.createProvider(EmoItemTagsProvider::new);
         event.createProvider(EmoEntityTypeTagsProvider::new);
-
         event.createProvider(EmoModelProvider::new);
+        event.createProvider(EmoEnchantmentTagsProvider::new);
 
         event.createProvider(((packOutput, lookupProvider) -> new LootTableProvider(
                 packOutput,

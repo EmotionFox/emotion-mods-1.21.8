@@ -19,3 +19,5 @@
 
 FIX:
 - Jam Pot when empty could give back full pot in multiplayer, sync issue
+- Tool does not appear as tool but as flat item (purpura / fossil?)
+- Pig not showing correctly on GUI when full_right ?

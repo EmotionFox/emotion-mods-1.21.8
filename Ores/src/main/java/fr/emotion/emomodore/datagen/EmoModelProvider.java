@@ -42,28 +42,28 @@ public class EmoModelProvider extends ModelProvider {
         // Items
         itemModels.generateFlatItem(EmoItems.FOSSIL.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(EmoItems.FOSSIL_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.FOSSIL_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.FOSSIL_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.FOSSIL_AXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.FOSSIL_HOE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.FOSSIL_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         itemModels.generateFlatItem(EmoItems.PURPURA_SHARD.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(EmoItems.PURPURA_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_SHOVEL.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_PICKAXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_AXE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_HOE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModels.generateFlatItem(EmoItems.PURPURA_LUME_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_LUME_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModels.generateFlatItem(EmoItems.PURPURA_NETHERITE_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_DIAMOND_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_EMERALD_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_GOLD_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_IRON_SWORD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(EmoItems.PURPURA_COPPER_SWORD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_NETHERITE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_DIAMOND_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_EMERALD_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_GOLD_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_IRON_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(EmoItems.PURPURA_COPPER_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         itemModels.generateFlatItem(EmoItems.VIRIDIS_HELMET.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(EmoItems.VIRIDIS_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
