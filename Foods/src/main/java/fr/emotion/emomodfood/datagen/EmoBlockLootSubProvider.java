@@ -2,6 +2,7 @@ package fr.emotion.emomodfood.datagen;
 
 import fr.emotion.emomodfood.init.EmoBlocks;
 import fr.emotion.emomodfood.init.EmoItems;
+import fr.emotion.emomodfood.functions.PotConditionalFunction;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -13,14 +14,10 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -137,7 +134,7 @@ public class EmoBlockLootSubProvider extends BlockLootSubProvider {
                                 .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1))
                                         .add(LootItem.lootTableItem(block)
-                                                .apply(CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY))
+                                                .apply(PotConditionalFunction.copyPotData())
                                         )
                                 )
         );

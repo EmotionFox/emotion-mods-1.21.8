@@ -87,8 +87,27 @@ public class EmoMain {
             CompoundTag data = player.getPersistentData();
 
             if (!blockEntities.isEmpty()) {
-                data.putLong("DreamCatcher", blockEntities.getFirst().getBlockPos().asLong());
-                data.putBoolean("BadDream", player.getRandom().nextBoolean());
+                double distSqr = 0;
+                DreamCatcherBlockEntity selectedBlockEntity = blockEntities.getFirst();
+
+                if (blockEntities.size() > 1) {
+                    for (DreamCatcherBlockEntity blockEntity : blockEntities) {
+                        BlockPos blockEntityPos = blockEntity.getBlockPos();
+                        double newDistSqr = playerPos.distToCenterSqr(blockEntityPos.getCenter());
+
+                        if (distSqr==0 || newDistSqr < distSqr) {
+                            distSqr = newDistSqr;
+                            selectedBlockEntity = blockEntity;
+                        }
+                    }
+                }
+
+                boolean flag2 = selectedBlockEntity.setPlayer(player);
+
+                if (flag2) {
+                    data.putLong("DreamCatcher", selectedBlockEntity.getBlockPos().asLong());
+                    data.putBoolean("BadDream", player.getRandom().nextBoolean());
+                }
             } else {
                 data.remove("DreamCatcher");
                 data.remove("BadDream");

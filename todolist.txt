@@ -12,12 +12,8 @@
 - Dreams -> biome per islands (possible? Using same noise as terrain gen ? (optional))
 - More variants for all mobs (very optional)
 - Find sound effect to make everything snap together (optional)
-
-- Add leaf on orange texture
-- Add fullscreen text when changing dimension with sound effect
-- Sit sync issue ?
+- Add fullscreen text when changing dimension with sound effect (optional but cool)
 
 FIX:
-- Jam Pot when empty could give back full pot in multiplayer, sync issue
-- Tool does not appear as tool but as flat item (purpura / fossil?)
-- Pig not showing correctly on GUI when full_right ?
+- Sit sync issue on multiplayer when reloading a chunk with a player sat ?
+- Sunrise cycle in dreams

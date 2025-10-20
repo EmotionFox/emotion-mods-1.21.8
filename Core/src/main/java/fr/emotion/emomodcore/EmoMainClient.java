@@ -71,7 +71,7 @@ public class EmoMainClient {
             }
         }
 
-        if (Config.GUI_HEALTH.isFalse() || mc.player.isCreative() || !(mc.crosshairPickEntity instanceof LivingEntity entity) || entity instanceof EnderDragon || entity instanceof WitherBoss)
+        if (Config.GUI_HEALTH.isFalse() || mc.player.isCreative() || mc.player.isSpectator() || !(mc.crosshairPickEntity instanceof LivingEntity entity) || entity instanceof EnderDragon || entity instanceof WitherBoss)
             return;
 
         int color;
@@ -79,7 +79,7 @@ public class EmoMainClient {
         else if (entity instanceof Player) color = 0xFF1b82ba; // Cyan
         else color = 0xFF91438c; // Purple
 
-        int maxHearts = (int) Math.ceil(entity.getMaxHealth() / 2.0);
+        int maxHearts = (int) Math.ceil(entity.getMaxHealth() / 2F);
         // Clamp to 10
         maxHearts = Math.min(maxHearts, 10);
         int fullHearts = (int) (entity.getHealth() / 2F);
@@ -101,24 +101,24 @@ public class EmoMainClient {
 
         switch (position) {
             case FULL_RIGHT:
-                posX += vanillaOffset - ((maxHearts / 2) * 8);
+                posX += vanillaOffset - ((maxHearts) * 4);
                 textX += vanillaOffset - textWidth;
                 textY -= 10;
                 break;
             case BOTTOM_LEFT:
-                posX = 10 + ((maxHearts / 2) * 8);
-                posY = event.getGuiGraphics().guiHeight() - 10;
+                posX = 10 + ((maxHearts) * 4);
+                posY = event.getGuiGraphics().guiHeight() - 20;
                 textX = 10;
                 textY = posY - 10;
                 break;
             case BOTTOM_RIGHT:
-                posX = event.getGuiGraphics().guiWidth() - (10 + ((maxHearts / 2) * 8));
-                posY = event.getGuiGraphics().guiHeight() - 10;
+                posX = event.getGuiGraphics().guiWidth() - (10 + ((maxHearts) * 4));
+                posY = event.getGuiGraphics().guiHeight() - 20;
                 textX = event.getGuiGraphics().guiWidth() - (10 + textWidth);
                 textY = posY - 10;
                 break;
             case LEFT_RIGHT:
-                posX -= (vanillaOffset - ((maxHearts / 2) * 8));
+                posX -= (vanillaOffset - ((maxHearts) * 4));
                 textX += vanillaOffset - textWidth;
                 posY -= hasArmor ? 10:0;
                 posY -= hasAbsorption ? 10:0;

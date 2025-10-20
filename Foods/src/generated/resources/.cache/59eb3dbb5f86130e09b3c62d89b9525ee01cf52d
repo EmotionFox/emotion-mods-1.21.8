@@ -1,4 +1,4 @@
-// 1.21.10	2025-10-17T18:44:27.1013932	Loot Tables
+// 1.21.10	2025-10-20T12:01:41.8778581	Loot Tables
 3b610eb34a105d08009c301e5067be783a853148 data/emomodfood/loot_table/blocks/black_candle_cake_chocolate.json
 e9d49c6370b13a0f8200647dd5fb835fae4cc1b4 data/emomodfood/loot_table/blocks/black_candle_cake_fruit.json
 e8a9eedbb326b6c204aebfa587a00033d21d6609 data/emomodfood/loot_table/blocks/black_candle_cake_strawberry.json
@@ -55,7 +55,7 @@ a5641231c3b6164e53f8450f4954c69991b722a7 data/emomodfood/loot_table/blocks/orang
 eb6ce0eb454373810b50a1708266f681b7426471 data/emomodfood/loot_table/blocks/pink_candle_cake_fruit.json
 78790f1b3c86f5d645d7353391cdfdeef673fc03 data/emomodfood/loot_table/blocks/pink_candle_cake_strawberry.json
 5bd4fe4ae390dc5a59e783c5c069982a46e71ca4 data/emomodfood/loot_table/blocks/pink_candle_cake_toffee.json
-463a4c38fae34d34c556ed69e87474ad7a27bd3c data/emomodfood/loot_table/blocks/pot.json
+43b402d39c91d73eb72db4ca94b523296832ad96 data/emomodfood/loot_table/blocks/pot.json
 f9e8f793c63f4d5c747fefa447584016a9c4351e data/emomodfood/loot_table/blocks/purple_candle_cake_chocolate.json
 f276205760829e8a80340ae3faa535395e383b50 data/emomodfood/loot_table/blocks/purple_candle_cake_fruit.json
 7a631ce872a692b234ac11753656a3d9656bb5e9 data/emomodfood/loot_table/blocks/purple_candle_cake_strawberry.json

@@ -66,12 +66,6 @@ public class EmoBlocks {
         return BLOCKS;
     }
 
-    private static <T extends net.minecraft.world.level.block.Block> DeferredBlock<T> addBlockTest(String name, Function<BlockBehaviour.Properties, T> func) {
-        DeferredBlock<T> returnBlock = BLOCKS.registerBlock(name, func, BlockBehaviour.Properties.of());
-        registerBlockItem(name, returnBlock);
-        return returnBlock;
-    }
-
     private static <T extends net.minecraft.world.level.block.Block> DeferredBlock<T> addBlock(String name, Function<BlockBehaviour.Properties, T> func) {
         DeferredBlock<T> returnBlock = BLOCKS.registerBlock(name, func);
         registerBlockItem(name, returnBlock);

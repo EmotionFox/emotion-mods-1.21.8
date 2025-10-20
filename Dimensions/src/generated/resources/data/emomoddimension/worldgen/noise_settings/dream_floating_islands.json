@@ -12,7 +12,7 @@
     "height": 256,
     "min_y": 0,
     "size_horizontal": 2,
-    "size_vertical": 1
+    "size_vertical": 3
   },
   "noise_router": {
     "barrier": 0.0,
@@ -144,7 +144,7 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "minecraft:moss_block"
+                  "Name": "minecraft:dirt"
                 }
               }
             },
@@ -176,7 +176,7 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "minecraft:dirt"
+                  "Name": "emomoddimension:dream_stone"
                 }
               }
             },

@@ -30,7 +30,7 @@ public class EmoDimensionType {
                         false,
                         true,
                         1.0,
-                        true,
+                        false,
                         false,
                         0,
                         256,

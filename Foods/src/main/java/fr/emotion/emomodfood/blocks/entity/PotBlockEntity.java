@@ -4,6 +4,7 @@ import fr.emotion.emomodfood.init.EmoBlockEntityTypes;
 import fr.emotion.emomodfood.init.EmoItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -25,6 +26,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 
 public class PotBlockEntity extends BlockEntity {
+    private DataComponentMap components = DataComponentMap.EMPTY;
+
     private PotContentType contentType = PotContentType.EMPTY;
     private int fillLevel = 0;
     public static final int maxLevel = 4;

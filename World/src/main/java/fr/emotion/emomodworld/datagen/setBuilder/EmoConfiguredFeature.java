@@ -72,65 +72,56 @@ public class EmoConfiguredFeature {
         context.register(
                 PATCH_BUSH_BLACKCURRANT,
                 new ConfiguredFeature<>(
-                        Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_BLACKCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
-                        )
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_BLACKCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
                 )
         );
         context.register(
                 PATCH_BUSH_BLUEBERRY,
                 new ConfiguredFeature<>(
-                        Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_BLUEBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
-                        )
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_BLUEBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
                 )
         );
         context.register(
                 PATCH_BUSH_DREAMCURRANT,
                 new ConfiguredFeature<>(
-                        Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_DREAMCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
-                        )
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_DREAMCURRANT.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
                 )
         );
         context.register(
                 PATCH_BUSH_STRAWBERRY,
                 new ConfiguredFeature<>(
-                        Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_STRAWBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
-                        )
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_STRAWBERRY.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
                 )
         );
         context.register(
                 PATCH_BUSH_EMOSWEET,
                 new ConfiguredFeature<>(
-                        Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_SWEET.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
-                        )
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BUSH_SWEET.get().defaultBlockState().setValue(EmoBushBlock.AGE, 3).setValue(EmoBushBlock.MOISTURE, 7)))
                 )
         );
         context.register(
                 EmoConfiguredFeature.PATCH_BLUE_MUSHROOM,
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BLUE_MUSHROOM.get())))
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.BLUE_MUSHROOM.get()))
+                        )
                 )
         );
         context.register(
                 EmoConfiguredFeature.PATCH_GREEN_MUSHROOM,
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.GREEN_MUSHROOM.get())))
+                        FeatureUtils.simplePatchConfiguration(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(EmoBlocks.GREEN_MUSHROOM.get()))
+                        )
                 )
         );
         context.register(

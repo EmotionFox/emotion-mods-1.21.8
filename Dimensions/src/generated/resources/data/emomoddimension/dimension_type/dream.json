@@ -1,6 +1,6 @@
 {
   "ambient_light": 0.1,
-  "bed_works": true,
+  "bed_works": false,
   "cloud_height": 0,
   "coordinate_scale": 1.0,
   "effects": "emomoddimension:dream",

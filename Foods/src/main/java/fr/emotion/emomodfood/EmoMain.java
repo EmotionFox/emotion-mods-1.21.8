@@ -25,6 +25,7 @@ public class EmoMain {
         EmoComponents.init(modEventBus);
         EmoDataComponentPredicates.init(modEventBus);
         EmoRecipeSerializer.init(modEventBus);
+        EmoLootItemFunctions.init(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

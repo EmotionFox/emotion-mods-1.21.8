@@ -45,7 +45,7 @@ public class EmoNoiseGeneratorSettings {
         context.register(
                 DREAM_FLOATING_ISLANDS,
                 new NoiseGeneratorSettings(
-                        new NoiseSettings(0, 256, 2, 1),
+                        new NoiseSettings(0, 256, 2, 3),
                         EmoBlocks.DREAM_STONE.get().defaultBlockState(),
                         Blocks.AIR.defaultBlockState(),
                         floatingIslands(densityFunctions, noiseParameters),
@@ -69,13 +69,13 @@ public class EmoNoiseGeneratorSettings {
                                         SurfaceRules.state(EmoBlocks.DREAM_GRASS_BLOCK.get().defaultBlockState())
                                 ),
                                 SurfaceRules.ifTrue(SurfaceRules.ON_CEILING,
-                                        SurfaceRules.state(Blocks.MOSS_BLOCK.defaultBlockState())
+                                        SurfaceRules.state(Blocks.DIRT.defaultBlockState())
                                 ),
                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,
                                         SurfaceRules.state(EmoBlocks.DREAM_STONE.get().defaultBlockState())
                                 ),
                                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR,
-                                        SurfaceRules.state(Blocks.DIRT.defaultBlockState())
+                                        SurfaceRules.state(EmoBlocks.DREAM_STONE.get().defaultBlockState())
                                 ),
                                 SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR,
                                         SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())
