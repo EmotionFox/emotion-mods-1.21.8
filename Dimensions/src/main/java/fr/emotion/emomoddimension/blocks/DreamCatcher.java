@@ -4,12 +4,12 @@ import com.mojang.serialization.MapCodec;
 import fr.emotion.emomoddimension.entity.DreamCatcherBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -48,6 +48,33 @@ public class DreamCatcher extends BaseEntityBlock implements SimpleWaterloggedBl
     }
 
     @Override
+    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+        if (neighborPos.equals(pos.relative(state.getValue(FACING).getOpposite())) && !canSurviveOn(level, neighborPos, state, neighborState))
+            return Blocks.AIR.defaultBlockState();
+        else
+            return super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
+    }
+
+    @Override
+    public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
+        if (context.getClickedFace().getAxis().isHorizontal())
+            return this.defaultBlockState().setValue(FACING, context.getClickedFace());
+        else
+            return null;
+    }
+
+    @Override
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockPos = pos.relative(state.getValue(FACING).getOpposite());
+        BlockState blockState = level.getBlockState(blockPos);
+        return canSurviveOn(level, blockPos, state, blockState);
+    }
+
+    private boolean canSurviveOn(BlockGetter level, BlockPos pos, BlockState state, BlockState neighborState) {
+        return neighborState.isFaceSturdy(level, pos, state.getValue(FACING).getOpposite());
+    }
+
+    @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
@@ -55,11 +82,6 @@ public class DreamCatcher extends BaseEntityBlock implements SimpleWaterloggedBl
     @Override
     protected FluidState getFluidState(BlockState state) {
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false):super.getFluidState(state);
-    }
-
-    @Override
-    public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override

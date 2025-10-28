@@ -1,0 +1,32 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "emomodworld:dream_dungeon/atlas_corner",
+        "processors": "minecraft:mossify_20_percent",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "emomodworld:dream_dungeon/atlas_hallway",
+        "processors": "minecraft:mossify_20_percent",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "emomodworld:dream_dungeon/atlas_stairs",
+        "processors": "minecraft:mossify_20_percent",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

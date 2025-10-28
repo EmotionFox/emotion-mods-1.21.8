@@ -9,6 +9,7 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
@@ -20,7 +21,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -181,7 +181,7 @@ public class EmoSetBuilder {
                     bootstrap.register(
                             FOSSIL_ORE_PLACED_FEATURE,
                             new PlacedFeature(configuredFeatures.getOrThrow(FOSSIL_ORE_CONFIGURED_FEATURE), List.of(
-                                    CountPlacement.of(200),
+                                    CountPlacement.of(30),
                                     InSquarePlacement.spread(),
                                     HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.belowTop(192)),
                                     BiomeFilter.biome()))
@@ -242,7 +242,7 @@ public class EmoSetBuilder {
                     bootstrap.register(
                             FOSSIL_ORE_BIOME_MODIFIER,
                             new BiomeModifiers.AddFeaturesBiomeModifier(
-                                    biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                                    biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                                     HolderSet.direct(placedFeatures.getOrThrow(FOSSIL_ORE_PLACED_FEATURE)),
                                     GenerationStep.Decoration.TOP_LAYER_MODIFICATION
                             )
@@ -250,7 +250,7 @@ public class EmoSetBuilder {
                     bootstrap.register(
                             PURPURA_ORE_BIOME_MODIFIER,
                             new BiomeModifiers.AddFeaturesBiomeModifier(
-                                    biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                                    biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                                     HolderSet.direct(List.of(
                                             placedFeatures.getOrThrow(PURPURA_ORE_BURIED_PLACED_FEATURE),
                                             placedFeatures.getOrThrow(PURPURA_ORE_SMALL_PLACED_FEATURE),
@@ -262,7 +262,7 @@ public class EmoSetBuilder {
                     bootstrap.register(
                             VIRIDIS_ORE_BIOME_MODIFIER,
                             new BiomeModifiers.AddFeaturesBiomeModifier(
-                                    biomes.getOrThrow(Tags.Biomes.IS_MOUNTAIN),
+                                    biomes.getOrThrow(BiomeTags.IS_JUNGLE),
                                     HolderSet.direct(placedFeatures.getOrThrow(VIRIDIS_ORE_PLACED_FEATURE)),
                                     GenerationStep.Decoration.UNDERGROUND_ORES
                             )
@@ -270,7 +270,7 @@ public class EmoSetBuilder {
                     bootstrap.register(
                             LUME_NETHER_ORE_BIOME_MODIFIER,
                             new BiomeModifiers.AddFeaturesBiomeModifier(
-                                    biomes.getOrThrow(Tags.Biomes.IS_NETHER),
+                                    biomes.getOrThrow(BiomeTags.IS_NETHER),
                                     HolderSet.direct(placedFeatures.getOrThrow(LUME_NETHER_ORE_PLACED_FEATURE)),
                                     GenerationStep.Decoration.UNDERGROUND_ORES
                             )

@@ -23,9 +23,10 @@ public class EmoRecipeProvider extends RecipeProvider {
                 .define('#', ItemTags.WOOL)
                 .define('X', Items.STICK)
                 .define('Z', Items.STRING)
+                .define('Y', Items.FEATHER)
                 .pattern("ZXZ")
                 .pattern("X#X")
-                .pattern("ZXZ")
+                .pattern("YXY")
                 .group("dream_catcher")
                 .unlockedBy("has_wool", this.has(ItemTags.WOOL))
                 .save(this.output);

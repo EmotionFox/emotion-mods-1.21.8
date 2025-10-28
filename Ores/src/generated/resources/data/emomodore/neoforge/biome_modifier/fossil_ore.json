@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#c:is_overworld",
+  "biomes": "#minecraft:is_overworld",
   "features": "emomodore:fossil_ore",
   "step": "top_layer_modification"
 }

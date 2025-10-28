@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:is_mountain",
+    "#minecraft:is_ocean",
+    "#minecraft:is_deep_ocean",
+    "minecraft:swamp",
+    {
+      "id": "#c:is_mountain",
+      "required": false
+    },
+    {
+      "id": "#c:is_ocean",
+      "required": false
+    },
+    {
+      "id": "#c:is_deep_ocean",
+      "required": false
+    },
+    {
+      "id": "#c:is_swamp",
+      "required": false
+    }
+  ]
+}

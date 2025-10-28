@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#c:is_mountain",
+  "biomes": "#minecraft:is_jungle",
   "features": "emomodore:viridis_ore",
   "step": "underground_ores"
 }

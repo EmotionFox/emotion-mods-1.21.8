@@ -56,6 +56,8 @@ public class EmoMain {
         EmoTreeDecoratorType.init(modEventBus);
         EmoDataComponentType.init(modEventBus);
         EmoEnchantmentEffects.init(modEventBus);
+        EmoStructureType.init(modEventBus);
+        EmoStructurePlacement.init(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

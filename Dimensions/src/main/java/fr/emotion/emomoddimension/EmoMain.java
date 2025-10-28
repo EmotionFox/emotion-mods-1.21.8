@@ -8,6 +8,7 @@ import fr.emotion.emomoddimension.init.*;
 import fr.emotion.emomoddimension.utils.DreamTeleporter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.goal.EatBlockGoal;
@@ -15,6 +16,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
@@ -109,7 +111,13 @@ public class EmoMain {
                     data.putBoolean("BadDream", player.getRandom().nextBoolean());
                 }
             } else {
-                data.remove("DreamCatcher");
+                if (data.getLong("DreamCatcher").isPresent()) {
+                    if (serverLevel.getBlockEntity(BlockPos.of(data.getLong("DreamCatcher").get())) instanceof DreamCatcherBlockEntity dreamCatcherBlockEntity) {
+                        dreamCatcherBlockEntity.resetPlayer();
+                    }
+                    data.remove("DreamCatcher");
+                }
+
                 data.remove("BadDream");
             }
         }
@@ -150,6 +158,7 @@ public class EmoMain {
             if (awakening.isPresent() && serverLevel.getGameTime() >= awakening.get()) {
                 data.remove("Dreaming");
                 data.putLong("Awakening", serverLevel.getGameTime() + 10);
+                resetPlayerInventory((ServerPlayer) player);
                 DreamDataSyncer.reset((ServerPlayer) player);
 
                 TeleportTransition transition = DreamTeleporter.getPortalDestination(serverLevel, player, playerPos);
@@ -189,7 +198,13 @@ public class EmoMain {
                     }
                 }
 
-                data.remove("DreamCatcher");
+                if (data.getLong("DreamCatcher").isPresent()) {
+                    if (serverLevel.getBlockEntity(BlockPos.of(data.getLong("DreamCatcher").get())) instanceof DreamCatcherBlockEntity dreamCatcherBlockEntity) {
+                        dreamCatcherBlockEntity.resetPlayer();
+                    }
+                    data.remove("DreamCatcher");
+                }
+
                 data.remove("BadDream");
                 data.remove("Dreaming");
                 data.remove("Awakening");
@@ -208,5 +223,20 @@ public class EmoMain {
         } else {
             DreamDataSyncer.reset(serverPlayer);
         }
+    }
+
+    private void resetPlayerInventory(ServerPlayer player) {
+        int lost = 0;
+
+        for (int i = 0; i < 41; i++) {
+            if (!player.getInventory().getItem(i).isEmpty()) {
+                lost++;
+                ItemStack lostStack = player.getInventory().getItem(i);
+                player.displayClientMessage(Component.translatable("dream.lost_item").append(lostStack.getCount() + " " + lostStack.getItemName().getString()), false);
+                player.getInventory().setItem(i, ItemStack.EMPTY);
+            }
+        }
+
+        if (lost >= 36) EmoCriteriaTriggers.DREAM_LOSS.get().trigger(player);
     }
 }

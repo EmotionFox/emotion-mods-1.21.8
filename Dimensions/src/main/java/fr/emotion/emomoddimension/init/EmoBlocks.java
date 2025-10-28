@@ -56,7 +56,7 @@ public class EmoBlocks {
     public static final DeferredBlock<Block> DREAM_COBBLESTONE = addBlock("dream_cobblestone", props -> new Block(props.mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
     public static final DeferredBlock<Block> DREAM_GRASS_BLOCK = addBlock("dream_grass_block", props -> new DreamGrassBlock(props.mapColor(MapColor.GRASS).randomTicks().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 
-    public static final DeferredBlock<Block> DREAM_CATCHER = addBlock("dream_catcher", props -> new DreamCatcher(props.mapColor(MapColor.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> DREAM_CATCHER = BLOCKS.registerBlock("dream_catcher", props -> new DreamCatcher(props.mapColor(MapColor.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     public static void init(IEventBus event) {
         BLOCKS.register(event);

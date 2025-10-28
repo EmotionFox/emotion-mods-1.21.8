@@ -1,7 +1,6 @@
 package fr.emotion.emomoddimension.entity;
 
 import fr.emotion.emomoddimension.init.EmoBlockEntityType;
-import fr.emotion.emomoddimension.init.EmoCriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -37,6 +36,10 @@ public class DreamCatcherBlockEntity extends RandomizableContainerBlockEntity {
         }
     }
 
+    public void resetPlayer() {
+        this.uuid = null;
+    }
+
     public void storePlayerInventory(ServerPlayer player) {
         if (!this.uuid.equals(player.getUUID())) return;
 
@@ -50,28 +53,15 @@ public class DreamCatcherBlockEntity extends RandomizableContainerBlockEntity {
     public void restorePlayerInventory(ServerPlayer player) {
         if (!this.uuid.equals(player.getUUID())) return;
 
-        int lost = 0;
-
         for (int i = 0; i < size; i++) {
             ItemStack stack = this.items.get(i);
-
-            if (!player.getInventory().getItem(i).isEmpty()) {
-                lost++;
-                ItemStack lostStack = player.getInventory().getItem(i);
-                player.displayClientMessage(Component.translatable("dream.lost_item").append(lostStack.getCount() + " " + lostStack.getItemName().getString()), false);
-            }
 
             if (!stack.isEmpty()) {
                 player.getInventory().setItem(i, stack);
                 this.items.set(i, ItemStack.EMPTY);
-            } else {
-                player.getInventory().setItem(i, ItemStack.EMPTY);
             }
         }
 
-        if (lost >= 36) EmoCriteriaTriggers.DREAM_LOSS.get().trigger(player);
-
-        this.uuid = null;
         this.setChanged();
     }
 

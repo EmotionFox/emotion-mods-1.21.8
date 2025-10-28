@@ -2,6 +2,7 @@ package fr.emotion.emomoddimension;
 
 import fr.emotion.emomoddimension.datagen.setBuilder.EmoDimensionType;
 import fr.emotion.emomoddimension.init.EmoBlocks;
+import fr.emotion.emomoddimension.init.EmoItems;
 import fr.emotion.emomoddimension.world.dimension.DreamEffects;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.BiomeColors;
@@ -49,7 +50,7 @@ public class EmoMainClient {
             event.accept(EmoBlocks.DREAM_GRASS_BLOCK);
         }
         if (key==CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EmoBlocks.DREAM_CATCHER);
+            event.accept(EmoItems.DREAM_CATCHER);
         }
     }
 

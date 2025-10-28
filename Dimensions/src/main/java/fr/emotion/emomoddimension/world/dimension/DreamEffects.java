@@ -8,7 +8,7 @@ import org.joml.Matrix4f;
 
 public class DreamEffects extends DimensionSpecialEffects {
     public DreamEffects() {
-        super(SkyType.NONE, false, true);
+        super(SkyType.OVERWORLD, false, true);
     }
 
     @Override

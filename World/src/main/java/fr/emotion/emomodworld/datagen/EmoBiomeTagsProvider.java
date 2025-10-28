@@ -32,5 +32,7 @@ public class EmoBiomeTagsProvider extends BiomeTagsProvider {
                 .add(EmoBiomeKeys.ORCHARD)
                 .add(EmoBiomeKeys.ANCIENT_FOREST)
                 .add(EmoBiomeKeys.VERDANT_SLOPES);
+        //this.tag(EmoBiomeTags.HAS_DREAM_DUNGEON)
+        //        .add(EmoBiomeKeys.ORCHARD);
     }
 }

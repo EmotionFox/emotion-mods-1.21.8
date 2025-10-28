@@ -5,12 +5,13 @@
   "key": {
     "#": "#minecraft:wool",
     "X": "minecraft:stick",
+    "Y": "minecraft:feather",
     "Z": "minecraft:string"
   },
   "pattern": [
     "ZXZ",
     "X#X",
-    "ZXZ"
+    "YXY"
   ],
   "result": {
     "count": 1,
